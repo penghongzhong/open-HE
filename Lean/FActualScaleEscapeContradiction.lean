@@ -81,7 +81,8 @@ theorem actual_normalized_return_time
     rw [htime]
     exact hNzero
   refine ⟨hmem, ?_⟩
-  have he := hcov.2 hmem
+  have he : U.state (-c / r^2) =
+      affineState hr y (N.state (timeAffine r c (-c / r^2))) := hcov.2 hmem
   rw [htime] at he
   exact (he.trans (congrArg (affineState hr y)
     ((hNM.2 M.center_mem).trans M.initial))).trans

@@ -1896,7 +1896,7 @@
     "FActualCompactTimeConvergence": "48ddee24c40d0800682ce5c7012a43c79508b0dd1dd808e0a178a119b20da998",
     "FActualBilateralStrongLimit": "59240ebcc4d8d9486a8b3933ca046671ad447e44ebbfc9f65a67f9759dd29bfb",
     "FActualCriticalLimitGlobal": "ff50c9008573debabc49ed09e6b6734624f7faa5414af1ec06205834994a2045",
-    "FActualScaleEscapeContradiction": "c41402bdb02613e9d95a54e8471f7724757f2cd3f7fa5b4df07c5a8ed8cd3b21"
+    "FActualScaleEscapeContradiction": "bfaee9517a5d95b1f8e06fb95c2a492725ead3382f8ffc14d4ae961b8183798a"
   },
   "declarations": [
     {
