@@ -1,0 +1,31 @@
+import FActualBilateralPathTools
+
+set_option pp.fullNames true
+set_option pp.universes false
+set_option pp.proofs false
+set_option pp.proofs.withType true
+set_option pp.deepTerms true
+set_option pp.maxSteps 10000000
+set_option format.width 120
+
+#print axioms HartreeF.BilateralPathTools.graphSConstant
+#print axioms HartreeF.BilateralPathTools.graphSConstant_nonneg
+#print axioms HartreeF.BilateralPathTools.pathValueSize_le_graph
+#print axioms HartreeF.BilateralPathTools.path_eq_of_state_eqOn
+#print axioms HartreeF.BilateralPathTools.path_restrict
+#print axioms HartreeF.BilateralPathTools.actualMaximalTrajectory_recenter
+#print axioms HartreeF.BilateralPathTools.actualMaximalTrajectory_zero_recenter
+#print axioms HartreeF.BilateralPathTools.affine_path_of_state_eqOn
+#print axioms HartreeF.BilateralPathTools.actualMaximalTrajectory_affine_path
+#print axioms HartreeF.BilateralPathTools.actualMaximalTrajectory_affine_norm
+
+#check @HartreeF.BilateralPathTools.graphSConstant
+#check @HartreeF.BilateralPathTools.graphSConstant_nonneg
+#check @HartreeF.BilateralPathTools.pathValueSize_le_graph
+#check @HartreeF.BilateralPathTools.path_eq_of_state_eqOn
+#check @HartreeF.BilateralPathTools.path_restrict
+#check @HartreeF.BilateralPathTools.actualMaximalTrajectory_recenter
+#check @HartreeF.BilateralPathTools.actualMaximalTrajectory_zero_recenter
+#check @HartreeF.BilateralPathTools.affine_path_of_state_eqOn
+#check @HartreeF.BilateralPathTools.actualMaximalTrajectory_affine_path
+#check @HartreeF.BilateralPathTools.actualMaximalTrajectory_affine_norm

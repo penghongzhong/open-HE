@@ -826,5 +826,89 @@
         "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_global_curveFinite_of_recenter"
       }
     ]
+  },
+  {
+    "module": "FActualBilateralPathTools",
+    "source": "components/FActualBilateralPathTools.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BilateralPathTools.graphSConstant"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.graphSConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.pathValueSize_le_graph"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.path_eq_of_state_eqOn"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.path_restrict"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.actualMaximalTrajectory_recenter"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.actualMaximalTrajectory_zero_recenter"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.affine_path_of_state_eqOn"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.actualMaximalTrajectory_affine_path"
+      },
+      {
+        "name": "HartreeF.BilateralPathTools.actualMaximalTrajectory_affine_norm"
+      }
+    ]
+  },
+  {
+    "module": "FActualDifferenceNormExhaustion",
+    "source": "components/FActualDifferenceNormExhaustion.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.IntervalNormExhaustion.ActualNestedLpBound"
+      },
+      {
+        "name": "HartreeF.IntervalNormExhaustion.ActualPaperRealization"
+      },
+      {
+        "name": "HartreeF.IntervalNormExhaustion.pathValueSize_sub_eq_actual"
+      },
+      {
+        "name": "HartreeF.IntervalNormExhaustion.actualPaperRealization_of_compact_differences"
+      }
+    ]
+  },
+  {
+    "module": "FActualBalancedGraphWindows",
+    "source": "components/FActualBalancedGraphWindows.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BilateralWindows.exists_path_half_large_S"
+      },
+      {
+        "name": "HartreeF.BilateralWindows.BalancedWindow"
+      },
+      {
+        "name": "HartreeF.BilateralWindows.BalancedWindow.center_mem"
+      },
+      {
+        "name": "HartreeF.BilateralWindows.exists_balanced_compact_windows"
+      },
+      {
+        "name": "HartreeF.BilateralWindows.translated_path_norm"
+      },
+      {
+        "name": "HartreeF.BilateralWindows.ZeroCenteredWindow"
+      },
+      {
+        "name": "HartreeF.BilateralWindows.actual_zero_centered_window"
+      },
+      {
+        "name": "HartreeF.BilateralWindows.actual_zero_centered_windows"
+      }
+    ]
   }
 ]

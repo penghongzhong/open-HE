@@ -1,4 +1,5 @@
 import FActualResidualDomains
+import FCriticalPathQuantitativeNorms
 
 /-! Uniform full-X continuity for one genuine first spatial derivative.
 The constant precedes the small block and its cap. Zero caps and zero Sobolev
@@ -16,12 +17,8 @@ open EnergySpace SobolevStretch StationarySelfTest TimeHolder ForcingDomain
 
 private theorem projected_sub_ae (L : ℂ →L[ℝ] ℝ) (u v : EnergyState) :
     energyProjectedGradient L (u-v) =ᵐ[volume]
-      fun x => energyProjectedGradient L u x-energyProjectedGradient L v x := by
-  have hc (j : Fin 3) : (energyGradient j (u-v) : Space → ℂ) =ᵐ[volume]
-      fun x => energyGradient j u x-energyGradient j v x := by
-    simpa only [map_sub] using Lp.coeFn_sub (energyGradient j u) (energyGradient j v)
-  filter_upwards [ae_all_iff.mpr hc] with x hx
-  simp only [energyProjectedGradient, hx, map_sub, sub_smul, Finset.sum_sub_distrib]
+      fun x => energyProjectedGradient L u x-energyProjectedGradient L v x :=
+  CriticalSourceBounds.projectedGradient_sub_ae L u v
 
 /-- Literal differences are chosen joint fields for the actual difference
 EnergyState curve; quotient-selected representatives are only identified AE. -/
@@ -37,8 +34,7 @@ def differenceJointFields {q v : ℝ → EnergyState}
   slice_eq := by
     filter_upwards [rq.slice_eq, rv.slice_eq] with t hq hv
     refine ⟨?_, ?_, ?_⟩
-    · exact (hq.1.sub hv.1).trans (by
-        simpa only [map_sub] using (Lp.coeFn_sub (energyValue (q t)) (energyValue (v t))).symm)
+    · exact (hq.1.sub hv.1).trans (CriticalSourceBounds.energyValue_sub_ae (q t) (v t)).symm
     · exact (hq.2.1.sub hv.2.1).trans (projected_sub_ae Complex.reCLM (q t) (v t)).symm
     · exact (hq.2.2.sub hv.2.2).trans (projected_sub_ae Complex.imCLM (q t) (v t)).symm
 
@@ -190,6 +186,8 @@ theorem sourceCandidate_difference_norm_eq_actual (hDensity : OrdinaryH1Density)
   apply mixedNorm_congr_nested_ae volume volume 2 (ENNReal.ofReal (6/5:ℝ))
   filter_upwards [hqD.actual_ae_candidate, hvD.actual_ae_candidate] with t hqA hvA
   filter_upwards [hqA, hvA] with x hqx hvx
+  change sourceGradient α c rq t x = sourceCandidate α c rq t x at hqx
+  change sourceGradient α c rv t x = sourceCandidate α c rv t x at hvx
   rw [← hqx, ← hvx]
   simp only [sourceGradient, actualGradient, zero_add, Pi.zero_apply]
   abel
@@ -200,7 +198,7 @@ theorem exists_full_x_gradient_difference_bound (hDensity : OrdinaryH1Density)
     {K : ℝ} (hSob : OrdinarySobolev K) {α c : ℝ} (hH : OrdinaryHLS α c)
     (M : ℝ) (hM : 1 ≤ M) :
     ∃ Ktail : ℝ, 0 ≤ Ktail ∧
-      ∀ (q T : ℝ → EnergyState) (hq : CurveFinite q) (hT : CurveFinite T)
+      ∀ (q T : ℝ → EnergyState) (_hq : CurveFinite q) (_hT : CurveFinite T)
         (rq : EnergyJointFields volume q) (rminus : EnergyJointFields volume (q-T))
         (d : ℝ), 0 ≤ d → d ≤ 1 → xNorm q ≤ M → xNorm T ≤ d →
       vectorForcingNorm (fun t x => sourceCandidate α c rq t x-
@@ -233,7 +231,7 @@ theorem exists_full_x_gradient_difference_bound (hDensity : OrdinaryH1Density)
       MemLp (rminus.U t) (ENNReal.ofReal (30/13:ℝ)) volume ∧
       MemLp (rminus.V t) (ENNReal.ofReal (30/13:ℝ)) volume := by
     filter_upwards [hqD.source_slices, hmD.source_slices] with t hqt hmt
-    simp only [TruePairSlices, Pi.zero_apply, zero_add] at hqt hmt
+    simp only [Pi.zero_apply, zero_add] at hqt hmt
     exact ⟨hqt.1, hmt.1, hqt.2.2.1, hmt.2.2.1,
       hqt.2.2.2.2.1, hqt.2.2.2.2.2.1, hmt.2.2.2.2.1, hmt.2.2.2.2.2.1⟩
   have hraw := hC volume rq.u rminus.u rq.U rq.V rminus.U rminus.V hs

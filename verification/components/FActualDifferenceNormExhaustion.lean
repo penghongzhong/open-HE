@@ -1,0 +1,19 @@
+import FActualDifferenceNormExhaustion
+
+set_option pp.fullNames true
+set_option pp.universes false
+set_option pp.proofs false
+set_option pp.proofs.withType true
+set_option pp.deepTerms true
+set_option pp.maxSteps 10000000
+set_option format.width 120
+
+#print axioms HartreeF.IntervalNormExhaustion.ActualNestedLpBound
+#print axioms HartreeF.IntervalNormExhaustion.ActualPaperRealization
+#print axioms HartreeF.IntervalNormExhaustion.pathValueSize_sub_eq_actual
+#print axioms HartreeF.IntervalNormExhaustion.actualPaperRealization_of_compact_differences
+
+#check @HartreeF.IntervalNormExhaustion.ActualNestedLpBound
+#check @HartreeF.IntervalNormExhaustion.ActualPaperRealization
+#check @HartreeF.IntervalNormExhaustion.pathValueSize_sub_eq_actual
+#check @HartreeF.IntervalNormExhaustion.actualPaperRealization_of_compact_differences
