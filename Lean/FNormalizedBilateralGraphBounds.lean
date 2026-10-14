@@ -49,12 +49,13 @@ theorem future_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
     (criticalAffineState lambda hlambda y).apply_symm_apply u
   have hn := actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
     (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) s s z
+  dsimp only at hn
   simp only [sub_self, zero_div, hd] at hn
   intro b hb hI
   have hNs : Icc (timeAffine lambda⁻¹ s 0) (timeAffine lambda⁻¹ s b) ⊆ N.domain := by
     intro t ht
     apply hdom
-    simpa only [timeAffine, mul_zero, zero_add] using ht.1
+    simpa only [mem_Ici, timeAffine, mul_zero, zero_add] using ht.1
   have hsb : s ≤ timeAffine lambda⁻¹ s b := by
     unfold timeAffine
     exact le_add_of_nonneg_left (mul_nonneg (sq_nonneg _) hb)
@@ -84,12 +85,13 @@ theorem past_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
     (criticalAffineState lambda hlambda y).apply_symm_apply u
   have hn := actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
     (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) s s z
+  dsimp only at hn
   simp only [sub_self, zero_div, hd] at hn
   intro a ha hI
   have hNs : Icc (timeAffine lambda⁻¹ s a) (timeAffine lambda⁻¹ s 0) ⊆ N.domain := by
     intro t ht
     apply hdom
-    simpa only [timeAffine, mul_zero, zero_add] using ht.2
+    simpa only [mem_Iic, timeAffine, mul_zero, zero_add] using ht.2
   have has : timeAffine lambda⁻¹ s a ≤ s := by
     unfold timeAffine
     exact add_le_of_nonpos_left (mul_nonpos_of_nonneg_of_nonpos (sq_nonneg _) ha)
