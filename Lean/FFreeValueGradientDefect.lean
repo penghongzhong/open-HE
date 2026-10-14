@@ -36,13 +36,13 @@ theorem projected_memLp_of_coordinates {p : ℝ≥0∞} (U V : Space → Space)
   have hR : U = (fun x => ∑ j : Fin 3,
       (directionalField U V (EuclideanSpace.basisFun (Fin 3) ℝ j) x).re • coordinate j) := by
     funext x
-    change U x = ∑ j : Fin 3, ⟪U x, EuclideanSpace.basisFun (Fin 3) ℝ j⟫_ℝ • coordinate j
+    change U x = ∑ j : Fin 3, (inner ℝ (U x) (EuclideanSpace.basisFun (Fin 3) ℝ j)) • coordinate j
     simpa only [EuclideanSpace.inner_basisFun_real] using
       (coordinate_reconstruct (U x)).symm
   have hI : V = (fun x => ∑ j : Fin 3,
       (directionalField U V (EuclideanSpace.basisFun (Fin 3) ℝ j) x).im • coordinate j) := by
     funext x
-    change V x = ∑ j : Fin 3, ⟪V x, EuclideanSpace.basisFun (Fin 3) ℝ j⟫_ℝ • coordinate j
+    change V x = ∑ j : Fin 3, (inner ℝ (V x) (EuclideanSpace.basisFun (Fin 3) ℝ j)) • coordinate j
     simpa only [EuclideanSpace.inner_basisFun_real] using
       (coordinate_reconstruct (V x)).symm
   constructor

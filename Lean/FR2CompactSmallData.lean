@@ -130,13 +130,11 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
       hDensity hSob h0 hfree hret hH (B := 1) (by norm_num)
   let rho : ℝ := Classical.choose comparisonChoice
   have hrho : 0 < rho := (Classical.choose_spec comparisonChoice).1
-  have hcompare := (Classical.choose_spec comparisonChoice).2.2
   let terminalChoice := WaveTerminal.exists_uniform_backward_terminal_radius
     hDensity hSob h0 hfree hret hH (B := 1) (delta := rho) (by norm_num) hrho
   let eta : ℝ := Classical.choose terminalChoice
   have heta : 0 < eta := (Classical.choose_spec terminalChoice).1
   have hetarho : eta ≤ rho := (Classical.choose_spec terminalChoice).2.1
-  have hsolve := (Classical.choose_spec terminalChoice).2.2
   let Cf := max (max (K ^ ((6 : ℝ)⁻¹)) 1 * Real.sqrt 3) Ch
   have hCf : 0 ≤ Cf := hfree.1.trans (le_max_right _ _)
   let delta := min 1 eta / (2*(Cf+1))
@@ -161,7 +159,7 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
     ((norm_le_pi_norm (fun j => criticalGradient (intervalMeasure a b) j p) j).trans
       (((le_max_right _ _).trans_eq (criticalPath_norm _ p).symm).trans hp)).trans
         (div_le_div_of_nonneg_right (min_le_right _ _) (by norm_num))
-  let solutionChoice := hsolve hab f hpE hpW
+  let solutionChoice := (Classical.choose_spec terminalChoice).2.2 hab f hpE hpW
   let u : CriticalPath (intervalMeasure a b) := Classical.choose solutionChoice
   have hfix := (Classical.choose_spec solutionChoice).1
   have hterminal := (Classical.choose_spec solutionChoice).2.1
@@ -181,7 +179,7 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
       norm_zero (E := CriticalGradient (intervalMeasure a b))
     exact (le_of_eq ((congrArg norm ((criticalGradient (intervalMeasure a b) j).map_zero)).trans hz)).trans
       hrho.le
-  have hc := (hcompare hab f u 0 huE hzeroE (huW.trans hetarho) hzeroW).2
+  have hc := ((Classical.choose_spec comparisonChoice).2.2 hab f u 0 huE hzeroE (huW.trans hetarho) hzeroW).2
   rw [hfix, backwardHartreeDuhamelMap_zero_path hDensity hSob h0 hfree hret hH hab f,
     sub_zero] at hc
   have htriangle : ‖u‖ ≤ ‖u-p‖ + ‖p‖ := by
@@ -265,16 +263,13 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
     hDensity hSob h0 hfree hret hefree heret hH
   let df : ℝ := Classical.choose forwardChoice
   have hdf : 0 < df := (Classical.choose_spec forwardChoice).1
-  have hforward := (Classical.choose_spec forwardChoice).2
   let backwardChoice := exists_uniform_backward_small_data_path
     hDensity hSob h0 hfree hret hH
   let db : ℝ := Classical.choose backwardChoice
   have hdb : 0 < db := (Classical.choose_spec backwardChoice).1
-  have hbackward := (Classical.choose_spec backwardChoice).2
   let sourceChoice := exists_source_power_bound hDensity hSob hH
   let C : ℝ := Classical.choose sourceChoice
   have hC : 0 ≤ C := (Classical.choose_spec sourceChoice).1
-  have hsource := (Classical.choose_spec sourceChoice).2
   let Cf := max (max (K ^ ((6 : ℝ)⁻¹)) 1 * Real.sqrt 3) Ch
   let B := 2*Cf
   let Q := max (energyEndpointConstant K C0) (Ch*C0+Cr)
@@ -291,7 +286,7 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
       Q*‖(criticalPathIntervalSource hDensity hSob hH hlr p 0).gradient‖ ≤
         D*‖f‖^(5+2*alpha) := by
     calc
-      _ ≤ Q*(C*‖p‖^(5+2*alpha)) := mul_le_mul_of_nonneg_left (hsource hlr p) hQ
+      _ ≤ Q*(C*‖p‖^(5+2*alpha)) := mul_le_mul_of_nonneg_left ((Classical.choose_spec sourceChoice).2 hlr p) hQ
       _ ≤ Q*(C*((B*‖f‖)^(5+2*alpha))) :=
         mul_le_mul_of_nonneg_left
           (mul_le_mul_of_nonneg_left (Real.rpow_le_rpow (norm_nonneg _) hp hpower) hC) hQ
@@ -304,7 +299,7 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
         IsMildHartreePath hab alpha c f p ∧ ‖p‖ ≤ B*‖f‖ ∧
         ‖p-freeCriticalPath hDensity hSob hfree a b
           (freeEnergyState hDensity hSob (-a) f)‖ ≤ D*‖f‖^(5+2*alpha) := by
-    obtain ⟨p, hp, _, hn, _⟩ := hforward hab f (hf.trans (min_le_left _ _))
+    obtain ⟨p, hp, _, hn, _⟩ := (Classical.choose_spec forwardChoice).2 hab f (hf.trans (min_le_left _ _))
     have hn' : ‖p‖ ≤ B*‖f‖ := hn.trans_eq (by dsimp [B, Cf]; ring)
     have hfix := (isMildHartreePath_iff_fixedPoint hDensity hSob h0 hfree hret hH
       hab f p).mp hp
@@ -317,7 +312,7 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
         IsBackwardMildHartreePath hba alpha c f p ∧ ‖p‖ ≤ B*‖f‖ ∧
         ‖p-freeCriticalPath hDensity hSob hfree b a
           (freeEnergyState hDensity hSob (-a) f)‖ ≤ D*‖f‖^(5+2*alpha) := by
-    obtain ⟨p, hp, _, hn⟩ := hbackward hba f (hf.trans (min_le_right _ _))
+    obtain ⟨p, hp, _, hn⟩ := (Classical.choose_spec backwardChoice).2 hba f (hf.trans (min_le_right _ _))
     have hn' : ‖p‖ ≤ B*‖f‖ := hn.trans_eq (by dsimp [B, Cf]; ring)
     have hfix := (isBackwardMildHartreePath_iff_fixedPoint hDensity hSob h0 hfree hret hH
       hba f p).mp hp
@@ -430,7 +425,7 @@ theorem exists_uniform_matching_compact_bounds (hDensity : OrdinaryH1Density)
             (s n) (M.state (s n)) M.state B D) ∧
           (∀ n, ‖M.state (s n)‖ ≤ max (K^((6 : ℝ)⁻¹)) 1*pureGradientNorm phi +
             ‖M.state (s n)-freeEnergyState hDensity hSob (s n) phi‖) := by
-  obtain ⟨d, B, D, hd, hB, hD, hsolve⟩ := exists_uniform_two_sided_small_data
+  obtain ⟨d, B, D, hd, hB, hD, (Classical.choose_spec terminalChoice).2.2⟩ := exists_uniform_two_sided_small_data
     hDensity hSob h0 hfree hret hefree heret hH
   let A := max (K^((6 : ℝ)⁻¹)) 1
   have hA : 0 ≤ A := (by norm_num : (0 : ℝ) ≤ 1).trans (le_max_right _ _)
@@ -457,12 +452,12 @@ theorem exists_uniform_matching_compact_bounds (hDensity : OrdinaryH1Density)
       (mul_le_mul_of_nonneg_left hphi hA).trans hAdelta
     linarith [hdata n]
   obtain ⟨n, hn, hsmall⟩ := hevent.exists
-  obtain ⟨hglobalV, _⟩ := hsolve (s n) (M.state (s n)) hsmall
+  obtain ⟨hglobalV, _⟩ := (Classical.choose_spec terminalChoice).2.2 (s n) (M.state (s n)) hsmall
   have hglobal := (actualMaximalTrajectory_global_of_recenter
     hDensity hSob h0 hfree hret hefree heret hH f hn hglobalV).1
   refine ⟨hglobal, ?_, hdata⟩
   filter_upwards [hevent] with n hn
-  obtain ⟨hglobalV, hb⟩ := hsolve (s n) (M.state (s n)) hn.2
+  obtain ⟨hglobalV, hb⟩ := (Classical.choose_spec terminalChoice).2.2 (s n) (M.state (s n)) hn.2
   have heq := (actualMaximalTrajectory_global_of_recenter
     hDensity hSob h0 hfree hret hefree heret hH f hn.1 hglobalV).2
   exact Eq.mpr (congrArg (fun U : ℝ → EnergyState =>
@@ -508,10 +503,10 @@ theorem actual_matching_zero_profile (hDensity : OrdinaryH1Density)
   let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH T f
   dsimp only
   intro hdom hmatch hphi
-  obtain ⟨delta, B, D, hdelta, _, _, hsolve⟩ := exists_uniform_matching_compact_bounds
+  obtain ⟨delta, B, D, hdelta, _, _, (Classical.choose_spec terminalChoice).2.2⟩ := exists_uniform_matching_compact_bounds
     hDensity hSob h0 hfree hret hefree heret hH
   have hsmall : pureGradientNorm phi ≤ delta := by rw [hphi]; exact hdelta.le
-  obtain ⟨hglobal, hbounds, hdata⟩ := hsolve T f phi s hdom hmatch hsmall
+  obtain ⟨hglobal, hbounds, hdata⟩ := (Classical.choose_spec terminalChoice).2.2 T f phi s hdom hmatch hsmall
   have hnorm : Tendsto (fun n => ‖M.state (s n)‖) atTop (𝓝 0) := by
     apply squeeze_zero (fun n => norm_nonneg (M.state (s n))) _ hmatch
     intro n

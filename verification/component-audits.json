@@ -421,5 +421,131 @@
         "name": "HartreeF.FreeValueFullCandidate.full_candidate_sum_bound"
       }
     ]
+  },
+  {
+    "module": "FFreeValueCandidateSplice",
+    "source": "components/FFreeValueCandidateSplice.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueSplice.E"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.S"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.W"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.C"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarDefect"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.coordinateBound"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_retarget"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_add"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_Q_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.directionalCandidate_add"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.directionalCandidate_sub"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.directionalCandidate_real_smul"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.literal_splice"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_full_control"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalar_defect_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_valueSize_le"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_changeSize"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.identical_changeSize"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_direction_continuity"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.SpliceControl"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_direction_free_value_bound"
+      }
+    ]
+  },
+  {
+    "module": "FFreeValueGradientDefect",
+    "source": "components/FFreeValueGradientDefect.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueGradient.directionCoordinate"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.directionCoordinate_add"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.projected_memLp_of_coordinates"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.inDotH1_add"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.TruePairSlices"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.true_pair_slices"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.literalForcing"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actualGradient"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient_coordinate"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient_eq_candidates"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient_joint"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actualGradient_candidate_ae"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.ActualDefectDomains"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actual_free_value_gradient_domains"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.ActualDefectControl"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actual_free_value_gradient_bound"
+      }
+    ]
   }
 ]
