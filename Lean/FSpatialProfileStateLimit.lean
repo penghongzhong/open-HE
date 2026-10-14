@@ -41,7 +41,7 @@ theorem spatial_limit_of_finite_time (hDensity : OrdinaryH1Density) {K : ℝ}
     apply tendsto_zero_iff_norm_tendsto_zero.mpr
     simpa only [spatial_inverse_error_norm] using herr
   have hf := ((freeEnergyState_time_continuous hDensity hSob phi).tendsto sstar).comp hs
-  simpa only [sub_add_cancel, zero_add] using he.add hf
+  simpa only [Function.comp_def, sub_add_cancel, zero_add] using he.add hf
 
 /-- Actual energy and kinetic bounds pass through spatial normalization and
 strong convergence. No statement about graph isometry of free flow is used. -/
