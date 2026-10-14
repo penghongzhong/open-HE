@@ -934,5 +934,77 @@
         "name": "HartreeF.FullResidual.exists_full_x_gradient_difference_bound"
       }
     ]
+  },
+  {
+    "module": "FFreeHeadAffineSlots",
+    "source": "components/FFreeHeadAffineSlots.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeHeadFrames.densityDerivative_power_smul"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.localFactor_power_smul"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.localFactorDerivative_power_smul"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.powerDensity_power_smul"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.inverse_kernel_scale"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.scaled_riesz_integrand"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.scaled_riesz_fibre_integrable"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.rieszConvolution_power_pullback"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.directionalDensity_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.density_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.directional_potential_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.potential_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.innerCross_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.outerCross_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.innerCross_joint"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.outerCross_joint"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.seedFrame_inner_N"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.seedFrame_outer_N"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.normProduct_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.seedFrame_Q"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.directional_fibre_parabolic"
+      },
+      {
+        "name": "HartreeF.FreeHeadFrames.density_fibre_parabolic"
+      }
+    ]
   }
 ]

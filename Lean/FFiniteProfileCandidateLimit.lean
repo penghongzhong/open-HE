@@ -42,6 +42,7 @@ private theorem nsmall_add {f g : κ → ℝ → Space → ℂ}
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds hz
     (fun _ => bot_le) hb
 
+omit [DecidableEq ι] in
 private theorem nsmall_sum (s : Finset ι) (f : ι → κ → ℝ → Space → ℂ)
     (hf : ∀ i ∈ s, NSmall (l := l) (f i)) :
     NSmall (l := l) (fun n t x => ∑ i ∈ s, f i n t x) := by
@@ -84,14 +85,18 @@ private theorem time03_holder {α : ℝ} (ha : 0 < α) (ha3 : α < 3) :
   have hh := reciprocal_holder (by linarith : 0 ≤ (3-α)/10)
     (by linarith : 0 ≤ (2+α)/10)
   simpa only [t0, t3, show (3-α)/10+(2+α)/10=(1/2 : ℝ) by ring,
-    show reciprocal (1/2 : ℝ)=2 by norm_num [reciprocal]] using hh
+    show reciprocal (1/2 : ℝ)=2 by
+      rw [reciprocal_eq (by norm_num : (0:ℝ)<1/2)]
+      norm_num] using hh
 
 private theorem time12_holder {α : ℝ} (ha : 0 < α) (ha3 : α < 3) :
     ENNReal.HolderTriple (t1 α) (t2 α) 2 := by
   have hh := reciprocal_holder (by linarith : 0 ≤ (3+2*α/3)/10)
     (by linarith : 0 ≤ (2-2*α/3)/10)
   simpa only [t1, t2, show (3+2*α/3)/10+(2-2*α/3)/10=(1/2 : ℝ) by ring,
-    show reciprocal (1/2 : ℝ)=2 by norm_num [reciprocal]] using hh
+    show reciprocal (1/2 : ℝ)=2 by
+      rw [reciprocal_eq (by norm_num : (0:ℝ)<1/2)]
+      norm_num] using hh
 
 private theorem space03_holder {α : ℝ} (ha : 0 < α) (ha3 : α < 3) :
     ENNReal.HolderTriple (ENNReal.ofReal (10/(3-α)))
@@ -154,8 +159,8 @@ private theorem row0_small {α c : ℝ} (hH : OrdinaryHLS α c)
   have ha := hH.order_pos
   have ha3 := hH.order_lt_three
   have hi := ledger_hls_interior ha ha3
-  letI := time03_holder ha ha3
-  letI := space03_holder ha ha3
+  let := time03_holder ha ha3
+  let := space03_holder ha ha3
   have hh := riesz_product_tendsto hH hi.1 hi.2.1
     (div_pos (by norm_num : (0:ℝ)<10) (by linarith : 0<3-α))
     (div_pos (by norm_num : (0:ℝ)<30) (by linarith : 0<16+3*α))
@@ -180,8 +185,8 @@ private theorem row1_small {α c : ℝ} (hH : OrdinaryHLS α c)
   have ha := hH.order_pos
   have ha3 := hH.order_lt_three
   have hi := ledger_hls_interior ha ha3
-  letI := time12_holder ha ha3
-  letI := space12_holder ha ha3
+  let := time12_holder ha ha3
+  let := space12_holder ha ha3
   have hh := riesz_product_tendsto hH hi.2.2.1 hi.2.2.2.1
     (div_pos (by norm_num : (0:ℝ)<90) (by nlinarith : 0<19*(3-α)))
     (div_pos (by norm_num : (0:ℝ)<90) (by linarith : 0<18+19*α))
@@ -234,9 +239,10 @@ private theorem candidate_six_terms_ae {α c : ℝ} (hH : OrdinaryHLS α c)
   filter_upwards [hzt, hix] with x hzx hix
   have he := candidateDefect_six_terms α c s (fun i => u i t) (fun i => h i t) x
     hzx.1 (fun i hi => (hix i hi).1) hzx.2 (fun i hi => (hix i hi).2)
-  simpa only [sixTerms, R0, R1, T0, T1, pureDensity, pureDensityDerivative,
+  dsimp only [sixTerms, R0, R1, T0, T1, pureDensity, pureDensityDerivative,
     pureLocal, pureLocalDerivative, innerCross, outerCross, directionalDensity,
-    potential, powerDensity, density, Finset.sum_smul] using he
+    potential, powerDensity, density] at he ⊢
+  simpa only [Finset.sum_smul] using he
 
 /-- Every-index finiteness and original-filter vanishing of the SAME literal
 finite directional candidate defect. The packet is produced from actual framed
@@ -299,7 +305,7 @@ theorem candidate_defect_finite_tendsto {α c : ℝ} (hH : OrdinaryHLS α c)
     (fun n => (hDF n).2.1) (fun n => (hZF n).2.2.1)
     (Or.inl ⟨hD0.2.1, C, fun n => (hZC n).2.2.1⟩)
   -- Term 2: finite sum of bounded pure derivative coefficients times T0.
-  have hB := nsmall_sum s
+  have hB := nsmall_sum (l := l) s
     (fun i n t x => rieszConvolution α c (pureDensityDerivative α (u n i) (h n i) t) x • T0 α s (u n) t x)
     (fun i hi => row1_small hH (fun n => pureDensityDerivative α (u n i) (h n i))
       (fun n => T0 α s (u n))
@@ -308,9 +314,9 @@ theorem candidate_defect_finite_tendsto {α c : ℝ} (hH : OrdinaryHLS α c)
       (fun n => (hiF n i hi).2.1) (fun n => (hDF n).2.2.1)
       (Or.inr ⟨⟨C, fun n => (hiC n i hi).2.1⟩, hD0.2.2.1⟩))
   -- Term 3: the genuine nonlocal inner cross terms, including every ordered pair.
-  have hCROSS1 := nsmall_sum s
+  have hCROSS1 := nsmall_sum (l := l) s
     (fun i n t x => ∑ j ∈ s.erase i, innerCross α c (u n i) (h n i) (u n j) t x)
-    (fun i hi => nsmall_sum (s.erase i)
+    (fun i hi => nsmall_sum (l := l) (s.erase i)
       (fun j n => innerCross α c (u n i) (h n i) (u n j)) (fun j hj => by
         have hjs := Finset.mem_of_mem_erase hj
         refine ⟨fun n => inner_joint_measurable α c
@@ -329,7 +335,7 @@ theorem candidate_defect_finite_tendsto {α c : ℝ} (hH : OrdinaryHLS α c)
     (fun n => (hDF n).1) (fun n => (hZF n).2.2.2)
     (Or.inl ⟨hD0.1, C, fun n => (hZC n).2.2.2⟩)
   -- Term 5: finite sum of bounded pure density coefficients times T1.
-  have hE := nsmall_sum s
+  have hE := nsmall_sum (l := l) s
     (fun i n t x => rieszConvolution α c (pureDensity α (u n i) t) x • T1 α s (u n) (h n) t x)
     (fun i hi => row0_small hH (fun n => pureDensity α (u n i)) (fun n => T1 α s (u n) (h n))
       (fun n => (hiJ n i hi).1.aestronglyMeasurable)
@@ -337,9 +343,9 @@ theorem candidate_defect_finite_tendsto {α c : ℝ} (hH : OrdinaryHLS α c)
       (fun n => (hiF n i hi).1) (fun n => (hDF n).2.2.2)
       (Or.inr ⟨⟨C, fun n => (hiC n i hi).1⟩, hD0.2.2.2⟩))
   -- Term 6: the distinct outer derivative placement is retained separately.
-  have hCROSS0 := nsmall_sum s
+  have hCROSS0 := nsmall_sum (l := l) s
     (fun i n t x => ∑ j ∈ s.erase i, outerCross α c (u n i) (u n j) (h n j) t x)
-    (fun i hi => nsmall_sum (s.erase i)
+    (fun i hi => nsmall_sum (l := l) (s.erase i)
       (fun j n => outerCross α c (u n i) (u n j) (h n j)) (fun j hj => by
         have hjs := Finset.mem_of_mem_erase hj
         refine ⟨fun n => outer_joint_measurable α c
