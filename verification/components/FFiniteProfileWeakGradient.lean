@@ -1,0 +1,95 @@
+import FFiniteProfileWeakGradient
+
+set_option pp.fullNames true
+set_option pp.universes false
+set_option pp.proofs false
+set_option pp.proofs.withType true
+set_option pp.deepTerms true
+set_option pp.maxSteps 10000000
+set_option format.width 120
+
+#print HartreeF.FiniteProfileWeakGradient.CoordinateTests
+
+#print axioms HartreeF.FiniteProfileWeakGradient.literalDefect
+#print axioms HartreeF.FiniteProfileWeakGradient.gradientDefect
+#print axioms HartreeF.FiniteProfileWeakGradient.jointCandidateDefect
+#print axioms HartreeF.FiniteProfileWeakGradient.weakGradient_zero
+#print axioms HartreeF.FiniteProfileWeakGradient.weakGradient_add
+#print axioms HartreeF.FiniteProfileWeakGradient.weakGradient_sum
+#print axioms HartreeF.FiniteProfileWeakGradient.inDotH1_sum
+#print axioms HartreeF.FiniteProfileWeakGradient.gradientReal_defect
+#print axioms HartreeF.FiniteProfileWeakGradient.gradientImag_defect
+#print axioms HartreeF.FiniteProfileWeakGradient.finite_forcing_hasWeakGradients
+#print axioms HartreeF.FiniteProfileWeakGradient.CoordinateTests
+#print axioms HartreeF.FiniteProfileWeakGradient.finite_forcing_coordinate_tests
+#print axioms HartreeF.FiniteProfileWeakGradient.gradientDefect_candidate_ae
+#print axioms HartreeF.FiniteProfileWeakGradient.directionalField_sum
+#print axioms HartreeF.FiniteProfileWeakGradient.candidateFullGradient_coordinate
+#print axioms HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_coordinate
+#print axioms HartreeF.FiniteProfileWeakGradient.gradientDefect_coordinates_ae
+#print axioms HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_joint_measurable
+#print axioms HartreeF.FiniteProfileWeakGradient.directionalCandidate_congr_ae
+#print axioms HartreeF.FiniteProfileWeakGradient.candidateFullGradient_congr_ae
+#print axioms HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_congr_ae
+#print axioms HartreeF.FiniteProfileWeakGradient.framedValue
+#print axioms HartreeF.FiniteProfileWeakGradient.framedReal
+#print axioms HartreeF.FiniteProfileWeakGradient.framedImag
+#print axioms HartreeF.FiniteProfileWeakGradient.framed_directionalField
+#print axioms HartreeF.FiniteProfileWeakGradient.packed_memLp_real_imag
+#print axioms HartreeF.FiniteProfileWeakGradient.actual_frame_slices
+#print axioms HartreeF.FiniteProfileWeakGradient.actual_finite_framed_weak_gradients
+#print axioms HartreeF.FiniteProfileWeakGradient.framedJointValue
+#print axioms HartreeF.FiniteProfileWeakGradient.framedJointReal
+#print axioms HartreeF.FiniteProfileWeakGradient.framedJointImag
+#print axioms HartreeF.FiniteProfileWeakGradient.framedJoint_joint_measurable
+#print axioms HartreeF.FiniteProfileWeakGradient.framedJoint_directionalField
+#print axioms HartreeF.FiniteProfileWeakGradient.framedJoint_nested_ae
+#print axioms HartreeF.FiniteProfileWeakGradient.actual_finite_framed_candidate_transfer
+#print axioms HartreeF.FiniteProfileWeakGradient.finite_forcing_representative_weak_tests
+#print axioms HartreeF.FiniteProfileWeakGradient.literalDefect_empty
+#print axioms HartreeF.FiniteProfileWeakGradient.literalDefect_singleton
+#print axioms HartreeF.FiniteProfileWeakGradient.gradientDefect_singleton
+#print axioms HartreeF.FiniteProfileWeakGradient.empty_forcing_hasWeakGradients
+#print axioms HartreeF.FiniteProfileWeakGradient.fin_one_defects_zero
+
+#check @HartreeF.FiniteProfileWeakGradient.literalDefect
+#check @HartreeF.FiniteProfileWeakGradient.gradientDefect
+#check @HartreeF.FiniteProfileWeakGradient.jointCandidateDefect
+#check @HartreeF.FiniteProfileWeakGradient.weakGradient_zero
+#check @HartreeF.FiniteProfileWeakGradient.weakGradient_add
+#check @HartreeF.FiniteProfileWeakGradient.weakGradient_sum
+#check @HartreeF.FiniteProfileWeakGradient.inDotH1_sum
+#check @HartreeF.FiniteProfileWeakGradient.gradientReal_defect
+#check @HartreeF.FiniteProfileWeakGradient.gradientImag_defect
+#check @HartreeF.FiniteProfileWeakGradient.finite_forcing_hasWeakGradients
+#check @HartreeF.FiniteProfileWeakGradient.CoordinateTests
+#check @HartreeF.FiniteProfileWeakGradient.finite_forcing_coordinate_tests
+#check @HartreeF.FiniteProfileWeakGradient.gradientDefect_candidate_ae
+#check @HartreeF.FiniteProfileWeakGradient.directionalField_sum
+#check @HartreeF.FiniteProfileWeakGradient.candidateFullGradient_coordinate
+#check @HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_coordinate
+#check @HartreeF.FiniteProfileWeakGradient.gradientDefect_coordinates_ae
+#check @HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_joint_measurable
+#check @HartreeF.FiniteProfileWeakGradient.directionalCandidate_congr_ae
+#check @HartreeF.FiniteProfileWeakGradient.candidateFullGradient_congr_ae
+#check @HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_congr_ae
+#check @HartreeF.FiniteProfileWeakGradient.framedValue
+#check @HartreeF.FiniteProfileWeakGradient.framedReal
+#check @HartreeF.FiniteProfileWeakGradient.framedImag
+#check @HartreeF.FiniteProfileWeakGradient.framed_directionalField
+#check @HartreeF.FiniteProfileWeakGradient.packed_memLp_real_imag
+#check @HartreeF.FiniteProfileWeakGradient.actual_frame_slices
+#check @HartreeF.FiniteProfileWeakGradient.actual_finite_framed_weak_gradients
+#check @HartreeF.FiniteProfileWeakGradient.framedJointValue
+#check @HartreeF.FiniteProfileWeakGradient.framedJointReal
+#check @HartreeF.FiniteProfileWeakGradient.framedJointImag
+#check @HartreeF.FiniteProfileWeakGradient.framedJoint_joint_measurable
+#check @HartreeF.FiniteProfileWeakGradient.framedJoint_directionalField
+#check @HartreeF.FiniteProfileWeakGradient.framedJoint_nested_ae
+#check @HartreeF.FiniteProfileWeakGradient.actual_finite_framed_candidate_transfer
+#check @HartreeF.FiniteProfileWeakGradient.finite_forcing_representative_weak_tests
+#check @HartreeF.FiniteProfileWeakGradient.literalDefect_empty
+#check @HartreeF.FiniteProfileWeakGradient.literalDefect_singleton
+#check @HartreeF.FiniteProfileWeakGradient.gradientDefect_singleton
+#check @HartreeF.FiniteProfileWeakGradient.empty_forcing_hasWeakGradients
+#check @HartreeF.FiniteProfileWeakGradient.fin_one_defects_zero

@@ -49,8 +49,14 @@ theorem power_VSQ_le {u h : ℝ → Space → ℂ}
     mixed_norm_norm_eq volume p q u hu.aestronglyMeasurable
   have hR6 : mixedNorm volume volume ∞ 6 R ≠ ∞ := by rw [hReq]; exact hE
   have hR10 : mixedNorm volume volume 10 10 R ≠ ∞ := by rw [hReq]; exact hS
-  have ht : reciprocal (1/5 : ℝ) = 5 := by norm_num [reciprocal]
-  have hx : reciprocal (8/15 : ℝ) = ENNReal.ofReal (15/8 : ℝ) := by norm_num [reciprocal]
+  have ht : reciprocal (1/5 : ℝ) = 5 := by
+    unfold reciprocal
+    rw [← ENNReal.ofReal_inv_of_pos (by norm_num : (0 : ℝ) < 1/5)]
+    norm_num
+  have hx : reciprocal (8/15 : ℝ) = ENNReal.ofReal (15/8 : ℝ) := by
+    unfold reciprocal
+    rw [← ENNReal.ofReal_inv_of_pos (by norm_num : (0 : ℝ) < 8/15)]
+    norm_num
   have hPf : mixedNorm volume volume (reciprocal (1/5)) (reciprocal (8/15)) P ≠ ∞ := by
     simpa only [ht, hx, P, Q, localProductNorm] using hQ
   have hw := weighted_pair_le ha hb (by norm_num : (0 : ℝ) < 1)

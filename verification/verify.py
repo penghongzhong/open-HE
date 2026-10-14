@@ -163,6 +163,42 @@ def main():
     receipt['requested_not_passed'] = sorted(set(REQ['targets']) - passed)
     receipt['finished_utc'] = now()
     save('receipt.json', receipt)
+    # Audit fixed successful components even when an unrelated closure root fails.
+    # This never changes compilation status or claims semantic acceptance.
+    component_reports = []
+    for component in json.loads((HERE / 'component-audits.json').read_text()):
+        name = component['module']
+        if name not in passed:
+            component_reports.append({'module': name, 'status': 'NOT_RUN_MODULE_NOT_PASS'})
+            continue
+        audit_source = HERE / component['source']
+        audit_log = OUT / ('component_audit_' + name + '.log')
+        cmd = [str(LEAN), '-DwarningAsError=true', str(audit_source)]
+        report = {'module': name, 'commit': os.environ.get('GITHUB_SHA'),
+                  'command': cmd, 'source_sha256': sha(audit_source),
+                  'module_source_sha256': hashes[name], 'started_utc': now(),
+                  'semantic_acceptance': 'PENDING', 'status': 'RUNNING'}
+        with audit_log.open('w') as f:
+            try:
+                audit_run = subprocess.run(cmd, cwd=source, env=env, stdout=f,
+                    stderr=subprocess.STDOUT, timeout=480)
+                report['exit_code'] = audit_run.returncode
+                ensure(audit_run.returncode == 0, 'Component audit compile failed: ' + name)
+                report['declarations'] = parse_public_output(audit_log.read_text(), component['declarations'])
+                report['status'] = 'AXIOMS_PASS_TYPES_CAPTURED_SEMANTIC_REVIEW_PENDING'
+            except Exception as error:
+                report['status'] = 'FAIL'
+                report['error'] = repr(error)
+        report['finished_utc'] = now()
+        report['log_sha256'] = sha(audit_log)
+        component_reports.append(report)
+        save('component_audit_' + name + '.json', report)
+        print('COMPONENT_AUDIT ' + json.dumps(report), flush=True)
+    receipt['component_audits'] = [{'module': r['module'], 'status': r['status']}
+                                  for r in component_reports]
+    save('component_audits.json', component_reports)
+    save('receipt.json', receipt)
+    ensure(all(r['status'] != 'FAIL' for r in component_reports), 'Component audit failed')
     ensure(receipt['status'] == 'TARGETS_PASS', 'Target closure did not pass')
 
     audit_log = OUT / 'public_audit.log'

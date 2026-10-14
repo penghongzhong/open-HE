@@ -15,6 +15,8 @@ namespace HartreeF.R2Frames
 open EnergySpace SobolevStretch StationarySelfTest CriticalAffine AffineMixed TimeHolder
   ProfileApproximation ProfileSpatialSmoothing GeneralProfileCross CriticalTimeSobolev
   FiniteProfileWeakGradient ProfileEnergy R2Global FreeAffine CompactCross
+local instance : SecondCountableTopologyEither ℝ EnergyState :=
+  ⟨Or.inl inferInstance⟩
 
 /-- The original positive-length frame, retaining its normalized time shift. -/
 def stateFrame (g : ℝ → EnergyState) {a : ℝ} (ha : 0 < a)
@@ -59,15 +61,33 @@ theorem stateFrame_fields_ae (g : ℝ → EnergyState) {a : ℝ} (ha : 0 < a)
   let hz := inDotH1_affine_pullback (energyState_inDotH1 z)
     (inv_pos.mpr ha) (-(a⁻¹ • y))
   refine ⟨?_, ?_, ?_⟩
-  · simpa only [stateFrame, criticalAffineState, affineStateEquiv, affineState,
-      framedValue, stateValueField, valuePullback, seedFrame, parabolicField,
-      Real.sqrt_eq_rpow, z] using inDotEnergyState_value_ae hz
-  · simpa only [stateFrame, criticalAffineState, affineStateEquiv, affineState,
-      framedReal, stateRealGradientField, gradientPullback, parabolicField,
-      derivative_weight ha, z] using inDotEnergyState_real_gradient_ae hz
-  · simpa only [stateFrame, criticalAffineState, affineStateEquiv, affineState,
-      framedImag, stateImagGradientField, gradientPullback, parabolicField,
-      derivative_weight ha, z] using inDotEnergyState_imag_gradient_ae hz
+  · have he : valuePullback a⁻¹ (-(a⁻¹ • y)) (energyValue z) = framedValue g a y s t := by
+      funext x
+      change Real.sqrt a⁻¹ • (energyValue z : Space → ℂ) (affine a⁻¹ (-(a⁻¹ • y)) x) =
+        (a⁻¹) ^ (1/2 : ℝ) • (energyValue z : Space → ℂ) (affine a⁻¹ (-(a⁻¹ • y)) x)
+      rw [Real.sqrt_eq_rpow]
+    rw [← he]
+    exact inDotEnergyState_value_ae hz
+  · have he : gradientPullback a⁻¹ (-(a⁻¹ • y)) (energyProjectedGradient Complex.reCLM z) =
+        framedReal g a y s t := by
+      funext x
+      change (a⁻¹ * Real.sqrt a⁻¹) • energyProjectedGradient Complex.reCLM z
+        (affine a⁻¹ (-(a⁻¹ • y)) x) =
+        (a⁻¹) ^ (3/2 : ℝ) • energyProjectedGradient Complex.reCLM z
+          (affine a⁻¹ (-(a⁻¹ • y)) x)
+      rw [derivative_weight ha]
+    rw [← he]
+    exact inDotEnergyState_real_gradient_ae hz
+  · have he : gradientPullback a⁻¹ (-(a⁻¹ • y)) (energyProjectedGradient Complex.imCLM z) =
+        framedImag g a y s t := by
+      funext x
+      change (a⁻¹ * Real.sqrt a⁻¹) • energyProjectedGradient Complex.imCLM z
+        (affine a⁻¹ (-(a⁻¹ • y)) x) =
+        (a⁻¹) ^ (3/2 : ℝ) • energyProjectedGradient Complex.imCLM z
+          (affine a⁻¹ (-(a⁻¹ • y)) x)
+      rw [derivative_weight ha]
+    rw [← he]
+    exact inDotEnergyState_imag_gradient_ae hz
 
 /-- An actual joint representative of the same framed curve; no joint
 measurability is claimed for canonical quotient representatives. -/
@@ -126,8 +146,9 @@ theorem stateFrame_curveW {g : ℝ → EnergyState} (hg : Continuous g)
   rw [← gradientFrame_is_packed]
   have h := parabolic_W_invariant (inv_pos.mpr ha) (-(a⁻¹ • y)) s Set.univ
     (fun t => complexGradient (r.U t) (r.V t))
-    (by simpa using packedGradient_joint_measurable
-      r.joint_U.aestronglyMeasurable r.joint_V.aestronglyMeasurable)
+    (by simpa only [Measure.restrict_univ] using
+      (packedGradient_joint_measurable
+        r.joint_U.aestronglyMeasurable r.joint_V.aestronglyMeasurable))
   simpa only [Set.preimage_univ, Measure.restrict_univ, gradientFrame] using h
 
 theorem stateFrame_curveX {g : ℝ → EnergyState} (hg : Continuous g)
@@ -138,14 +159,17 @@ theorem stateFrame_curveX {g : ℝ → EnergyState} (hg : Continuous g)
 theorem CurveFinite.stateFrame {g : ℝ → EnergyState} (hg : CurveFinite g)
     {a : ℝ} (ha : 0 < a) (y : Space) (s : ℝ) : CurveFinite (stateFrame g ha y s) := by
   refine ⟨stateFrame_continuous hg.continuous ha y s, ?_, ?_, ?_⟩
-  · rwa [stateFrame_curveEnergy]
-  · rwa [stateFrame_curveS hg.continuous]
-  · rwa [stateFrame_curveW hg.continuous]
+  · rw [stateFrame_curveEnergy]
+    exact hg.energy
+  · rw [stateFrame_curveS hg.continuous]
+    exact hg.value
+  · rw [stateFrame_curveW hg.continuous]
+    exact hg.gradient
 
 theorem stateFrame_xNorm {g : ℝ → EnergyState} (hg : Continuous g)
     {a : ℝ} (ha : 0 < a) (y : Space) (s : ℝ) :
     xNorm (stateFrame g ha y s) = xNorm g := by
-  rw [xNorm, stateFrame_curveX hg]
+  exact congrArg ENNReal.toReal (stateFrame_curveX hg ha y s)
 
 /-- The normalized free orbit is exactly the original physical profile atom. -/
 theorem stateFrame_free (hDensity : OrdinaryH1Density) {K : ℝ}
@@ -167,5 +191,6 @@ theorem stateFrame_correction (hDensity : OrdinaryH1Density) {K : ℝ}
   rw [show (fun t => g t - freeEnergyState hDensity hSob t φ) =
     g - (fun t => freeEnergyState hDensity hSob t φ) from rfl,
     stateFrame_sub, stateFrame_free]
+  rfl
 
 end HartreeF.R2Frames
