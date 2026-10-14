@@ -1156,5 +1156,65 @@
         "name": "HartreeF.R2Global.exists_same_canonical_small_profile_bounds"
       }
     ]
+  },
+  {
+    "module": "FR2FamilyTailAlgebra",
+    "source": "components/FR2FamilyTailAlgebra.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2FamilyTail.curveFinite_sum"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.xNorm_sum_le"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.freeCurve"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.nonlinearFrame"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.normalizedCorrection"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.physicalCorrection"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.nonlinearBlock"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.augmentedCurve"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.physicalCorrection_eq_frame"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.physicalCorrection_finite"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.physicalCorrection_xNorm"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.freeCurve_sum"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.nonlinearBlock_decomposition"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.augmentedCurve_cancellation"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.correction_block_bound"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.nonlinear_block_eventual_bound"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.correction_prefix_bound"
+      },
+      {
+        "name": "HartreeF.R2FamilyTail.exists_augmented_uniform_cap"
+      }
+    ]
   }
 ]

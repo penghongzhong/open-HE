@@ -98,7 +98,7 @@ theorem freeCurve_sum (hDensity : OrdinaryH1Density) {K : ℝ}
     freeCurve hDensity hSob (∑ i ∈ s, f i) = ∑ i ∈ s, freeCurve hDensity hSob (f i) := by
   funext t
   change (freeEnergyCLM hDensity hSob t) (∑ i ∈ s, f i) = _
-  simp only [map_sum, Finset.sum_apply, freeCurve, freeEnergyState]
+  simp only [map_sum, Finset.sum_apply, freeCurve, freeEnergyCLM_apply]
 
 /-- Exact finite algebra, before every spacetime norm or kinetic limit. -/
 theorem nonlinearBlock_decomposition (hDensity : OrdinaryH1Density) {K : ℝ}
@@ -125,7 +125,8 @@ theorem augmentedCurve_cancellation (hDensity : OrdinaryH1Density) {K : ℝ}
     change freeEnergyState hDensity hSob t (u n) = _
     conv_lhs => rw [profileRemainder_reconstruction hDensity hSob P u J n]
     change (freeEnergyCLM hDensity hSob t) (_ + _) = _
-    simp only [map_add, map_sum, Finset.sum_apply, freeCurve, freeEnergyState]
+    simp only [map_add, map_sum, Pi.add_apply, Finset.sum_apply, freeCurve,
+      freeEnergyCLM_apply]
   rw [he]
   simp only [augmentedCurve, physicalCorrection, Finset.sum_sub_distrib]
   abel
