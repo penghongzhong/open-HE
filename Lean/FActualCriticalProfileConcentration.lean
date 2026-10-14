@@ -33,7 +33,7 @@ theorem ledger_profile_global_of_lower_energy (hDensity : OrdinaryH1Density)
     (heret : OrdinaryRetardedEndpointOutput h0 Cre)
     (hOrd : OrdinaryHLS alpha (standardRieszConstant alpha))
     (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     {P : LinearProfileFamily} {u : ℕ → EnergyState} {T : ℕ → ℝ} {f : ℕ → EnergyState}
     (hL : ProfileEnergyLedger hDensity hSob h0 hfree hret hefree heret hOrd P u T f E0)
@@ -102,7 +102,7 @@ theorem exists_actual_critical_profile_concentration
     (heret : OrdinaryRetardedEndpointOutput h0 Cre)
     (hOrd : OrdinaryHLS alpha (standardRieszConstant alpha))
     (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     (hExtract : OrdinaryLinearProfileExtraction hDensity hSob)
     (hgen : OrdinaryFreeDistributionScalarGenerator)
@@ -194,7 +194,7 @@ theorem exists_actual_critical_profile_concentration
     have hMcap : ∀ t ∈ M.domain,
         pureGradientNorm (M.state t) ≤ Real.sqrt (kappa alpha*totalEnergy alpha (f j0)) := by
       intro t htM
-      exact pureGradientNorm_le_of_gradientSquared_le _ (hL.native_trapping j0 t htM).1
+      exact DynamicSharpW.pureGradientNorm_le_of_gradientSquared_le _ (hL.native_trapping j0 t htM).1
     have hMglobal := actualMaximalTrajectory_global_curveFinite_of_finiteS
       hDensity hSob h0 hfree hret hefree heret hOrd (T j0) (f j0) hMcap hfinite
     apply hcontradiction
