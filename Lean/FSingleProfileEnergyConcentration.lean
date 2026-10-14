@@ -63,11 +63,11 @@ theorem single_profile_concentration (hDensity : OrdinaryH1Density)
   obtain ⟨τ, hτ, hdef⟩ := L.finite_energy_subsequence J0 hJ0
   have ha : Tendsto (fun n => totalEnergy alpha (profileAtom hDensity hSob P j0 (τ n)))
       atTop (𝓝 E0) := by
-    simpa only [hcrit] using (L.atom_energy_limit j0).comp hτ.tendsto_atTop
+    simpa only [hcrit, Function.comp_def] using (L.atom_energy_limit j0).comp hτ.tendsto_atTop
   have hrE : Tendsto (fun n => totalEnergy alpha (profileRemainder hDensity hSob P u J0 (τ n)))
       atTop (𝓝 0) := by
     have ht := ((hE.comp hτ.tendsto_atTop).sub ha).sub hdef
-    simp only [sub_self, sub_zero, hsumE] at ht
+    simp only [sub_self, hsumE, Function.comp_def] at ht
     convert ht using 1
     funext n
     ring
@@ -85,7 +85,7 @@ theorem single_profile_concentration (hDensity : OrdinaryH1Density)
     exact squeeze_zero' (Eventually.of_forall (fun n => gradientSquared_nonneg _)) hbound ht
   have hrP : Tendsto (fun n => pureGradientNorm (profileRemainder hDensity hSob P u J0 (τ n)))
       atTop (𝓝 0) := by
-    simpa only [pureGradientNorm, Real.sqrt_zero] using
+    simpa only [pureGradientNorm, Real.sqrt_zero, Function.comp_def] using
       Real.continuous_sqrt.continuousAt.tendsto.comp hrA
   have hrN : Tendsto (fun n => ‖profileRemainder hDensity hSob P u J0 (τ n)‖)
       atTop (𝓝 0) := by
