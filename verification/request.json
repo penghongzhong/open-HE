@@ -8,32 +8,7 @@
     ]
   },
   "targets": [
-    "FActualCommutatorRepresentatives",
-    "FActualDynamicSharpWTrapping",
-    "FActualEnergyErrorBound",
-    "FActualEnergyErrorUniformBound",
-    "FActualGradientHartreeCommutator",
-    "FActualHartreePairingLimit",
-    "FActualMaximalMildEnergyConservation",
-    "FActualRegularizedEnergyFTC",
-    "FActualRegularizedEnergyResidual",
-    "FActualRegularizedMildDerivative",
-    "FConjugateWeakPairing",
-    "FFiniteMildHartreeEnergyConservation",
-    "FIntervalGradientSourceContinuity",
-    "FLocalMildTrajectoryEnergyConservation",
-    "FRealPairingBounds",
-    "FRegularizedBochnerMild",
-    "FRegularizedDuhamelDerivative",
-    "FRegularizedEnergyResidualAlgebra",
-    "FRegularizedFreeProductRule",
-    "FRegularizedGradientPath",
-    "FRegularizedMildBochnerConsumer",
-    "FRegularizedSourceRepresentatives",
-    "FRegularizedSpatialEnergyAlgebra",
-    "FUniformRegularizedEndpoint",
-    "FVanishingActualEnergyBudget",
-    "FVanishingActualEnergyIntegral"
+    "FSharpWFiniteSGlobalScattering"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -328,6 +303,7 @@
     "FScalarDifferenceSource",
     "FScalarSourceRepresentatives",
     "FSharpEnergyBarrier",
+    "FSharpWFiniteSGlobalScattering",
     "FSharpWStateTopology",
     "FSmallRadiusChoice",
     "FSmallSGraphBound",
@@ -941,7 +917,8 @@
     "WeakProductCutoffDomains": "44edf6b8a001dd615b307f8d279e4a7c7f071d7ab447ac8afb8424f8497d5ab3",
     "WeakSmoothProduct": "d701c7706addeb838cb30d720dfc6bb1955f560f82ae6d5594cb2ec423c2b3eb",
     "WeightedProjectionDifference": "e7ddd2cb638b346853f413d099b2c63167d32ebb571026c070f65f31eb694262",
-    "WeightedSixComparison": "85830c3a0a4a34191c57c06ca15307c34e065dac6b4e586503114db8b226d5b0"
+    "WeightedSixComparison": "85830c3a0a4a34191c57c06ca15307c34e065dac6b4e586503114db8b226d5b0",
+    "FSharpWFiniteSGlobalScattering": "0f534e6df292a23c6a292e8a3f11ec411823f2ea6aa569b378ffd77d661aadd9"
   },
   "declarations": [
     {
@@ -1665,10 +1642,27 @@
         "OrdinaryRetardedStrichartz",
         "OrdinarySobolev"
       ]
+    },
+    {
+      "name": "HartreeF.DynamicSharpW.actualMaximalTrajectory_global_scattering_of_W_and_finiteS",
+      "module": "FSharpWFiniteSGlobalScattering",
+      "kind": "theorem",
+      "ordinary_inputs": [
+        "OrdinaryBesselLp",
+        "OrdinaryBesselSmoothing",
+        "OrdinaryEndpointBound",
+        "OrdinaryH1Density",
+        "OrdinaryHLS",
+        "OrdinaryHomogeneousEndpointOutput",
+        "OrdinaryHomogeneousStrichartz",
+        "OrdinaryRetardedEndpointOutput",
+        "OrdinaryRetardedStrichartz",
+        "OrdinarySobolev"
+      ]
     }
   ],
   "seed": {
-    "run": 38498487592,
-    "commit": "4311e9b93df57beb7d6b21ca49b533d290fb737f"
+    "run": 38502175292,
+    "commit": "3b92b8925b2d61187c131f096b5477a722f5930a"
   }
 }

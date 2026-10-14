@@ -1,4 +1,4 @@
-name: Pinned Lean energy conservation and trapping
+name: Pinned Lean threshold finite-S bridge
 on:
   push:
     branches: [energy-trapping-20261014]
@@ -38,7 +38,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: lean-verification-results-1
-          run-id: 38498487592
+          run-id: 38502175292
           github-token: ${{ github.token }}
           path: verification-seed
       - name: Check all pins, compile finite-S closure and audit public declarations

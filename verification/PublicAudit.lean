@@ -12,6 +12,7 @@ import FActualTwoSidedFiniteSScattering
 import FMaximalFiniteSGlobalScattering
 import FActualDynamicSharpWTrapping
 import FActualMaximalMildEnergyConservation
+import FSharpWFiniteSGlobalScattering
 
 set_option pp.fullNames true
 set_option pp.universes false
@@ -87,6 +88,7 @@ set_option format.width 120
 #print axioms HartreeF.DynamicSharpW.actualMaximalTrajectory_original_groundState_trapping
 #print axioms HartreeF.MaximalTrajectory.actualMaximalTrajectory_totalEnergy_constant
 #print axioms HartreeF.MaximalTrajectory.actualMaximalTrajectory_originalEnergy_constant
+#print axioms HartreeF.DynamicSharpW.actualMaximalTrajectory_global_scattering_of_W_and_finiteS
 
 #check @HartreeF.FiniteSContinuation.FiniteSBefore
 #check @HartreeF.FiniteSContinuation.exists_strict_extension_of_finite_s
@@ -154,3 +156,4 @@ set_option format.width 120
 #check @HartreeF.DynamicSharpW.actualMaximalTrajectory_original_groundState_trapping
 #check @HartreeF.MaximalTrajectory.actualMaximalTrajectory_totalEnergy_constant
 #check @HartreeF.MaximalTrajectory.actualMaximalTrajectory_originalEnergy_constant
+#check @HartreeF.DynamicSharpW.actualMaximalTrajectory_global_scattering_of_W_and_finiteS
