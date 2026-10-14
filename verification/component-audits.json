@@ -1333,5 +1333,20 @@
         "name": "HartreeF.L6OrbitGauge.gauge_parameters_bounded_on_compact_time"
       }
     ]
+  },
+  {
+    "module": "FActualNativeGlobalCompactOrbit",
+    "source": "components/FActualNativeGaugeBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualCompactOrbitGauge.exists_compact_normalization_with_gauge"
+      },
+      {
+        "name": "HartreeF.ActualNativeCompactOrbit.exists_actual_native_compact_orbit_with_gauge"
+      },
+      {
+        "name": "HartreeF.ActualNativeGlobalCompactOrbit.exists_actual_global_compact_orbit_with_local_bounds"
+      }
+    ]
   }
 ]

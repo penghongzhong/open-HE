@@ -81,10 +81,11 @@ private theorem fixed_gauge_subsequence {K : ℝ} (hSob : OrdinarySobolev K)
 
 /-- A genuine compact closure of one fixed choice of normalized states.
 The choice functions themselves have no asserted regularity. -/
-theorem exists_compact_normalization {K : ℝ} (hSob : OrdinarySobolev K)
+theorem exists_compact_normalization_with_gauge {K : ℝ} (hSob : OrdinarySobolev K)
     {ι : Type*} (u : ι → EnergyState) (hne : ∀ i, u i ≠ 0)
     (hseq : SpatialSequentialConcentration u) :
     ∃ (r : ι → ℝ) (hr : ∀ i, 0 < r i) (y : ι → Space),
+      (∀ i, Gauge (u i) (r i) (y i)) ∧
       IsCompact (closure (range (fun i => (criticalAffineState (r i) (hr i) (y i)).symm (u i)))) := by
   classical
   choose r y hg using fun i => exists_gauge (hne i)
@@ -93,7 +94,7 @@ theorem exists_compact_normalization {K : ℝ} (hSob : OrdinarySobolev K)
   have hpseq (t : ℕ → ι) : ∃ k : ℕ → ℕ, StrictMono k ∧ ∃ w : EnergyState,
       Tendsto (fun n => p (t (k n))) atTop (𝓝 w) :=
     fixed_gauge_subsequence hSob u hseq r y hg t
-  refine ⟨r, hr, y, IsSeqCompact.isCompact ?_⟩
+  refine ⟨r, hr, y, hg, IsSeqCompact.isCompact ?_⟩
   intro w hw
   have hnear (n : ℕ) : ∃ z ∈ range p, dist (w n) z < 1 / ((n : ℝ)+1) :=
     (Metric.mem_closure_iff.mp (hw n)) _ (by positivity)
@@ -111,4 +112,13 @@ theorem exists_compact_normalization {K : ℝ} (hSob : OrdinarySobolev K)
   refine ⟨a, haz, k, hk, ?_⟩
   exact hza.congr_dist (hdist0.comp hk.tendsto_atTop)
 
+theorem exists_compact_normalization {K : ℝ} (hSob : OrdinarySobolev K)
+    {ι : Type*} (u : ι → EnergyState) (hne : ∀ i, u i ≠ 0)
+    (hseq : SpatialSequentialConcentration u) :
+    ∃ (r : ι → ℝ) (hr : ∀ i, 0 < r i) (y : ι → Space),
+      IsCompact (closure (range (fun i => (criticalAffineState (r i) (hr i) (y i)).symm (u i)))) := by
+  obtain ⟨r, hr, y, _hg, hc⟩ := exists_compact_normalization_with_gauge hSob u hne hseq
+  exact ⟨r, hr, y, hc⟩
+
 end HartreeF.ActualCompactOrbitGauge
+

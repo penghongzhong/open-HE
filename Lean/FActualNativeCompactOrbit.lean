@@ -24,7 +24,7 @@ attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
 The closed carrier retains a fixed quantitative kinetic gap, not merely a
 closure of the strict sublevel. The original `hbad` remains a contradiction
 hypothesis; this theorem is not a nonscattering counterexample. -/
-theorem exists_actual_native_compact_orbit
+theorem exists_actual_native_compact_orbit_with_gauge
     (hDensity : OrdinaryH1Density) (hRel : OrdinaryRellichBall)
     {K C0 Ch Cr Che Cre alpha : ℝ} (hSob : OrdinarySobolev K)
     (h0 : OrdinaryEndpointBound C0) (hfree : OrdinaryHomogeneousStrichartz Ch)
@@ -54,6 +54,7 @@ theorem exists_actual_native_compact_orbit
             gradientSquared q ≤ kappa alpha*Ec ∧
             gradientSquared q < gradientSquared (normalizedBubbleState alpha) ∧
             totalEnergy alpha q < totalEnergy alpha (normalizedBubbleState alpha)) ∧
+          (∀ t ∈ V.domain, L6OrbitGauge.Gauge (V.state t) (r t) (y t)) ∧
           ∀ t ∈ V.domain,
             (criticalAffineState (r t) (hr t) (y t)).symm (V.state t) ∈ Q := by
   classical
@@ -79,7 +80,7 @@ theorem exists_actual_native_compact_orbit
     intro hz
     rw [hz, hEzero] at hEv
     exact hEc.ne hEv
-  obtain ⟨r0, hr0, y0, hcompact⟩ := exists_compact_normalization hSob
+  obtain ⟨r0, hr0, y0, hg0, hcompact⟩ := exists_compact_normalization_with_gauge hSob
     (fun t : V.domain => V.state t) hnonzero hseq
   let p (t : V.domain) :=
     (criticalAffineState (r0 t) (hr0 t) (y0 t)).symm (V.state t)
@@ -115,10 +116,12 @@ theorem exists_actual_native_compact_orbit
     · simpa only [r, dite_eq_left ht] using hr0 ⟨t, ht⟩
     · simp only [r, dite_eq_right ht, zero_lt_one]
   refine ⟨hEc, hEcW, psi, hEpsi, hstable, hfuture, hpast, hNative,
-    r, hr, y, Q, hQc, hQne, hQzero, ?_, ?_⟩
+    r, hr, y, Q, hQc, hQne, hQzero, ?_, ?_, ?_⟩
   · intro q hq
     exact ⟨hQenergy q hq, hQkinetic q hq, (hQkinetic q hq).trans_lt hgap,
       (hQenergy q hq).trans_lt hEcW⟩
+  · intro t ht
+    simpa only [r, y, dite_eq_left ht] using hg0 ⟨t, ht⟩
   · intro t ht
     have hp : p ⟨t, ht⟩ ∈ Q := subset_closure (mem_range_self _)
     let normalAt : ℝ → Space → Prop := fun a z =>
@@ -130,4 +133,44 @@ theorem exists_actual_native_compact_orbit
       Eq.mpr (congrArg₂ normalAt hr_eq hy_eq) hraw
     exact hnormalized (hr t)
 
+theorem exists_actual_native_compact_orbit
+    (hDensity : OrdinaryH1Density) (hRel : OrdinaryRellichBall)
+    {K C0 Ch Cr Che Cre alpha : ℝ} (hSob : OrdinarySobolev K)
+    (h0 : OrdinaryEndpointBound C0) (hfree : OrdinaryHomogeneousStrichartz Ch)
+    (hret : OrdinaryRetardedStrichartz h0 Cr)
+    (hefree : OrdinaryHomogeneousEndpointOutput Che)
+    (heret : OrdinaryRetardedEndpointOutput h0 Cre)
+    (hOrd : OrdinaryHLS alpha (standardRieszConstant alpha))
+    (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
+    (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
+    (hExtract : OrdinaryLinearProfileExtraction hDensity hSob)
+    (hgen : OrdinaryFreeDistributionScalarGenerator)
+    (hUnique : OrdinaryL2CompactHomogeneousUniqueness) (cutoff : Highpass.Cutoff)
+    (hbad : ∃ f, BadDatum hDensity hSob h0 hfree hret hefree heret hOrd f) :
+    let Ec := criticalLevel hDensity hSob h0 hfree hret hefree heret hOrd
+    0 < Ec ∧ Ec < totalEnergy alpha (normalizedBubbleState alpha) ∧
+      ∃ psi : EnergyState, totalEnergy alpha psi = Ec ∧ StableDatum alpha psi ∧
+        let V := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd 0 psi
+        (¬ ActualScattering.FiniteSAfter V) ∧
+        (¬ ActualLeftScattering.FiniteSBefore V) ∧
+        (∀ t ∈ V.domain, totalEnergy alpha (V.state t) = Ec ∧
+          gradientSquared (V.state t) ≤ kappa alpha*Ec ∧
+          kappa alpha*Ec < gradientSquared (normalizedBubbleState alpha)) ∧
+        ∃ (r : ℝ → ℝ) (hr : ∀ t, 0 < r t) (y : ℝ → Space) (Q : Set EnergyState),
+          IsCompact Q ∧ Q.Nonempty ∧ (0 : EnergyState) ∉ Q ∧
+          (∀ q ∈ Q, totalEnergy alpha q = Ec ∧
+            gradientSquared q ≤ kappa alpha*Ec ∧
+            gradientSquared q < gradientSquared (normalizedBubbleState alpha) ∧
+            totalEnergy alpha q < totalEnergy alpha (normalizedBubbleState alpha)) ∧
+          ∀ t ∈ V.domain,
+            (criticalAffineState (r t) (hr t) (y t)).symm (V.state t) ∈ Q := by
+  obtain ⟨hEc, hEcW, psi, hEpsi, hs, hf, hp, hn,
+    r, hr, y, Q, hc, hne, hz, hq, _hg, hnorm⟩ :=
+    exists_actual_native_compact_orbit_with_gauge hDensity hRel hSob h0 hfree hret hefree heret
+      hOrd hH hS S Bw Bs B6 hExtract hgen hUnique cutoff hbad
+  exact ⟨hEc, hEcW, psi, hEpsi, hs, hf, hp, hn,
+    r, hr, y, Q, hc, hne, hz, hq, hnorm⟩
+
 end HartreeF.ActualNativeCompactOrbit
+

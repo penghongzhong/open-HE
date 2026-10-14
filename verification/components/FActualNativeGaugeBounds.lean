@@ -1,0 +1,10 @@
+import FActualNativeGlobalCompactOrbit
+
+#print axioms HartreeF.ActualCompactOrbitGauge.exists_compact_normalization_with_gauge
+#check @HartreeF.ActualCompactOrbitGauge.exists_compact_normalization_with_gauge
+
+#print axioms HartreeF.ActualNativeCompactOrbit.exists_actual_native_compact_orbit_with_gauge
+#check @HartreeF.ActualNativeCompactOrbit.exists_actual_native_compact_orbit_with_gauge
+
+#print axioms HartreeF.ActualNativeGlobalCompactOrbit.exists_actual_global_compact_orbit_with_local_bounds
+#check @HartreeF.ActualNativeGlobalCompactOrbit.exists_actual_global_compact_orbit_with_local_bounds
