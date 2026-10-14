@@ -116,9 +116,12 @@ private theorem residual_finite_joint_sum {E : Type*} [NormedAddCommGroup E]
   | empty => intro h; simpa using (aestronglyMeasurable_const (b := (0 : E)))
   | @insert a s ha ih =>
       intro h
-      simpa only [Finset.sum_insert ha, Pi.add_apply] using
-        (h a (Finset.mem_insert_self a s)).add
-          (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
+      have hs := (h a (Finset.mem_insert_self a s)).add
+        (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
+      change AEStronglyMeasurable
+        (fun z : ℝ × Space => f a z.1 z.2 + ∑ i ∈ s, f i z.1 z.2)
+        (volume.prod volume) at hs
+      simpa only [Finset.sum_insert ha] using hs
 
 /-- Triangle is used on jointly measurable candidates only. -/
 theorem vectorForcingNorm_sub_le (G H : ℝ → Space → CGradient)
@@ -215,9 +218,9 @@ theorem actual_residual_domains (hDensity : OrdinaryH1Density) {K : ℝ}
       (by norm_num) (by norm_num) _ hF
   · exact hW.mono fun _ ht => weakGradients_coordinate_tests ht.1 ht.2
 
+omit [DecidableEq ι] in
 /-- The retained actual residual has the same canonical weak derivative.
 Only the supplied nested actual-to-candidate equality is used. -/
-omit [DecidableEq ι] in
 theorem ActualResidualDomains.actual_weak
     {s : Finset ι} {α c : ℝ} {q : ℝ → EnergyState} {p : ι → ℝ → EnergyState}
     {rq : EnergyJointFields volume q} {rp : ∀ j, EnergyJointFields volume (p j)}
@@ -249,9 +252,9 @@ theorem ActualResidualDomains.actual_tests
     ∀ᵐ t ∂volume, CoordinateTests (literalResidual s α c q p t) (residualActual s α c rq rp t) :=
   h.actual_weak.mono fun _ ht => weakGradients_coordinate_tests ht.1 ht.2
 
+omit [DecidableEq ι] in
 /-- Independence of all chosen compatible representatives, including a framed
 normalized choice versus the joint fields chosen for the physical curve. -/
-omit [DecidableEq ι] in
 theorem residualCandidate_congr (s : Finset ι) (α c : ℝ)
     {q : ℝ → EnergyState} {p : ι → ℝ → EnergyState}
     (rq sq : EnergyJointFields volume q)
