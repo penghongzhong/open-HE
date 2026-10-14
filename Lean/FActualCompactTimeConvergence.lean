@@ -1,4 +1,5 @@
 import FActualFiniteSideGraphStability
+import FR2CompactSmallData
 
 /-! Compact-time continuous dependence and moving-time convergence for the
 actual maximal Hartree trajectories. All path bounds and zero forcing are
@@ -27,10 +28,14 @@ private theorem state_difference_le_path
     (hU : Icc a b ⊆ U.domain) (hV : Icc a b ⊆ V.domain)
     (t : ℝ) (ht : t ∈ Icc a b) :
     ‖U.state t - V.state t‖ ≤ ‖U.path hab hU - V.path hab hV‖ := by
-  have h := energyPath_value_norm_le (intervalMeasure a b)
-    (U.path hab hU - V.path hab hV) ⟨t, ht⟩
-  rw [energyPath_sub_apply, U.path_agrees, V.path_agrees] at h
-  exact h
+  have hsub := congrArg (fun q : C(Icc a b, EnergyState) => q ⟨t, ht⟩)
+    ((energyPath (intervalMeasure a b)).map_sub (U.path hab hU) (V.path hab hV))
+  have he : energyPath (intervalMeasure a b) (U.path hab hU - V.path hab hV) ⟨t, ht⟩ =
+      U.state t - V.state t :=
+    hsub.trans (congrArg₂ (fun x y : EnergyState => x - y)
+      (U.path_agrees hab hU ⟨t, ht⟩) (V.path_agrees hab hV ⟨t, ht⟩))
+  exact (congrArg norm he).symm.trans_le
+    (R2SmallData.represented_state_norm_le _ ⟨t, ht⟩)
 
 /-- Actual interval inclusion and uniform state error, with no assumed
 bound on the perturbed trajectory. -/
