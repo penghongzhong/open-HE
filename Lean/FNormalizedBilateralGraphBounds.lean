@@ -66,15 +66,18 @@ theorem future_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
     intro t ht
     apply hdom
     simpa only [mem_Ici, timeAffine, mul_zero, zero_add] using ht.1
-  have hsb : s ≤ timeAffine lambda⁻¹ s b := by
-    unfold timeAffine
-    exact le_add_of_nonneg_left (mul_nonneg (sq_nonneg _) hb)
-  have hNs' : Icc s (timeAffine lambda⁻¹ s b) ⊆ N.domain := by
-    simpa only [timeAffine, mul_zero, zero_add] using hNs
-  have hbound := hcap (timeAffine lambda⁻¹ s b) hsb hNs'
   have heq := hn 0 b hb hNs hI
   apply heq.trans_le
-  simpa only [timeAffine, mul_zero, zero_add] using hbound
+  let capAt : ℝ → Prop := fun A =>
+    ∀ (hAB : A ≤ timeAffine lambda⁻¹ s b)
+      (hD : Icc A (timeAffine lambda⁻¹ s b) ⊆ N.domain),
+      ‖N.path hAB hD‖ ≤ R
+  have hbase : capAt s := hcap (timeAffine lambda⁻¹ s b)
+  have hzero : timeAffine lambda⁻¹ s 0 = s := by
+    simp only [timeAffine, mul_zero, zero_add]
+  have hnormalized : capAt (timeAffine lambda⁻¹ s 0) :=
+    Eq.mpr (congrArg capAt hzero) hbase
+  exact hnormalized _ _
 
 /-- Past normalization has the same positive orientation, not a time reflection. -/
 theorem past_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
@@ -112,15 +115,18 @@ theorem past_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
     intro t ht
     apply hdom
     simpa only [mem_Iic, timeAffine, mul_zero, zero_add] using ht.2
-  have has : timeAffine lambda⁻¹ s a ≤ s := by
-    unfold timeAffine
-    exact add_le_of_nonpos_left (mul_nonpos_of_nonneg_of_nonpos (sq_nonneg _) ha)
-  have hNs' : Icc (timeAffine lambda⁻¹ s a) s ⊆ N.domain := by
-    simpa only [timeAffine, mul_zero, zero_add] using hNs
-  have hbound := hcap (timeAffine lambda⁻¹ s a) has hNs'
   have heq := hn a 0 ha hNs hI
   apply heq.trans_le
-  simpa only [timeAffine, mul_zero, zero_add] using hbound
+  let capAt : ℝ → Prop := fun B =>
+    ∀ (hAB : timeAffine lambda⁻¹ s a ≤ B)
+      (hD : Icc (timeAffine lambda⁻¹ s a) B ⊆ N.domain),
+      ‖N.path hAB hD‖ ≤ R
+  have hbase : capAt s := hcap (timeAffine lambda⁻¹ s a)
+  have hzero : timeAffine lambda⁻¹ s 0 = s := by
+    simp only [timeAffine, mul_zero, zero_add]
+  have hnormalized : capAt (timeAffine lambda⁻¹ s 0) :=
+    Eq.mpr (congrArg capAt hzero) hbase
+  exact hnormalized _ _
 
 /-- A common subsequence cannot turn the future large graph windows into a
 uniformly bounded family; the same physical data occur on both sides. -/
