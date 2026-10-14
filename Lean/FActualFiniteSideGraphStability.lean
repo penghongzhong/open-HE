@@ -173,8 +173,8 @@ theorem exists_eventual_forward_graph_cap_of_finite_s (hDensity : OrdinaryH1Dens
     obtain ⟨hI, _⟩ := hcompact t ht
     exact hI ⟨ht, le_rfl⟩
   · intro b hb hI
-    obtain ⟨_hI, hclose⟩ := hcompact b hb
-    have hclose' : ‖U.path hb hI - V.path hb (hVI b hb)‖ ≤ C * epsilon0 := hclose
+    have hclose' : ‖U.path hb hI - V.path hb (hVI b hb)‖ ≤ C * epsilon0 :=
+      (hcompact b hb).choose_spec
     calc
       ‖U.path hb hI‖ =
           ‖(U.path hb hI - V.path hb (hVI b hb)) + V.path hb (hVI b hb)‖ := by
@@ -262,8 +262,8 @@ theorem exists_eventual_backward_graph_cap_of_finite_s (hDensity : OrdinaryH1Den
     obtain ⟨hI, _⟩ := hcompact t ht
     exact hI ⟨le_rfl, ht⟩
   · intro a ha hI
-    obtain ⟨_hI, hclose⟩ := hcompact a ha
-    have hclose' : ‖U.path ha hI - V.path ha (hVI a ha)‖ ≤ C * epsilon0 := hclose
+    have hclose' : ‖U.path ha hI - V.path ha (hVI a ha)‖ ≤ C * epsilon0 :=
+      (hcompact a ha).choose_spec
     calc
       ‖U.path ha hI‖ =
           ‖(U.path ha hI - V.path ha (hVI a ha)) + V.path ha (hVI a ha)‖ := by

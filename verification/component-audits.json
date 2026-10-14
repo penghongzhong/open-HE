@@ -1216,5 +1216,50 @@
         "name": "HartreeF.R2FamilyTail.exists_augmented_uniform_cap"
       }
     ]
+  },
+  {
+    "module": "FActualProfileSumPDE",
+    "source": "components/FActualProfileSumPDE.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FullResidual.sourceSubFold_pair_integral"
+      },
+      {
+        "name": "HartreeF.FullResidual.originalFree_weakEquation"
+      },
+      {
+        "name": "HartreeF.FullResidual.framedTrajectory_compactPDE"
+      },
+      {
+        "name": "HartreeF.FullResidual.profileSum_compactPDE_of_profileIdentities"
+      },
+      {
+        "name": "HartreeF.FullResidual.actualProfileSum_compactPDE"
+      },
+      {
+        "name": "HartreeF.FullResidual.actual_augmented_compactPDE"
+      }
+    ]
+  },
+  {
+    "module": "FActualFiniteSideGraphStability",
+    "source": "components/FActualFiniteSideGraphStability.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BilateralSideStability.forward_halfLine_subset_of_finite_s"
+      },
+      {
+        "name": "HartreeF.BilateralSideStability.backward_halfLine_subset_of_finite_s"
+      },
+      {
+        "name": "HartreeF.BilateralSideStability.compact_energy_norm_le_of_state_cap"
+      },
+      {
+        "name": "HartreeF.BilateralSideStability.exists_eventual_forward_graph_cap_of_finite_s"
+      },
+      {
+        "name": "HartreeF.BilateralSideStability.exists_eventual_backward_graph_cap_of_finite_s"
+      }
+    ]
   }
 ]
