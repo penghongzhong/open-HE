@@ -25,6 +25,7 @@ attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
 attribute [local irreducible] energySubmodule criticalPathSubmodule
   energyPath criticalGradient hartreeDuhamelMap backwardHartreeDuhamelMap
   criticalPathIntervalSource freeCriticalPath freeEnergyState
+  actualMaximalTrajectory intervalAdvancedCriticalPath
 
 /-- Uniform compact graph and correction caps on the two sides of an anchor.
 The pointwise equalities identify the paths with the specified actual curve. -/
@@ -52,7 +53,7 @@ theorem rpow_mul_fifth {alpha x : ℝ} (halpha : 0 < alpha) (hx : 0 ≤ x) :
       Real.zero_rpow (by linarith : 5 + 2*alpha ≠ 0)]
   · have hpos : 0 < x := lt_of_le_of_ne hx (Ne.symm hzero)
     rw [← Real.rpow_natCast, ← Real.rpow_add hpos]
-    congr 1 <;> norm_num <;> ring
+    congr 1; norm_num; ring
 
 /-- The actual compatible derivative source has degree 5+2 alpha in the
 existing graph norm. No source-domain or source-cap premise is added. -/
@@ -96,7 +97,11 @@ theorem backwardHartreeDuhamelMap_zero_path (hDensity : OrdinaryH1Density)
   have hz : intervalAdvancedCriticalPath hDensity hSob h0 hfree hret F = 0 :=
     (congrArg (intervalAdvancedCriticalPath hDensity hSob h0 hfree hret) hs).symm.trans
       ((intervalAdvancedCriticalPath_sub hDensity hSob h0 hfree hret F F).trans
-        (sub_self _))
+        (by
+          apply Subtype.ext
+          change (intervalAdvancedCriticalPath hDensity hSob h0 hfree hret F).val -
+            (intervalAdvancedCriticalPath hDensity hSob h0 hfree hret F).val = 0
+          exact sub_self _))
   unfold backwardHartreeDuhamelMap
   change _ - Complex.I • intervalAdvancedCriticalPath hDensity hSob h0 hfree hret F = _
   rw [hz, smul_zero, sub_zero]
@@ -397,6 +402,7 @@ theorem exists_uniform_matching_compact_bounds (hDensity : OrdinaryH1Density)
   refine ⟨delta, B, D, hdelta, hB, hD, ?_⟩
   intro T f phi s
   let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH T f
+  dsimp only
   intro hdom hmatch hphi
   have hdata (n : ℕ) : ‖M.state (s n)‖ ≤ A*pureGradientNorm phi +
       ‖M.state (s n)-freeEnergyState hDensity hSob (s n) phi‖ :=
@@ -458,6 +464,7 @@ theorem actual_matching_zero_profile (hDensity : OrdinaryH1Density)
       atTop (𝓝 0) →
     pureGradientNorm phi = 0 → M.domain = Set.univ ∧ ∀ t, M.state t = 0 := by
   let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH T f
+  dsimp only
   intro hdom hmatch hphi
   obtain ⟨delta, B, D, hdelta, _, _, hsolve⟩ := exists_uniform_matching_compact_bounds
     hDensity hSob h0 hfree hret hefree heret hH
