@@ -21,8 +21,12 @@ open EnergySpace SobolevStretch StationarySelfTest ProfileEnergy TimeHolder
   ActualFreeValueHeadData FreeValueGradient ActualSelectedFreeValue
   CountableNonlinearProfiles Retarded ActualStrichartz EndpointOutput MaximalTrajectory
 
+local instance : SecondCountableTopologyEither ℝ EnergyState :=
+  ⟨Or.inl inferInstance⟩
+
 variable {ι : Type*} [DecidableEq ι]
 
+omit [DecidableEq ι] in
 private theorem selected_finite_sum_ae {E : Type*} [AddCommMonoid E]
     (s : Finset ι) {f g : ι → Space → E}
     (h : ∀ i ∈ s, f i =ᵐ[volume] g i) :
@@ -41,10 +45,11 @@ private theorem selected_finite_joint_sum {E : Type*} [NormedAddCommGroup E]
   | empty => intro h; simpa using (aestronglyMeasurable_const (b := (0 : E)))
   | @insert a s ha ih =>
       intro h
-      simpa only [Finset.sum_insert ha] using
+      simpa only [Finset.sum_insert ha, Pi.add_apply] using
         (h a (Finset.mem_insert_self a s)).add
           (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
 
+omit [DecidableEq ι] in
 private theorem lp_finset_sum_ae {p : ℝ≥0∞} (s : Finset ι)
     (f : ι → Lp ℂ p (volume : Measure Space)) :
     ((∑ j ∈ s, f j : Lp ℂ p volume) : Space → ℂ) =ᵐ[volume]
@@ -70,7 +75,9 @@ private theorem energy_sum_fields_ae (s : Finset ι) (f : ι → EnergyState) :
   have hp (L : ℂ →L[ℝ] ℝ) : energyProjectedGradient L (∑ j ∈ s, f j) =ᵐ[volume]
       (fun x => ∑ j ∈ s, energyProjectedGradient L (f j) x) := by
     filter_upwards [eventually_all.mpr hd] with x hx
-    simp only [energyProjectedGradient, hx, map_sum, Finset.sum_smul]
+    simp only [energyProjectedGradient]
+    simp only [hx]
+    simp only [map_sum, Finset.sum_smul]
     exact Finset.sum_comm
   exact ⟨hv, hp Complex.reCLM, hp Complex.imCLM⟩
 
@@ -106,7 +113,9 @@ private theorem energy_add_fields_ae (f g : EnergyState) :
   have hp (L : ℂ →L[ℝ] ℝ) : energyProjectedGradient L (f+g) =ᵐ[volume]
       (fun x => energyProjectedGradient L f x + energyProjectedGradient L g x) := by
     filter_upwards [eventually_all.mpr hd] with x hx
-    simp only [energyProjectedGradient, hx, map_add, add_smul, Finset.sum_add_distrib]
+    simp only [energyProjectedGradient]
+    simp only [hx]
+    simp only [map_add, add_smul, Finset.sum_add_distrib]
   refine ⟨?_, hp Complex.reCLM, hp Complex.imCLM⟩
   rw [map_add]
   exact Lp.coeFn_add _ _
@@ -176,7 +185,8 @@ theorem selected_head_defect_tendsto (hDensity : OrdinaryH1Density) {K α c : �
       Tendsto (frameSeparation a y τ i j) atTop atTop := by
     intro i hi j hj hij
     have hne : i.val ≠ j.val := fun he => hij (Fin.ext he)
-    simpa only [frameSeparation, a, y, τ, mul_comm] using
+    unfold frameSeparation
+    exact
       hp.orthogonal i.val j.val (selected_head_active P hJ hi)
         (selected_head_active P hJ hj) hne
   have hd := actual_finite_profile_gradient_defect hDensity hSob hH
@@ -192,8 +202,9 @@ theorem selected_head_defect_tendsto (hDensity : OrdinaryH1Density) {K α c : �
   apply Filter.Eventually.of_forall
   intro n
   have hn := mixedNorm_congr_nested_ae volume volume 2 (ENNReal.ofReal (6/5 : ℝ)) (he n)
+  unfold jointCandidateDefect at hn
   simpa only [vectorForcingNorm, sourceCandidate_eq_full, selectedHeadFields,
-    sumJointFields, frameJointFields, jointCandidateDefect, a, y, τ] using hn
+    sumJointFields, frameJointFields, a, y, τ] using hn
 
 
 def selectedHeadCurve (P : LinearProfileFamily) (g : ℕ → ℝ → EnergyState)
@@ -216,7 +227,7 @@ theorem selectedHeadFree_eq_sub_block (hDensity : OrdinaryH1Density) {K : ℝ}
     selectedHeadCurve P g L J n + freeCurve hDensity hSob (profileRemainder hDensity hSob P u J n) =
       augmentedCurve hDensity hSob P u g J n - nonlinearBlock P g (min J L) J n := by
   have hp := Finset.sum_range_add_sum_Ico (fun j => nonlinearFrame P g j n) (min_le_left J L)
-  rw [selectedHeadCurve, headSet_sum_eq_range]
+  rw [selectedHeadCurve, headSet_sum_eq_range L J (fun j => nonlinearFrame P g j n)]
   unfold augmentedCurve nonlinearBlock
   rw [← hp]
   abel
