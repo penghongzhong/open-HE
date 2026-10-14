@@ -1437,7 +1437,7 @@
     "FFreeFlowCore": "f1ba3871762c0374aefef2d7ae53282854e718e2fe9f70e2aab9762e55120364",
     "FFreeGlobalValueS": "31ebccbc20add957ab3ef2702295ea6b55fbfed802d47cdfb3f618ee11cc5ee9",
     "FFreeHartreeEnergyTails": "1087bb3cfab5dd68f00db76a669cd910d6dbcabee2ab987451ca03ffbb77889d",
-    "FFreeHeadAffineSlots": "06d0bee1da30cd9d872a2dced5f13252a0a09e59173589fc5f6b17b66d8557fb",
+    "FFreeHeadAffineSlots": "586296c496b2eea95990db33951e3f22853bb3a0de64e52ecae3cdc0fe89dc31",
     "FFreeHighFrequencyLocal": "cd1c8bd6ade951725f71155e289477f9ddf0e2970f5224903b4d4ad4a7d27646",
     "FFreeHomogeneousL6Decay": "5a78c7e2d5c3d1128929d14bb10892ac8408c800f66964c0373ea84d66a321a8",
     "FFreeIntegralL2Compatibility": "41fcbffb79cc69aa83c474e679d656cabd8de84e27c9477b7831f92da36da71b",
@@ -2764,7 +2764,7 @@
     }
   ],
   "seed": {
-    "run": 38520218639,
-    "commit": "aed8baf8b45d9b05690644085163eeac3a87c4af"
+    "run": 38521046796,
+    "commit": "0b8a290a1e9a75fd6f4ffbf4e68fc7d75e77784b"
   }
 }

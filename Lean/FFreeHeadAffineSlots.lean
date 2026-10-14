@@ -39,8 +39,8 @@ theorem densityDerivative_power_smul {a : ℝ} (ha : 0 < a)
 
 theorem localFactor_power_smul {a : ℝ} (ha : 0 < a)
     (p β : ℝ) (z : ℂ) :
-    localFactor p (a^β • z) = a^(β*(p+1)) • localFactor p z := by
-  simp only [localFactor, norm_smul, Real.norm_eq_abs,
+    WeakHartreeChain.localFactor p (a^β • z) = a^(β*(p+1)) • WeakHartreeChain.localFactor p z := by
+  simp only [WeakHartreeChain.localFactor, norm_smul, Real.norm_eq_abs,
     abs_of_pos (Real.rpow_pos_of_pos ha β)]
   rw [Real.mul_rpow (Real.rpow_nonneg ha.le β) (norm_nonneg z),
     ← Real.rpow_mul ha.le]
@@ -160,6 +160,7 @@ theorem density_parabolic {a : ℝ} (ha : 0 < a) (α : ℝ)
   change powerDensity α (fun y => a^(1/2:ℝ) •
       u (timeAffine a s t) (affine a b y)) x = _
   rw [powerDensity_power_smul ha]
+  change a^((1/2:ℝ)*(3+α)) * powerDensity α (u (timeAffine a s t)) (affine a b x) = _
   congr 2
   ring
 
@@ -202,15 +203,15 @@ theorem innerCross_parabolic {a : ℝ} (ha : 0 < a) (α c : ℝ)
   funext t x
   change rieszConvolution α c (directionalDensity α
       (parabolicField a b s (1/2) u t) (parabolicField a b s (3/2) h t)) x •
-      localFactor (1+α) (a^(1/2:ℝ) • v (timeAffine a s t) (affine a b x)) = _
+      WeakHartreeChain.localFactor (1+α) (a^(1/2:ℝ) • v (timeAffine a s t) (affine a b x)) = _
   rw [directional_potential_parabolic ha α c, localFactor_power_smul ha]
   change (a^((5-α)/2) * rieszConvolution α c
       (directionalDensity α (u (timeAffine a s t)) (h (timeAffine a s t)))
       (affine a b x)) • (a^((1/2:ℝ)*((1+α)+1)) •
-      localFactor (1+α) (v (timeAffine a s t) (affine a b x))) =
+      WeakHartreeChain.localFactor (1+α) (v (timeAffine a s t) (affine a b x))) =
     a^(7/2:ℝ) • (rieszConvolution α c
       (directionalDensity α (u (timeAffine a s t)) (h (timeAffine a s t)))
-      (affine a b x) • localFactor (1+α) (v (timeAffine a s t) (affine a b x)))
+      (affine a b x) • WeakHartreeChain.localFactor (1+α) (v (timeAffine a s t) (affine a b x)))
   simp only [smul_smul]
   have hp : a^((5-α)/2) * a^((1/2:ℝ)*((1+α)+1)) = a^(7/2:ℝ) := by
     rw [← Real.rpow_add ha]
@@ -284,7 +285,7 @@ theorem seedFrame_inner_N (α c : ℝ) {a : ℝ} (ha : 0 < a)
   rw [innerCross_parabolic (inv_pos.mpr ha)]
   have hscale := mixedNorm_parabolicField (inv_pos.mpr ha) (-(a⁻¹ • y)) s (7/2)
     Set.univ 2 (ENNReal.ofReal (6/5:ℝ)) (by norm_num) ENNReal.ofReal_ne_top
-    (innerCross α c u h v) (by simpa using innerCross_joint α c hu hh hv)
+    (innerCross α c u h v) (innerCross_joint α c hu hh hv)
   norm_num [reciprocalExponent] at hscale
   exact hscale
 
@@ -302,7 +303,7 @@ theorem seedFrame_outer_N {α : ℝ} (hα : 0 < α) (c : ℝ) {a : ℝ} (ha : 0 
   rw [outerCross_parabolic (inv_pos.mpr ha) hα]
   have hscale := mixedNorm_parabolicField (inv_pos.mpr ha) (-(a⁻¹ • y)) s (7/2)
     Set.univ 2 (ENNReal.ofReal (6/5:ℝ)) (by norm_num) ENNReal.ofReal_ne_top
-    (outerCross α c u v h) (by simpa using outerCross_joint α c hu hv hh)
+    (outerCross α c u v h) (outerCross_joint α c hu hv hh)
   norm_num [reciprocalExponent] at hscale
   exact hscale
 
@@ -334,7 +335,7 @@ theorem seedFrame_Q {a : ℝ} (ha : 0 < a) (y : Space) (s : ℝ)
   rw [normProduct_parabolic (inv_pos.mpr ha)]
   have hscale := mixedNorm_parabolicField (inv_pos.mpr ha) (-(a⁻¹ • y)) s 2
     Set.univ 5 (ENNReal.ofReal (15/8:ℝ)) (by norm_num) ENNReal.ofReal_ne_top
-    (normProduct u h) (by simpa using hu.norm.mul hh.norm)
+    (normProduct u h) (hu.norm.mul hh.norm)
   norm_num [reciprocalExponent] at hscale
   exact hscale
 
