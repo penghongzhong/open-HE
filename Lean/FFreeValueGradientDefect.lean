@@ -36,12 +36,14 @@ theorem projected_memLp_of_coordinates {p : ℝ≥0∞} (U V : Space → Space)
   have hR : U = (fun x => ∑ j : Fin 3,
       (directionalField U V (EuclideanSpace.basisFun (Fin 3) ℝ j) x).re • coordinate j) := by
     funext x
-    simpa [directionalField, EuclideanSpace.inner_basisFun_real] using
+    change U x = ∑ j : Fin 3, (inner ℝ (U x) (EuclideanSpace.basisFun (Fin 3) ℝ j)) • coordinate j
+    simpa only [EuclideanSpace.inner_basisFun_real] using
       (coordinate_reconstruct (U x)).symm
   have hI : V = (fun x => ∑ j : Fin 3,
       (directionalField U V (EuclideanSpace.basisFun (Fin 3) ℝ j) x).im • coordinate j) := by
     funext x
-    simpa [directionalField, EuclideanSpace.inner_basisFun_real] using
+    change V x = ∑ j : Fin 3, (inner ℝ (V x) (EuclideanSpace.basisFun (Fin 3) ℝ j)) • coordinate j
+    simpa only [EuclideanSpace.inner_basisFun_real] using
       (coordinate_reconstruct (V x)).symm
   constructor
   · rw [hR]
@@ -63,9 +65,11 @@ theorem inDotH1_add {A z : Space → ℂ} {U V P Q : Space → Space}
   refine ⟨hA.function_L6.add hz.function_L6,
     hA.real_gradient_L2.add hz.real_gradient_L2,
     hA.imag_gradient_L2.add hz.imag_gradient_L2, ?_, ?_⟩
-  · simpa only [Pi.add_apply, Complex.add_re] using
+  · change HasWeakGradient (fun x => (A x + z x).re) (fun x => U x + P x)
+    simpa only [Complex.add_re] using
       FiniteProfileWeakGradient.weakGradient_add hA.real_weak hz.real_weak
-  · simpa only [Pi.add_apply, Complex.add_im] using
+  · change HasWeakGradient (fun x => (A x + z x).im) (fun x => V x + Q x)
+    simpa only [Complex.add_im] using
       FiniteProfileWeakGradient.weakGradient_add hA.imag_weak hz.imag_weak
 
 /-- Exactly the two source states consumed by the pre-existing actual weak

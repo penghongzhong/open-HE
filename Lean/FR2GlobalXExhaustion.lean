@@ -17,6 +17,7 @@ open EnergySpace CriticalPathSpace SobolevStretch StationarySelfTest TimeHolder
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
 attribute [local irreducible] energySubmodule criticalPathSubmodule energyPath
+  freeCriticalPath freeEnergyState
 
 structure TwoHalfGraphBound (g : ℝ → EnergyState) (a R : ℝ) : Prop where
   left : ∀ b : ℝ, b ≤ a → ∃ p : CriticalPath (intervalMeasure b a),
@@ -78,7 +79,7 @@ theorem vector_of_two_half_graph (g : ℝ → EnergyState) {a R C : ℝ}
     p r hC (fun _ => a) (fun n : ℕ => a+n) antitone_const (right_monotone a) hRn g QR hQR
     (fun n => hbound (QR n) (hQRn n)) (fun n => hslices (QR n) (hQRn n))
   obtain ⟨F,hF,hFa,_⟩ := exists_global_nestedLp_of_two_halves volume p r univ
-    measurableSet_univ a (fun t => energyComplexGradient (g t)) C C FL FR hFL hFR
+    MeasurableSet.univ a (fun t => energyComplexGradient (g t)) C C FL FR hFL hFR
     (by simpa only [left_union,univ_inter] using hLa)
     (by simpa only [right_union,univ_inter] using hRa)
     (by simpa only [left_union,univ_inter] using hLz)
@@ -108,7 +109,7 @@ theorem value_of_two_half_graph (hDensity : OrdinaryH1Density) {K : ℝ}
     hDensity hSob hC (fun _ => a) (fun n : ℕ => a+n) antitone_const (right_monotone a) hRn
     g QR hQR (fun n => hb (QR n) (hQRn n))
   obtain ⟨F,hF,hFa,_⟩ := exists_global_nestedLp_of_two_halves volume 10 10 univ
-    measurableSet_univ a (fun t => energyValue (g t))
+    MeasurableSet.univ a (fun t => energyValue (g t))
     (normComparisonConstant K*R) (normComparisonConstant K*R) FL FR hFL hFR
     (by simpa only [left_union,univ_inter] using hLa)
     (by simpa only [right_union,univ_inter] using hRa)
@@ -181,7 +182,9 @@ theorem curveX_of_two_half_graph (hDensity : OrdinaryH1Density) {K : ℝ}
     mul_nonneg (normComparisonConstant_pos hSob).le hR
   have hx : curveX g ≤ ENNReal.ofReal (graphToXConstant K*R) := by
     convert curveX_le_of_component_caps g (add_nonneg hCE hCE) (add_nonneg hCS hCS)
-      (add_nonneg hCW hCW) he hs hw using 1 <;> unfold graphToXConstant <;> ring
+      (add_nonneg hCW hCW) he hs hw using 1
+    unfold graphToXConstant
+    ring
   exact ⟨CurveFinite.of_le hg hx,hx,h.pointwise⟩
 
 /-- Compact paths for the actual curve, with their original radius. -/
@@ -192,11 +195,13 @@ theorem anchored_two_half_graph (hDensity : OrdinaryH1Density) {K Ch alpha a B D
     TwoHalfGraphBound g a (B*‖f‖) := by
   constructor
   · intro b hb
-    obtain ⟨p,hp,hn,_⟩ := h.backward b hb
-    exact ⟨p,hp,hn⟩
+    let choice := h.backward b hb
+    let p : CriticalPath (intervalMeasure b a) := Classical.choose choice
+    exact ⟨p, (Classical.choose_spec choice).1, (Classical.choose_spec choice).2.1⟩
   · intro b hb
-    obtain ⟨p,hp,hn,_⟩ := h.forward b hb
-    exact ⟨p,hp,hn⟩
+    let choice := h.forward b hb
+    let p : CriticalPath (intervalMeasure a b) := Classical.choose choice
+    exact ⟨p, (Classical.choose_spec choice).1, (Classical.choose_spec choice).2.1⟩
 
 theorem anchored_correction_two_half_graph (hDensity : OrdinaryH1Density)
     {K Ch alpha a B D : ℝ} (hSob : OrdinarySobolev K)
@@ -206,15 +211,19 @@ theorem anchored_correction_two_half_graph (hDensity : OrdinaryH1Density)
       a (D*‖f‖^(5+2*alpha)) := by
   constructor
   · intro b hb
-    obtain ⟨p,hp,_,hn⟩ := h.backward b hb
+    let choice := h.backward b hb
+    let p : CriticalPath (intervalMeasure b a) := Classical.choose choice
     exact ⟨p-freeCriticalPath hDensity hSob hfree b a
       (freeEnergyState hDensity hSob (-a) f),
-      represented_correction_state hDensity hSob hfree f g p hp,hn⟩
+      represented_correction_state hDensity hSob hfree f g p
+        (Classical.choose_spec choice).1, (Classical.choose_spec choice).2.2⟩
   · intro b hb
-    obtain ⟨p,hp,_,hn⟩ := h.forward b hb
+    let choice := h.forward b hb
+    let p : CriticalPath (intervalMeasure a b) := Classical.choose choice
     exact ⟨p-freeCriticalPath hDensity hSob hfree a b
       (freeEnergyState hDensity hSob (-a) f),
-      represented_correction_state hDensity hSob hfree f g p hp,hn⟩
+      represented_correction_state hDensity hSob hfree f g p
+        (Classical.choose_spec choice).1, (Classical.choose_spec choice).2.2⟩
 
 /-- The same Fourier orbit, with a literal anchor. -/
 def anchoredFreeCurve (hDensity : OrdinaryH1Density) {K : ℝ}

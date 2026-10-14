@@ -20,6 +20,8 @@ open EnergySpace CriticalPathSpace SobolevStretch StationarySelfTest TimeHolder
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
 attribute [local irreducible] energySubmodule criticalPathSubmodule energyPath
+local instance : SecondCountableTopologyEither ℝ EnergyState :=
+  ⟨Or.inl inferInstance⟩
 
 def curveGradient (g : ℝ → EnergyState) (t : ℝ) : Space → EuclideanSpace ℂ (Fin 3) :=
   complexGradient (stateRealGradientField g t) (stateImagGradientField g t)
@@ -42,7 +44,7 @@ def xNorm (g : ℝ → EnergyState) : ℝ := (curveX g).toReal
 
 theorem CurveFinite.x_ne_top {g : ℝ → EnergyState} (h : CurveFinite g) :
     curveX g ≠ ∞ := by
-  simp only [curveX, ENNReal.add_ne_top, h.energy, h.value, h.gradient, and_self]
+  exact ENNReal.add_ne_top.mpr ⟨ENNReal.add_ne_top.mpr ⟨h.energy, h.value⟩, h.gradient⟩
 
 theorem curveEnergy_le_curveX (g : ℝ → EnergyState) : curveEnergy g ≤ curveX g :=
   (le_add_of_nonneg_right bot_le).trans (le_add_of_nonneg_right bot_le)
@@ -89,7 +91,6 @@ theorem curveGradient_eq_actual (g : ℝ → EnergyState) (t : ℝ) :
 theorem curveW_eq_actual (g : ℝ → EnergyState) :
     curveW g = mixedNorm volume volume 10 criticalExponent
       (fun t => energyComplexGradient (g t)) := by
-  simp only [curveW, curveGradient_eq_actual]
   rfl
 
 theorem curveEnergy_eq_actual (g : ℝ → EnergyState) (hg : Continuous g) :
@@ -167,7 +168,8 @@ theorem curveGradient_add_slice (g h : ℝ → EnergyState) (t : ℝ) :
     curveGradient (g+h) t =ᵐ[volume] fun x => curveGradient g t x + curveGradient h t x := by
   have hc (j : Fin 3) : (energyGradient j (g t+h t) : Space → ℂ) =ᵐ[volume]
       fun x => energyGradient j (g t) x + energyGradient j (h t) x := by
-    simpa only [map_add] using Lp.coeFn_add (energyGradient j (g t)) (energyGradient j (h t))
+    rw [map_add]
+    exact Lp.coeFn_add (energyGradient j (g t)) (energyGradient j (h t))
   filter_upwards [ae_all_iff.mpr hc] with x hx
   ext j
   simpa only [curveGradient, stateRealGradientField, stateImagGradientField,
@@ -177,7 +179,8 @@ theorem curveGradient_neg_slice (g : ℝ → EnergyState) (t : ℝ) :
     curveGradient (-g) t =ᵐ[volume] fun x => -curveGradient g t x := by
   have hc (j : Fin 3) : (energyGradient j (-g t) : Space → ℂ) =ᵐ[volume]
       fun x => -energyGradient j (g t) x := by
-    simpa only [map_neg] using Lp.coeFn_neg (energyGradient j (g t))
+    rw [map_neg]
+    exact Lp.coeFn_neg (energyGradient j (g t))
   filter_upwards [ae_all_iff.mpr hc] with x hx
   ext j
   simpa only [curveGradient, stateRealGradientField, stateImagGradientField,
@@ -252,7 +255,8 @@ theorem curveX_neg (g : ℝ → EnergyState) : curveX (-g) = curveX g := by
   have hw : curveW (-g)=curveW g := by
     apply eLpNorm_congr_ae
     filter_upwards [] with t
-    rw [eLpNorm_congr_ae (curveGradient_neg_slice g t),eLpNorm_neg]
+    rw [eLpNorm_congr_ae (curveGradient_neg_slice g t)]
+    exact eLpNorm_neg _ _ _
   simp only [curveX,he,hs,hw]
 
 theorem curveX_sub_le (g h : ℝ → EnergyState) (hg : Continuous g) (hh : Continuous h) :
@@ -318,7 +322,7 @@ assertion about a quotient-selected representative. -/
   simp only [xNorm,curveX_zero,ENNReal.toReal_zero]
 
 theorem CurveFinite.zero : CurveFinite (0 : ℝ → EnergyState) := by
-  apply CurveFinite.of_le continuous_const (R := 0)
-  simp only [curveX_zero,ENNReal.ofReal_zero,le_refl]
+  apply CurveFinite.of_le (g := (0 : ℝ → EnergyState)) continuous_const (R := 0)
+  rw [curveX_zero, ENNReal.ofReal_zero]
 
 end HartreeF.R2Global

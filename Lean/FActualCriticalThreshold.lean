@@ -59,7 +59,7 @@ theorem trapping_factor_ground_energy (hDensity : OrdinaryH1Density) {alpha : �
   have ha := hH.order_pos
   have htwo : 2+alpha ≠ 0 := by linarith
   have hthree : 3+alpha ≠ 0 := by linarith
-  field_simp [htwo, hthree] <;> ring
+  field_simp [htwo, hthree]
 
 variable (hDensity : OrdinaryH1Density)
   {K C0 Ch Cr Che Cre alpha : ℝ} (hSob : OrdinarySobolev K)
@@ -103,7 +103,7 @@ theorem criticalLevel_le_bad_energy (hH : SharpOrdinaryHLS alpha)
 /-- The positive seed is the actual small-energy producer, not a new
 induction premise.  Both nonempty and lower-bounded sInf domains are supplied. -/
 theorem criticalLevel_pos_lt (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     (hbad : ∃ f, BadDatum hDensity hSob h0 hfree hret hefree heret hOrd f) :
     0 < criticalLevel hDensity hSob h0 hfree hret hefree heret hOrd ∧
@@ -137,7 +137,7 @@ theorem finiteS_below_criticalLevel (hH : SharpOrdinaryHLS alpha)
 
 theorem global_curveFinite_below_criticalLevel
     (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     {f : EnergyState} (hf : StableDatum alpha f)
     (he : totalEnergy alpha f < criticalLevel hDensity hSob h0 hfree hret hefree heret hOrd) :
@@ -151,7 +151,7 @@ theorem global_curveFinite_below_criticalLevel
 mark; the exact maximal affine and finite-X frame bodies supply the transport. -/
 theorem marked_global_curveFinite_below_criticalLevel
     (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     (s : ℝ) {f : EnergyState} (hf : StableDatum alpha f)
     (he : totalEnergy alpha f < criticalLevel hDensity hSob h0 hfree hret hefree heret hOrd) :
@@ -166,7 +166,7 @@ theorem marked_global_curveFinite_below_criticalLevel
 Its uniform gap, not closure of an open strict sublevel, controls extraction. -/
 theorem exists_bad_minimizing_sequence
     (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     (hbad : ∃ f, BadDatum hDensity hSob h0 hfree hret hefree heret hOrd f) :
     ∃ (Estar : ℝ) (u : ℕ → EnergyState),

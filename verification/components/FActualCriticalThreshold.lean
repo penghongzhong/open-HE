@@ -1,0 +1,48 @@
+import FActualCriticalThreshold
+
+set_option pp.fullNames true
+set_option pp.universes false
+set_option pp.proofs false
+set_option pp.proofs.withType true
+set_option pp.deepTerms true
+set_option pp.maxSteps 10000000
+set_option format.width 120
+
+#print HartreeF.ActualCriticalThreshold.StableDatum
+#print HartreeF.ActualCriticalThreshold.BadDatum
+#print HartreeF.ActualCriticalThreshold.badEnergies
+#print HartreeF.ActualCriticalThreshold.criticalLevel
+
+#print axioms HartreeF.ActualCriticalThreshold.StableDatum
+#print axioms HartreeF.ActualCriticalThreshold.trapping_factor_pos
+#print axioms HartreeF.ActualCriticalThreshold.stable_kinetic_le_energy
+#print axioms HartreeF.ActualCriticalThreshold.stable_energy_nonneg
+#print axioms HartreeF.ActualCriticalThreshold.trapping_factor_ground_energy
+#print axioms HartreeF.ActualCriticalThreshold.BadDatum
+#print axioms HartreeF.ActualCriticalThreshold.badEnergies
+#print axioms HartreeF.ActualCriticalThreshold.criticalLevel
+#print axioms HartreeF.ActualCriticalThreshold.badEnergies_nonempty
+#print axioms HartreeF.ActualCriticalThreshold.badEnergies_bddBelow
+#print axioms HartreeF.ActualCriticalThreshold.criticalLevel_le_bad_energy
+#print axioms HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt
+#print axioms HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel
+#print axioms HartreeF.ActualCriticalThreshold.global_curveFinite_below_criticalLevel
+#print axioms HartreeF.ActualCriticalThreshold.marked_global_curveFinite_below_criticalLevel
+#print axioms HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence
+
+#check @HartreeF.ActualCriticalThreshold.StableDatum
+#check @HartreeF.ActualCriticalThreshold.trapping_factor_pos
+#check @HartreeF.ActualCriticalThreshold.stable_kinetic_le_energy
+#check @HartreeF.ActualCriticalThreshold.stable_energy_nonneg
+#check @HartreeF.ActualCriticalThreshold.trapping_factor_ground_energy
+#check @HartreeF.ActualCriticalThreshold.BadDatum
+#check @HartreeF.ActualCriticalThreshold.badEnergies
+#check @HartreeF.ActualCriticalThreshold.criticalLevel
+#check @HartreeF.ActualCriticalThreshold.badEnergies_nonempty
+#check @HartreeF.ActualCriticalThreshold.badEnergies_bddBelow
+#check @HartreeF.ActualCriticalThreshold.criticalLevel_le_bad_energy
+#check @HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt
+#check @HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel
+#check @HartreeF.ActualCriticalThreshold.global_curveFinite_below_criticalLevel
+#check @HartreeF.ActualCriticalThreshold.marked_global_curveFinite_below_criticalLevel
+#check @HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence

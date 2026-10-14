@@ -82,23 +82,27 @@ theorem inDotH1_sum (s : Finset ι) (u : ι → Space → ℂ)
   · simpa using weakGradient_sum s (fun i x => (u i x).im) V
       (fun i hi => (h i hi).imag_weak)
 
+omit [DecidableEq ι] in
 theorem gradientReal_defect (s : Finset ι) (α c : ℝ) (u : ι → Space → ℂ)
     (U V : ι → Space → Space) (x : Space) :
     gradientReal (gradientDefect s α c u U V x) =
       forcingGradientRe α c (fun y => ∑ i ∈ s, u i y)
         (fun y => ∑ i ∈ s, U i y) (fun y => ∑ i ∈ s, V i y) x -
           ∑ i ∈ s, forcingGradientRe α c (u i) (U i) (V i) x := by
+  classical
   ext j
-  simp [gradientDefect, gradientReal, actualFullGradient_coordinate, map_sum]
+  simp [gradientDefect, gradientReal, actualFullGradient_coordinate]
 
+omit [DecidableEq ι] in
 theorem gradientImag_defect (s : Finset ι) (α c : ℝ) (u : ι → Space → ℂ)
     (U V : ι → Space → Space) (x : Space) :
     gradientImag (gradientDefect s α c u U V x) =
       forcingGradientIm α c (fun y => ∑ i ∈ s, u i y)
         (fun y => ∑ i ∈ s, U i y) (fun y => ∑ i ∈ s, V i y) x -
           ∑ i ∈ s, forcingGradientIm α c (u i) (U i) (V i) x := by
+  classical
   ext j
-  simp [gradientDefect, gradientImag, actualFullGradient_coordinate, map_sum]
+  simp [gradientDefect, gradientImag, actualFullGradient_coordinate]
 
 /-- The finite forcing defect is produced directly from its finite family. It is
 not a two-input nonlinear difference wrapper with a sum substituted for one input. -/
@@ -173,11 +177,13 @@ theorem gradientDefect_candidate_ae {α c : ℝ} (hH : OrdinaryHLS α c)
   filter_upwards [hsum, hi] with x hx hix
   exact congrArg₂ (· - ·) hx (Finset.sum_congr rfl hix)
 
+omit [DecidableEq ι] in
 theorem directionalField_sum (s : Finset ι) (U V : ι → Space → Space) (e : Space) :
     directionalField (fun x => ∑ i ∈ s, U i x) (fun x => ∑ i ∈ s, V i x) e =
       (fun x => ∑ i ∈ s, directionalField (U i) (V i) e x) := by
+  classical
   funext x
-  apply Complex.ext <;> simp [directionalField, sum_inner, map_sum]
+  apply Complex.ext <;> simp [directionalField, sum_inner]
 
 theorem candidateFullGradient_coordinate (α c : ℝ) (u : Space → ℂ)
     (U V : Space → Space) (x : Space) (j : Fin 3) :
@@ -185,6 +191,7 @@ theorem candidateFullGradient_coordinate (α c : ℝ) (u : Space → ℂ)
       directionalCandidate α c u (directionalField U V (EuclideanSpace.basisFun (Fin 3) ℝ j)) x := by
   fin_cases j <;> simp [candidateFullGradient, packGradient_coordinate]
 
+omit [DecidableEq ι] in
 /-- A pointwise identity for the chosen joint candidate; this is the bridge to
 the scalar finite-family domain and six-term estimates. -/
 theorem jointCandidateDefect_coordinate (s : Finset ι) (α c : ℝ)
@@ -193,7 +200,7 @@ theorem jointCandidateDefect_coordinate (s : Finset ι) (α c : ℝ)
       FiniteCandidateExpansion.candidateDefect α c s u
         (fun i => directionalField (U i) (V i) (EuclideanSpace.basisFun (Fin 3) ℝ j)) x := by
   simp [jointCandidateDefect, candidateFullGradient_coordinate,
-    directionalField_sum, FiniteCandidateExpansion.candidateDefect, map_sum]
+    directionalField_sum, FiniteCandidateExpansion.candidateDefect]
 
 /-- All three coordinates hold on the same finite good set. The right side is
 exactly the candidate defect consumed by the finite six-term expansion. -/
@@ -211,10 +218,12 @@ theorem gradientDefect_coordinates_ae {α c : ℝ} (hH : OrdinaryHLS α c)
   rw [hx]
   exact jointCandidateDefect_coordinate s α c u U V x j
 
+omit [DecidableEq ι] in
 private theorem finite_sum_ae {E : Type*} [AddCommMonoid E]
     (s : Finset ι) {f g : ι → Space → E}
     (h : ∀ i ∈ s, f i =ᵐ[volume] g i) :
     (fun x => ∑ i ∈ s, f i x) =ᵐ[volume] (fun x => ∑ i ∈ s, g i x) := by
+  classical
   filter_upwards [(eventually_all_finset s).2 h] with x hx
   exact Finset.sum_congr rfl hx
 
@@ -229,9 +238,9 @@ private theorem finite_joint_sum {E : Type*} [NormedAddCommGroup E]
   | empty => intro h; simpa using (aestronglyMeasurable_const (b := (0 : E)))
   | @insert a s ha ih =>
       intro h
-      simpa only [Finset.sum_insert ha] using
-        (h a (Finset.mem_insert_self a s)).add
-          (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
+      simp only [Finset.sum_insert ha]
+      exact (h a (Finset.mem_insert_self a s)).add
+        (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
 
 /-- Only joint measurability of the selected input fields is used here. -/
 theorem jointCandidateDefect_joint_measurable (s : Finset ι) (α c : ℝ)
@@ -276,6 +285,7 @@ theorem candidateFullGradient_congr_ae (α c : ℝ) {u v : Space → ℂ}
   filter_upwards [hc 0, hc 1, hc 2] with x h0 h1 h2
   simp only [candidateFullGradient, h0, h1, h2]
 
+omit [DecidableEq ι] in
 theorem jointCandidateDefect_congr_ae (s : Finset ι) (α c : ℝ)
     {u v : ι → Space → ℂ} {U V P Q : ι → Space → Space}
     (hu : ∀ i ∈ s, u i =ᵐ[volume] v i)
@@ -308,9 +318,10 @@ theorem framed_directionalField (g : ℝ → EnergyState) (a : ℝ) (y : Space)
   rw [← gradientCoordinate_state g j]
   funext x
   apply Complex.ext <;>
-    simp [directionalField, EuclideanSpace.inner_basisFun_real, framedReal,
-      framedImag, seedFrame, parabolicField, gradientCoordinate, complexGradient,
-      Complex.real_smul]
+    simp only [directionalField, framedReal, framedImag, seedFrame, parabolicField,
+      real_inner_smul_left, EuclideanSpace.inner_basisFun_real, gradientCoordinate,
+      complexGradient]
+  all_goals simp [Complex.real_smul]
 
 /-- Projection domains are produced from the packed W domain. -/
 theorem packed_memLp_real_imag {p : ℝ≥0∞} {U V : Space → Space}
@@ -353,9 +364,12 @@ theorem actual_frame_slices (g : ℝ → EnergyState) {a : ℝ} (ha : 0 < a)
     timeAffine_ae_pullback (inv_pos.mpr ha) τ hw] with t hst hwt
   obtain ⟨hr, hi⟩ := packed_memLp_real_imag hwt
   refine ⟨actual_seedFrame_inDotH1 g ha y τ t, ?_, ?_, ?_⟩
-  · exact (affine_memLp (inv_ne_zero ha.ne') (-(a⁻¹ • y)) (by norm_num) (by norm_num) hst).const_smul _
-  · exact (affine_memLp (inv_ne_zero ha.ne') (-(a⁻¹ • y)) (by norm_num) (by norm_num) hr).const_smul _
-  · exact (affine_memLp (inv_ne_zero ha.ne') (-(a⁻¹ • y)) (by norm_num) (by norm_num) hi).const_smul _
+  · exact
+      (affine_memLp (inv_ne_zero ha.ne') (-(a⁻¹ • y)) (by norm_num) (by norm_num) hst).const_smul (a⁻¹ ^ ((1 : ℝ)/2))
+  · exact
+      (affine_memLp (inv_ne_zero ha.ne') (-(a⁻¹ • y)) (by norm_num) (by norm_num) hr).const_smul (a⁻¹ ^ ((3 : ℝ)/2))
+  · exact
+      (affine_memLp (inv_ne_zero ha.ne') (-(a⁻¹ • y)) (by norm_num) (by norm_num) hi).const_smul (a⁻¹ ^ ((3 : ℝ)/2))
 
 /-- Finite families share one conull time set; at each such time the coordinate
 candidate identities share one conull spatial set. No target defect domain is assumed. -/
@@ -414,7 +428,7 @@ private theorem realFrame_joint_measurable (a : ℝ) (y : Space) (τ : ℝ)
       (timeAffine a⁻¹ τ z.1, affine a⁻¹ (-(a⁻¹ • y)) z.2)) := by
     unfold timeAffine affine
     fun_prop
-  exact (hU.comp_measurable hc.measurable).const_smul _
+  exact (hU.comp_measurable hc.measurable).const_smul (a⁻¹ ^ ((3 : ℝ)/2))
 
 theorem framedJoint_joint_measurable {g : ℝ → EnergyState} (r : EnergyJointFields volume g)
     (a : ℝ) (y : Space) (τ : ℝ) :
@@ -435,9 +449,10 @@ theorem framedJoint_directionalField {g : ℝ → EnergyState} (r : EnergyJointF
         (gradientCoordinate j (fun t => complexGradient (r.U t) (r.V t))) t := by
   funext x
   apply Complex.ext <;>
-    simp [directionalField, EuclideanSpace.inner_basisFun_real, framedJointReal,
-      framedJointImag, seedFrame, parabolicField, gradientCoordinate, complexGradient,
-      Complex.real_smul]
+    simp only [directionalField, framedJointReal, framedJointImag, seedFrame, parabolicField,
+      real_inner_smul_left, EuclideanSpace.inner_basisFun_real, gradientCoordinate,
+      complexGradient]
+  all_goals simp [Complex.real_smul]
 
 private theorem realFrame_congr_nested_ae {a : ℝ} (ha : 0 < a) (y : Space) (τ : ℝ)
     {U P : ℝ → Space → Space} (h : ∀ᵐ t ∂volume, U t =ᵐ[volume] P t) :
@@ -520,20 +535,26 @@ theorem finite_forcing_representative_weak_tests (hDensity : OrdinaryH1Density)
   have hI := weakGradient_congr_gradient hi (hG.mono fun _ hx => congrArg gradientImag hx)
   exact ⟨hR, hI, weakGradients_coordinate_tests hR hI⟩
 
+omit [DecidableEq ι] in
 /-- Empty sums give the zero literal forcing error even at totalized exponents. -/
 @[simp] theorem literalDefect_empty (α c : ℝ) (u : ι → Space → ℂ) :
     literalDefect ∅ α c u = 0 := by
+  classical
   funext x
   simp [literalDefect, forcing, ForcingDomain.localFactor]
 
+omit [DecidableEq ι] in
 /-- Singleton families vanish by literal cancellation, with no analytic premise. -/
 @[simp] theorem literalDefect_singleton (i : ι) (α c : ℝ) (u : ι → Space → ℂ) :
     literalDefect {i} α c u = 0 := by
+  classical
   funext x
   simp [literalDefect]
 
+omit [DecidableEq ι] in
 @[simp] theorem gradientDefect_singleton (i : ι) (α c : ℝ) (u : ι → Space → ℂ)
     (U V : ι → Space → Space) : gradientDefect {i} α c u U V = 0 := by
+  classical
   funext x
   simp [gradientDefect]
 

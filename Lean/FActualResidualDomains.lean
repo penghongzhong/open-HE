@@ -30,9 +30,9 @@ No pointwise statement about the totalized raw derivative is used. -/
       (EuclideanSpace.basisFun (Fin 3) ℝ j) = 0 := by
     funext x
     simp [directionalField]
-  simp only [candidateFullGradient, hd, directionalCandidate_zero, Pi.zero_apply]
   funext x
-  simp [packGradient]
+  simp only [candidateFullGradient, hd, directionalCandidate_zero, Pi.zero_apply,
+    packGradient, zero_smul, zero_add]
 
 /-- sourceCandidate retains the zero-state subtraction in its definition;
 this explicit algebra is the justified simplification. -/
@@ -93,15 +93,17 @@ theorem source_candidate_canonical_weak (hDensity : OrdinaryH1Density) {K : ℝ}
     weakGradient_congr_fields hw.2 (he.mono fun _ hx => congrArg Complex.im hx)
       Filter.EventuallyEq.rfl⟩
 
+omit [DecidableEq ι] in
 private theorem gradientReal_sub_sum (s : Finset ι) (a : CGradient) (b : ι → CGradient) :
     gradientReal (a - ∑ j ∈ s, b j) = gradientReal a - ∑ j ∈ s, gradientReal (b j) := by
   ext k
-  simp [gradientReal, map_sum]
+  simp [gradientReal]
 
+omit [DecidableEq ι] in
 private theorem gradientImag_sub_sum (s : Finset ι) (a : CGradient) (b : ι → CGradient) :
     gradientImag (a - ∑ j ∈ s, b j) = gradientImag a - ∑ j ∈ s, gradientImag (b j) := by
   ext k
-  simp [gradientImag, map_sum]
+  simp [gradientImag]
 
 private theorem residual_finite_joint_sum {E : Type*} [NormedAddCommGroup E]
     (s : Finset ι) (f : ι → ℝ → Space → E)
@@ -114,9 +116,12 @@ private theorem residual_finite_joint_sum {E : Type*} [NormedAddCommGroup E]
   | empty => intro h; simpa using (aestronglyMeasurable_const (b := (0 : E)))
   | @insert a s ha ih =>
       intro h
-      simpa only [Finset.sum_insert ha] using
-        (h a (Finset.mem_insert_self a s)).add
-          (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
+      have hs := (h a (Finset.mem_insert_self a s)).add
+        (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
+      change AEStronglyMeasurable
+        (fun z : ℝ × Space => f a z.1 z.2 + ∑ i ∈ s, f i z.1 z.2)
+        (volume.prod volume) at hs
+      simpa only [Finset.sum_insert ha] using hs
 
 /-- Triangle is used on jointly measurable candidates only. -/
 theorem vectorForcingNorm_sub_le (G H : ℝ → Space → CGradient)
@@ -125,7 +130,11 @@ theorem vectorForcingNorm_sub_le (G H : ℝ → Space → CGradient)
     vectorForcingNorm (fun t x => G t x - H t x) ≤ vectorForcingNorm G + vectorForcingNorm H := by
   have hn : vectorForcingNorm (fun t x => -H t x) = vectorForcingNorm H := by
     unfold vectorForcingNorm mixedNorm
-    simp only [eLpNorm_neg]
+    congr 1
+    funext t
+    change eLpNorm (-(H t)) (ENNReal.ofReal (6/5 : ℝ)) volume =
+      eLpNorm (H t) (ENNReal.ofReal (6/5 : ℝ)) volume
+    exact eLpNorm_neg (H t) (ENNReal.ofReal (6/5 : ℝ)) volume
   calc
     _ = vectorForcingNorm (fun t x => G t x + -H t x) := by simp only [sub_eq_add_neg]
     _ ≤ vectorForcingNorm G + vectorForcingNorm (fun t x => -H t x) :=
@@ -209,6 +218,7 @@ theorem actual_residual_domains (hDensity : OrdinaryH1Density) {K : ℝ}
       (by norm_num) (by norm_num) _ hF
   · exact hW.mono fun _ ht => weakGradients_coordinate_tests ht.1 ht.2
 
+omit [DecidableEq ι] in
 /-- The retained actual residual has the same canonical weak derivative.
 Only the supplied nested actual-to-candidate equality is used. -/
 theorem ActualResidualDomains.actual_weak
@@ -224,6 +234,7 @@ theorem ActualResidualDomains.actual_weak
   exact ⟨weakGradient_congr_gradient hw.1 (he.symm.mono fun _ hx => congrArg gradientReal hx),
     weakGradient_congr_gradient hw.2 (he.symm.mono fun _ hx => congrArg gradientImag hx)⟩
 
+omit [DecidableEq ι] in
 theorem ActualResidualDomains.actual_slice
     {s : Finset ι} {α c : ℝ} {q : ℝ → EnergyState} {p : ι → ℝ → EnergyState}
     {rq : EnergyJointFields volume q} {rp : ∀ j, EnergyJointFields volume (p j)}
@@ -233,6 +244,7 @@ theorem ActualResidualDomains.actual_slice
   finite_mixedNorm_ae_slice_memLp volume volume 2 (ENNReal.ofReal (6/5:ℝ))
     (by norm_num) (by norm_num) _ h.actual_finite
 
+omit [DecidableEq ι] in
 theorem ActualResidualDomains.actual_tests
     {s : Finset ι} {α c : ℝ} {q : ℝ → EnergyState} {p : ι → ℝ → EnergyState}
     {rq : EnergyJointFields volume q} {rp : ∀ j, EnergyJointFields volume (p j)}
@@ -240,6 +252,7 @@ theorem ActualResidualDomains.actual_tests
     ∀ᵐ t ∂volume, CoordinateTests (literalResidual s α c q p t) (residualActual s α c rq rp t) :=
   h.actual_weak.mono fun _ ht => weakGradients_coordinate_tests ht.1 ht.2
 
+omit [DecidableEq ι] in
 /-- Independence of all chosen compatible representatives, including a framed
 normalized choice versus the joint fields chosen for the physical curve. -/
 theorem residualCandidate_congr (s : Finset ι) (α c : ℝ)

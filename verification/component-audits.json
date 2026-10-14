@@ -1,0 +1,830 @@
+[
+  {
+    "module": "FFiniteProfileWeakGradient",
+    "source": "components/FFiniteProfileWeakGradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.literalDefect"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.gradientDefect"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.jointCandidateDefect"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.weakGradient_zero"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.weakGradient_add"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.weakGradient_sum"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.inDotH1_sum"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.gradientReal_defect"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.gradientImag_defect"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.finite_forcing_hasWeakGradients"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.CoordinateTests"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.finite_forcing_coordinate_tests"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.gradientDefect_candidate_ae"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.directionalField_sum"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.candidateFullGradient_coordinate"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_coordinate"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.gradientDefect_coordinates_ae"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_joint_measurable"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.directionalCandidate_congr_ae"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.candidateFullGradient_congr_ae"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.jointCandidateDefect_congr_ae"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedValue"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedReal"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedImag"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framed_directionalField"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.packed_memLp_real_imag"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.actual_frame_slices"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.actual_finite_framed_weak_gradients"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedJointValue"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedJointReal"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedJointImag"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedJoint_joint_measurable"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedJoint_directionalField"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.framedJoint_nested_ae"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.actual_finite_framed_candidate_transfer"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.finite_forcing_representative_weak_tests"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.literalDefect_empty"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.literalDefect_singleton"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.gradientDefect_singleton"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.empty_forcing_hasWeakGradients"
+      },
+      {
+        "name": "HartreeF.FiniteProfileWeakGradient.fin_one_defects_zero"
+      }
+    ]
+  },
+  {
+    "module": "FR2ActualGlobalX",
+    "source": "components/FR2ActualGlobalX.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2Global.curveGradient"
+      },
+      {
+        "name": "HartreeF.R2Global.curveS"
+      },
+      {
+        "name": "HartreeF.R2Global.curveW"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite"
+      },
+      {
+        "name": "HartreeF.R2Global.xNorm"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.x_ne_top"
+      },
+      {
+        "name": "HartreeF.R2Global.curveEnergy_le_curveX"
+      },
+      {
+        "name": "HartreeF.R2Global.curveS_le_curveX"
+      },
+      {
+        "name": "HartreeF.R2Global.curveW_le_curveX"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.of_le"
+      },
+      {
+        "name": "HartreeF.R2Global.xNorm_nonneg"
+      },
+      {
+        "name": "HartreeF.R2Global.ofReal_xNorm"
+      },
+      {
+        "name": "HartreeF.R2Global.xNorm_le"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX_le_of_component_caps"
+      },
+      {
+        "name": "HartreeF.R2Global.curveGradient_eq_actual"
+      },
+      {
+        "name": "HartreeF.R2Global.curveW_eq_actual"
+      },
+      {
+        "name": "HartreeF.R2Global.curveEnergy_eq_actual"
+      },
+      {
+        "name": "HartreeF.R2Global.joint_value_norm"
+      },
+      {
+        "name": "HartreeF.R2Global.joint_gradient_norm"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.value_slices"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.gradient_slices"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.value_time"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.gradient_time"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.value_real_time"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.gradient_real_time"
+      },
+      {
+        "name": "HartreeF.R2Global.curveGradient_add_slice"
+      },
+      {
+        "name": "HartreeF.R2Global.curveGradient_neg_slice"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX_add_le"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX_neg"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX_sub_le"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.add"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.sub"
+      },
+      {
+        "name": "HartreeF.R2Global.xNorm_add_le"
+      },
+      {
+        "name": "HartreeF.R2Global.xNorm_sub_le"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX_zero"
+      },
+      {
+        "name": "HartreeF.R2Global.xNorm_zero"
+      },
+      {
+        "name": "HartreeF.R2Global.CurveFinite.zero"
+      }
+    ]
+  },
+  {
+    "module": "FFiniteProfileRieszMixed",
+    "source": "components/FFiniteProfileRieszMixed.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FiniteProfileRieszMixed.mixed_riesz_bound"
+      },
+      {
+        "name": "HartreeF.FiniteProfileRieszMixed.mixed_smul_le"
+      },
+      {
+        "name": "HartreeF.FiniteProfileRieszMixed.riesz_product_estimate"
+      },
+      {
+        "name": "HartreeF.FiniteProfileRieszMixed.riesz_product_tendsto"
+      }
+    ]
+  },
+  {
+    "module": "FFreeValueQCoefficients",
+    "source": "components/FFreeValueQCoefficients.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueFullCandidate.Q"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.zero_direction_profile"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.power_VSQ_le"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.q_coefficients_joint"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.q_coefficients_bound"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.q_coefficients_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.Q_sum_le"
+      }
+    ]
+  },
+  {
+    "module": "FR2ActualProfileFrames",
+    "source": "components/FR2ActualProfileFrames.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2Frames.stateFrame"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_time"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_continuous"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_sub"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_fields_ae"
+      },
+      {
+        "name": "HartreeF.R2Frames.frameJointFields"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveEnergy"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveS"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveW"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveX"
+      },
+      {
+        "name": "HartreeF.R2Frames.CurveFinite.stateFrame"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_xNorm"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_free"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_correction"
+      }
+    ]
+  },
+  {
+    "module": "FR2CompactSmallData",
+    "source": "components/FR2CompactSmallData.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2SmallData.AnchoredCompactBounds"
+      },
+      {
+        "name": "HartreeF.R2SmallData.rpow_mul_fifth"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_source_power_bound"
+      },
+      {
+        "name": "HartreeF.R2SmallData.backwardHartreeDuhamelMap_zero_path"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_uniform_backward_small_data_path"
+      },
+      {
+        "name": "HartreeF.R2SmallData.represented_state_norm_le"
+      },
+      {
+        "name": "HartreeF.R2SmallData.AnchoredCompactBounds.pointwise"
+      },
+      {
+        "name": "HartreeF.R2SmallData.represented_correction_state"
+      },
+      {
+        "name": "HartreeF.R2SmallData.AnchoredCompactBounds.correction_pointwise"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_uniform_two_sided_small_data"
+      },
+      {
+        "name": "HartreeF.R2SmallData.actualMaximalTrajectory_global_of_recenter"
+      },
+      {
+        "name": "HartreeF.R2SmallData.matching_state_norm_le"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_uniform_matching_compact_bounds"
+      },
+      {
+        "name": "HartreeF.R2SmallData.matching_state_pureGradient_le"
+      },
+      {
+        "name": "HartreeF.R2SmallData.matching_error_pureGradient_tendsto"
+      },
+      {
+        "name": "HartreeF.R2SmallData.actual_matching_zero_profile"
+      }
+    ]
+  },
+  {
+    "module": "FFreeValueFullCandidate",
+    "source": "components/FFreeValueFullCandidate.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueFullCandidate.MixedDomain"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.mixedDomain_of_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.signed_riesz_product_bound"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.candidate_eq_cross"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.FullCandidateControl"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.full_candidate_bound"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.full_candidate_sum_bound"
+      }
+    ]
+  },
+  {
+    "module": "FFreeValueCandidateSplice",
+    "source": "components/FFreeValueCandidateSplice.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueSplice.E"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.S"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.W"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.C"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarDefect"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.coordinateBound"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_retarget"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_add"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_Q_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.directionalCandidate_add"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.directionalCandidate_sub"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.directionalCandidate_real_smul"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.literal_splice"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalarProfile_full_control"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.scalar_defect_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_valueSize_le"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_changeSize"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.identical_changeSize"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_direction_continuity"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.SpliceControl"
+      },
+      {
+        "name": "HartreeF.FreeValueSplice.same_direction_free_value_bound"
+      }
+    ]
+  },
+  {
+    "module": "FFreeValueGradientDefect",
+    "source": "components/FFreeValueGradientDefect.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueGradient.directionCoordinate"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.directionCoordinate_add"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.projected_memLp_of_coordinates"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.inDotH1_add"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.TruePairSlices"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.true_pair_slices"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.literalForcing"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actualGradient"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient_coordinate"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient_eq_candidates"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.candidateGradient_joint"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actualGradient_candidate_ae"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.ActualDefectDomains"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actual_free_value_gradient_domains"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.ActualDefectControl"
+      },
+      {
+        "name": "HartreeF.FreeValueGradient.actual_free_value_gradient_bound"
+      }
+    ]
+  },
+  {
+    "module": "FR2ActualTailForcing",
+    "source": "components/FR2ActualTailForcing.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2TailForcing.sourceGradient"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.sourceCandidate"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.joint_scalar_profiles"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_domains"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.literal_source_eq"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_scalar_canonical_ae"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.exists_source_gradient_power_bound"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_gradient_sum_le"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_gradient_sum_finite"
+      }
+    ]
+  },
+  {
+    "module": "FActualResidualDomains",
+    "source": "components/FActualResidualDomains.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FullResidual.sourceCandidate_eq_full"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceCandidate_congr"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceCandidate_congr_curve"
+      },
+      {
+        "name": "HartreeF.FullResidual.literalResidual"
+      },
+      {
+        "name": "HartreeF.FullResidual.residualCandidate"
+      },
+      {
+        "name": "HartreeF.FullResidual.residualActual"
+      },
+      {
+        "name": "HartreeF.FullResidual.source_candidate_canonical_weak"
+      },
+      {
+        "name": "HartreeF.FullResidual.vectorForcingNorm_sub_le"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains"
+      },
+      {
+        "name": "HartreeF.FullResidual.actual_residual_domains"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains.actual_weak"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains.actual_slice"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains.actual_tests"
+      },
+      {
+        "name": "HartreeF.FullResidual.residualCandidate_congr"
+      }
+    ]
+  },
+  {
+    "module": "FR2GlobalXExhaustion",
+    "source": "components/FR2GlobalXExhaustion.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2Global.TwoHalfGraphBound"
+      },
+      {
+        "name": "HartreeF.R2Global.vector_of_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.value_of_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.graphToXConstant"
+      },
+      {
+        "name": "HartreeF.R2Global.graphToXConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.R2Global.TwoHalfGraphBound.pointwise"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX_of_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.anchored_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.anchored_correction_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.anchoredFreeCurve"
+      },
+      {
+        "name": "HartreeF.R2Global.freeXConstant"
+      },
+      {
+        "name": "HartreeF.R2Global.freeXConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.R2Global.anchoredFreeCurve_continuous"
+      },
+      {
+        "name": "HartreeF.R2Global.anchoredFreeCurve_bound"
+      }
+    ]
+  },
+  {
+    "module": "FActualResidualCompactSource",
+    "source": "components/FActualResidualCompactSource.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FullResidual.curveLocallyCritical"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_energy"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_extend_eq"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_energy_mixed_le"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_value_mixed_le"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_energy_cap"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_value_cap"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceSubFold"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceSubFold_distribution_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceSubFold_value_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveHartreeSource_value_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_value_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_pair_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compatibleSource_vector_ae_of_weak"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_gradient_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_paperForcingSize"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_paperForcingSize_le"
+      }
+    ]
+  },
+  {
+    "module": "FActualFiniteSCurveFinite",
+    "source": "components/FActualFiniteSCurveFinite.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FiniteSActualX.uniform_compact_graph_of_finiteS"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_global_curveFinite_of_finiteS"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actual_path_value_size"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.finiteS_of_global_curveFinite"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_stable_global_curveFinite_of_finiteS"
+      }
+    ]
+  },
+  {
+    "module": "FActualCriticalThreshold",
+    "source": "components/FActualCriticalThreshold.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualCriticalThreshold.StableDatum"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.trapping_factor_pos"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.stable_kinetic_le_energy"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.stable_energy_nonneg"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.trapping_factor_ground_energy"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.BadDatum"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.badEnergies"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.badEnergies_nonempty"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.badEnergies_bddBelow"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.criticalLevel_le_bad_energy"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.global_curveFinite_below_criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.marked_global_curveFinite_below_criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence"
+      }
+    ]
+  },
+  {
+    "module": "FMarkedBelowEnergyTransport",
+    "source": "components/FMarkedBelowEnergyTransport.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_marked_global_curveFinite"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_global_curveFinite_of_recenter"
+      }
+    ]
+  }
+]
