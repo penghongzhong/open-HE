@@ -1,0 +1,10 @@
+{
+  "toolchain/bin/lean": "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38",
+  "toolchain/lib/lean/libInit_shared.so": "7831b707e868cee76c353d26649fbd8981b2f4d7e0329af55bbf4fa9e0c69350",
+  "toolchain/lib/lean/libLake_shared.so": "b7d0d1aa2909a742a34ff5faa1d8047575adcd72d923d285b125cdc6473a547e",
+  "toolchain/lib/lean/libleanshared.so": "2a8e5aed7cac5181a0c2a9f87d87915e039b851f57738a2feefd7cb1e2840e21",
+  "toolchain/lib/lean/libleanshared_1.so": "691bf49d9e542a15808fad9d1f8c5df45860166f77efa57961b5335e65a3a0ed",
+  "toolchain/lib/lean/libleanshared_2.so": "141cbfdb3bc2016cd68e0bebc2e5494818213b462ed985afa6d975d4872fb8ec",
+  "mathlib/lean-toolchain": "bc84812c94489d1e3e191baa1dc10d5eb684382d7fe9d2a5ab085e72c1c67e47",
+  "mathlib/lake-manifest.json": "5f5f5d5825931416d9fc99a21950b1f8cfa9c98a52a6af0af89a577d72310014"
+}

@@ -1,0 +1,46 @@
+name: Pinned Lean finite-S verification
+on:
+  push:
+    branches: [main]
+    paths: ['Lean/**', 'verification/**', 'lean-toolchain', '.github/workflows/verify.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: open-he-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore pinned official Lean
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL https://github.com/leanprover/lean4/releases/download/v4.35.0-rc3/lean-4.35.0-rc3-linux.tar.zst -o /tmp/lean.tar.zst
+          echo '1526de16c0496f16b46a168f26c990af4e3796505273c3342fec17d72d763997  /tmp/lean.tar.zst' | sha256sum -c -
+          tar --no-same-owner --zstd -xf /tmp/lean.tar.zst -C /tmp
+          echo /tmp/lean-4.35.0-rc3-linux/bin >> "$GITHUB_PATH"
+          /tmp/lean-4.35.0-rc3-linux/bin/lean --version
+      - name: Restore pinned Mathlib and official cache
+        shell: bash
+        run: |
+          set -euo pipefail
+          git init /tmp/mathlib
+          git -C /tmp/mathlib remote add origin https://github.com/leanprover-community/mathlib4.git
+          git -C /tmp/mathlib fetch --depth=1 origin a98628e16c11f5167f16124105ddce53efa9bfe5
+          git -C /tmp/mathlib checkout --detach FETCH_HEAD
+          cd /tmp/mathlib
+          lake exe cache get --cache-from=master
+      - name: Check all pins, compile finite-S closure and audit public declarations
+        shell: bash
+        run: python3 verification/verify.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lean-verification-results-${{ github.run_attempt }}
+          path: verification-results/
+          retention-days: 30
+          if-no-files-found: warn
