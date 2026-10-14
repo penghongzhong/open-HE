@@ -8,8 +8,11 @@ def parse_public_output(text, declarations):
         raise ValueError('sorryAx in Lean output')
     starts = list(re.finditer(r'^@?([A-Za-z_][A-Za-z0-9_.]*)\s*:', text, re.M))
     types = {}
+    expected_names = {d['name'] for d in declarations}
     for i, match in enumerate(starts):
         name = match.group(1)
+        if name not in expected_names:
+            continue
         if name in types:
             raise ValueError('Duplicate type output: ' + name)
         types[name] = text[match.start():starts[i + 1].start() if i + 1 < len(starts) else len(text)].strip()

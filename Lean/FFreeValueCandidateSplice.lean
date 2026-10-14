@@ -106,7 +106,8 @@ theorem directionalCandidate_real_smul (α c r : ℝ) (u h : Space → ℂ) (x :
     unfold rieszConvolution
     rw [heq, integral_const_mul]
   simp only [directionalCandidate, hd, Pi.smul_apply, map_smul, smul_add,
-    mul_smul, smul_comm]
+    mul_smul]
+  exact congrArg₂ (fun x y : ℂ => x + y) rfl (smul_comm _ _ _)
 
 /-- This is literal algebra in the value difference. The only distributed
 integral is the signed directional fibre with the fixed value A. -/
@@ -163,7 +164,7 @@ theorem same_valueSize_le {p q : ℝ≥0∞} (hp : 1 ≤ p) (hq : 1 ≤ q) (hqt 
     _ ≤ ((mixedNorm volume volume p q A + mixedNorm volume volume p q z) +
           mixedNorm volume volume p q A) +
         ((mixedNorm volume volume p q A + mixedNorm volume volume p q z) +
-          mixedNorm volume volume p q A) := add_le_add (add_le_add_right ht _) (add_le_add_right ht _)
+          mixedNorm volume volume p q A) := add_le_add (add_le_add ht le_rfl) (add_le_add ht le_rfl)
     _ = _ := by ring
 
 @[simp] theorem same_changeSize (p q : ℝ≥0∞) (A z : ℝ → Space → ℂ) :

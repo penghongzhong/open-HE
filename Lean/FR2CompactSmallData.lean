@@ -113,6 +113,7 @@ theorem backwardHartreeDuhamelMap_zero_path (hDensity : OrdinaryH1Density)
   change _ - Complex.I • intervalAdvancedCriticalPath hDensity hSob h0 hfree hret F = _
   rw [hz, smul_zero, sub_zero]
 
+set_option diagnostics true in
 /-- Datum-linear terminal paths. The first radius is the public comparison
 witness, and the terminal solver is called with delta equal to that witness. -/
 theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
@@ -235,6 +236,7 @@ theorem AnchoredCompactBounds.correction_pointwise (hDensity : OrdinaryH1Density
       ⟨t, le_rfl, hta⟩)).symm.trans_le (represented_state_norm_le _
         ⟨t, le_rfl, hta⟩)).trans hnorm
 
+set_option diagnostics true in
 /-- Same canonical trajectory on the whole line, with datum-linear compact
 bounds and a genuine 5+2 alpha correction. There is no small-global input. -/
 theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
@@ -320,6 +322,7 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
       exact closed_backward_mildPath_left_mem_maximalDomain hDensity hSob h0 hfree hret
         hefree heret hH hta f p hp
   refine ⟨hglobal, ?_⟩
+  rw [hMstate]
   constructor
   · intro b hab
     obtain ⟨p, hp, hn, hc⟩ := hF b hab
@@ -327,7 +330,6 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
       hDensity hSob h0 hfree hret hefree heret hH hab f p hp
     refine ⟨p, ?_, hn, hc⟩
     intro t
-    rw [hMstate]
     exact (hVp t).symm.trans
       (maximalState_agrees hDensity hSob h0 hfree hret hH V (hV t.property)).symm
   · intro b hba
@@ -336,7 +338,6 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
       hDensity hSob h0 hfree hret hefree heret hH hba f p hp
     refine ⟨p, ?_, hn, hc⟩
     intro t
-    rw [hMstate]
     exact (hVp t).symm.trans
       (maximalState_agrees hDensity hSob h0 hfree hret hH V (hV t.property)).symm
 
