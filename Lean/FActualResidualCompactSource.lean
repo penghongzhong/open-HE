@@ -25,7 +25,7 @@ attribute [local irreducible] energySubmodule criticalPathSubmodule energyPath
 
 /-- Global finite X supplies the existing local critical-path producer.  The
 subtype interval measure is transported to restricted real time explicitly. -/
-def curveLocallyCritical {q : ℝ → EnergyState} (hq : CurveFinite q) :
+theorem curveLocallyCritical {q : ℝ → EnergyState} (hq : CurveFinite q) :
     LocallyCriticalEnergyCurve Set.univ q where
   continuousOn := hq.continuous.continuousOn
   localW := by

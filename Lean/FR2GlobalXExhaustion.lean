@@ -79,7 +79,7 @@ theorem vector_of_two_half_graph (g : ℝ → EnergyState) {a R C : ℝ}
     p r hC (fun _ => a) (fun n : ℕ => a+n) antitone_const (right_monotone a) hRn g QR hQR
     (fun n => hbound (QR n) (hQRn n)) (fun n => hslices (QR n) (hQRn n))
   obtain ⟨F,hF,hFa,_⟩ := exists_global_nestedLp_of_two_halves volume p r univ
-    measurableSet_univ a (fun t => energyComplexGradient (g t)) C C FL FR hFL hFR
+    MeasurableSet.univ a (fun t => energyComplexGradient (g t)) C C FL FR hFL hFR
     (by simpa only [left_union,univ_inter] using hLa)
     (by simpa only [right_union,univ_inter] using hRa)
     (by simpa only [left_union,univ_inter] using hLz)
@@ -109,7 +109,7 @@ theorem value_of_two_half_graph (hDensity : OrdinaryH1Density) {K : ℝ}
     hDensity hSob hC (fun _ => a) (fun n : ℕ => a+n) antitone_const (right_monotone a) hRn
     g QR hQR (fun n => hb (QR n) (hQRn n))
   obtain ⟨F,hF,hFa,_⟩ := exists_global_nestedLp_of_two_halves volume 10 10 univ
-    measurableSet_univ a (fun t => energyValue (g t))
+    MeasurableSet.univ a (fun t => energyValue (g t))
     (normComparisonConstant K*R) (normComparisonConstant K*R) FL FR hFL hFR
     (by simpa only [left_union,univ_inter] using hLa)
     (by simpa only [right_union,univ_inter] using hRa)

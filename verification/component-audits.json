@@ -676,5 +676,68 @@
         "name": "HartreeF.R2Global.anchoredFreeCurve_bound"
       }
     ]
+  },
+  {
+    "module": "FActualResidualCompactSource",
+    "source": "components/FActualResidualCompactSource.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FullResidual.curveLocallyCritical"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_energy"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_extend_eq"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_energy_mixed_le"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_value_mixed_le"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_energy_cap"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveCompactPath_value_cap"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceSubFold"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceSubFold_distribution_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceSubFold_value_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource"
+      },
+      {
+        "name": "HartreeF.FullResidual.curveHartreeSource_value_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_value_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_pair_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compatibleSource_vector_ae_of_weak"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_gradient_ae"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_paperForcingSize"
+      },
+      {
+        "name": "HartreeF.FullResidual.compactResidualSource_paperForcingSize_le"
+      }
+    ]
   }
 ]
