@@ -1390,5 +1390,23 @@
         "name": "HartreeF.ActualCriticalLimitGlobal.critical_strong_limit_global_compact"
       }
     ]
+  },
+  {
+    "module": "FActualScaleEscapeContradiction",
+    "source": "components/FActualScaleEscapeContradiction.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualScaleEscape.normalized_scale_atTop_not_nonzero_limit"
+      },
+      {
+        "name": "HartreeF.ActualScaleEscape.actual_normalized_return_time"
+      },
+      {
+        "name": "HartreeF.ActualScaleEscape.moving_time_tendsto_of_global"
+      },
+      {
+        "name": "HartreeF.ActualScaleEscape.normalized_return_time_not_tendsto"
+      }
+    ]
   }
 ]

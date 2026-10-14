@@ -1,0 +1,13 @@
+import FActualScaleEscapeContradiction
+
+#print axioms HartreeF.ActualScaleEscape.normalized_scale_atTop_not_nonzero_limit
+#check @HartreeF.ActualScaleEscape.normalized_scale_atTop_not_nonzero_limit
+
+#print axioms HartreeF.ActualScaleEscape.actual_normalized_return_time
+#check @HartreeF.ActualScaleEscape.actual_normalized_return_time
+
+#print axioms HartreeF.ActualScaleEscape.moving_time_tendsto_of_global
+#check @HartreeF.ActualScaleEscape.moving_time_tendsto_of_global
+
+#print axioms HartreeF.ActualScaleEscape.normalized_return_time_not_tendsto
+#check @HartreeF.ActualScaleEscape.normalized_return_time_not_tendsto
