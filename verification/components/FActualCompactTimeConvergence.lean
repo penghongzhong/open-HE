@@ -1,0 +1,10 @@
+import FActualCompactTimeConvergence
+
+#print axioms HartreeF.ActualCompactTimeConvergence.exists_forward_compact_state_bound
+#check @HartreeF.ActualCompactTimeConvergence.exists_forward_compact_state_bound
+
+#print axioms HartreeF.ActualCompactTimeConvergence.exists_backward_compact_state_bound
+#check @HartreeF.ActualCompactTimeConvergence.exists_backward_compact_state_bound
+
+#print axioms HartreeF.ActualCompactTimeConvergence.actual_moving_time_tendsto
+#check @HartreeF.ActualCompactTimeConvergence.actual_moving_time_tendsto

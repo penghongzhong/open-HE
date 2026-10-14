@@ -1348,5 +1348,20 @@
         "name": "HartreeF.ActualNativeGlobalCompactOrbit.exists_actual_global_compact_orbit_with_local_bounds"
       }
     ]
+  },
+  {
+    "module": "FActualCompactTimeConvergence",
+    "source": "components/FActualCompactTimeConvergence.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualCompactTimeConvergence.exists_forward_compact_state_bound"
+      },
+      {
+        "name": "HartreeF.ActualCompactTimeConvergence.exists_backward_compact_state_bound"
+      },
+      {
+        "name": "HartreeF.ActualCompactTimeConvergence.actual_moving_time_tendsto"
+      }
+    ]
   }
 ]
