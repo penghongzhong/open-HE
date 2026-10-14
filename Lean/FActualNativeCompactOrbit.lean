@@ -16,7 +16,7 @@ namespace HartreeF.ActualNativeCompactOrbit
 open EnergySpace StateEnergy StateSharpThreshold MaximalTrajectory MaximalFiniteSGlobal
   SobolevStretch StationarySelfTest Retarded ActualStrichartz EndpointOutput ForcingDomain
   SharpOrdinary Regularization.Actual HeatRiesz R2SquareTail CriticalAffine
-  ActualCriticalThreshold DynamicSharpW LocalRellich LinearWeakEquation
+  ProfileEnergy ActualProfileEnergy ActualCriticalThreshold DynamicSharpW LocalRellich LinearWeakEquation
   ActualNativeOrbitWindows ActualCompactOrbitGauge ActualBilateralCriticalProfile
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
 
@@ -88,12 +88,14 @@ theorem exists_actual_native_compact_orbit
   have hQenergy : ∀ q ∈ Q, totalEnergy alpha q = Ec := by
     apply closure_minimal _ (isClosed_eq (totalEnergy_contDiff hOrd).continuous continuous_const)
     rintro q ⟨t, rfl⟩
+    change totalEnergy alpha (p t) = Ec
     rw [show p t = affineState (hr0 t) (y0 t) (V.state t) from
       criticalAffineState_symm_eq_affineState _ _ _ _, affineState_totalEnergy hOrd]
     exact (hNative t t.property).1
   have hQkinetic : ∀ q ∈ Q, gradientSquared q ≤ kappa alpha*Ec := by
     apply closure_minimal _ (isClosed_le DynamicSharpW.gradientSquared_continuous continuous_const)
     rintro q ⟨t, rfl⟩
+    change gradientSquared (p t) ≤ kappa alpha*Ec
     rw [show p t = affineState (hr0 t) (y0 t) (V.state t) from
       criticalAffineState_symm_eq_affineState _ _ _ _, affineState_gradientSquared]
     exact (hNative t t.property).2.1
@@ -110,8 +112,8 @@ theorem exists_actual_native_compact_orbit
   let y (t : ℝ) := if ht : t ∈ V.domain then y0 ⟨t, ht⟩ else 0
   have hr (t : ℝ) : 0 < r t := by
     by_cases ht : t ∈ V.domain
-    · simpa only [r, dif_pos ht] using hr0 ⟨t, ht⟩
-    · simp only [r, dif_neg ht, zero_lt_one]
+    · simpa only [r, dite_eq_left ht] using hr0 ⟨t, ht⟩
+    · simp only [r, dite_eq_right ht, zero_lt_one]
   refine ⟨hEc, hEcW, psi, hEpsi, hstable, hfuture, hpast, hNative,
     r, hr, y, Q, hQc, hQne, hQzero, ?_, ?_⟩
   · intro q hq
@@ -119,6 +121,13 @@ theorem exists_actual_native_compact_orbit
       (hQenergy q hq).trans_lt hEcW⟩
   · intro t ht
     have hp : p ⟨t, ht⟩ ∈ Q := subset_closure (mem_range_self _)
-    simpa only [r, y, p, dif_pos ht] using hp
+    let normalAt : ℝ → Space → Prop := fun a z =>
+      ∀ ha : 0 < a, (criticalAffineState a ha z).symm (V.state t) ∈ Q
+    have hraw : normalAt (r0 ⟨t, ht⟩) (y0 ⟨t, ht⟩) := fun _ => hp
+    have hr_eq : r t = r0 ⟨t, ht⟩ := dite_eq_left ht
+    have hy_eq : y t = y0 ⟨t, ht⟩ := dite_eq_left ht
+    have hnormalized : normalAt (r t) (y t) :=
+      Eq.mpr (congrArg₂ normalAt hr_eq hy_eq) hraw
+    exact hnormalized (hr t)
 
 end HartreeF.ActualNativeCompactOrbit

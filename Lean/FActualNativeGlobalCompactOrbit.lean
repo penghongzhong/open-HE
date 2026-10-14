@@ -17,7 +17,7 @@ namespace HartreeF.ActualNativeGlobalCompactOrbit
 open EnergySpace StateEnergy StateSharpThreshold MaximalTrajectory MaximalFiniteSGlobal
   SobolevStretch StationarySelfTest Retarded ActualStrichartz EndpointOutput ForcingDomain
   SharpOrdinary Regularization.Actual HeatRiesz R2SquareTail CriticalAffine
-  ActualCriticalThreshold DynamicSharpW LocalRellich LinearWeakEquation
+  ProfileEnergy ActualProfileEnergy ActualCriticalThreshold DynamicSharpW LocalRellich LinearWeakEquation
   ActualNativeOrbitWindows ActualCompactOrbitGauge ActualBilateralCriticalProfile
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
 
