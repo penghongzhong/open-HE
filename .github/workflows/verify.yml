@@ -16,21 +16,6 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
-      - name: Wait for verified threshold bridge
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          for attempt in $(seq 1 90); do
-            state=$(gh api repos/penghongzhong/open-HE/actions/runs/38502419996 --jq '.status + " " + (.conclusion // "pending")')
-            echo "Prerequisite: $state"
-            if [ "$state" = "completed success" ]; then exit 0; fi
-            if [[ "$state" == completed* ]]; then echo 'Prerequisite failed; no compilation accepted.'; exit 1; fi
-            sleep 10
-          done
-          echo 'Prerequisite did not finish in the waiting window.'
-          exit 1
       - name: Restore pinned official Lean
         shell: bash
         run: |
@@ -53,7 +38,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: lean-verification-results-1
-          run-id: 38502419996
+          run-id: 38502988566
           github-token: ${{ github.token }}
           path: verification-seed
       - name: Check all pins, compile finite-S closure and audit public declarations

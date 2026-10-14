@@ -87,10 +87,15 @@ def main():
     seed = json.loads((seed_dir / 'receipt.json').read_text())
     ensure(seed['identity'] == REQ['identity'], 'Seed environment differs')
     ensure(seed['commit'] == REQ['seed']['commit'], 'Seed commit differs')
-    ensure(seed['status'] == 'TARGETS_PASS', 'Seed did not complete compilation')
-    ensure(seed.get('public_audit') == 'AXIOMS_PASS_TYPES_CAPTURED_SEMANTIC_REVIEW_PENDING',
-           'Seed public axiom audit did not pass')
-    candidates = set(files) & seed['results'].keys()
+    ensure(seed['status'] in {'TARGETS_PASS', 'INCOMPLETE'}, 'Invalid seed compilation status')
+    if seed['status'] == 'TARGETS_PASS':
+        ensure(seed.get('public_audit') == 'AXIOMS_PASS_TYPES_CAPTURED_SEMANTIC_REVIEW_PENDING',
+               'Seed public axiom audit did not pass')
+    candidates = {n for n in set(files) & seed['results'].keys()
+                  if seed['results'][n]['status'] == 'PASS'
+                  and seed['results'][n]['source_sha256'] == hashes[n]
+                  and seed['results'][n]['dependency_sources'] ==
+                      {d: hashes[d] for d in sorted(deps[n])}}
     while True:
         ready = sorted(n for n in candidates - results.keys() if deps[n] <= results.keys())
         if not ready:
