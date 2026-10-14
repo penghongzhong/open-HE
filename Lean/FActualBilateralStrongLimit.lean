@@ -2,6 +2,7 @@ import FActualFiniteSideGraphStability
 import FActualBilateralPathTools
 import FActualCriticalThreshold
 import FActualDynamicSharpWTrapping
+import FFreeHartreeEnergyTails
 
 /-! Strong limits preserve bilateral infinite S below the original ground
 state thresholds. The native gradient cap is derived in the public threshold
@@ -54,7 +55,8 @@ theorem forward_bad_of_strong_limit
     ((actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 (z N)).path hb hI)).trans
     (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left (hgraph b hb hI)
       (graphSConstant_nonneg hSob)))
-  exact hS.trans_eq (ENNReal.ofReal_coe_nnreal M)
+  exact hS.trans_eq (show ENNReal.ofReal (M : ℝ) = (M : ℝ≥0∞) from
+    ENNReal.ofReal_coe_nnreal)
 
 theorem backward_bad_of_strong_limit
     (hDensity : OrdinaryH1Density)
@@ -87,7 +89,8 @@ theorem backward_bad_of_strong_limit
     ((actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 (z N)).path hb hI)).trans
     (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left (hgraph b hb hI)
       (graphSConstant_nonneg hSob)))
-  exact hS.trans_eq (ENNReal.ofReal_coe_nnreal M)
+  exact hS.trans_eq (show ENNReal.ofReal (M : ℝ) = (M : ℝ≥0∞) from
+    ENNReal.ofReal_coe_nnreal)
 
 /-- The exact strong limit retains the energy level, a quantitative kinetic
 gap, both infinite-S directions, and native conservation/trapping. No cap of
@@ -148,7 +151,8 @@ theorem threshold_bilateral_limit
     exact ((pureGradientNorm_lt_iff_gradientSquared_lt _ _).mpr
       (hc.1.trans_lt hc.2)).le
   have hzNorm : Tendsto (fun n => ‖z n - psi‖) atTop (𝓝 0) := by
-    simpa only [sub_self, norm_zero] using (hz.sub tendsto_const_nhds).norm
+    have hc : Tendsto (fun _ : ℕ => psi) atTop (𝓝 psi) := tendsto_const_nhds
+    simpa only [sub_self, norm_zero] using (hz.sub hc).norm
   refine ⟨hne, hEpsi, hApsi, hstable, ?_, ?_, ?_⟩
   · exact forward_bad_of_strong_limit hDensity hSob h0 hfree hret hefree heret
       hOrd hgen hUnique psi (pureGradientNorm_nonneg _) hgradient z hzNorm hfuture
