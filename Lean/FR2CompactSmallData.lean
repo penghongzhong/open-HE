@@ -12,7 +12,8 @@ All constants precede every anchor, datum and compact interval. -/
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
-set_option maxHeartbeats 3000000
+set_option maxHeartbeats 6000000
+set_option synthInstance.maxHeartbeats 200000
 open MeasureTheory Filter
 open scoped ENNReal NNReal Topology
 namespace HartreeF.R2SmallData
@@ -22,6 +23,12 @@ open CriticalUniqueness EndpointOutput FreeDataDependence CriticalSourceBounds
 open IntervalTimeTransport MaximalTrajectory
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
+local instance r2PathAddCommGroup (a b : ℝ) :
+    AddCommGroup (CriticalPath (intervalMeasure a b)) :=
+  Submodule.addCommGroup (criticalPathSubmodule (intervalMeasure a b))
+local instance r2PathModule (a b : ℝ) :
+    Module ℂ (CriticalPath (intervalMeasure a b)) :=
+  Submodule.module (criticalPathSubmodule (intervalMeasure a b))
 attribute [local irreducible] energySubmodule criticalPathSubmodule
   energyPath criticalGradient hartreeDuhamelMap backwardHartreeDuhamelMap
   criticalPathIntervalSource freeCriticalPath freeEnergyState
@@ -336,13 +343,15 @@ theorem actualMaximalTrajectory_global_of_recenter (hDensity : OrdinaryH1Density
   let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH T f
   let R := M.recenter s hs
   let V := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH s (M.state s)
-  have hRV : R.domain ⊆ V.domain := subset_maximalDomain R
+  have hRV : R.domain ⊆ V.domain := by
+    simpa only [V, actualMaximalTrajectory] using subset_maximalDomain R
   have hT : T ∈ V.domain := hRV M.center_mem
   have hVT : V.state T = f :=
     (LocalMildTrajectory.overlap_eq hDensity hSob h0 hfree hret hH V R hT M.center_mem).trans
       M.initial
   let W := V.recenterWithDatum T f hT hVT
-  have hWM : W.domain ⊆ M.domain := subset_maximalDomain W
+  have hWM : W.domain ⊆ M.domain := by
+    simpa only [M, actualMaximalTrajectory] using subset_maximalDomain W
   have hglobal : M.domain = Set.univ := by
     apply Set.eq_univ_of_forall
     intro t
