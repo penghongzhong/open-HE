@@ -111,7 +111,6 @@ theorem given_critical_native_compact_orbit
     exact ⟨hQenergy q hq, hQkinetic q hq, (hQkinetic q hq).trans_lt hgap,
       (hQenergy q hq).trans_lt hEcW⟩
   · intro t ht
-    change L6OrbitGauge.Gauge (V.state t) (r t) (y t)
     have hr_eq : r t = r0 ⟨t, ht⟩ := dite_eq_left ht
     have hy_eq : y t = y0 ⟨t, ht⟩ := dite_eq_left ht
     rw [hr_eq, hy_eq]
