@@ -100,7 +100,8 @@ theorem freeJoint_local_tendsto_zero (q : Cutoff) {f : ℕ → L2} {B : ℝ}
     ((Real.continuous_sqrt.tendsto 0).comp
       (freeJoint_cylinder_integral_tendsto_zero q hB hbound hweak hT hR z))
   have he (n : ℕ) := eLpNorm_two_eq_ofReal_sqrt (freeJoint_cylinder_memLp (f n) T R z)
-  simpa only [Function.comp_def, Real.sqrt_zero, ENNReal.ofReal_zero, ← he] using h
+  simp only [he]
+  simpa only [Function.comp_def, Function.uncurry, Real.sqrt_zero, ENNReal.ofReal_zero] using h
 
 theorem freeJoint_local_mixedNorm_tendsto_zero (q : Cutoff) {f : ℕ → L2} {B : ℝ}
     (hB : 0 ≤ B) (hbound : ∀ n, ‖f n‖ ≤ B)
