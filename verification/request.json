@@ -90,6 +90,7 @@
     "FNegativeInitialApproximation",
     "FNegativeInitialCauchyFamily",
     "FNormalizedBilateralGraphBounds",
+    "FPaperMainEnvironment",
     "FPaperNormBackwardCompactPerturbation",
     "FPaperNormCompactPerturbation",
     "FPartitionEndpointBound",
@@ -723,6 +724,7 @@
     "FOrthogonalityCutoff",
     "FOrthogonalityPowerCutoff",
     "FOrthogonalityScaleCutoff",
+    "FPaperMainEnvironment",
     "FPaperNormBackwardCompactPerturbation",
     "FPaperNormCompactPerturbation",
     "FPaperStabilitySumNorm",
@@ -1878,7 +1880,8 @@
     "WeakProductCutoffDomains": "44edf6b8a001dd615b307f8d279e4a7c7f071d7ab447ac8afb8424f8497d5ab3",
     "WeakSmoothProduct": "d701c7706addeb838cb30d720dfc6bb1955f560f82ae6d5594cb2ec423c2b3eb",
     "WeightedProjectionDifference": "e7ddd2cb638b346853f413d099b2c63167d32ebb571026c070f65f31eb694262",
-    "WeightedSixComparison": "85830c3a0a4a34191c57c06ca15307c34e065dac6b4e586503114db8b226d5b0"
+    "WeightedSixComparison": "85830c3a0a4a34191c57c06ca15307c34e065dac6b4e586503114db8b226d5b0",
+    "FPaperMainEnvironment": "3543313335cafe4925e93e2c154fe37fb3f46c889d14013e0fcbd9c5ff458d9c"
   },
   "declarations": [
     {
@@ -2764,7 +2767,7 @@
     }
   ],
   "seed": {
-    "run": 38574442473,
-    "commit": "6cd6d37f7dec1efb3b4c09aab45fb9cfe97b27e4"
+    "run": 38575333196,
+    "commit": "5bcc4ead22c00e16015630325d42b914db55ab63"
   }
 }

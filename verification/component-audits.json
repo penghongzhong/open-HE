@@ -1309,5 +1309,17 @@
         "name": "HartreeF.ActualProfileEnergy.build_profile_energy_ledger"
       }
     ]
+  },
+  {
+    "module": "FPaperMainEnvironment",
+    "source": "components/FPaperMainEnvironment.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.PaperMainEnvironment.PaperThresholdConclusion"
+      },
+      {
+        "name": "HartreeF.PaperMainEnvironment.paper_threshold_conclusion_of_no_bad"
+      }
+    ]
   }
 ]
