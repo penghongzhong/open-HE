@@ -34,20 +34,14 @@ private theorem selected_finite_sum_ae {E : Type*} [AddCommMonoid E]
   filter_upwards [(eventually_all_finset s).2 h] with x hx
   exact Finset.sum_congr rfl hx
 
+omit [DecidableEq ι] in
 private theorem selected_finite_joint_sum {E : Type*} [NormedAddCommGroup E]
     (s : Finset ι) (f : ι → ℝ → Space → E)
     (h : ∀ i ∈ s, AEStronglyMeasurable (fun z : ℝ × Space => f i z.1 z.2)
       (volume.prod volume)) :
     AEStronglyMeasurable (fun z : ℝ × Space => ∑ i ∈ s, f i z.1 z.2)
       (volume.prod volume) := by
-  revert h
-  induction s using Finset.induction_on with
-  | empty => intro h; simpa using (aestronglyMeasurable_const (b := (0 : E)))
-  | @insert a s ha ih =>
-      intro h
-      simpa only [Finset.sum_insert ha, Pi.add_apply] using
-        (h a (Finset.mem_insert_self a s)).add
-          (ih (fun i hi => h i (Finset.mem_insert_of_mem hi)))
+  exact Finset.aestronglyMeasurable_fun_sum s h
 
 omit [DecidableEq ι] in
 private theorem lp_finset_sum_ae {p : ℝ≥0∞} (s : Finset ι)
@@ -57,6 +51,7 @@ private theorem lp_finset_sum_ae {p : ℝ≥0∞} (s : Finset ι)
   Lp.coeFn_fun_finsetSum s f
 
 /-- Canonical quotient representatives are added only modulo spatial AE. -/
+omit [DecidableEq ι] in
 private theorem energy_sum_fields_ae (s : Finset ι) (f : ι → EnergyState) :
     (energyValue (∑ j ∈ s, f j) : Space → ℂ) =ᵐ[volume]
       (fun x => ∑ j ∈ s, energyValue (f j) x) ∧
@@ -186,7 +181,7 @@ theorem selected_head_defect_tendsto (hDensity : OrdinaryH1Density) {K α c : �
     intro i hi j hj hij
     have hne : i.val ≠ j.val := fun he => hij (Fin.ext he)
     unfold frameSeparation
-    exact
+    simpa only [a, y, τ, mul_comm] using
       hp.orthogonal i.val j.val (selected_head_active P hJ hi)
         (selected_head_active P hJ hj) hne
   have hd := actual_finite_profile_gradient_defect hDensity hSob hH
