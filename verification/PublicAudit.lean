@@ -14,6 +14,7 @@ import FActualDynamicSharpWTrapping
 import FActualMaximalMildEnergyConservation
 import FSharpWFiniteSGlobalScattering
 import FActualCriticalThreshold
+import FActualNativeCompactOrbit
 
 set_option pp.fullNames true
 set_option pp.universes false
@@ -97,6 +98,7 @@ set_option format.width 120
 #print axioms HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt
 #print axioms HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel
 #print axioms HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence
+#print axioms HartreeF.ActualNativeCompactOrbit.exists_actual_native_compact_orbit
 
 #check @HartreeF.FiniteSContinuation.FiniteSBefore
 #check @HartreeF.FiniteSContinuation.exists_strict_extension_of_finite_s
@@ -172,3 +174,4 @@ set_option format.width 120
 #check @HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt
 #check @HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel
 #check @HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence
+#check @HartreeF.ActualNativeCompactOrbit.exists_actual_native_compact_orbit
