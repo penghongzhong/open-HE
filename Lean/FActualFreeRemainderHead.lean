@@ -15,10 +15,10 @@ set_option maxHeartbeats 2400000
 open MeasureTheory Filter
 open scoped ENNReal NNReal Topology
 namespace HartreeF.ActualFreeRemainderHead
-open EnergySpace SobolevStretch ProfileEnergy ActualStrichartz CriticalTimeSobolev
+open EnergySpace SobolevStretch StationarySelfTest ProfileEnergy ActualStrichartz CriticalTimeSobolev
   TimeHolder ProfileApproximation GeneralProfileCross CompactCross LocalProfileProducts
   FreeRemainderInputs FreeHeadSlots FreeHeadFrames CriticalAffine ForcingDomain
-  DerivativeMajorization
+  DerivativeMajorization ProfileSpatialSmoothing
 
 /-- This is ONE physical field, independent of the profile label j. -/
 def physicalFreeGradient (hDensity : OrdinaryH1Density) {K : ℝ}
@@ -66,7 +66,7 @@ theorem ForcingSequenceZero.domains {F : ℕ → ℝ → Space → ℂ}
 theorem ForcingSequenceZero.real_zero {F : ℕ → ℝ → Space → ℂ}
     (hF : ForcingSequenceZero F) :
     Tendsto (fun n => (forcingNorm (F n)).toReal) atTop (𝓝 0) := by
-  simpa only [Function.comp_apply, ENNReal.toReal_zero] using
+  simpa only [Function.comp_def, ENNReal.toReal_zero] using
     (ENNReal.tendsto_toReal (by simp : (0 : ℝ≥0∞) ≠ ∞)).comp hF.zero
 
 private theorem forcingSequenceZero_zero :
@@ -126,7 +126,7 @@ theorem HeadSlotDecay.Q_real_zero {α c : ℝ} {U H : ℕ → ℝ → Space → 
     (h : HeadSlotDecay α c U H) :
     Tendsto (fun n => (localProductNorm (ENNReal.ofReal (15/8 : ℝ))
       (U n) (H n)).toReal) atTop (𝓝 0) := by
-  simpa only [Function.comp_apply, ENNReal.toReal_zero] using
+  simpa only [Function.comp_def, ENNReal.toReal_zero] using
     (ENNReal.tendsto_toReal (by simp : (0 : ℝ≥0∞) ≠ ∞)).comp h.Q_zero
 
 /-- Signed integrability is transported by actual spatial AE equality, before

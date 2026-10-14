@@ -31,10 +31,9 @@ theorem kappa_pos {alpha : ℝ} (ha : 0 < alpha) : 0 < kappa alpha := by
 theorem active_succ_eligible (P : LinearProfileFamily) (j : ℕ)
     (hj : (j : WithTop ℕ) < P.count) : ((j+1 : ℕ) : WithTop ℕ) ≤ P.count := by
   cases hcount : P.count with
-  | top => simp [hcount]
+  | top => simp
   | coe N =>
     have hjN : j < N := by simpa [hcount] using hj
-    rw [hcount]
     exact_mod_cast Nat.succ_le_of_lt hjN
 
 /-- The sharp kinetic prefix bound uses the limiting energy and does not
@@ -96,7 +95,7 @@ theorem single_matching_limits (hDensity : OrdinaryH1Density)
     (heret : OrdinaryRetardedEndpointOutput h0 Cre)
     (hOrd : OrdinaryHLS alpha (HeatRiesz.standardRieszConstant alpha))
     (hH : SharpOrdinaryHLS alpha)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     (T : ℝ) (f phi : EnergyState) (s : ℕ → ℝ)
     (hdom : ∀ᶠ n in atTop, s n ∈
@@ -126,12 +125,12 @@ theorem single_matching_limits (hDensity : OrdinaryH1Density)
         ‖w n‖ = ‖(M.state (s n) - v n) + v n‖ := by simp [w, hn, v]
         _ ≤ ‖M.state (s n) - v n‖ + ‖v n‖ := norm_add_le _ _
         _ ≤ 1 + C := add_le_add he.le (hv n)
-    · simp only [w, if_neg hn, norm_zero]
+    · simp only [w, ite_eq_right hn, norm_zero]
       linarith
   have hv' (n : ℕ) : ‖v n‖ ≤ 1 + C := (hv n).trans (by linarith)
   have heq : w =ᶠ[atTop] (fun n => M.state (s n)) := by
     filter_upwards [eventually_ge_atTop N] with n hn
-    simp only [w, if_pos hn]
+    simp only [w, ite_eq_left hn]
   have hd : Tendsto (fun n => ‖w n - v n‖) atTop (𝓝 0) := by
     apply hmatch.congr'
     filter_upwards [heq] with n hn
@@ -147,7 +146,7 @@ theorem single_matching_limits (hDensity : OrdinaryH1Density)
       hefree heret hOrd S Bw Bs B6 T f (s n) hm).symm
   have hve : Tendsto (fun n => totalEnergy alpha (v n))
       atTop (𝓝 (totalEnergy alpha f)) := by
-    convert hwe.sub hwd using 1 <;> simp only [sub_zero]
+    convert hwe.sub hwd using 1 <;> try simp only [sub_zero]
     funext n
     ring
   have hgd := gradientSquared_difference_tendsto_zero hw hv' hd
@@ -176,15 +175,15 @@ structure ProfileEnergyLedger (hDensity : OrdinaryH1Density)
   zero_energy : ∀ j, P.profile j = 0 → totalEnergy alpha (f j) = 0
   atom_energy_limit : ∀ j, Tendsto (fun n => totalEnergy alpha (profileAtom hDensity hSob P j n))
     atTop (𝓝 (totalEnergy alpha (f j)))
-  kinetic_prefix : ∀ J, (J : WithTop ℕ) ≤ P.count →
+  kinetic_prefix : ∀ J : ℕ, (J : WithTop ℕ) ≤ P.count →
     (∑ j ∈ Finset.range J, gradientSquared (P.profile j)) ≤ kappa alpha * E0
-  remainder_eventually_below : ∀ J, (J : WithTop ℕ) ≤ P.count → ∀ᶠ n in atTop,
+  remainder_eventually_below : ∀ J : ℕ, (J : WithTop ℕ) ≤ P.count → ∀ᶠ n in atTop,
     gradientSquared (profileRemainder hDensity hSob P u J n) < gradientSquared (normalizedBubbleState alpha)
-  finite_energy_subsequence : ∀ J, (J : WithTop ℕ) ≤ P.count →
+  finite_energy_subsequence : ∀ J : ℕ, (J : WithTop ℕ) ≤ P.count →
     ∃ τ : ℕ → ℕ, StrictMono τ ∧ Tendsto (fun n => totalEnergy alpha (u (τ n)) -
       totalEnergy alpha (profileRemainder hDensity hSob P u J (τ n)) -
       ∑ j ∈ Finset.range J, totalEnergy alpha (profileAtom hDensity hSob P j (τ n))) atTop (𝓝 0)
-  allocation : ∀ J, (J : WithTop ℕ) ≤ P.count →
+  allocation : ∀ J : ℕ, (J : WithTop ℕ) ≤ P.count →
     (∑ j ∈ Finset.range J, totalEnergy alpha (f j)) ≤ E0
   stable_state : ∀ j, ∃ t : ℝ,
     let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd (T j) (f j)
@@ -206,7 +205,7 @@ theorem build_profile_energy_ledger (hDensity : OrdinaryH1Density)
     (heret : OrdinaryRetardedEndpointOutput h0 Cre)
     (hOrd : OrdinaryHLS alpha (HeatRiesz.standardRieszConstant alpha))
     (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     (P : LinearProfileFamily) (u : ℕ → EnergyState) (T : ℕ → ℝ) (f : ℕ → EnergyState)
     (hP : LinearProfileProperties hDensity hSob u P)
@@ -286,7 +285,7 @@ theorem build_profile_energy_ledger (hDensity : OrdinaryH1Density)
       (fun j _ => (hatom j).comp hτ.tendsto_atTop)
     have hr : Tendsto (fun n => totalEnergy alpha (profileRemainder hDensity hSob P u J (τ n)))
         atTop (𝓝 (E0 - ∑ j ∈ Finset.range J, totalEnergy alpha (f j))) := by
-      convert ((hE.comp hτ.tendsto_atTop).sub hsum).sub hd using 1 <;> simp only [sub_zero]
+      convert ((hE.comp hτ.tendsto_atTop).sub hsum).sub hd using 1 <;> try simp only [sub_zero]
       funext n
       ring
     have hnon : 0 ≤ E0 - ∑ j ∈ Finset.range J, totalEnergy alpha (f j) := by
@@ -327,6 +326,9 @@ theorem build_profile_energy_ledger (hDensity : OrdinaryH1Density)
   let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd (T j) (f j)
   have hh := localMildTrajectory_sharp_W_trapping hDensity hSob h0 hfree hret hefree heret
     hOrd hH hS S Bw Bs B6 (M.recenter s hs) hEW' hGW t htM
-  simpa only [kappa, he] using hh
+  change gradientSquared (M.state t) ≤ kappa alpha * totalEnergy alpha (M.state s) ∧
+    kappa alpha * totalEnergy alpha (M.state s) < gradientSquared (normalizedBubbleState alpha) at hh
+  rw [he] at hh
+  exact hh
 
 end HartreeF.ActualProfileEnergy
