@@ -235,7 +235,7 @@ theorem native_sequence_spatial_concentration
     (heret : OrdinaryRetardedEndpointOutput h0 Cre)
     (hOrd : OrdinaryHLS alpha (standardRieszConstant alpha))
     (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
-    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp criticalExponent)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
     (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
     (hExtract : OrdinaryLinearProfileExtraction hDensity hSob)
     (hgen : OrdinaryFreeDistributionScalarGenerator)
