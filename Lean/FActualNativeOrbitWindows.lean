@@ -65,33 +65,33 @@ private theorem native_path_norm_two_piece {alpha kernel s a c b : ℝ}
 
 private theorem finiteSAfter_of_native_graph_cap (hDensity : OrdinaryH1Density)
     {K alpha kernel Q : ℝ} (hSob : OrdinarySobolev K) {f : EnergyState}
-    (V : LocalMildTrajectory alpha kernel 0 f) (hQ : 0 ≤ Q)
+    (V : LocalMildTrajectory alpha kernel 0 f) (_hQ : 0 ≤ Q)
     (hcap : ∀ (b : ℝ) (hb : 0 ≤ b) (hI : Icc 0 b ⊆ V.domain),
       ‖V.path hb hI‖ ≤ Q) : ActualScattering.FiniteSAfter V := by
   let C := BilateralPathTools.graphSConstant K
   have hC : 0 ≤ C := BilateralPathTools.graphSConstant_nonneg hSob
-  refine ⟨⟨C * Q, mul_nonneg hC hQ⟩, ?_⟩
+  refine ⟨Real.toNNReal (C * Q), ?_⟩
   intro b hb hI
   have h : CriticalSourceBounds.pathValueSize (intervalMeasure 0 b) (V.path hb hI) ≤
       ENNReal.ofReal (C * Q) :=
     (BilateralPathTools.pathValueSize_le_graph hDensity hSob (V.path hb hI)).trans
     (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left (hcap b hb hI) hC))
-  simpa only [ENNReal.ofReal_eq_coe_nnreal (mul_nonneg hC hQ)] using h
+  exact h
 
 private theorem finiteSBefore_of_native_graph_cap (hDensity : OrdinaryH1Density)
     {K alpha kernel Q : ℝ} (hSob : OrdinarySobolev K) {f : EnergyState}
-    (V : LocalMildTrajectory alpha kernel 0 f) (hQ : 0 ≤ Q)
+    (V : LocalMildTrajectory alpha kernel 0 f) (_hQ : 0 ≤ Q)
     (hcap : ∀ (a : ℝ) (ha : a ≤ 0) (hI : Icc a 0 ⊆ V.domain),
       ‖V.path ha hI‖ ≤ Q) : ActualLeftScattering.FiniteSBefore V := by
   let C := BilateralPathTools.graphSConstant K
   have hC : 0 ≤ C := BilateralPathTools.graphSConstant_nonneg hSob
-  refine ⟨⟨C * Q, mul_nonneg hC hQ⟩, ?_⟩
+  refine ⟨Real.toNNReal (C * Q), ?_⟩
   intro a ha hI
   have h : CriticalSourceBounds.pathValueSize (intervalMeasure a 0) (V.path ha hI) ≤
       ENNReal.ofReal (C * Q) :=
     (BilateralPathTools.pathValueSize_le_graph hDensity hSob (V.path ha hI)).trans
     (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left (hcap a ha hI) hC))
-  simpa only [ENNReal.ofReal_eq_coe_nnreal (mul_nonneg hC hQ)] using h
+  exact h
 
 /-- The center is arbitrary in the native domain, including either side of zero. -/
 theorem native_forward_graph_unbounded (hDensity : OrdinaryH1Density)
@@ -213,13 +213,21 @@ theorem prescribed_center_bilateral_windows (hDensity : OrdinaryH1Density)
     change c+t ∈ V.domain
     exact hBI ⟨by linarith [ht.1], by linarith [ht.2]⟩
   have hnL : ‖U.path (sub_nonpos.mpr hac) hL‖ = ‖V.path hac hAI‖ := by
-    have hLU : Icc (a-c) (c-c) ⊆ U.domain := by simpa only [sub_self] using hL
-    simpa only [sub_self] using
-      BilateralWindows.translated_path_norm V U c hcenter.2 hac hAI hLU
+    let normAt : ℝ → Prop := fun B =>
+      ∀ (hle : a-c ≤ B) (hD : Icc (a-c) B ⊆ U.domain),
+        ‖U.path hle hD‖ = ‖V.path hac hAI‖
+    have hraw : normAt (c-c) := fun _ hD =>
+      BilateralWindows.translated_path_norm V U c hcenter.2 hac hAI hD
+    have hnormalized : normAt 0 := Eq.mp (congrArg normAt (sub_self c)) hraw
+    exact hnormalized _ _
   have hnR : ‖U.path (sub_nonneg.mpr hcb) hRight‖ = ‖V.path hcb hBI‖ := by
-    have hRU : Icc (c-c) (b-c) ⊆ U.domain := by simpa only [sub_self] using hRight
-    simpa only [sub_self] using
-      BilateralWindows.translated_path_norm V U c hcenter.2 hcb hBI hRU
+    let normAt : ℝ → Prop := fun A =>
+      ∀ (hle : A ≤ b-c) (hD : Icc A (b-c) ⊆ U.domain),
+        ‖U.path hle hD‖ = ‖V.path hcb hBI‖
+    have hraw : normAt (c-c) := fun _ hD =>
+      BilateralWindows.translated_path_norm V U c hcenter.2 hcb hBI hD
+    have hnormalized : normAt 0 := Eq.mp (congrArg normAt (sub_self c)) hraw
+    exact hnormalized _ _
   exact ⟨a-c, b-c, sub_nonpos.mpr hac, sub_nonneg.mpr hcb, hL, hRight,
     hlargeL.trans_eq hnL.symm, hlargeR.trans_eq hnR.symm⟩
 
