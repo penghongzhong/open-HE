@@ -123,7 +123,6 @@ private theorem norm_le_twice_of_fixed_point {E : Type*} [NormedAddCommGroup E]
   rw [hfix, hzero, sub_zero] at hc
   exact norm_le_twice_of_half_sub u p hc
 
-set_option diagnostics true in
 /-- Datum-linear terminal paths. The first radius is the public comparison
 witness, and the terminal solver is called with delta equal to that witness. -/
 theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
@@ -157,7 +156,6 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
     nlinarith only [hm]
   refine ⟨delta, hdelta, ?_⟩
   intro a b hab f hf
-  run_tac Lean.logInfo "FR2 backward: radius selected"
   let p := freeCriticalPath hDensity hSob hfree a b
     (freeEnergyState hDensity hSob (-b) f)
   have hp : ‖p‖ ≤ min 1 eta / 2 :=
@@ -190,19 +188,16 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
       norm_zero (E := CriticalGradient (intervalMeasure a b))
     exact (le_of_eq ((congrArg norm ((criticalGradient (intervalMeasure a b) j).map_zero)).trans hz)).trans
       hrho.le
-  run_tac Lean.logInfo "FR2 backward: zero coordinate bounds checked"
   have hc : ‖backwardHartreeDuhamelMap hDensity hSob h0 hfree hret hH hab f u -
       backwardHartreeDuhamelMap hDensity hSob h0 hfree hret hH hab f
         (0 : CriticalPath (intervalMeasure a b))‖ ≤
       (1/2 : ℝ) * ‖u - (0 : CriticalPath (intervalMeasure a b))‖ :=
     ((Classical.choose_spec comparisonChoice).2.2 hab f u 0 huE hzeroE
       (huW.trans hetarho) hzeroW).2
-  run_tac Lean.logInfo "FR2 backward: contraction specialized"
   have hlinear : ‖u‖ ≤ 2 * ‖p‖ :=
     norm_le_twice_of_fixed_point
       (backwardHartreeDuhamelMap hDensity hSob h0 hfree hret hH hab f) u p hfix
       (backwardHartreeDuhamelMap_zero_path hDensity hSob h0 hfree hret hH hab f) hc
-  run_tac Lean.logInfo "FR2 backward: abstract norm estimate checked"
   exact ⟨u, (isBackwardMildHartreePath_iff_fixedPoint hDensity hSob h0 hfree hret hH
     hab f u).mpr hfix, hterminal, hlinear.trans
       (mul_le_mul_of_nonneg_left
@@ -261,7 +256,6 @@ theorem AnchoredCompactBounds.correction_pointwise (hDensity : OrdinaryH1Density
       ⟨t, le_rfl, hta⟩)).symm.trans_le (represented_state_norm_le _
         ⟨t, le_rfl, hta⟩)).trans hnorm
 
-set_option diagnostics true in
 /-- Same canonical trajectory on the whole line, with datum-linear compact
 bounds and a genuine 5+2 alpha correction. There is no small-global input. -/
 theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
@@ -361,9 +355,10 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
     refine ⟨p, ?_, (Classical.choose_spec pathChoice).2.1,
       (Classical.choose_spec pathChoice).2.2⟩
     intro t
-    exact ((Classical.choose_spec extensionChoice).2 t).symm.trans
-      (maximalState_agrees hDensity hSob h0 hfree hret hH V
-        ((Classical.choose_spec extensionChoice).1 t.property)).symm
+    simpa only [actualMaximalTrajectory] using
+      ((Classical.choose_spec extensionChoice).2 t).symm.trans
+        (maximalState_agrees hDensity hSob h0 hfree hret hH V
+          ((Classical.choose_spec extensionChoice).1 t.property)).symm
   · intro b hba
     let pathChoice := hBwd b hba
     let p : CriticalPath (intervalMeasure b a) := Classical.choose pathChoice
@@ -374,9 +369,10 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
     refine ⟨p, ?_, (Classical.choose_spec pathChoice).2.1,
       (Classical.choose_spec pathChoice).2.2⟩
     intro t
-    exact ((Classical.choose_spec extensionChoice).2 t).symm.trans
-      (maximalState_agrees hDensity hSob h0 hfree hret hH V
-        ((Classical.choose_spec extensionChoice).1 t.property)).symm
+    simpa only [actualMaximalTrajectory] using
+      ((Classical.choose_spec extensionChoice).2 t).symm.trans
+        (maximalState_agrees hDensity hSob h0 hfree hret hH V
+          ((Classical.choose_spec extensionChoice).1 t.property)).symm
 
 /-- Recenter a global actual maximal curve back at the original mark. The
 second inclusion is what proves the original maximal domain is all of R. -/
