@@ -1,0 +1,10 @@
+import FActualBilateralStrongLimit
+
+#print axioms HartreeF.ActualBilateralStrongLimit.forward_bad_of_strong_limit
+#check @HartreeF.ActualBilateralStrongLimit.forward_bad_of_strong_limit
+
+#print axioms HartreeF.ActualBilateralStrongLimit.backward_bad_of_strong_limit
+#check @HartreeF.ActualBilateralStrongLimit.backward_bad_of_strong_limit
+
+#print axioms HartreeF.ActualBilateralStrongLimit.threshold_bilateral_limit
+#check @HartreeF.ActualBilateralStrongLimit.threshold_bilateral_limit

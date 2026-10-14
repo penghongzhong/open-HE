@@ -1363,5 +1363,20 @@
         "name": "HartreeF.ActualCompactTimeConvergence.actual_moving_time_tendsto"
       }
     ]
+  },
+  {
+    "module": "FActualBilateralStrongLimit",
+    "source": "components/FActualBilateralStrongLimit.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualBilateralStrongLimit.forward_bad_of_strong_limit"
+      },
+      {
+        "name": "HartreeF.ActualBilateralStrongLimit.backward_bad_of_strong_limit"
+      },
+      {
+        "name": "HartreeF.ActualBilateralStrongLimit.threshold_bilateral_limit"
+      }
+    ]
   }
 ]
