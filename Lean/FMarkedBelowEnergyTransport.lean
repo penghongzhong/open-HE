@@ -52,7 +52,11 @@ theorem actualMaximalTrajectory_marked_global_curveFinite
       hDensity hSob h0 hfree hret hefree heret hH hone (0 : Space) s s f
     dsimp only at hc
     rw [sub_self, zero_div, affineState_one_zero] at hc
-    simpa only [affineState_one_zero, timeAffine, one_pow, one_mul] using hc
+    have htime : timeAffine (1 : ℝ) s = fun t : ℝ => t+s := by
+      funext t
+      simp only [timeAffine, one_pow, one_mul]
+    rw [htime] at hc
+    simpa only [affineState_one_zero] using hc
   have hglobal : U.domain = Set.univ := by
     apply Set.eq_univ_iff_forall.mpr
     intro t
