@@ -48,7 +48,7 @@ theorem free_direction (hDensity : OrdinaryH1Density) {K : ℝ}
       freeJoint (energyGradient k (profileRemainder hDensity hSob P u J n)) t x
   fin_cases k <;> apply Complex.ext <;>
     simp [directionalField, jointProjection, Fin.sum_univ_three, coordinate,
-      EuclideanSpace.inner_basisFun_real]
+      EuclideanSpace.inner_single_right]
 
 theorem head_direction (P : LinearProfileFamily)
     (r : ∀ j, EnergyJointFields volume (g j)) (J n : ℕ) (k : Fin 3) :
@@ -150,7 +150,7 @@ theorem canonical_source_weak (hDensity : OrdinaryH1Density) {α c K C : ℝ}
 
 private theorem const_mul_zero_limit {f : ℕ → ℝ≥0∞} (hf : Tendsto f atTop (𝓝 0))
     {a : ℝ≥0∞} (ha : a ≠ ∞) : Tendsto (fun n => a*f n) atTop (𝓝 0) := by
-  simpa only [Function.comp_apply, ENNReal.rpow_one] using
+  simpa only [Function.comp_def, ENNReal.rpow_one] using
     (ENNReal.tendsto_const_mul_rpow_nhds_zero_of_pos ha (by norm_num : (0:ℝ)<1)).comp hf
 
 /-- A positive tolerance is chosen before extraction. The harmless pre-existing
@@ -207,19 +207,19 @@ theorem actual_selected_head_free_value (hDensity : OrdinaryH1Density) {α c K B
     have h : 4*b+2*e ≤ M := by
       calc
         _ = (4*b+2*e)+0+0 := by simp
-        _ ≤ M := add_le_add (add_le_add le_rfl (zero_le _)) (zero_le _)
+        _ ≤ M := add_le_add (add_le_add le_rfl bot_le) bot_le
     exact_mod_cast h
   have hMS : 4*(b : ℝ≥0∞)+2*s ≤ M := by
     have h : 4*b+2*s ≤ M := by
       calc
         _ = 0+(4*b+2*s)+0 := by simp
-        _ ≤ M := add_le_add (add_le_add (zero_le _) le_rfl) (zero_le _)
+        _ ≤ M := add_le_add (add_le_add bot_le le_rfl) bot_le
     exact_mod_cast h
   have hMW : 2*((b : ℝ≥0∞)+w) ≤ M := by
     have h : 2*(b+w) ≤ M := by
       calc
         _ = 0+0+2*(b+w) := by simp
-        _ ≤ M := add_le_add (add_le_add (zero_le _) (zero_le _)) le_rfl
+        _ ≤ M := add_le_add (add_le_add bot_le bot_le) le_rfl
     exact_mod_cast h
   intro ε hε
   obtain ⟨m, hm⟩ := choose_free_tolerance hH.order_pos hH.order_lt_three Ccont M hε
