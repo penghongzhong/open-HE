@@ -41,7 +41,7 @@ theorem localize_spatial_support (I : Set ℝ) (S : Set Space) (h : ℝ → Spac
     (t : ℝ) : Function.support (localize I S h t) ⊆ S := by
   intro x hx
   by_contra hxs
-  exact hx (by simp [localize, hxs])
+  exact hx (indicator_of_notMem (fun htx : (t,x) ∈ I.prod S => hxs htx.2) _)
 
 theorem localize_mixedNorm_eq (I : Set ℝ) (S : Set Space)
     (hI : MeasurableSet I) (hS : MeasurableSet S) (p q : ℝ≥0∞)
@@ -56,9 +56,15 @@ theorem localize_mixedNorm_eq (I : Set ℝ) (S : Set Space)
   · simp only [indicator_of_mem ht]
     have he : localize I S h t = S.indicator (h t) := by
       funext x
-      simp [localize, ht]
+      by_cases hx : x ∈ S
+      · simp only [localize, indicator_of_mem (show (t,x) ∈ I.prod S from ⟨ht,hx⟩),
+          indicator_of_mem hx, Function.uncurry_apply_pair]
+      · simp only [localize, indicator_of_notMem (fun htx : (t,x) ∈ I.prod S => hx htx.2),
+          indicator_of_notMem hx]
     rw [he, eLpNorm_indicator_eq_eLpNorm_restrict hS.nullMeasurableSet]
-  · have he : localize I S h t = 0 := by funext x; simp [localize, ht]
+  · have he : localize I S h t = 0 := by
+      funext x
+      exact indicator_of_notMem (fun htx : (t,x) ∈ I.prod S => ht htx.1) _
     simp [he, ht]
 
 /-- A finite spatial support lowers the exponent without losing the true domain. -/
@@ -90,7 +96,8 @@ theorem mixed_of_slice_bound {E F : Type*}
   let K : ℝ≥0 := C.toNNReal
   have hK : (K : ℝ≥0∞) = C := ENNReal.coe_toNNReal hC
   have hm := spatial_lp_time_measurable volume volume q hq hqT f hf
-  have he := eLpNorm_le_nnreal_smul_eLpNorm_of_ae_le_mul' (c := K) hm
+  have he := eLpNorm_le_nnreal_smul_eLpNorm_of_ae_le_mul'
+    (g := fun t => eLpNorm (g t) r volume) (c := K) hm
     (by simpa only [enorm_eq_self, hK] using hs) p
   simpa only [mixedNorm, ENNReal.smul_def, hK] using he
 
@@ -123,8 +130,9 @@ theorem bounded_support_mixed_top {E : Type*}
   rw [eLpNorm_exponent_top hm]
   apply eLpNormEssSup_le_of_ae_enorm_bound
   filter_upwards [hf.prodMk_left] with t ht
-  simpa only [enorm_eq_self] using
-    (finite_support_lp_bound volume hq hM hS hSf ht (hbound t) (hsupport t)).2
+  change eLpNorm (f t) (ENNReal.ofReal q) volume ≤ _
+  have ht' : AEStronglyMeasurable (f t) volume := ht
+  exact (finite_support_lp_bound volume hq hM hS hSf ht' (hbound t) (hsupport t)).2
 
 /-- L-infinity_t L2_x and local L2_t L2_x interpolate on the SAME localized field. -/
 theorem mixed_five_two_interpolate {h : ℝ → Space → ℂ}
@@ -251,9 +259,9 @@ theorem compact_slots_bound {α c : ℝ} (hHLS : OrdinaryHLS α c) :
   have hod : 0 ≤ 1/(12/(7+α))-1/2 := by
     have := one_div_le_one_div_of_le hov hov2
     linarith
-  letI : ENNReal.HolderTriple (ENNReal.ofReal (4/(3-α)))
+  let : ENNReal.HolderTriple (ENNReal.ofReal (4/(3-α)))
       (ENNReal.ofReal (12/(1+3*α))) (ENNReal.ofReal (6/5 : ℝ)) := hiH.ennrealOfReal
-  letI : ENNReal.HolderTriple (ENNReal.ofReal (12/(3-α)))
+  let : ENNReal.HolderTriple (ENNReal.ofReal (12/(3-α)))
       (ENNReal.ofReal (12/(7+α))) (ENNReal.ofReal (6/5 : ℝ)) := hoH.ennrealOfReal
   obtain ⟨Ci,hCi⟩ := riesz_product_estimate (p₁ := 2) (p₂ := ∞)
     hHLS hi1 hiα hir hiH.symm.pos hirel (by norm_num) (by norm_num)
@@ -287,7 +295,7 @@ theorem compact_slots_bound {α c : ℝ} (hHLS : OrdinaryHLS α c) :
     have hpoint : ∀ t x, ‖fi t x‖ ≤ ((3+α)*M^(2+α)) * ‖H t x‖ := by
       intro t x
       by_cases hx : (t,x) ∈ I.prod S
-      · simpa only [H, localize, indicator_of_mem hx, Function.uncurry_apply_pair] using
+      · simpa only [fi, directionalDensity, H, localize, indicator_of_mem hx, Function.uncurry_apply_pair] using
           (density_action_amplitude ha hM (norm_nonneg (h t x)) (hAB t x) le_rfl)
       · simp [fi, directionalDensity, hAS t x hx, densityDerivative_zero, H, localize, hx]
     have hb := mixed_le_const_mul (p := 2)
@@ -318,7 +326,7 @@ theorem compact_slots_bound {α c : ℝ} (hHLS : OrdinaryHLS α c) :
     have hpoint : ∀ t x, ‖go t x‖ ≤ ((2+α)*M^(1+α)) * ‖H t x‖ := by
       intro t x
       by_cases hx : (t,x) ∈ I.prod S
-      · simpa only [H, localize, indicator_of_mem hx, Function.uncurry_apply_pair] using
+      · simpa only [fi, directionalDensity, H, localize, indicator_of_mem hx, Function.uncurry_apply_pair] using
           (local_action_amplitude ha hM (norm_nonneg (h t x)) (hAB t x) le_rfl)
       · simp [go, hAS t x hx, localFactorDerivative_zero (by linarith : 0 < 1+α), H, localize, hx]
     have hb := mixed_le_const_mul (p := 2)
@@ -350,7 +358,7 @@ theorem compact_slots_bound {α c : ℝ} (hHLS : OrdinaryHLS α c) :
       (C := ENNReal.ofReal (3+α)) (D := 1) hM
       (show 0 ≤ 2+α by linarith) (show 0 ≤ 2+α by linarith)
       hid (le_of_lt (one_div_pos.mpr hiH.symm.pos))
-    simp only [one_mul, mul_one] at hp
+    simp only [one_mul] at hp
     rw [show (2+α)+(2+α)=4+2*α by ring, he] at hp
     have hb := hi.2.trans (mul_le_mul' (mul_le_mul' le_rfl hfiB) hgiB)
     calc
@@ -371,7 +379,7 @@ theorem compact_slots_bound {α c : ℝ} (hHLS : OrdinaryHLS α c) :
       (C := 1) (D := ENNReal.ofReal (2+α)) hM
       (show 0 ≤ 3+α by linarith) (show 0 ≤ 1+α by linarith)
       (le_of_lt (one_div_pos.mpr hoq)) hod
-    simp only [one_mul, mul_one] at hp
+    simp only [one_mul] at hp
     rw [show (3+α)+(1+α)=4+2*α by ring, he] at hp
     have hb := ho.2.trans (mul_le_mul' (mul_le_mul' le_rfl hfoB) hgoB)
     calc
@@ -455,16 +463,24 @@ theorem compact_free_head_zero {α c : ℝ} (hHLS : OrdinaryHLS α c)
   · exact tendsto_zero_of_power_bound (by finiteness) (by norm_num) (hl0 T R 0 hT hR) hQ
   · apply tendsto_zero_of_power_bound
       (C := (Ci : ℝ≥0∞) * ENNReal.ofReal ((3+α)*M^(4+2*α)) * volume S ^ ((1+α)/3))
-      (p := 1) (by have hp : 0 ≤ (1+α)/3 := by positivity; finiteness) (by norm_num)
+      (p := 1) (by
+        have hp : 0 ≤ (1+α)/3 := by positivity
+        exact ENNReal.mul_ne_top
+          (ENNReal.mul_ne_top ENNReal.coe_ne_top ENNReal.ofReal_ne_top)
+          (ENNReal.rpow_ne_top_of_nonneg hp hSf)) (by norm_num)
       (hl0 T R 0 hT hR)
     intro n
-    simpa only [ENNReal.rpow_one] using (hslots n).2.2.2.1
+    simpa only [ENNReal.rpow_one, cylinderL2, I, S] using (hslots n).2.2.2.1
   · apply tendsto_zero_of_power_bound
       (C := (Co : ℝ≥0∞) * ENNReal.ofReal ((2+α)*M^(4+2*α)) * volume S ^ ((1+α)/3))
-      (p := 1) (by have hp : 0 ≤ (1+α)/3 := by positivity; finiteness) (by norm_num)
+      (p := 1) (by
+        have hp : 0 ≤ (1+α)/3 := by positivity
+        exact ENNReal.mul_ne_top
+          (ENNReal.mul_ne_top ENNReal.coe_ne_top ENNReal.ofReal_ne_top)
+          (ENNReal.rpow_ne_top_of_nonneg hp hSf)) (by norm_num)
       (hl0 T R 0 hT hR)
     intro n
-    simpa only [ENNReal.rpow_one] using (hslots n).2.2.2.2
+    simpa only [ENNReal.rpow_one, cylinderL2, I, S] using (hslots n).2.2.2.2
 
 /-- The pure coefficient ledger supplies absolute signed fibres at EACH index.
 N-finiteness or an asymptotic statement is never used as a fibre witness. -/
@@ -496,7 +512,7 @@ theorem scalar_signed_fibre_domains {α c : ℝ} (hHLS : OrdinaryHLS α c)
     hm.2.1.aestronglyMeasurable (by simpa only [hx1] using hf.2.1)).1
   refine ⟨?_,?_⟩
   · simpa only [pureDensityDerivative, directionalDensity] using h1
-  · simpa only [pureDensity, density, powerDensity] using h0
+  · simpa only [pureDensity, WeakHartreeChain.density, powerDensity] using h0
 
 /-- Genuine mixed domains, with actual target fields and both norm layers. -/
 structure HeadMixedDomains (α c : ℝ) (u h : ℝ → Space → ℂ) : Prop where

@@ -14,6 +14,7 @@ open MeasureTheory Filter
 open scoped ENNReal NNReal Topology
 namespace HartreeF.ActualFiniteProfileGradientDefect
 open TimeHolder EnergySpace CriticalTimeSobolev SobolevStretch ForcingDomain
+open StationarySelfTest ProfileSpatialSmoothing
 open GeneralProfileCross ProfileApproximation FiniteProfileFrameData
 open FiniteCandidateExpansion FiniteProfileCandidateLimit FiniteProfileWeakGradient
 
