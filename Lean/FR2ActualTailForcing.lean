@@ -31,9 +31,11 @@ private theorem direction_eq_coordinate (U V : ℝ → Space → Space) (j : Fin
     directionCoordinate U V j =
       gradientCoordinate j (fun t => complexGradient (U t) (V t)) := by
   funext t x
-  apply Complex.ext <;>
-    simp [directionCoordinate, directionalField, gradientCoordinate, complexGradient,
-      EuclideanSpace.inner_basisFun_real]
+  apply Complex.ext
+  · change inner ℝ (U t x) (EuclideanSpace.basisFun (Fin 3) ℝ j) = (U t x) j
+    exact EuclideanSpace.inner_basisFun_real (U t x) j
+  · change inner ℝ (V t x) (EuclideanSpace.basisFun (Fin 3) ℝ j) = (V t x) j
+    exact EuclideanSpace.inner_basisFun_real (V t x) j
 
 private theorem zero_profile (j : Fin 3) :
     ScalarProfile (0 : ℝ → Space → ℂ) (directionCoordinate 0 0 j) := by
@@ -45,9 +47,11 @@ private theorem zero_profile (j : Fin 3) :
     by simp [mixedNorm], by simp [mixedNorm], by simp [mixedNorm]⟩
 
 private theorem zero_inDot : InDotH1 (0 : Space → ℂ) 0 0 := by
-  refine ⟨memLp_zero, memLp_zero, memLp_zero, ?_, ?_⟩
-  · simpa using FiniteProfileWeakGradient.weakGradient_zero
-  · simpa using FiniteProfileWeakGradient.weakGradient_zero
+  refine ⟨MemLp.zero, MemLp.zero, MemLp.zero, ?_, ?_⟩
+  · change HasWeakGradient (fun _ : Space => (0 : ℝ)) (fun _ => 0)
+    exact FiniteProfileWeakGradient.weakGradient_zero
+  · change HasWeakGradient (fun _ : Space => (0 : ℝ)) (fun _ => 0)
+    exact FiniteProfileWeakGradient.weakGradient_zero
 
 /-- The per-coordinate domains use the true global X of this actual curve. -/
 theorem joint_scalar_profiles {K : ℝ} (hSob : OrdinarySobolev K)
@@ -119,15 +123,15 @@ private theorem joint_projected_W_le {g : ℝ → EnergyState}
       r.joint_V.aestronglyMeasurable
       (fun t x => (projected_norm_le_packed (r.U t) (r.V t) x).2)).trans_eq hm
 
-private theorem zero_reference_budget {α : ℝ} (hα : 0 < α)
+private theorem zero_reference_budget {α : ℝ} (_hα : 0 < α)
     {g : ℝ → EnergyState} (r : EnergyJointFields volume g) :
     vectorDifferenceBudget α volume r.u 0 r.U r.V 0 0 =
       mixedNorm volume volume ∞ 6 r.u ^ (2*α) *
       mixedNorm volume volume 10 10 r.u ^ (4 : ℝ) *
       (mixedNorm volume volume 10 (ENNReal.ofReal (30/13 : ℝ)) r.U +
        mixedNorm volume volume 10 (ENNReal.ofReal (30/13 : ℝ)) r.V) := by
-  simp [vectorDifferenceBudget, criticalBudget, mixedNorm, hα.ne',
-    zero_mul, mul_zero, zero_add, add_zero, sub_zero]
+  simp [vectorDifferenceBudget, criticalBudget, mixedNorm,
+    zero_mul, mul_zero, add_zero, sub_zero]
 
 /-- A fixed coefficient precedes the curve, its frame, and its numerical cap.
 This is an estimate for one genuine first spatial derivative. -/
@@ -194,7 +198,7 @@ theorem exists_source_gradient_power_bound (hDensity : OrdinaryH1Density)
         ← Real.rpow_add_of_nonneg hD (by positivity) (by norm_num)]
       congr 1
       ring
-    dsimp [C']
+    change _ = (2 * (C : ℝ) * A ^ (2*α)) * D ^ (5+2*α)
     calc
       _ = (2*(C : ℝ)*A^(2*α)) * (D^(2*α)*D^(4 : ℝ)*D) := by ring
       _ = _ := by rw [hp]
@@ -202,7 +206,14 @@ theorem exists_source_gradient_power_bound (hDensity : OrdinaryH1Density)
   change vectorForcingNorm (actualGradient α c 0 r.u 0 0 r.U r.V) ≤ _
   have hn' : vectorForcingNorm (actualGradient α c 0 r.u 0 0 r.U r.V) ≤
       (C : ℝ≥0∞) * vectorDifferenceBudget α volume r.u 0 r.U r.V 0 0 := by
-    simpa only [vectorForcingNorm, actualGradient, zero_add] using hn
+    have heq : (fun t => actualFullGradient α c (r.u t) (r.U t) (r.V t) -
+        actualFullGradient α c ((0 : ℝ → Space → ℂ) t)
+          ((0 : ℝ → Space → Space) t) ((0 : ℝ → Space → Space) t)) =
+        actualGradient α c 0 r.u 0 0 r.U r.V := by
+      funext t x
+      simp only [actualGradient, Pi.sub_apply, Pi.zero_apply, zero_add]
+    rw [heq] at hn
+    exact hn
   rw [zero_reference_budget hH.order_pos r] at hn'
   exact hn'.trans ((mul_le_mul' le_rfl hb).trans_eq hnum)
 

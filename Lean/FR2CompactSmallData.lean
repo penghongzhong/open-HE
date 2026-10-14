@@ -23,12 +23,6 @@ open CriticalUniqueness EndpointOutput FreeDataDependence CriticalSourceBounds
 open IntervalTimeTransport MaximalTrajectory
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
-local instance r2PathAddCommGroup (a b : ℝ) :
-    AddCommGroup (CriticalPath (intervalMeasure a b)) :=
-  Submodule.addCommGroup (criticalPathSubmodule (intervalMeasure a b))
-local instance r2PathModule (a b : ℝ) :
-    Module ℂ (CriticalPath (intervalMeasure a b)) :=
-  Submodule.module (criticalPathSubmodule (intervalMeasure a b))
 attribute [local irreducible] energySubmodule criticalPathSubmodule
   energyPath criticalGradient hartreeDuhamelMap backwardHartreeDuhamelMap
   criticalPathIntervalSource freeCriticalPath freeEnergyState
@@ -113,6 +107,12 @@ theorem backwardHartreeDuhamelMap_zero_path (hDensity : OrdinaryH1Density)
   change _ - Complex.I • intervalAdvancedCriticalPath hDensity hSob h0 hfree hret F = _
   rw [hz, smul_zero, sub_zero]
 
+private theorem norm_le_twice_of_half_sub {E : Type*} [NormedAddCommGroup E]
+    (u p : E) (h : ‖u-p‖ ≤ (1/2 : ℝ)*‖u‖) : ‖u‖ ≤ 2*‖p‖ := by
+  have ht : ‖u‖ ≤ ‖u-p‖ + ‖p‖ := by
+    simpa only [sub_add_cancel] using norm_add_le (u-p) p
+  linarith only [ht, h]
+
 set_option diagnostics true in
 /-- Datum-linear terminal paths. The first radius is the public comparison
 witness, and the terminal solver is called with delta equal to that witness. -/
@@ -144,9 +144,10 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
     rw [← mul_div_assoc]
     apply (div_le_iff₀ (by positivity : 0 < 2*(Cf+1))).mpr
     have hm : 0 ≤ min 1 eta := le_min (by norm_num) heta.le
-    nlinarith
+    nlinarith only [hm]
   refine ⟨delta, hdelta, ?_⟩
   intro a b hab f hf
+  run_tac Lean.logInfo "FR2 backward: radius selected"
   let p := freeCriticalPath hDensity hSob hfree a b
     (freeEnergyState hDensity hSob (-b) f)
   have hp : ‖p‖ ≤ min 1 eta / 2 :=
@@ -179,14 +180,13 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
       norm_zero (E := CriticalGradient (intervalMeasure a b))
     exact (le_of_eq ((congrArg norm ((criticalGradient (intervalMeasure a b) j).map_zero)).trans hz)).trans
       hrho.le
+  run_tac Lean.logInfo "FR2 backward: zero coordinate bounds checked"
   have hc := ((Classical.choose_spec comparisonChoice).2.2 hab f u 0 huE hzeroE (huW.trans hetarho) hzeroW).2
   rw [hfix, backwardHartreeDuhamelMap_zero_path hDensity hSob h0 hfree hret hH hab f,
     sub_zero] at hc
-  have htriangle : ‖u‖ ≤ ‖u-p‖ + ‖p‖ := by
-    calc
-      ‖u‖ = ‖(u-p)+p‖ := by rw [sub_add_cancel]
-      _ ≤ _ := norm_add_le (u-p) p
-  have hlinear : ‖u‖ ≤ 2 * ‖p‖ := by change ‖u-p‖ ≤ (1/2 : ℝ)*‖u‖ at hc; linarith
+  run_tac Lean.logInfo "FR2 backward: contraction reduced"
+  have hlinear : ‖u‖ ≤ 2 * ‖p‖ := norm_le_twice_of_half_sub u p hc
+  run_tac Lean.logInfo "FR2 backward: abstract norm estimate checked"
   exact ⟨u, (isBackwardMildHartreePath_iff_fixedPoint hDensity hSob h0 hfree hret hH
     hab f u).mpr hfix, hterminal, hlinear.trans
       (mul_le_mul_of_nonneg_left
@@ -334,7 +334,6 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
       exact closed_backward_mildPath_left_mem_maximalDomain hDensity hSob h0 hfree hret
         hefree heret hH hta f p hp
   refine ⟨hglobal, ?_⟩
-  dsimp only [M, actualMaximalTrajectory]
   constructor
   · intro b hab
     obtain ⟨p, hp, hn, hc⟩ := hF b hab
@@ -425,7 +424,7 @@ theorem exists_uniform_matching_compact_bounds (hDensity : OrdinaryH1Density)
             (s n) (M.state (s n)) M.state B D) ∧
           (∀ n, ‖M.state (s n)‖ ≤ max (K^((6 : ℝ)⁻¹)) 1*pureGradientNorm phi +
             ‖M.state (s n)-freeEnergyState hDensity hSob (s n) phi‖) := by
-  obtain ⟨d, B, D, hd, hB, hD, (Classical.choose_spec terminalChoice).2.2⟩ := exists_uniform_two_sided_small_data
+  obtain ⟨d, B, D, hd, hB, hD, hsolve⟩ := exists_uniform_two_sided_small_data
     hDensity hSob h0 hfree hret hefree heret hH
   let A := max (K^((6 : ℝ)⁻¹)) 1
   have hA : 0 ≤ A := (by norm_num : (0 : ℝ) ≤ 1).trans (le_max_right _ _)
@@ -452,12 +451,12 @@ theorem exists_uniform_matching_compact_bounds (hDensity : OrdinaryH1Density)
       (mul_le_mul_of_nonneg_left hphi hA).trans hAdelta
     linarith [hdata n]
   obtain ⟨n, hn, hsmall⟩ := hevent.exists
-  obtain ⟨hglobalV, _⟩ := (Classical.choose_spec terminalChoice).2.2 (s n) (M.state (s n)) hsmall
+  obtain ⟨hglobalV, _⟩ := hsolve (s n) (M.state (s n)) hsmall
   have hglobal := (actualMaximalTrajectory_global_of_recenter
     hDensity hSob h0 hfree hret hefree heret hH f hn hglobalV).1
   refine ⟨hglobal, ?_, hdata⟩
   filter_upwards [hevent] with n hn
-  obtain ⟨hglobalV, hb⟩ := (Classical.choose_spec terminalChoice).2.2 (s n) (M.state (s n)) hn.2
+  obtain ⟨hglobalV, hb⟩ := hsolve (s n) (M.state (s n)) hn.2
   have heq := (actualMaximalTrajectory_global_of_recenter
     hDensity hSob h0 hfree hret hefree heret hH f hn.1 hglobalV).2
   exact Eq.mpr (congrArg (fun U : ℝ → EnergyState =>
@@ -503,10 +502,10 @@ theorem actual_matching_zero_profile (hDensity : OrdinaryH1Density)
   let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH T f
   dsimp only
   intro hdom hmatch hphi
-  obtain ⟨delta, B, D, hdelta, _, _, (Classical.choose_spec terminalChoice).2.2⟩ := exists_uniform_matching_compact_bounds
+  obtain ⟨delta, B, D, hdelta, _, _, hsolve⟩ := exists_uniform_matching_compact_bounds
     hDensity hSob h0 hfree hret hefree heret hH
   have hsmall : pureGradientNorm phi ≤ delta := by rw [hphi]; exact hdelta.le
-  obtain ⟨hglobal, hbounds, hdata⟩ := (Classical.choose_spec terminalChoice).2.2 T f phi s hdom hmatch hsmall
+  obtain ⟨hglobal, hbounds, hdata⟩ := hsolve T f phi s hdom hmatch hsmall
   have hnorm : Tendsto (fun n => ‖M.state (s n)‖) atTop (𝓝 0) := by
     apply squeeze_zero (fun n => norm_nonneg (M.state (s n))) _ hmatch
     intro n
