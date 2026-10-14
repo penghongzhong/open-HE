@@ -17,7 +17,7 @@ open scoped ENNReal NNReal Topology
 namespace HartreeF.FullResidual
 open EnergySpace SobolevStretch StationarySelfTest TimeHolder ForcingDomain
   CriticalTimeSobolev CriticalPathSpace IntervalTimeTransport ActualDuhamelPath
-  Retarded R2Global R2TailForcing RawStabilityInputs HartreeDistributionalBridge
+  Retarded EndpointOutput R2Global R2TailForcing RawStabilityInputs HartreeDistributionalBridge
   WeakHartreeProduct ProfileSpatialSmoothing ProfileApproximation GeneralProfileCross
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
@@ -41,7 +41,8 @@ def curveCompactPath {q : ℝ → EnergyState} (hq : CurveFinite q)
 
 @[simp] theorem curveCompactPath_energy {q : ℝ → EnergyState} (hq : CurveFinite q)
     {a b : ℝ} (hab : a ≤ b) (t : Set.Icc a b) :
-    energyPath _ (curveCompactPath hq hab) t = q t := rfl
+    energyPath _ (curveCompactPath hq hab) t = q t :=
+  (curveLocallyCritical hq).compactPath_energy hab (Set.subset_univ _) t
 
 theorem curveCompactPath_extend_eq {q : ℝ → EnergyState} (hq : CurveFinite q)
     {a b : ℝ} (hab : a ≤ b) (t : ℝ) (ht : t ∈ Set.Icc a b) :
@@ -163,7 +164,6 @@ theorem compactResidualSource_value_ae (q : ℝ → EnergyState) (p : ℕ → �
     (fun j => actualHartreeSourceL1 hDensity hSob hH hab (curveCompactPath (hp j) hab)) J,
     curveHartreeSource_value_ae hDensity hSob hH hq hab, hprofiles] with t ht hqv hpv
   filter_upwards [ht, hqv, (eventually_all_finset (Finset.range J)).2 hpv] with x hx hqx hpx
-  change (compactResidualSource hDensity hSob hH q p hq hp J hab).value t x = _
   rw [show (compactResidualSource hDensity hSob hH q p hq hp J hab).value t x =
     (actualHartreeSourceL1 hDensity hSob hH hab (curveCompactPath hq hab)).value t x -
       ∑ j ∈ Finset.range J,
@@ -205,8 +205,8 @@ theorem compatibleSource_vector_ae_of_weak {a b : ℝ}
       HasWeakGradient (fun x => (e t x).re) (fun x => gradientReal (G t x)) ∧
       HasWeakGradient (fun x => (e t x).im) (fun x => gradientImag (G t x))) :
     ∀ᵐ t ∂localMeasure a b, E.complexGradient t =ᵐ[volume] G t := by
-  letI : Fact (1 ≤ ENNReal.ofReal (6/5 : ℝ)) := ⟨by norm_num⟩
-  letI : Fact (ENNReal.ofReal (6/5 : ℝ) ≠ ∞) := ⟨ENNReal.ofReal_ne_top⟩
+  let : Fact (1 ≤ ENNReal.ofReal (6/5 : ℝ)) := ⟨by norm_num⟩
+  let : Fact (ENNReal.ofReal (6/5 : ℝ) ≠ ∞) := ⟨ENNReal.ofReal_ne_top⟩
   have hμ : localMeasure a b ≤ (volume : Measure ℝ) := Measure.restrict_le_self
   have hj := hjoint.mono_measure (Measure.prod_mono hμ le_rfl)
   have hf : mixedNorm (localMeasure a b) volume 2 (ENNReal.ofReal (6/5 : ℝ)) G ≠ ∞ :=

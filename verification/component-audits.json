@@ -580,5 +580,101 @@
         "name": "HartreeF.R2TailForcing.source_gradient_sum_finite"
       }
     ]
+  },
+  {
+    "module": "FActualResidualDomains",
+    "source": "components/FActualResidualDomains.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FullResidual.sourceCandidate_eq_full"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceCandidate_congr"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceCandidate_congr_curve"
+      },
+      {
+        "name": "HartreeF.FullResidual.literalResidual"
+      },
+      {
+        "name": "HartreeF.FullResidual.residualCandidate"
+      },
+      {
+        "name": "HartreeF.FullResidual.residualActual"
+      },
+      {
+        "name": "HartreeF.FullResidual.source_candidate_canonical_weak"
+      },
+      {
+        "name": "HartreeF.FullResidual.vectorForcingNorm_sub_le"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains"
+      },
+      {
+        "name": "HartreeF.FullResidual.actual_residual_domains"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains.actual_weak"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains.actual_slice"
+      },
+      {
+        "name": "HartreeF.FullResidual.ActualResidualDomains.actual_tests"
+      },
+      {
+        "name": "HartreeF.FullResidual.residualCandidate_congr"
+      }
+    ]
+  },
+  {
+    "module": "FR2GlobalXExhaustion",
+    "source": "components/FR2GlobalXExhaustion.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2Global.TwoHalfGraphBound"
+      },
+      {
+        "name": "HartreeF.R2Global.vector_of_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.value_of_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.graphToXConstant"
+      },
+      {
+        "name": "HartreeF.R2Global.graphToXConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.R2Global.TwoHalfGraphBound.pointwise"
+      },
+      {
+        "name": "HartreeF.R2Global.curveX_of_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.anchored_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.anchored_correction_two_half_graph"
+      },
+      {
+        "name": "HartreeF.R2Global.anchoredFreeCurve"
+      },
+      {
+        "name": "HartreeF.R2Global.freeXConstant"
+      },
+      {
+        "name": "HartreeF.R2Global.freeXConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.R2Global.anchoredFreeCurve_continuous"
+      },
+      {
+        "name": "HartreeF.R2Global.anchoredFreeCurve_bound"
+      }
+    ]
   }
 ]
