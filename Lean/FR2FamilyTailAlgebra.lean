@@ -93,6 +93,7 @@ theorem physicalCorrection_xNorm (hDensity : OrdinaryH1Density) {K : ℝ}
       xNorm (normalizedCorrection hDensity hSob P g j) := by
   rw [physicalCorrection_eq_frame, stateFrame_xNorm h]
 
+omit [DecidableEq ι] in
 theorem freeCurve_sum (hDensity : OrdinaryH1Density) {K : ℝ}
     (hSob : OrdinarySobolev K) (s : Finset ι) (f : ι → EnergyState) :
     freeCurve hDensity hSob (∑ i ∈ s, f i) = ∑ i ∈ s, freeCurve hDensity hSob (f i) := by

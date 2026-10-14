@@ -1646,7 +1646,7 @@
     "FR2ActualSquareTailBlocks": "154ffbcf114b331e12f8256474a229900c6f1c5541c445186420fbec4ba2c019",
     "FR2ActualTailForcing": "c74f5a278cc0b8ba9f59f7ccec044107f066cfb8f55c5d55b7b24c71d80b844d",
     "FR2CompactSmallData": "c95ea1cf351b7cd79b9b0fa714bb87e57a11017a4c86cbb687b502a49f7e5c8f",
-    "FR2FamilyTailAlgebra": "cfd3f2d0f9d9adeba59c79eb0966b34f9cac5e44aaa286c315b83241e763e113",
+    "FR2FamilyTailAlgebra": "71dd7ac6919ac5d7183e5fdd002eff5ad41ee64d0b7a04184b0f6f635c1b4ada",
     "FR2GlobalXExhaustion": "6e7a8a5314b26a1828652f1272e1683f5f26908bdfd9a7e2a7c169e4a36b5704",
     "FR2SameCanonicalSmallProfiles": "3a43200415dab6ea1b2cfed485acce9f13f426e94660caa4888662e88545d27c",
     "FR2SquareTailPowers": "ad55563462bb8fbdd42fa0842fdb2d5577c98c548f1379459eae42c4f58afae1",
@@ -2764,7 +2764,7 @@
     }
   ],
   "seed": {
-    "run": 38543333571,
-    "commit": "0ffe7c6393fdef02b9d3ada2b2043cef63ff19d8"
+    "run": 38544406363,
+    "commit": "01e308998a391743eb11cca6c4ca763523e12053"
   }
 }
