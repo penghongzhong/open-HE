@@ -16,18 +16,21 @@ namespace HartreeF.ConditionalNonlinearReconstruction
 open EnergySpace SobolevStretch StationarySelfTest TimeHolder ProfileEnergy
   Retarded ActualStrichartz EndpointOutput ForcingDomain MaximalTrajectory
   CountableNonlinearProfiles CriticalTimeSobolev GeneralProfileCross
-  R2Global R2Frames R2FamilyTail R2TailForcing ActualR2Tail FullResidual
+  R2Global R2Frames R2SquareTail R2FamilyTail R2TailForcing ActualR2Tail FullResidual
   CriticalPathSpace ActualDuhamelPath RawStabilityInputs
   HomogeneousStability IntervalNormExhaustion IndependentGlobalNormBridge
   HartreeDistributionalBridge LinearWeakEquation CriticalUniqueness
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
 
+local instance : SecondCountableTopologyEither ℝ EnergyState :=
+  ⟨Or.inl inferInstance⟩
+
 /-- A genuine whole-line paper realization supplies the three X domains of
 that same continuous state curve. It is not merely a bound on a formal norm. -/
 theorem curveFinite_of_paper_realization {d : ℝ → EnergyState} {C : ℝ}
     (hd : Continuous d) (h : ActualPaperRealization univ d C) : CurveFinite d := by
-  have bound {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
+  have bound {X E : Type} [MeasurableSpace X] [NormedAddCommGroup E]
       (ν : Measure X) (p r : ℝ≥0∞) [Fact (1 ≤ p)] [Fact (1 ≤ r)]
       (g : ℝ → X → E) (hg : ActualNestedLpBound ν p r univ g C) :
       mixedNorm volume ν p r g ≤ ENNReal.ofReal C := by
@@ -72,7 +75,7 @@ private theorem exists_stability_tolerance {ε ε0 C : ℝ}
 private theorem paper_realization_mono {I : Set ℝ} {d : ℝ → EnergyState}
     {C D : ℝ} (hCD : C ≤ D) (h : ActualPaperRealization I d C) :
     ActualPaperRealization I d D := by
-  have mono {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
+  have mono {X E : Type} [MeasurableSpace X] [NormedAddCommGroup E]
       (ν : Measure X) (p r : ℝ≥0∞) [Fact (1 ≤ p)] [Fact (1 ≤ r)]
       (g : ℝ → X → E) (hg : ActualNestedLpBound ν p r I g C) :
       ActualNestedLpBound ν p r I g D := by
