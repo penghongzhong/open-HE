@@ -32,11 +32,8 @@ attribute [local irreducible] energySubmodule criticalPathSubmodule energyPath
 private theorem profileSum_integrable_range {a b : ℝ}
     (f : ℕ → ℝ → ℂ) (hf : ∀ j, IntegrableOn (f j) (Set.Icc a b)) (J : ℕ) :
     IntegrableOn (fun t => ∑ j ∈ Finset.range J, f j t) (Set.Icc a b) := by
-  induction J with
-  | zero => simpa only [Finset.range_zero, Finset.sum_empty] using
-      (integrable_zero ℝ ℂ (volume.restrict (Set.Icc a b)))
-  | succ J ih =>
-      simpa only [Finset.sum_range_succ] using ih.add (hf J)
+  unfold IntegrableOn at hf ⊢
+  exact integrable_finsetSum (Finset.range J) (fun j _ => hf j)
 
 private theorem profileSum_integral_range {a b : ℝ}
     (f : ℕ → ℝ → ℂ) (hf : ∀ j, IntegrableOn (f j) (Set.Icc a b)) (J : ℕ) :
