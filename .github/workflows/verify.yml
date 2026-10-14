@@ -1,5 +1,8 @@
 name: Pinned Lean critical energy level
 on:
+  push:
+    branches: [critical-level-20261014]
+    paths: ['Lean/**', 'verification/**', '.github/workflows/verify.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -13,6 +16,21 @@ jobs:
     timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
+      - name: Wait for verified threshold bridge
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 90); do
+            state=$(gh api repos/penghongzhong/open-HE/actions/runs/38502419996 --jq '.status + " " + (.conclusion // "pending")')
+            echo "Prerequisite: $state"
+            if [ "$state" = "completed success" ]; then exit 0; fi
+            if [[ "$state" == completed* ]]; then echo 'Prerequisite failed; no compilation accepted.'; exit 1; fi
+            sleep 10
+          done
+          echo 'Prerequisite did not finish in the waiting window.'
+          exit 1
       - name: Restore pinned official Lean
         shell: bash
         run: |
