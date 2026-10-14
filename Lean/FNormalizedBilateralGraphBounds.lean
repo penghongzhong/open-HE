@@ -53,7 +53,7 @@ theorem future_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
       (hN : Icc (timeAffine lambda⁻¹ s A) (timeAffine lambda⁻¹ s B) ⊆ N.domain)
       (hV : Icc A B ⊆ V.domain),
       ‖V.path hAB hV‖ =
-        ‖N.path (timeAffine_monotone (inv_pos.mpr hlambda) s hAB) hN‖
+        ‖N.path (AffinePath.timeAffine_monotone (inv_pos.mpr hlambda) s hAB) hN‖
   have hraw : normAt ((s-s)/lambda⁻¹^2)
       (affineState (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) z) :=
     actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
@@ -99,7 +99,7 @@ theorem past_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
       (hN : Icc (timeAffine lambda⁻¹ s A) (timeAffine lambda⁻¹ s B) ⊆ N.domain)
       (hV : Icc A B ⊆ V.domain),
       ‖V.path hAB hV‖ =
-        ‖N.path (timeAffine_monotone (inv_pos.mpr hlambda) s hAB) hN‖
+        ‖N.path (AffinePath.timeAffine_monotone (inv_pos.mpr hlambda) s hAB) hN‖
   have hraw : normAt ((s-s)/lambda⁻¹^2)
       (affineState (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) z) :=
     actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
