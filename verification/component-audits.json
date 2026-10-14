@@ -1006,5 +1006,23 @@
         "name": "HartreeF.FreeHeadFrames.density_fibre_parabolic"
       }
     ]
+  },
+  {
+    "module": "FFiniteProfileCandidateLimit",
+    "source": "components/FFiniteProfileCandidateLimit.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FiniteProfileCandidateLimit.candidate_defect_finite_tendsto"
+      }
+    ]
+  },
+  {
+    "module": "FActualFiniteProfileGradientDefect",
+    "source": "components/FActualFiniteProfileGradientDefect.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualFiniteProfileGradientDefect.actual_finite_profile_gradient_defect"
+      }
+    ]
   }
 ]
