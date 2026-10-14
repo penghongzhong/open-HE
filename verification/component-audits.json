@@ -1321,5 +1321,17 @@
         "name": "HartreeF.PaperMainEnvironment.paper_threshold_conclusion_of_no_bad"
       }
     ]
+  },
+  {
+    "module": "FGaugeCompactParameterBounds",
+    "source": "components/FGaugeCompactParameterBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.L6OrbitGauge.gauge_parameters_bounded_on_compact"
+      },
+      {
+        "name": "HartreeF.L6OrbitGauge.gauge_parameters_bounded_on_compact_time"
+      }
+    ]
   }
 ]

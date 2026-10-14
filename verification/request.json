@@ -71,6 +71,7 @@
     "FFreeHeadAffineSlots",
     "FFreeLocalCompactness",
     "FFullXGradientDifference",
+    "FGaugeCompactParameterBounds",
     "FGivenBadSequenceConcentration",
     "FIndependentEssentialGlobalConsumer",
     "FIndependentPureGlobalConsumer",
@@ -569,6 +570,7 @@
     "FFullGradientBudget",
     "FFullXGradientDifference",
     "FFullZPathGluing",
+    "FGaugeCompactParameterBounds",
     "FGeneralApproximationTransfer",
     "FGeneralFrameCrossContinuity",
     "FGeneralFrameNorms",
@@ -1881,7 +1883,8 @@
     "WeakSmoothProduct": "d701c7706addeb838cb30d720dfc6bb1955f560f82ae6d5594cb2ec423c2b3eb",
     "WeightedProjectionDifference": "e7ddd2cb638b346853f413d099b2c63167d32ebb571026c070f65f31eb694262",
     "WeightedSixComparison": "85830c3a0a4a34191c57c06ca15307c34e065dac6b4e586503114db8b226d5b0",
-    "FPaperMainEnvironment": "3543313335cafe4925e93e2c154fe37fb3f46c889d14013e0fcbd9c5ff458d9c"
+    "FPaperMainEnvironment": "3543313335cafe4925e93e2c154fe37fb3f46c889d14013e0fcbd9c5ff458d9c",
+    "FGaugeCompactParameterBounds": "4fb80ce2381e4dd6b89b843c1afc3943d466bf8d1ebe92d2bdd3053428facc48"
   },
   "declarations": [
     {
@@ -2767,7 +2770,7 @@
     }
   ],
   "seed": {
-    "run": 38575333196,
-    "commit": "5bcc4ead22c00e16015630325d42b914db55ab63"
+    "run": 38579445193,
+    "commit": "54cd990a83533160f2389c752ed2caae79bccf56"
   }
 }
