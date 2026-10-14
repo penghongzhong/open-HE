@@ -1,5 +1,8 @@
 name: Pinned Lean energy conservation and trapping
 on:
+  push:
+    branches: [energy-trapping-20261014]
+    paths: ['Lean/**', 'verification/**', '.github/workflows/verify.yml']
   workflow_dispatch:
 permissions:
   contents: read
