@@ -1,6 +1,7 @@
 import FActualCompactTimeConvergence
 import FActualBilateralPathTools
 import FL6GaugeRelativeBounds
+import FCriticalAffineL2Continuity
 
 /-! The strong-limit contradiction in the subparabolic-scale argument.
 Intrinsic L6 gauges rule out a nonzero strong limit of a fixed datum at
