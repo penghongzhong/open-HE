@@ -156,13 +156,19 @@ theorem exists_uniform_backward_small_data_path (hDensity : OrdinaryH1Density)
         (div_le_div_of_nonneg_right (min_le_right _ _) (by norm_num))
   obtain ⟨u, hfix, hterminal, huE, huW, _⟩ := hsolve hab f hpE hpW
   have hzeroE : ‖energyPath (intervalMeasure a b) (0 : CriticalPath (intervalMeasure a b))‖ ≤
-      (1 : ℝ) := by rw [map_zero, norm_zero]; norm_num
+      (1 : ℝ) := by
+    have hz : ‖(0 : C(Set.Icc a b, EnergyState))‖ = 0 :=
+      norm_zero (E := C(Set.Icc a b, EnergyState))
+    exact (le_of_eq ((congrArg norm ((energyPath (intervalMeasure a b)).map_zero)).trans hz)).trans
+      (by norm_num : (0 : ℝ) ≤ 1)
   have hzeroW : ‖fun j => criticalGradient (intervalMeasure a b) j
       (0 : CriticalPath (intervalMeasure a b))‖ ≤ rho := by
     apply (pi_norm_le_iff_of_nonneg hrho.le).mpr
     intro j
-    rw [map_zero, norm_zero]
-    exact hrho.le
+    have hz : ‖(0 : CriticalGradient (intervalMeasure a b))‖ = 0 :=
+      norm_zero (E := CriticalGradient (intervalMeasure a b))
+    exact (le_of_eq ((congrArg norm ((criticalGradient (intervalMeasure a b) j).map_zero)).trans hz)).trans
+      hrho.le
   have hc := (hcompare hab f u 0 huE hzeroE (huW.trans hetarho) hzeroW).2
   rw [hfix, backwardHartreeDuhamelMap_zero_path hDensity hSob h0 hfree hret hH hab f,
     sub_zero] at hc
@@ -296,7 +302,14 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
     have hc := WaveTerminal.backward_map_sub_free_norm hDensity hSob h0 hfree hret hH hba f p
     rw [hfix] at hc
     exact ⟨p, hp, hn', hc.trans (hnonlinear hba f p hn')⟩
+  have hMdom : M.domain = maximalDomain alpha c a f := by
+    unfold M actualMaximalTrajectory
+    rfl
+  have hMstate : M.state = maximalState alpha c a f := by
+    unfold M actualMaximalTrajectory
+    rfl
   have hglobal : M.domain = Set.univ := by
+    rw [hMdom]
     apply Set.eq_univ_of_forall
     intro t
     rcases le_total a t with hat | hta
@@ -314,6 +327,7 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
       hDensity hSob h0 hfree hret hefree heret hH hab f p hp
     refine ⟨p, ?_, hn, hc⟩
     intro t
+    rw [hMstate]
     exact (hVp t).symm.trans
       (maximalState_agrees hDensity hSob h0 hfree hret hH V (hV t.property)).symm
   · intro b hba
@@ -322,6 +336,7 @@ theorem exists_uniform_two_sided_small_data (hDensity : OrdinaryH1Density)
       hDensity hSob h0 hfree hret hefree heret hH hba f p hp
     refine ⟨p, ?_, hn, hc⟩
     intro t
+    rw [hMstate]
     exact (hVp t).symm.trans
       (maximalState_agrees hDensity hSob h0 hfree hret hH V (hV t.property)).symm
 

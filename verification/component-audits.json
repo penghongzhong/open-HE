@@ -265,5 +265,161 @@
         "name": "HartreeF.FiniteProfileRieszMixed.riesz_product_tendsto"
       }
     ]
+  },
+  {
+    "module": "FFreeValueQCoefficients",
+    "source": "components/FFreeValueQCoefficients.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueFullCandidate.Q"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.zero_direction_profile"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.power_VSQ_le"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.q_coefficients_joint"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.q_coefficients_bound"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.q_coefficients_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.Q_sum_le"
+      }
+    ]
+  },
+  {
+    "module": "FR2ActualProfileFrames",
+    "source": "components/FR2ActualProfileFrames.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2Frames.stateFrame"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_time"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_continuous"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_sub"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_fields_ae"
+      },
+      {
+        "name": "HartreeF.R2Frames.frameJointFields"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveEnergy"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveS"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveW"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_curveX"
+      },
+      {
+        "name": "HartreeF.R2Frames.CurveFinite.stateFrame"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_xNorm"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_free"
+      },
+      {
+        "name": "HartreeF.R2Frames.stateFrame_correction"
+      }
+    ]
+  },
+  {
+    "module": "FR2CompactSmallData",
+    "source": "components/FR2CompactSmallData.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2SmallData.AnchoredCompactBounds"
+      },
+      {
+        "name": "HartreeF.R2SmallData.rpow_mul_fifth"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_source_power_bound"
+      },
+      {
+        "name": "HartreeF.R2SmallData.backwardHartreeDuhamelMap_zero_path"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_uniform_backward_small_data_path"
+      },
+      {
+        "name": "HartreeF.R2SmallData.represented_state_norm_le"
+      },
+      {
+        "name": "HartreeF.R2SmallData.AnchoredCompactBounds.pointwise"
+      },
+      {
+        "name": "HartreeF.R2SmallData.represented_correction_state"
+      },
+      {
+        "name": "HartreeF.R2SmallData.AnchoredCompactBounds.correction_pointwise"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_uniform_two_sided_small_data"
+      },
+      {
+        "name": "HartreeF.R2SmallData.actualMaximalTrajectory_global_of_recenter"
+      },
+      {
+        "name": "HartreeF.R2SmallData.matching_state_norm_le"
+      },
+      {
+        "name": "HartreeF.R2SmallData.exists_uniform_matching_compact_bounds"
+      },
+      {
+        "name": "HartreeF.R2SmallData.matching_state_pureGradient_le"
+      },
+      {
+        "name": "HartreeF.R2SmallData.matching_error_pureGradient_tendsto"
+      },
+      {
+        "name": "HartreeF.R2SmallData.actual_matching_zero_profile"
+      }
+    ]
+  },
+  {
+    "module": "FFreeValueFullCandidate",
+    "source": "components/FFreeValueFullCandidate.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeValueFullCandidate.MixedDomain"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.mixedDomain_of_finite"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.signed_riesz_product_bound"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.candidate_eq_cross"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.FullCandidateControl"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.full_candidate_bound"
+      },
+      {
+        "name": "HartreeF.FreeValueFullCandidate.full_candidate_sum_bound"
+      }
+    ]
   }
 ]

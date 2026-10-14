@@ -71,7 +71,9 @@ theorem signed_riesz_product_bound {α c q r v : ℝ} (hH : OrdinaryHLS α c)
     rw [real_slice_mixed_eq volume p₁ (ENNReal.ofReal r)
       (ne_of_gt (ENNReal.ofReal_pos.mpr hr)) ENNReal.ofReal_ne_top _ hj hs]
     exact lt_top_iff_ne_top.mpr hrf
-  have hprod := (mixed_smul_le hp₁ hp₂
+  have hprod : forcingNorm (fun t x => rieszConvolution α c (f t) x • g t x) ≤
+      (C : ℝ≥0∞) * mixedNorm volume volume p₁ (ENNReal.ofReal q) f *
+        mixedNorm volume volume p₂ (ENNReal.ofReal v) g := (mixed_smul_le hp₁ hp₂
     (ne_of_gt (ENNReal.ofReal_pos.mpr hr)) ENNReal.ofReal_ne_top
     (ne_of_gt (ENNReal.ofReal_pos.mpr hv)) ENNReal.ofReal_ne_top
     (by norm_num : ENNReal.ofReal (6/5 : ℝ) ≠ 0) ENNReal.ofReal_ne_top
@@ -141,14 +143,18 @@ private theorem time03_holder {α : ℝ} (ha : 0 < α) (ha3 : α < 3) :
   have hh := reciprocal_holder (by linarith : 0 ≤ (3-α)/10)
     (by linarith : 0 ≤ (2+α)/10)
   simpa only [t0, t3, show (3-α)/10+(2+α)/10=(1/2 : ℝ) by ring,
-    show reciprocal (1/2 : ℝ)=2 by norm_num [reciprocal]] using hh
+    show reciprocal (1/2 : ℝ)=2 by
+      rw [reciprocal_eq (by norm_num : (0 : ℝ) < 1/2)]
+      norm_num] using hh
 
 private theorem time12_holder {α : ℝ} (ha : 0 < α) (ha3 : α < 3) :
     ENNReal.HolderTriple (t1 α) (t2 α) 2 := by
   have hh := reciprocal_holder (by linarith : 0 ≤ (3+2*α/3)/10)
     (by linarith : 0 ≤ (2-2*α/3)/10)
   simpa only [t1, t2, show (3+2*α/3)/10+(2-2*α/3)/10=(1/2 : ℝ) by ring,
-    show reciprocal (1/2 : ℝ)=2 by norm_num [reciprocal]] using hh
+    show reciprocal (1/2 : ℝ)=2 by
+      rw [reciprocal_eq (by norm_num : (0 : ℝ) < 1/2)]
+      norm_num] using hh
 
 private theorem space03_holder {α : ℝ} (ha : 0 < α) (ha3 : α < 3) :
     ENNReal.HolderTriple (ENNReal.ofReal (10/(3-α)))
@@ -205,10 +211,10 @@ theorem full_candidate_bound {α c : ℝ} (hH : OrdinaryHLS α c) :
   have ha := hH.order_pos
   have ha3 := hH.order_lt_three
   have hi := ledger_hls_interior ha ha3
-  letI := time03_holder ha ha3
-  letI := time12_holder ha ha3
-  letI := space03_holder ha ha3
-  letI := space12_holder ha ha3
+  let := time03_holder ha ha3
+  let := time12_holder ha ha3
+  let := space03_holder ha ha3
+  let := space12_holder ha ha3
   obtain ⟨C0,hC0⟩ := signed_riesz_product_bound hH hi.1 hi.2.1
     (div_pos (by norm_num : (0 : ℝ) < 10) (by linarith : 0 < 3-α))
     (div_pos (by norm_num : (0 : ℝ) < 30) (by linarith : 0 < 16+3*α))
@@ -245,7 +251,8 @@ theorem full_candidate_bound {α c : ℝ} (hH : OrdinaryHLS α c) :
     have hr : forcingNorm (innerCross α c u h u) ≤
         (C1 : ℝ≥0∞) * mixedNorm volume volume (t1 α) (x1 α) (pureDensityDerivative α u h) *
           mixedNorm volume volume (t2 α) (x2 α) (pureLocal α u) := by
-      simpa only [x1_eq ha, x2_eq ha] using hn1
+      rw [x1_eq ha, x2_eq ha]
+      exact hn1
     calc
       _ ≤ (C1 : ℝ≥0∞) *
           (ENNReal.ofReal (3+α) * (mixedNorm volume volume ∞ 6 u ^ (α/3) *
@@ -260,7 +267,8 @@ theorem full_candidate_bound {α c : ℝ} (hH : OrdinaryHLS α c) :
     have hr : forcingNorm (outerCross α c u u h) ≤
         (C0 : ℝ≥0∞) * mixedNorm volume volume (t0 α) (x0 α) (pureDensity α u) *
           mixedNorm volume volume (t3 α) (x3 α) (pureLocalDerivative α u h) := by
-      simpa only [x0_eq ha, x3_eq ha] using hn0
+      rw [x0_eq ha, x3_eq ha]
+      exact hn0
     calc
       _ ≤ (C0 : ℝ≥0∞) *
           (mixedNorm volume volume ∞ 6 u ^ (2*α) * mixedNorm volume volume 10 10 u ^ (3-α)) *
