@@ -285,7 +285,9 @@ theorem seedFrame_inner_N (α c : ℝ) {a : ℝ} (ha : 0 < a)
   rw [innerCross_parabolic (inv_pos.mpr ha)]
   have hscale := mixedNorm_parabolicField (inv_pos.mpr ha) (-(a⁻¹ • y)) s (7/2)
     Set.univ 2 (ENNReal.ofReal (6/5:ℝ)) (by norm_num) ENNReal.ofReal_ne_top
-    (innerCross α c u h v) (innerCross_joint α c hu hh hv)
+    (innerCross α c u h v) (by
+      rw [Measure.restrict_univ]
+      exact innerCross_joint α c hu hh hv)
   norm_num [reciprocalExponent] at hscale
   exact hscale
 
@@ -303,7 +305,9 @@ theorem seedFrame_outer_N {α : ℝ} (hα : 0 < α) (c : ℝ) {a : ℝ} (ha : 0 
   rw [outerCross_parabolic (inv_pos.mpr ha) hα]
   have hscale := mixedNorm_parabolicField (inv_pos.mpr ha) (-(a⁻¹ • y)) s (7/2)
     Set.univ 2 (ENNReal.ofReal (6/5:ℝ)) (by norm_num) ENNReal.ofReal_ne_top
-    (outerCross α c u v h) (outerCross_joint α c hu hv hh)
+    (outerCross α c u v h) (by
+      rw [Measure.restrict_univ]
+      exact outerCross_joint α c hu hv hh)
   norm_num [reciprocalExponent] at hscale
   exact hscale
 
@@ -335,7 +339,9 @@ theorem seedFrame_Q {a : ℝ} (ha : 0 < a) (y : Space) (s : ℝ)
   rw [normProduct_parabolic (inv_pos.mpr ha)]
   have hscale := mixedNorm_parabolicField (inv_pos.mpr ha) (-(a⁻¹ • y)) s 2
     Set.univ 5 (ENNReal.ofReal (15/8:ℝ)) (by norm_num) ENNReal.ofReal_ne_top
-    (normProduct u h) (hu.norm.mul hh.norm)
+    (normProduct u h) (by
+      rw [Measure.restrict_univ]
+      exact hu.norm.mul hh.norm)
   norm_num [reciprocalExponent] at hscale
   exact hscale
 

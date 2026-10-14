@@ -910,5 +910,29 @@
         "name": "HartreeF.BilateralWindows.actual_zero_centered_windows"
       }
     ]
+  },
+  {
+    "module": "FFullXGradientDifference",
+    "source": "components/FFullXGradientDifference.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FullResidual.differenceJointFields"
+      },
+      {
+        "name": "HartreeF.FullResidual.joint_projected_W_le_curveW"
+      },
+      {
+        "name": "HartreeF.FullResidual.tailCoefficient"
+      },
+      {
+        "name": "HartreeF.FullResidual.tailCoefficient_nonneg"
+      },
+      {
+        "name": "HartreeF.FullResidual.sourceCandidate_difference_norm_eq_actual"
+      },
+      {
+        "name": "HartreeF.FullResidual.exists_full_x_gradient_difference_bound"
+      }
+    ]
   }
 ]
