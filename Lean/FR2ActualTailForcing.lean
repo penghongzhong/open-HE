@@ -31,11 +31,9 @@ private theorem direction_eq_coordinate (U V : ℝ → Space → Space) (j : Fin
     directionCoordinate U V j =
       gradientCoordinate j (fun t => complexGradient (U t) (V t)) := by
   funext t x
-  apply Complex.ext
-  · change inner ℝ (U t x) (EuclideanSpace.basisFun (Fin 3) ℝ j) = (U t x) j
-    exact EuclideanSpace.inner_basisFun_real (U t x) j
-  · change inner ℝ (V t x) (EuclideanSpace.basisFun (Fin 3) ℝ j) = (V t x) j
-    exact EuclideanSpace.inner_basisFun_real (V t x) j
+  apply Complex.ext <;>
+    simp [directionCoordinate, directionalField, gradientCoordinate, complexGradient,
+      EuclideanSpace.inner_single_right]
 
 private theorem zero_profile (j : Fin 3) :
     ScalarProfile (0 : ℝ → Space → ℂ) (directionCoordinate 0 0 j) := by
@@ -137,7 +135,7 @@ private theorem zero_reference_budget {α : ℝ} (_hα : 0 < α)
 This is an estimate for one genuine first spatial derivative. -/
 theorem exists_source_gradient_power_bound (hDensity : OrdinaryH1Density)
     {K : ℝ} (hSob : OrdinarySobolev K) {α c : ℝ} (hH : OrdinaryHLS α c) :
-    ∃ C : ℝ≥0, ∀ (g : ℝ → EnergyState) (hg : CurveFinite g)
+    ∃ C : ℝ≥0, ∀ (g : ℝ → EnergyState) (_hg : CurveFinite g)
       (r : EnergyJointFields volume g) (D : ℝ), 0 ≤ D → xNorm g ≤ D →
       ActualDefectDomains α c 0 r.u 0 0 r.U r.V ∧
       vectorForcingNorm (sourceGradient α c r) ≤
@@ -148,7 +146,8 @@ theorem exists_source_gradient_power_bound (hDensity : OrdinaryH1Density)
   have hA : 0 ≤ A := Real.rpow_nonneg hSob.nonneg _
   let C' : ℝ≥0 := ⟨2 * (C : ℝ) * A ^ (2*α), by positivity⟩
   refine ⟨C', fun g hg r D hD hcap => ?_⟩
-  have hd := source_domains hDensity hSob hH hg r
+  have hd : ActualDefectDomains α c 0 r.u 0 0 r.U r.V :=
+    source_domains hDensity hSob hH hg r
   have hs : ∀ᵐ t ∂volume,
       InDotH1 (r.u t) (r.U t) (r.V t) ∧ InDotH1 (0 : Space → ℂ) 0 0 ∧
       MemLp (r.u t) 10 volume ∧ MemLp (0 : Space → ℂ) 10 volume ∧

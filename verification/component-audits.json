@@ -547,5 +547,38 @@
         "name": "HartreeF.FreeValueGradient.actual_free_value_gradient_bound"
       }
     ]
+  },
+  {
+    "module": "FR2ActualTailForcing",
+    "source": "components/FR2ActualTailForcing.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2TailForcing.sourceGradient"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.sourceCandidate"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.joint_scalar_profiles"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_domains"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.literal_source_eq"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_scalar_canonical_ae"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.exists_source_gradient_power_bound"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_gradient_sum_le"
+      },
+      {
+        "name": "HartreeF.R2TailForcing.source_gradient_sum_finite"
+      }
+    ]
   }
 ]
