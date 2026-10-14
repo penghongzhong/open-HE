@@ -814,5 +814,17 @@
         "name": "HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence"
       }
     ]
+  },
+  {
+    "module": "FMarkedBelowEnergyTransport",
+    "source": "components/FMarkedBelowEnergyTransport.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_marked_global_curveFinite"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_global_curveFinite_of_recenter"
+      }
+    ]
   }
 ]
