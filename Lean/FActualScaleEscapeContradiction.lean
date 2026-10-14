@@ -71,7 +71,8 @@ theorem actual_normalized_return_time
   have hcov : covarianceAt 0 z := Eq.mp (congrArg₂ covarianceAt hmark hdatum) hraw
   have htime : timeAffine r c (-c / r^2) = 0 := by
     unfold timeAffine
-    field_simp [hr.ne'] <;> ring
+    field_simp [hr.ne']
+    ring
   have hNzero : (0 : ℝ) ∈ N.domain := by
     rw [hNM.1]
     exact M.center_mem
