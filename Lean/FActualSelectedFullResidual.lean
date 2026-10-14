@@ -50,8 +50,8 @@ private theorem lp_finset_sum_ae {p : ℝ≥0∞} (s : Finset ι)
       (fun x => ∑ j ∈ s, f j x) :=
   Lp.coeFn_fun_finsetSum s f
 
-/-- Canonical quotient representatives are added only modulo spatial AE. -/
 omit [DecidableEq ι] in
+/-- Canonical quotient representatives are added only modulo spatial AE. -/
 private theorem energy_sum_fields_ae (s : Finset ι) (f : ι → EnergyState) :
     (energyValue (∑ j ∈ s, f j) : Space → ℂ) =ᵐ[volume]
       (fun x => ∑ j ∈ s, energyValue (f j) x) ∧
