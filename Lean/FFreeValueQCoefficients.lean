@@ -41,8 +41,10 @@ theorem power_VSQ_le {u h : ℝ → Space → ℂ}
       mixedNorm volume volume ∞ 6 u ^ a * mixedNorm volume volume 10 10 u ^ b * Q u h := by
   let R : ℝ → Space → ℝ := fun t x => ‖u t x‖
   let P : ℝ → Space → ℝ := normProduct u h
-  have hR := hu.aestronglyMeasurable.norm
-  have hP := hu.aestronglyMeasurable.norm.mul hh.aestronglyMeasurable.norm
+  have hR : AEStronglyMeasurable (fun z : ℝ × Space => R z.1 z.2)
+      (volume.prod volume) := hu.aestronglyMeasurable.norm
+  have hP : AEStronglyMeasurable (fun z : ℝ × Space => P z.1 z.2)
+      (volume.prod volume) := hu.aestronglyMeasurable.norm.mul hh.aestronglyMeasurable.norm
   have hReq (p q : ℝ≥0∞) : mixedNorm volume volume p q R = mixedNorm volume volume p q u :=
     mixed_norm_norm_eq volume p q u hu.aestronglyMeasurable
   have hR6 : mixedNorm volume volume ∞ 6 R ≠ ∞ := by rw [hReq]; exact hE
@@ -169,8 +171,8 @@ theorem Q_sum_le {ι : Type*} (s : Finset ι) (u : ι → ℝ → Space → ℂ)
   intro t x
   have hnonneg : 0 ≤ ∑ i ∈ s, normProduct (u i) h t x :=
     Finset.sum_nonneg (fun i _ => mul_nonneg (norm_nonneg _) (norm_nonneg _))
-  simp only [normProduct, Real.norm_of_nonneg (mul_nonneg (norm_nonneg _) (norm_nonneg _)),
-    Real.norm_of_nonneg hnonneg]
+  rw [Real.norm_of_nonneg hnonneg]
+  simp only [normProduct, Real.norm_of_nonneg (mul_nonneg (norm_nonneg _) (norm_nonneg _))]
   calc
     ‖∑ i ∈ s, u i t x‖ * ‖h t x‖ ≤ (∑ i ∈ s, ‖u i t x‖) * ‖h t x‖ :=
       mul_le_mul_of_nonneg_right (norm_sum_le s _) (norm_nonneg _)
