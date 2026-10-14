@@ -1131,7 +1131,7 @@
     "FActualFreeTestL6Bound": "84ec5e6d88ec3ccbd867e68e41f9a0af907f3d05b19bdbe1a1af15899cdefc1c",
     "FActualFreeTestPairing": "443ffc74cd71746a82e159eb511739726e58f0e4b98efaa7db5455b2c6206104",
     "FActualFreeValueDomains": "476e6d03bdb9d63b72865ebc6527203a19854099877074e5ead98f0d06566d4f",
-    "FActualFreeValueHeadData": "31550089f5c9ab268305777bdac4f893b91d04ec9fff2e88d432c027b19a2d9e",
+    "FActualFreeValueHeadData": "ad9751349e5caab98c23bbf25aca72e8c05e6128368393051a28b7f4a35ebf88",
     "FActualFullGradientControl": "7fae4fa07ce8aa0c08bd3e23dca0f9ef4cadd60fdc37e8e552b1e5b75c7b0167",
     "FActualFullGradientMembership": "bd3380945305dc743c452bed2969274186fb520de402d4a8b693a80c17359b2d",
     "FActualFullGradientMixed": "ec439ab2eb1eee5d808b40d4c2a8991e251925bcac29a540d4d2295e42279568",
@@ -1202,7 +1202,7 @@
     "FActualPowerMixedRemainders": "b9708abc7a171da7c0750f69330508be7a68d4ff7edd726d2bc50eec96cc0e8d",
     "FActualProfileCompactApproximation": "7f75a0ea60e6f63e4203f37d5f3a04f163bcca567430b02769a526a581f20ae5",
     "FActualProfileCutoff": "a4c8e76abd532f7ee32be99cb9727b25209759f51e2c637dc44ef4996f89e866",
-    "FActualProfileEnergyLedger": "e9c441742efda926d771c13b6b44bfd3f5a6f83f88df567be3d9e52f516c8635",
+    "FActualProfileEnergyLedger": "3e6d699eba2067b6e8e9f791dec0d267674ab1713d4a89e126db214905c5e899",
     "FActualProfileSumPDE": "95680e33fb20b6138fe09637d1a4a2d25f854bc7c6af05a01777063ed321449b",
     "FActualQuadraticChargeRule": "23b8c61005c8213b7a3bd5d8743d1ecbe017c723bdffc03d8cbb20b8e0a3b184",
     "FActualRealSliceMembership": "91816b55893a21492472f570db325d226af7b8c5b3474e0f5db07a052d925959",
@@ -2764,7 +2764,7 @@
     }
   ],
   "seed": {
-    "run": 38557903195,
-    "commit": "8dd5bb4188e8e11fa468289539eded001834f8bf"
+    "run": 38558929984,
+    "commit": "67f5b0dba10e81bf7d8d963ff8725daed1f3cd0f"
   }
 }

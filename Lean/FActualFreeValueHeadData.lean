@@ -16,7 +16,7 @@ namespace HartreeF.ActualFreeValueHeadData
 open EnergySpace SobolevStretch CriticalTimeSobolev ProfileEnergy ActualStrichartz
   TimeHolder ProfileApproximation ProfileSpatialSmoothing GeneralProfileCross
   CompactCross LocalProfileProducts FiniteProfileMixedDefects FiniteProfileWeakGradient
-  FiniteProfileFrameData ActualFreeRemainderHead FreeValueFullCandidate WeakHartreeProduct StationarySelfTest
+  FiniteProfileFrameData ActualFreeRemainderHead FreeValueFullCandidate WeakHartreeProduct StationarySelfTest ForcingDomain
 
 /-- Exactly the actual active prefix below both L and the retained depth J. -/
 def headSet (L J : ℕ) : Finset (Fin L) := Finset.univ.filter (fun j => j.val < J)
@@ -180,7 +180,7 @@ theorem head_uniform_cap {K : ℝ} (hSob : OrdinarySobolev K)
   refine ⟨∑ k : Fin 3, b k, fun J n k => ?_⟩
   have hk : (b k : ℝ≥0∞) ≤ ((∑ l : Fin 3, b l : ℝ≥0) : ℝ≥0∞) := by
     have hk0 : b k ≤ ∑ l : Fin 3, b l :=
-      Finset.single_le_sum (fun l _ => zero_le (b l)) (Finset.mem_univ k)
+      Finset.single_le_sum (fun l _ => (show (0 : ℝ≥0) ≤ b l from bot_le)) (Finset.mem_univ k)
     exact_mod_cast hk0
   have hsub (f : Fin L → ℝ≥0∞) : ∑ j ∈ headSet L J, f j ≤ ∑ j : Fin L, f j :=
     Finset.sum_le_sum_of_subset (Finset.subset_univ _)

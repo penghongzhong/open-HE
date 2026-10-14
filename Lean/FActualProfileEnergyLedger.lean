@@ -34,7 +34,7 @@ theorem active_succ_eligible (P : LinearProfileFamily) (j : ℕ)
   | top => simp
   | coe N =>
     have hjN : j < N := by simpa [hcount] using hj
-    exact_mod_cast Nat.succ_le_of_lt hjN
+    exact WithTop.coe_le_coe.mpr (Nat.succ_le_of_lt hjN)
 
 /-- The sharp kinetic prefix bound uses the limiting energy and does not
 assume convergence of the original kinetic sequence. -/
@@ -287,6 +287,7 @@ theorem build_profile_energy_ledger (hDensity : OrdinaryH1Density)
         atTop (𝓝 (E0 - ∑ j ∈ Finset.range J, totalEnergy alpha (f j))) := by
       convert ((hE.comp hτ.tendsto_atTop).sub hsum).sub hd using 1 <;> try simp only [sub_zero]
       funext n
+      simp only [Function.comp_def]
       ring
     have hnon : 0 ≤ E0 - ∑ j ∈ Finset.range J, totalEnergy alpha (f j) := by
       apply ge_of_tendsto hr
