@@ -121,7 +121,11 @@ theorem exists_actual_native_compact_orbit_with_gauge
     exact ⟨hQenergy q hq, hQkinetic q hq, (hQkinetic q hq).trans_lt hgap,
       (hQenergy q hq).trans_lt hEcW⟩
   · intro t ht
-    simpa only [r, y, dite_eq_left ht] using hg0 ⟨t, ht⟩
+    change L6OrbitGauge.Gauge (V.state t) (r t) (y t)
+    have hr_eq : r t = r0 ⟨t, ht⟩ := dite_eq_left ht
+    have hy_eq : y t = y0 ⟨t, ht⟩ := dite_eq_left ht
+    rw [hr_eq, hy_eq]
+    exact hg0 ⟨t, ht⟩
   · intro t ht
     have hp : p ⟨t, ht⟩ ∈ Q := subset_closure (mem_range_self _)
     let normalAt : ℝ → Space → Prop := fun a z =>
