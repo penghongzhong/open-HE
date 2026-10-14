@@ -19,6 +19,15 @@ open EnergySpace SobolevStretch StationarySelfTest TimeHolder ProfileEnergy
   CountableNonlinearProfiles CriticalTimeSobolev GeneralProfileCross FreeValueGradient
   R2Global R2Frames R2SquareTail R2TailForcing R2FamilyTail
 
+local instance : SecondCountableTopologyEither ℝ EnergyState :=
+  ⟨Or.inl inferInstance⟩
+
+private theorem anchoredFreeCurve_zero_eq (hDensity : OrdinaryH1Density) {K : ℝ}
+    (hSob : OrdinarySobolev K) (f : EnergyState) :
+    anchoredFreeCurve hDensity hSob 0 f = freeCurve hDensity hSob f := by
+  funext t
+  simp only [anchoredFreeCurve, freeCurve, sub_zero]
+
 /-- Actual finite-tail conclusions on one given family and one fixed set of
 joint representatives. All scalar and vector norms refer to the same curves. -/
 structure TailBounds (hDensity : OrdinaryH1Density) {K α c : ℝ}
@@ -55,7 +64,7 @@ private theorem freeCurve_bound (hDensity : OrdinaryH1Density) {K Ch : ℝ}
     (hSob : OrdinarySobolev K) (hfree : OrdinaryHomogeneousStrichartz Ch) (f : EnergyState) :
     CurveFinite (freeCurve hDensity hSob f) ∧
       xNorm (freeCurve hDensity hSob f) ≤ freeXConstant K Ch*pureGradientNorm f := by
-  simpa only [anchoredFreeCurve, sub_zero, freeCurve] using
+  simpa only [anchoredFreeCurve_zero_eq] using
     anchoredFreeCurve_bound hDensity hSob hfree 0 f
 
 /-- One set of constants precedes the selected linear and actual nonlinear
@@ -108,7 +117,7 @@ theorem exists_actual_nonlinear_R2_tail (hDensity : OrdinaryH1Density)
     (hg j).2.sub (hfree' (P.profile j)).1
   have hcorr (j : ℕ) (hj : actualProfileSize P j ≤ δ) :
       xNorm (normalizedCorrection hDensity hSob P g j) ≤ Ccorr*actualProfileSize P j^m := by
-    simpa only [normalizedCorrection, freeCurve, anchoredFreeCurve, sub_zero,
+    simpa only [anchoredFreeCurve_zero_eq, normalizedCorrection,
       actualProfileSize, m] using (hs j hj).2.2.2.2.1
   obtain ⟨L0, hL0⟩ := actualProfileSize_eventually_le hDensity hSob P u hp hB hδ
   have htail := fun j hj => hcorr j (hL0 j hj)

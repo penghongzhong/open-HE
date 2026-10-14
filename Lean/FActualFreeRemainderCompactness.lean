@@ -10,7 +10,7 @@ set_option warningAsError true
 open MeasureTheory Filter
 open scoped ENNReal NNReal Topology RealInnerProductSpace
 namespace HartreeF.FreeRemainderInputs
-open EnergySpace SobolevStretch ProfileEnergy ActualStrichartz TimeHolder
+open EnergySpace SobolevStretch StationarySelfTest ProfileEnergy ActualStrichartz TimeHolder
 
 /-- Genuine local mixed domains hold at every index without the weak-limit input. -/
 theorem normalizedFreeGradient_local_finite (hDensity : OrdinaryH1Density) {K : ℝ}
