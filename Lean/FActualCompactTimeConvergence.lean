@@ -18,6 +18,19 @@ attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
 attribute [local irreducible] energySubmodule criticalPathSubmodule energyPath
   criticalGradient hartreeDuhamelMap criticalPathIntervalSource LocalMildTrajectory.path
+  actualMaximalTrajectory CriticalJointSources.jointFields
+
+private theorem state_difference_le_path
+    {alpha kernel s r a b : ℝ} {f g : EnergyState}
+    (U : LocalMildTrajectory alpha kernel s f)
+    (V : LocalMildTrajectory alpha kernel r g) (hab : a ≤ b)
+    (hU : Icc a b ⊆ U.domain) (hV : Icc a b ⊆ V.domain)
+    (t : ℝ) (ht : t ∈ Icc a b) :
+    ‖U.state t - V.state t‖ ≤ ‖U.path hab hU - V.path hab hV‖ := by
+  have h := energyPath_value_norm_le (intervalMeasure a b)
+    (U.path hab hU - V.path hab hV) ⟨t, ht⟩
+  rw [energyPath_sub_apply, U.path_agrees, V.path_agrees] at h
+  exact h
 
 /-- Actual interval inclusion and uniform state error, with no assumed
 bound on the perturbed trajectory. -/
@@ -47,6 +60,8 @@ theorem exists_forward_compact_state_bound
       hDensity hSob hH h0 hfree hret hab q (V.state a) hgen (V.path_mild hab hI)
   obtain ⟨δ, C, hδ, _hδ1, hC, hperturb⟩ :=
     CompactLongTimePerturbation.exists_actual_maximal_compact_perturbation
+      (B := ‖energyPath (intervalMeasure a b) q‖)
+      (M := (pathValueSize (intervalMeasure a b) q).toReal)
       hDensity hSob h0 hfree hret hefree heret hH hgen hUnique
       (norm_nonneg (energyPath (intervalMeasure a b) q)) ENNReal.toReal_nonneg
   refine ⟨δ, C, hδ, hC, ?_⟩
@@ -61,12 +76,7 @@ theorem exists_forward_compact_state_bound
   intro t ht
   let U := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH a f
   have hclose : ‖U.path hab hU - q‖ ≤ C * ‖f - psi‖ := hresult.2.2.2.2.1
-  have hv := energyPath_value_norm_le (intervalMeasure a b) (U.path hab hU - q) ⟨t, ht⟩
-  rw [energyPath_sub_apply, U.path_agrees] at hv
-  have he : energyPath (intervalMeasure a b) q ⟨t, ht⟩ = V.state t :=
-    V.path_agrees hab hI ⟨t, ht⟩
-  rw [he] at hv
-  exact hv.trans hclose
+  exact (state_difference_le_path U V hab hU hI t ht).trans hclose
 
 /-- Actual interval inclusion and uniform state error, with no assumed
 bound on the perturbed trajectory. -/
@@ -96,6 +106,8 @@ theorem exists_backward_compact_state_bound
       hDensity hSob hH h0 hfree hret hab q (V.state a) hgen (V.path_mild hab hI)
   obtain ⟨δ, C, hδ, _hδ1, hC, hperturb⟩ :=
     BackwardCompactLongTimePerturbation.exists_actual_maximal_backward_compact_perturbation
+      (B := ‖energyPath (intervalMeasure a b) q‖)
+      (M := (pathValueSize (intervalMeasure a b) q).toReal)
       hDensity hSob h0 hfree hret hefree heret hH hgen hUnique
       (norm_nonneg (energyPath (intervalMeasure a b) q)) ENNReal.toReal_nonneg
   refine ⟨δ, C, hδ, hC, ?_⟩
@@ -110,12 +122,7 @@ theorem exists_backward_compact_state_bound
   intro t ht
   let U := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH b f
   have hclose : ‖U.path hab hU - q‖ ≤ C * ‖f - psi‖ := hresult.2.2.2.2.1
-  have hv := energyPath_value_norm_le (intervalMeasure a b) (U.path hab hU - q) ⟨t, ht⟩
-  rw [energyPath_sub_apply, U.path_agrees] at hv
-  have he : energyPath (intervalMeasure a b) q ⟨t, ht⟩ = V.state t :=
-    V.path_agrees hab hI ⟨t, ht⟩
-  rw [he] at hv
-  exact hv.trans hclose
+  exact (state_difference_le_path U V hab hU hI t ht).trans hclose
 
 /-- The moving evaluation statement needed in the critical-limit argument.
 The reference solution need only exist on the displayed compact time window.
