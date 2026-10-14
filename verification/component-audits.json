@@ -1024,5 +1024,74 @@
         "name": "HartreeF.ActualFiniteProfileGradientDefect.actual_finite_profile_gradient_defect"
       }
     ]
+  },
+  {
+    "module": "FCompactFreeHeadSlots",
+    "source": "components/FCompactFreeHeadSlots.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeHeadSlots.localize"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.cylinderL2"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.localize_joint"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.localize_norm_le"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.localize_spatial_support"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.localize_mixedNorm_eq"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.supported_spatial_embedding"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.mixed_of_slice_bound"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.supported_mixed_embedding"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.bounded_support_mixed_top"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.mixed_five_two_interpolate"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.compact_Q_bound"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.compact_Q_finite"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.SignedFibreDomains"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.compact_slots_bound"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.compact_seed_cylinder"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.tendsto_zero_of_power_bound"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.compact_free_head_zero"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.scalar_signed_fibre_domains"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.HeadMixedDomains"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.head_mixed_domains_of_finite"
+      }
+    ]
   }
 ]

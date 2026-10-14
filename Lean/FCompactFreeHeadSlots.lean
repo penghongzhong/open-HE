@@ -99,7 +99,7 @@ theorem mixed_of_slice_bound {E F : Type*}
   have he := eLpNorm_le_nnreal_smul_eLpNorm_of_ae_le_mul'
     (g := fun t => eLpNorm (g t) r volume) (c := K) hm
     (by simpa only [enorm_eq_self, hK] using hs) p
-  simpa only [mixedNorm, ENNReal.smul_def, hK] using he
+  simpa only [mixedNorm, ENNReal.smul_def, smul_eq_mul, hK] using he
 
 theorem supported_mixed_embedding {q : ℝ} (hq : 0 < q) (hq2 : q ≤ 2)
     {S : Set Space} (hSf : volume S ≠ ∞) {h : ℝ → Space → ℂ}
