@@ -16,7 +16,7 @@ open scoped ENNReal NNReal Topology
 namespace HartreeF.FreeHeadSlots
 open TimeHolder ProfileApproximation GeneralProfileCross CompactCross
   CrossContinuity LocalProfileProducts ProfileSpatialSmoothing
-  FiniteProfileCrossDomains EnergySpace SobolevStretch CriticalTimeSobolev
+  FiniteProfileCrossDomains EnergySpace SobolevStretch CriticalTimeSobolev ForcingDomain
 
 /-- A ScalarProfile records genuine domains, without identifying its direction
 with the derivative of its value. This constructor keeps the given h unchanged. -/
@@ -38,7 +38,7 @@ def approximationError (m : ℕ) : ℝ≥0 := 2*(smoothingPrecision m).toNNReal
 theorem approximationError_coe (m : ℕ) :
     (approximationError m : ℝ≥0∞) = smoothingPrecision m+smoothingPrecision m := by
   change ((2 : ℝ≥0) * (smoothingPrecision m).toNNReal : ℝ≥0∞) = _
-  rw [ENNReal.coe_mul, ENNReal.coe_toNNReal (show smoothingPrecision m ≠ ∞ from ENNReal.ofReal_ne_top)]
+  rw [ENNReal.coe_toNNReal (show smoothingPrecision m ≠ ∞ from ENNReal.ofReal_ne_top)]
   norm_num only [ENNReal.coe_ofNat, two_mul]
 
 /-- Same-direction continuity, with explicit NNReal cap/error conversions. -/
@@ -148,7 +148,7 @@ theorem value_approximation_free_head_zero {α c : ℝ} (hHLS : OrdinaryHLS α c
       ne_top_of_le_ne_top ENNReal.ofReal_ne_top (A.value_error m)
     have hdz : mixedNorm volume volume 10 (ENNReal.ofReal (30/13 : ℝ))
         (fun t x => h n t x-h n t x) ≠ ∞ := by simp [mixedNorm]
-    letI := value_gradient_product_holder
+    let := value_gradient_product_holder
     have hd := normProduct_difference_mixed_le
       (p := 10) (q := ENNReal.ofReal (30/13 : ℝ)) (r := ENNReal.ofReal (15/8 : ℝ))
       (by norm_num) (by norm_num) (by norm_num) ENNReal.ofReal_ne_top (by norm_num) ENNReal.ofReal_ne_top

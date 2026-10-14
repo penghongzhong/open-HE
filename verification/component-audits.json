@@ -1093,5 +1093,32 @@
         "name": "HartreeF.FreeHeadSlots.head_mixed_domains_of_finite"
       }
     ]
+  },
+  {
+    "module": "FActualFreeHeadApproximation",
+    "source": "components/FActualFreeHeadApproximation.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeHeadSlots.value_approximation_direction_profile"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.approximationCap"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.approximationError"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.approximationError_coe"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.same_direction_approximation_error"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.value_approximation_free_head_zero"
+      },
+      {
+        "name": "HartreeF.FreeHeadSlots.actual_free_head_slots"
+      }
+    ]
   }
 ]
