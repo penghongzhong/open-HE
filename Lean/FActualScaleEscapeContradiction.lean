@@ -35,8 +35,8 @@ theorem normalized_scale_atTop_not_nonzero_limit
     simpa only [v, (criticalAffineState (r n) (hr n) (y n)).apply_symm_apply] using hGauge
   obtain ⟨a, ha, _S, _hS, hbound⟩ := relative_parameter_bounds hlim hg hv
   have hzero : Tendsto (fun n => R / r n) atTop (𝓝 0) := by
-    simpa only [div_eq_mul_inv, mul_zero] using hscale.inv_tendsto_atTop.const_mul R
-  obtain ⟨n, hn, hnsmall⟩ := (hbound.and (hzero.eventually_lt_const ha)).exists
+    simpa only [div_eq_mul_inv, Pi.inv_apply, mul_zero] using hscale.inv_tendsto_atTop.const_mul R
+  obtain ⟨n, hn, hnsmall⟩ := (hbound.and (hzero.eventually (Iio_mem_nhds ha))).exists
   exact (not_lt_of_ge hn.1) hnsmall
 
 /-- At normalized time -c/r², the normalized actual trajectory returns to
@@ -54,7 +54,7 @@ theorem actual_normalized_return_time
     let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 f
     let z := (criticalAffineState r hr y).symm (M.state c)
     let U := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 z
-    -c / r^2 ∈ U.domain ∧ U.state (-c / r^2) = (criticalAffineState r hr y).symm f := by
+    (-c / r^2) ∈ U.domain ∧ U.state (-c / r^2) = (criticalAffineState r hr y).symm f := by
   intro M z U
   let N := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH c (M.state c)
   have hNM := actualMaximalTrajectory_recenter hDensity hSob h0 hfree hret hefree heret hH f hc
@@ -116,7 +116,7 @@ theorem moving_time_tendsto_of_global
     rw [hglobal]
     exact subset_univ _
   have htauI : ∀ᶠ n in atTop, tau n ∈ Icc a b := by
-    filter_upwards [htau.eventually_gt_const ha, htau.eventually_lt_const hb] with n hn hn'
+    filter_upwards [htau.eventually (Ioi_mem_nhds ha), htau.eventually (Iio_mem_nhds hb)] with n hn hn'
     exact ⟨hn.le, hn'.le⟩
   exact (actual_moving_time_tendsto hDensity hSob h0 hfree hret hefree heret hH
     hgen hUnique psi z hz (min_le_left _ _) (le_max_left _ _) tau htau
