@@ -1378,5 +1378,17 @@
         "name": "HartreeF.ActualBilateralStrongLimit.threshold_bilateral_limit"
       }
     ]
+  },
+  {
+    "module": "FActualCriticalLimitGlobal",
+    "source": "components/FActualCriticalLimitGlobal.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualCriticalLimitGlobal.given_critical_native_compact_orbit"
+      },
+      {
+        "name": "HartreeF.ActualCriticalLimitGlobal.critical_strong_limit_global_compact"
+      }
+    ]
   }
 ]

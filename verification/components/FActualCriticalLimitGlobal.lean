@@ -1,0 +1,7 @@
+import FActualCriticalLimitGlobal
+
+#print axioms HartreeF.ActualCriticalLimitGlobal.given_critical_native_compact_orbit
+#check @HartreeF.ActualCriticalLimitGlobal.given_critical_native_compact_orbit
+
+#print axioms HartreeF.ActualCriticalLimitGlobal.critical_strong_limit_global_compact
+#check @HartreeF.ActualCriticalLimitGlobal.critical_strong_limit_global_compact

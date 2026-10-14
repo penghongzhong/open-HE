@@ -22,6 +22,7 @@
     "FActualCompactLongTimePerturbation",
     "FActualCompactMaximalPerturbation",
     "FActualCompactTimeConvergence",
+    "FActualCriticalLimitGlobal",
     "FActualCriticalProfileConcentration",
     "FActualDifferenceNormExhaustion",
     "FActualFinitePerturbation",
@@ -207,6 +208,7 @@
     "FActualCompactPDEToChargeDerivative",
     "FActualCompactTimeConvergence",
     "FActualCoupledApproximationAdapter",
+    "FActualCriticalLimitGlobal",
     "FActualCriticalPathProducer",
     "FActualCriticalPathRegularization",
     "FActualCriticalPathUniqueness",
@@ -1890,7 +1892,8 @@
     "FPaperMainEnvironment": "3543313335cafe4925e93e2c154fe37fb3f46c889d14013e0fcbd9c5ff458d9c",
     "FGaugeCompactParameterBounds": "4fb80ce2381e4dd6b89b843c1afc3943d466bf8d1ebe92d2bdd3053428facc48",
     "FActualCompactTimeConvergence": "48ddee24c40d0800682ce5c7012a43c79508b0dd1dd808e0a178a119b20da998",
-    "FActualBilateralStrongLimit": "59240ebcc4d8d9486a8b3933ca046671ad447e44ebbfc9f65a67f9759dd29bfb"
+    "FActualBilateralStrongLimit": "59240ebcc4d8d9486a8b3933ca046671ad447e44ebbfc9f65a67f9759dd29bfb",
+    "FActualCriticalLimitGlobal": "f85fb2d0009381a26e4b6caf4db8cd4007ed94e76a66ef5df9e2beed2a2b86a4"
   },
   "declarations": [
     {
@@ -2776,7 +2779,7 @@
     }
   ],
   "seed": {
-    "run": 38616092766,
-    "commit": "0d3f68ad60540a77e8f50f2a2a51b02b8970432d"
+    "run": 38617765674,
+    "commit": "66dfebc2d10fbc8268732f0dc6c64ebb7fde5b31"
   }
 }
