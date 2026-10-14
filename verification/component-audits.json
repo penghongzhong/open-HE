@@ -1261,5 +1261,29 @@
         "name": "HartreeF.BilateralSideStability.exists_eventual_backward_graph_cap_of_finite_s"
       }
     ]
+  },
+  {
+    "module": "FFreeLocalCompactness",
+    "source": "components/FFreeLocalCompactness.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeLocalCompactness.lowL2_add_highL2"
+      },
+      {
+        "name": "HartreeF.FreeLocalCompactness.freeJoint_low_high_cylinder_ae"
+      },
+      {
+        "name": "HartreeF.FreeLocalCompactness.freeJoint_cylinder_split_integral_le"
+      },
+      {
+        "name": "HartreeF.FreeLocalCompactness.freeJoint_cylinder_integral_tendsto_zero"
+      },
+      {
+        "name": "HartreeF.FreeLocalCompactness.freeJoint_local_tendsto_zero"
+      },
+      {
+        "name": "HartreeF.FreeLocalCompactness.freeJoint_local_mixedNorm_tendsto_zero"
+      }
+    ]
   }
 ]

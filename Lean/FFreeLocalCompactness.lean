@@ -40,6 +40,8 @@ theorem freeJoint_cylinder_split_integral_le (q : Cutoff) (L : ℝ)
     apply integral_mono_ae (freeJoint_cylinder_integrable_sq f T R z)
       ((hl.const_mul 2).add (hh.const_mul 2))
     filter_upwards [freeJoint_low_high_cylinder_ae q L f T R z] with p hp
+    dsimp only [Function.uncurry] at hp
+    simp only [Pi.add_apply]
     rw [hp]
     have ht := norm_add_le (freeJoint (lowL2 q L f) p.1 p.2)
       (freeJoint (highL2 q L f) p.1 p.2)
@@ -74,7 +76,7 @@ theorem freeJoint_cylinder_integral_tendsto_zero (q : Cutoff) {f : ℕ → L2} {
       apply (div_lt_iff₀ hL).mpr
       have he : ε / 4 * L = ε / 4 + C * B ^ 2 := by
         dsimp [L]
-        field_simp [hε.ne'] <;> ring
+        field_simp [hε.ne']
       rw [he]
       linarith
     have hlow := lowL2_cylinder_integral_tendsto_zero q hL hB hbound hweak T R z
@@ -94,7 +96,7 @@ theorem freeJoint_local_tendsto_zero (q : Cutoff) {f : ℕ → L2} {B : ℝ}
     {T R : ℝ} (hT : 0 < T) (hR : 0 < R) (z : V) :
     Tendsto (fun n => eLpNorm (Function.uncurry (freeJoint (f n))) 2
       (cylinderMeasure T R z)) atTop (𝓝 0) := by
-  have h := (ENNReal.continuous_ofReal.tendsto 0).comp
+  have h := (ENNReal.continuous_ofReal.tendsto (Real.sqrt 0)).comp
     ((Real.continuous_sqrt.tendsto 0).comp
       (freeJoint_cylinder_integral_tendsto_zero q hB hbound hweak hT hR z))
   have he (n : ℕ) := eLpNorm_two_eq_ofReal_sqrt (freeJoint_cylinder_memLp (f n) T R z)

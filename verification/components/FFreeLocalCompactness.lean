@@ -1,0 +1,22 @@
+import FFreeLocalCompactness
+
+set_option pp.fullNames true
+set_option pp.universes false
+set_option pp.proofs false
+set_option pp.proofs.withType true
+set_option pp.deepTerms true
+set_option pp.maxSteps 10000000
+set_option format.width 120
+
+#print axioms HartreeF.FreeLocalCompactness.lowL2_add_highL2
+#check @HartreeF.FreeLocalCompactness.lowL2_add_highL2
+#print axioms HartreeF.FreeLocalCompactness.freeJoint_low_high_cylinder_ae
+#check @HartreeF.FreeLocalCompactness.freeJoint_low_high_cylinder_ae
+#print axioms HartreeF.FreeLocalCompactness.freeJoint_cylinder_split_integral_le
+#check @HartreeF.FreeLocalCompactness.freeJoint_cylinder_split_integral_le
+#print axioms HartreeF.FreeLocalCompactness.freeJoint_cylinder_integral_tendsto_zero
+#check @HartreeF.FreeLocalCompactness.freeJoint_cylinder_integral_tendsto_zero
+#print axioms HartreeF.FreeLocalCompactness.freeJoint_local_tendsto_zero
+#check @HartreeF.FreeLocalCompactness.freeJoint_local_tendsto_zero
+#print axioms HartreeF.FreeLocalCompactness.freeJoint_local_mixedNorm_tendsto_zero
+#check @HartreeF.FreeLocalCompactness.freeJoint_local_mixedNorm_tendsto_zero
