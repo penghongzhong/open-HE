@@ -48,6 +48,7 @@ private theorem exists_L10_half_mass {E : Type*} [NormedAddCommGroup E]
       simp only [intervalIntegral.integral_same]
       change 0 ≤ mass/2 ∧ mass/2 ≤ mass
       constructor <;> linarith)
+  change (∫ t in a..c, g t) = mass/2 at hleft
   have hac : a<c := by
     apply lt_of_le_of_ne hc.1
     intro heq
@@ -146,11 +147,11 @@ theorem exists_balanced_compact_windows (hDensity : OrdinaryH1Density)
       ENNReal.ofReal (2*T) < pathValueSize (intervalMeasure a b) (M.path hab hI) := by
     by_contra h
     apply hbad
-    refine ⟨⟨2*T, by positivity⟩, ?_⟩
+    refine ⟨(2*T).toNNReal, ?_⟩
     intro a b hab hI
     have hle : pathValueSize (intervalMeasure a b) (M.path hab hI) ≤
         ENNReal.ofReal (2*T) := le_of_not_gt (fun hlt => h ⟨a,b,hab,hI,hlt⟩)
-    simpa only [ENNReal.ofReal_eq_coe_nnreal (by positivity : 0≤2*T)] using hle
+    exact hle
   obtain ⟨a,b,hab,hI,hlarge⟩ := hex
   obtain ⟨c,hac,hcb,hL,hRight⟩ := exists_path_half_large_S hDensity hSob hab
     (M.path hab hI) hT hlarge
@@ -159,8 +160,7 @@ theorem exists_balanced_compact_windows (hDensity : OrdinaryH1Density)
     by_contra hn
     have hbound : C*‖q‖ ≤ T := by
       have hm := mul_le_mul_of_nonneg_left (le_of_not_gt hn) hC
-      dsimp [T]
-      nlinarith
+      exact hm.trans (show C*R ≤ (C+1)*R by nlinarith)
     exact (not_le_of_gt hq) ((pathValueSize_le_graph hDensity hSob q).trans
       (ENNReal.ofReal_le_ofReal hbound))
   have hIL : Icc a c ⊆ M.domain := fun _ ht => hI ⟨ht.1, ht.2.trans hcb.le⟩
@@ -170,6 +170,15 @@ theorem exists_balanced_compact_windows (hDensity : OrdinaryH1Density)
     exact graph_large _ hL
   · rw [path_restrict M hab hI hac.le hcb.le le_rfl hIR]
     exact graph_large _ hRight
+
+private theorem path_norm_endpoints {alpha kernel s : ℝ} {f : EnergyState}
+    (M : LocalMildTrajectory alpha kernel s f) {a b c d : ℝ}
+    (ha : a=c) (hb : b=d) (hab : a≤b) (hcd : c≤d)
+    (hI : Icc a b ⊆ M.domain) (hJ : Icc c d ⊆ M.domain) :
+    ‖M.path hab hI‖ = ‖M.path hcd hJ‖ := by
+  subst c
+  subst d
+  rfl
 
 /-- Literal translated path identity and its graph norm consequence. -/
 theorem translated_path_norm {alpha kernel s : ℝ} {f g : EnergyState}
@@ -192,7 +201,7 @@ theorem translated_path_norm {alpha kernel s : ℝ} {f g : EnergyState}
   have hn := (congrArg norm hid).trans
     (affineCriticalPath_norm (by norm_num : (0:ℝ)<1) 0 c (l-c) (r-c)
       (sub_le_sub_right hlr c) _)
-  simpa only [hl,hr] using hn
+  exact hn.trans (path_norm_endpoints M hl hr _ hlr hsource hM)
 
 /-- The native zero-mark trajectory and both actual windows, including the
 compact path identity needed for all later graph transports. -/
@@ -258,15 +267,17 @@ theorem actual_zero_centered_window (hDensity : OrdinaryH1Density)
       ‖M.path w.left_lt_center.le hLM‖ := by
     have hLU : Icc (w.left-w.center) (w.center-w.center) ⊆ U.domain := by
       simpa only [sub_self] using hL
-    simpa only [sub_self] using translated_path_norm M U w.center hcenter.2
-      w.left_lt_center.le hLM hLU
+    exact (path_norm_endpoints U rfl (sub_self w.center) _ _ hLU hL).symm.trans
+      (translated_path_norm M U w.center hcenter.2 w.left_lt_center.le hLM hLU)
   have hnR : ‖U.path (sub_nonneg.mpr w.center_lt_right.le) hR'‖ =
       ‖M.path w.center_lt_right.le hRM‖ := by
     have hRU : Icc (w.center-w.center) (w.right-w.center) ⊆ U.domain := by
       simpa only [sub_self] using hR'
-    simpa only [sub_self] using translated_path_norm M U w.center hcenter.2
-      w.center_lt_right.le hRM hRU
-  refine ⟨{ center := w.center, center_mem := hc,
+    exact (path_norm_endpoints U (sub_self w.center) rfl _ _ hRU hR').symm.trans
+      (translated_path_norm M U w.center hcenter.2 w.center_lt_right.le hRM hRU)
+  refine ⟨{
+    center := w.center
+    center_mem := hc
     left := w.left-w.center, right := w.right-w.center,
     left_neg := sub_neg.mpr w.left_lt_center,
     right_pos := sub_pos.mpr w.center_lt_right,
