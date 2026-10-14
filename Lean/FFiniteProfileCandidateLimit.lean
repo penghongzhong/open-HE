@@ -239,10 +239,18 @@ private theorem candidate_six_terms_ae {α c : ℝ} (hH : OrdinaryHLS α c)
   filter_upwards [hzt, hix] with x hzx hix
   have he := candidateDefect_six_terms α c s (fun i => u i t) (fun i => h i t) x
     hzx.1 (fun i hi => (hix i hi).1) hzx.2 (fun i hi => (hix i hi).2)
-  dsimp only [sixTerms, R0, R1, T0, T1, pureDensity, pureDensityDerivative,
-    pureLocal, pureLocalDerivative, innerCross, outerCross, directionalDensity,
-    potential, powerDensity, density] at he ⊢
-  simpa only [Finset.sum_smul] using he
+  have hR1 : R1 α s u h t =
+      (fun y => densityDerivativeDefect α s (fun i => u i t y) (fun i => h i t y)) := rfl
+  have hR0 : R0 α s u t = (fun y => densityDefect α s (fun i => u i t y)) := rfl
+  have hDerivative (i : ι) : pureDensityDerivative α (u i) (h i) t =
+      directionalDensity α (u i t) (h i t) := rfl
+  have hPotential (i : ι) : rieszConvolution α c (pureDensity α (u i) t) x =
+      potential α c (u i t) x := rfl
+  simp only [sixTerms]
+  rw [hR1, hR0]
+  simp_rw [hDerivative, hPotential]
+  simpa only [T0, T1, pureLocal, pureLocalDerivative, innerCross, outerCross,
+    Finset.sum_smul] using he
 
 /-- Every-index finiteness and original-filter vanishing of the SAME literal
 finite directional candidate defect. The packet is produced from actual framed
