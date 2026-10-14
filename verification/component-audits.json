@@ -739,5 +739,80 @@
         "name": "HartreeF.FullResidual.compactResidualSource_paperForcingSize_le"
       }
     ]
+  },
+  {
+    "module": "FActualFiniteSCurveFinite",
+    "source": "components/FActualFiniteSCurveFinite.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FiniteSActualX.uniform_compact_graph_of_finiteS"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_global_curveFinite_of_finiteS"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actual_path_value_size"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.finiteS_of_global_curveFinite"
+      },
+      {
+        "name": "HartreeF.FiniteSActualX.actualMaximalTrajectory_stable_global_curveFinite_of_finiteS"
+      }
+    ]
+  },
+  {
+    "module": "FActualCriticalThreshold",
+    "source": "components/FActualCriticalThreshold.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualCriticalThreshold.StableDatum"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.trapping_factor_pos"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.stable_kinetic_le_energy"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.stable_energy_nonneg"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.trapping_factor_ground_energy"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.BadDatum"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.badEnergies"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.badEnergies_nonempty"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.badEnergies_bddBelow"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.criticalLevel_le_bad_energy"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.global_curveFinite_below_criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.marked_global_curveFinite_below_criticalLevel"
+      },
+      {
+        "name": "HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence"
+      }
+    ]
   }
 ]

@@ -48,15 +48,17 @@ theorem actualMaximalTrajectory_marked_global_curveFinite
   have hone : (0 : ℝ) < 1 := by norm_num
   have hcov : V.domain = (fun t : ℝ => t+s) ⁻¹' U.domain ∧
       Set.EqOn V.state (fun t => U.state (t+s)) V.domain := by
-    simpa only [sub_self, one_pow, zero_div, affineState_one_zero, timeAffine, one_mul] using
-      MaximalAffine.actualMaximalTrajectory_affine hDensity hSob h0 hfree hret hefree heret hH
-        hone (0 : Space) s s f
+    have hc := MaximalAffine.actualMaximalTrajectory_affine
+      hDensity hSob h0 hfree hret hefree heret hH hone (0 : Space) s s f
+    dsimp only at hc
+    rw [sub_self, zero_div, affineState_one_zero] at hc
+    simpa only [affineState_one_zero, timeAffine, one_pow, one_mul] using hc
   have hglobal : U.domain = Set.univ := by
     apply Set.eq_univ_iff_forall.mpr
     intro t
     have ht : t-s ∈ V.domain := hzero.1.symm ▸ Set.mem_univ (t-s)
-    have hu : (t-s)+s ∈ U.domain := hcov.1 ▸ ht
-    simpa only [sub_add_cancel] using hu
+    have hu : t-s ∈ (fun t : ℝ => t+s) ⁻¹' U.domain := hcov.1 ▸ ht
+    simpa only [Set.mem_preimage, sub_add_cancel] using hu
   have hframe : stateFrame V.state hone (0 : Space) (-s) = U.state := by
     funext t
     rw [stateFrame_time, criticalAffineState_one_zero]
