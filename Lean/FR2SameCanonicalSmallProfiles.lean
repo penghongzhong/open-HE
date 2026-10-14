@@ -93,6 +93,7 @@ theorem exists_same_canonical_small_profile_bounds (hDensity : OrdinaryH1Density
   refine ⟨delta,Csd,Ccorr,hdelta,hCsd,hCcorr,?_⟩
   intro T f phi s
   let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH T f
+  dsimp only
   intro hdom hmatch hsmall
   obtain ⟨hglobal,hpaths,hdata⟩ := hcompact T f phi s hdom hmatch hsmall
   have hcont : Continuous M.state := continuousOn_univ.mp (hglobal ▸ M.continuous)

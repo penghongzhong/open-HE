@@ -1141,5 +1141,20 @@
         "name": "HartreeF.FreeRemainderInputs.profileRemainder_eventually_free_bounds"
       }
     ]
+  },
+  {
+    "module": "FR2SameCanonicalSmallProfiles",
+    "source": "components/FR2SameCanonicalSmallProfiles.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.R2Global.anchored_global_bounds"
+      },
+      {
+        "name": "HartreeF.R2Global.anchored_free_matching_difference"
+      },
+      {
+        "name": "HartreeF.R2Global.exists_same_canonical_small_profile_bounds"
+      }
+    ]
   }
 ]

@@ -1648,7 +1648,7 @@
     "FR2CompactSmallData": "c95ea1cf351b7cd79b9b0fa714bb87e57a11017a4c86cbb687b502a49f7e5c8f",
     "FR2FamilyTailAlgebra": "dac4974292b1d06d1584ec0d60e23c3286c214afae7a448bbbdc487164c22e0c",
     "FR2GlobalXExhaustion": "6e7a8a5314b26a1828652f1272e1683f5f26908bdfd9a7e2a7c169e4a36b5704",
-    "FR2SameCanonicalSmallProfiles": "49d9fc1d4e30802a13e26a69fc0bd5654ec385133eb16a354859e7511a468b97",
+    "FR2SameCanonicalSmallProfiles": "3a43200415dab6ea1b2cfed485acce9f13f426e94660caa4888662e88545d27c",
     "FR2SquareTailPowers": "ad55563462bb8fbdd42fa0842fdb2d5577c98c548f1379459eae42c4f58afae1",
     "FRawAffineL1Source": "3004e5add2762347efb210ad186542d77fd2d2ade7843963e92ec1ee0446cf73",
     "FRawCriticalPathProducer": "fb20274b09add43f2bc008b615c4fbd26ab68c105acfb11b83c716a7ffc9d62d",
@@ -2764,7 +2764,7 @@
     }
   ],
   "seed": {
-    "run": 38528813460,
-    "commit": "cbfe5ad24f552a17bed1b1da2534659eb175baa4"
+    "run": 38542597994,
+    "commit": "fcfe45099dd70e203cf7e4a1ec661cc028856796"
   }
 }
