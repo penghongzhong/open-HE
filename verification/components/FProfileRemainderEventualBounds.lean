@@ -1,0 +1,20 @@
+import FProfileRemainderEventualBounds
+
+set_option pp.fullNames true
+set_option pp.universes false
+set_option pp.proofs false
+set_option pp.proofs.withType true
+set_option pp.deepTerms true
+set_option pp.maxSteps 10000000
+set_option format.width 120
+
+#print axioms HartreeF.FreeRemainderInputs.profileRemainder_free_all_index_bounds
+#check @HartreeF.FreeRemainderInputs.profileRemainder_free_all_index_bounds
+#print axioms HartreeF.FreeRemainderInputs.profileRemainder_free_scalarProfile
+#check @HartreeF.FreeRemainderInputs.profileRemainder_free_scalarProfile
+#print axioms HartreeF.FreeRemainderInputs.profileRemainder_eventually_pureGradient_le
+#check @HartreeF.FreeRemainderInputs.profileRemainder_eventually_pureGradient_le
+#print axioms HartreeF.FreeRemainderInputs.profileRemainder_eventually_pureGradient_le_add_one
+#check @HartreeF.FreeRemainderInputs.profileRemainder_eventually_pureGradient_le_add_one
+#print axioms HartreeF.FreeRemainderInputs.profileRemainder_eventually_free_bounds
+#check @HartreeF.FreeRemainderInputs.profileRemainder_eventually_free_bounds

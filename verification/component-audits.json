@@ -1120,5 +1120,26 @@
         "name": "HartreeF.FreeHeadSlots.actual_free_head_slots"
       }
     ]
+  },
+  {
+    "module": "FProfileRemainderEventualBounds",
+    "source": "components/FProfileRemainderEventualBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.FreeRemainderInputs.profileRemainder_free_all_index_bounds"
+      },
+      {
+        "name": "HartreeF.FreeRemainderInputs.profileRemainder_free_scalarProfile"
+      },
+      {
+        "name": "HartreeF.FreeRemainderInputs.profileRemainder_eventually_pureGradient_le"
+      },
+      {
+        "name": "HartreeF.FreeRemainderInputs.profileRemainder_eventually_pureGradient_le_add_one"
+      },
+      {
+        "name": "HartreeF.FreeRemainderInputs.profileRemainder_eventually_free_bounds"
+      }
+    ]
   }
 ]

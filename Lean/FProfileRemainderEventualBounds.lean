@@ -12,6 +12,7 @@ open MeasureTheory Filter
 open scoped ENNReal NNReal Topology
 namespace HartreeF.FreeRemainderInputs
 open EnergySpace SobolevStretch ProfileEnergy ActualStrichartz ActualFreeValue TimeHolder
+  StationarySelfTest
 
 /-- Every original sequence index has the inherited fixed-depth cap B_J.
 This cap is allowed to grow with J and does not consume kinetic asymptotics. -/
