@@ -78,17 +78,40 @@ def main():
     env = {**os.environ, 'LEAN_PATH': os.pathsep.join(map(str, [objects] + external_paths))}
     environment = {'utc': now(), 'identity': REQ['identity'], 'checked_file_hashes': count,
                    'dependency_revisions': len(manifest['packages']), 'external_sources': 10900,
-                   'external_artifacts': count, 'version': version.stdout, 'lean_path': env['LEAN_PATH']}
+                   'external_artifacts': 43600, 'version': version.stdout, 'lean_path': env['LEAN_PATH']}
     save('environment.json', environment)
     print('ENVIRONMENT_VERIFIED ' + json.dumps(environment), flush=True)
 
     results = {}
+    seed_dir = HERE.parent / 'verification-seed'
+    seed = json.loads((seed_dir / 'receipt.json').read_text())
+    ensure(seed['identity'] == REQ['identity'], 'Seed environment differs')
+    ensure(seed['commit'] == REQ['seed']['commit'], 'Seed commit differs')
+    ensure(seed['status'] == 'TARGETS_PASS', 'Seed did not complete compilation')
+    ensure(seed.get('public_audit') == 'AXIOMS_PASS_TYPES_CAPTURED_SEMANTIC_REVIEW_PENDING',
+           'Seed public axiom audit did not pass')
+    candidates = set(files) & seed['results'].keys()
+    while True:
+        ready = sorted(n for n in candidates - results.keys() if deps[n] <= results.keys())
+        if not ready:
+            break
+        for n in ready:
+            record = seed['results'][n]
+            ensure(record['status'] == 'PASS' and record['exit_code'] == 0 and
+                   not record.get('sorryAx_detected', True), 'Invalid seed result: '+n)
+            ensure(record['source_sha256'] == hashes[n] and record['dependency_sources'] ==
+                   {d:hashes[d] for d in sorted(deps[n])}, 'Seed source/dependency mismatch: '+n)
+            for folder,suffix,key in [('objects','.olean','olean_sha256'),('logs','.log','log_sha256')]:
+                artifact = seed_dir / folder / (n+suffix)
+                ensure(sha(artifact) == record[key], 'Seed artifact hash mismatch: '+n)
+                shutil.copy2(artifact, OUT / folder / artifact.name)
+            results[n] = {**record, 'reused':True,'seed_run':REQ['seed']['run']}
     receipt = {'status':'RUNNING','identity':REQ['identity'],'targets':REQ['targets'],
                'closure':sorted(files),'results':results,'main_theorem_verified':False,
                'full_scattering_proved':False,'started_utc':now(),
                'commit':os.environ.get('GITHUB_SHA'), 'public_semantic_acceptance':'PENDING'}
     save('receipt.json',receipt)
-    print(f'Fresh compilations: {len(files)}',flush=True)
+    print(f'Seed verified: {len(results)}; fresh compilations: {len(files)-len(results)}',flush=True)
 
     def compile_one(n):
         obj = objects / (n + '.olean'); log = logs / (n + '.log')

@@ -1,11 +1,9 @@
-name: Pinned Lean finite-S verification
+name: Pinned Lean energy conservation and trapping
 on:
-  push:
-    branches: [main]
-    paths: ['Lean/**', 'verification/**', 'lean-toolchain', '.github/workflows/verify.yml']
   workflow_dispatch:
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: open-he-${{ github.ref }}
   cancel-in-progress: false
@@ -34,6 +32,12 @@ jobs:
           git -C /tmp/mathlib checkout --detach FETCH_HEAD
           cd /tmp/mathlib
           lake exe cache get --cache-from=master
+      - uses: actions/download-artifact@v4
+        with:
+          name: lean-verification-results-1
+          run-id: 38498487592
+          github-token: ${{ github.token }}
+          path: verification-seed
       - name: Check all pins, compile finite-S closure and audit public declarations
         shell: bash
         run: python3 verification/verify.py

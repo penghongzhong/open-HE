@@ -10,6 +10,8 @@ import FActualLeftFiniteSScattering
 import FActualMaximalFiniteSScattering
 import FActualTwoSidedFiniteSScattering
 import FMaximalFiniteSGlobalScattering
+import FActualDynamicSharpWTrapping
+import FActualMaximalMildEnergyConservation
 
 set_option pp.fullNames true
 set_option pp.universes false
@@ -77,6 +79,14 @@ set_option format.width 120
 #print axioms HartreeF.MaximalFiniteSGlobal.infinite_s_criteria_of_compact_s
 #print axioms HartreeF.MaximalFiniteSGlobal.maximal_domain_eq_univ_of_finite_s
 #print axioms HartreeF.MaximalFiniteSGlobal.actual_maximal_global_and_two_sided_scattering_of_finite_s
+#print axioms HartreeF.DynamicSharpW.localMildTrajectory_sharp_W_trapping
+#print axioms HartreeF.DynamicSharpW.localMildTrajectory_pureGradient_cap
+#print axioms HartreeF.DynamicSharpW.actualMaximalTrajectory_sharp_W_trapping
+#print axioms HartreeF.DynamicSharpW.actualMaximalTrajectory_pureGradient_cap
+#print axioms HartreeF.DynamicSharpW.actualMaximalTrajectory_groundState_trapping
+#print axioms HartreeF.DynamicSharpW.actualMaximalTrajectory_original_groundState_trapping
+#print axioms HartreeF.MaximalTrajectory.actualMaximalTrajectory_totalEnergy_constant
+#print axioms HartreeF.MaximalTrajectory.actualMaximalTrajectory_originalEnergy_constant
 
 #check @HartreeF.FiniteSContinuation.FiniteSBefore
 #check @HartreeF.FiniteSContinuation.exists_strict_extension_of_finite_s
@@ -136,3 +146,11 @@ set_option format.width 120
 #check @HartreeF.MaximalFiniteSGlobal.infinite_s_criteria_of_compact_s
 #check @HartreeF.MaximalFiniteSGlobal.maximal_domain_eq_univ_of_finite_s
 #check @HartreeF.MaximalFiniteSGlobal.actual_maximal_global_and_two_sided_scattering_of_finite_s
+#check @HartreeF.DynamicSharpW.localMildTrajectory_sharp_W_trapping
+#check @HartreeF.DynamicSharpW.localMildTrajectory_pureGradient_cap
+#check @HartreeF.DynamicSharpW.actualMaximalTrajectory_sharp_W_trapping
+#check @HartreeF.DynamicSharpW.actualMaximalTrajectory_pureGradient_cap
+#check @HartreeF.DynamicSharpW.actualMaximalTrajectory_groundState_trapping
+#check @HartreeF.DynamicSharpW.actualMaximalTrajectory_original_groundState_trapping
+#check @HartreeF.MaximalTrajectory.actualMaximalTrajectory_totalEnergy_constant
+#check @HartreeF.MaximalTrajectory.actualMaximalTrajectory_originalEnergy_constant
