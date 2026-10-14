@@ -1,0 +1,7 @@
+import FActualSpatialBadTransport
+
+#print axioms HartreeF.ActualSpatialBadTransport.forward_bad_of_spatial_normalization
+#check @HartreeF.ActualSpatialBadTransport.forward_bad_of_spatial_normalization
+
+#print axioms HartreeF.ActualSpatialBadTransport.backward_bad_of_spatial_normalization
+#check @HartreeF.ActualSpatialBadTransport.backward_bad_of_spatial_normalization

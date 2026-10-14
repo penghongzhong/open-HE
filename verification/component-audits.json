@@ -1408,5 +1408,26 @@
         "name": "HartreeF.ActualScaleEscape.normalized_return_time_not_tendsto"
       }
     ]
+  },
+  {
+    "module": "FActualCriticalScaleEscape",
+    "source": "components/FActualCriticalScaleEscape.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualCriticalScaleEscape.critical_normalized_return_time_not_tendsto"
+      }
+    ]
+  },
+  {
+    "module": "FActualSpatialBadTransport",
+    "source": "components/FActualSpatialBadTransport.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualSpatialBadTransport.forward_bad_of_spatial_normalization"
+      },
+      {
+        "name": "HartreeF.ActualSpatialBadTransport.backward_bad_of_spatial_normalization"
+      }
+    ]
   }
 ]
