@@ -49,6 +49,7 @@ theorem actual_finite_profile_gradient_defect
       HasWeakGradient (fun x => (E n t x).im) (fun x => gradientImag (D n t x)) ∧
       CoordinateTests (E n t) (D n t)) := by
   classical
+  letI : SecondCountableTopologyEither ℝ EnergyState := ⟨Or.inl inferInstance⟩
   dsimp only
   let r : ∀ i, EnergyJointFields volume (g i) :=
     fun i => energyJointFields volume (g i) (hg i).aestronglyMeasurable
