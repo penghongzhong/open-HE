@@ -13,6 +13,7 @@ import FMaximalFiniteSGlobalScattering
 import FActualDynamicSharpWTrapping
 import FActualMaximalMildEnergyConservation
 import FSharpWFiniteSGlobalScattering
+import FActualCriticalThreshold
 
 set_option pp.fullNames true
 set_option pp.universes false
@@ -89,6 +90,13 @@ set_option format.width 120
 #print axioms HartreeF.MaximalTrajectory.actualMaximalTrajectory_totalEnergy_constant
 #print axioms HartreeF.MaximalTrajectory.actualMaximalTrajectory_originalEnergy_constant
 #print axioms HartreeF.DynamicSharpW.actualMaximalTrajectory_global_scattering_of_W_and_finiteS
+#print axioms HartreeF.ActualCriticalThreshold.StableDatum
+#print axioms HartreeF.ActualCriticalThreshold.BadDatum
+#print axioms HartreeF.ActualCriticalThreshold.badEnergies
+#print axioms HartreeF.ActualCriticalThreshold.criticalLevel
+#print axioms HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt
+#print axioms HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel
+#print axioms HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence
 
 #check @HartreeF.FiniteSContinuation.FiniteSBefore
 #check @HartreeF.FiniteSContinuation.exists_strict_extension_of_finite_s
@@ -157,3 +165,10 @@ set_option format.width 120
 #check @HartreeF.MaximalTrajectory.actualMaximalTrajectory_totalEnergy_constant
 #check @HartreeF.MaximalTrajectory.actualMaximalTrajectory_originalEnergy_constant
 #check @HartreeF.DynamicSharpW.actualMaximalTrajectory_global_scattering_of_W_and_finiteS
+#check @HartreeF.ActualCriticalThreshold.StableDatum
+#check @HartreeF.ActualCriticalThreshold.BadDatum
+#check @HartreeF.ActualCriticalThreshold.badEnergies
+#check @HartreeF.ActualCriticalThreshold.criticalLevel
+#check @HartreeF.ActualCriticalThreshold.criticalLevel_pos_lt
+#check @HartreeF.ActualCriticalThreshold.finiteS_below_criticalLevel
+#check @HartreeF.ActualCriticalThreshold.exists_bad_minimizing_sequence
