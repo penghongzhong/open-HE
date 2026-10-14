@@ -1285,5 +1285,29 @@
         "name": "HartreeF.FreeLocalCompactness.freeJoint_local_mixedNorm_tendsto_zero"
       }
     ]
+  },
+  {
+    "module": "FActualProfileEnergyLedger",
+    "source": "components/FActualProfileEnergyLedger.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualProfileEnergy.kappa_pos"
+      },
+      {
+        "name": "HartreeF.ActualProfileEnergy.active_succ_eligible"
+      },
+      {
+        "name": "HartreeF.ActualProfileEnergy.kinetic_prefix_and_remainder"
+      },
+      {
+        "name": "HartreeF.ActualProfileEnergy.free_profile_energy_has_limit"
+      },
+      {
+        "name": "HartreeF.ActualProfileEnergy.single_matching_limits"
+      },
+      {
+        "name": "HartreeF.ActualProfileEnergy.build_profile_energy_ledger"
+      }
+    ]
   }
 ]

@@ -228,7 +228,7 @@ theorem actual_head_Q_zero (hDensity : OrdinaryH1Density) {α c K B C : ℝ}
   have hz : Tendsto (fun n => ∑ j ∈ headSet L J,
       Q (physicalProfileValue P j.val (r j).u n)
         (physicalFreeGradient hDensity hSob P u J k n)) atTop (𝓝 0) := by
-    simpa only [Finset.sum_const_zero] using
+    simpa only [Q, Finset.sum_const_zero] using
       tendsto_finsetSum (headSet L J) (fun j hj => (hi j hj).Q_zero)
   refine ⟨fun n => ne_top_of_le_ne_top
     (ENNReal.sum_ne_top.mpr (fun j hj => (hi j hj).Q_finite n)) (hb n), ?_⟩
