@@ -27,7 +27,7 @@ open HartreeDistributionalBridge LinearWeakEquation L1RetardedIndependentReview
 attribute [local instance] FreeDataDependence.canonicalEnergyNormedSpace
   FreeDataDependence.canonicalPathNormedSpace
 attribute [local irreducible] energySubmodule criticalPathSubmodule energyPath
-  criticalGradient hartreeDuhamelMap criticalPathIntervalSource
+  criticalGradient hartreeDuhamelMap criticalPathIntervalSource LocalMildTrajectory.path
 
 /-- Finite forward S rules out the finite right endpoint of this maximal
 trajectory. No forward-domain premise is assumed. -/
@@ -175,13 +175,8 @@ theorem exists_eventual_forward_graph_cap_of_finite_s (hDensity : OrdinaryH1Dens
   · intro b hb hI
     have hclose' : ‖U.path hb hI - V.path hb (hVI b hb)‖ ≤ C * epsilon0 :=
       (hcompact b hb).choose_spec
-    calc
-      ‖U.path hb hI‖ =
-          ‖(U.path hb hI - V.path hb (hVI b hb)) + V.path hb (hVI b hb)‖ := by
-        rw [sub_add_cancel]
-      _ ≤ ‖U.path hb hI - V.path hb (hVI b hb)‖ + ‖V.path hb (hVI b hb)‖ :=
-        norm_add_le _ _
-      _ ≤ C * epsilon0 + L := add_le_add hclose' (href b hb)
+    exact (norm_le_norm_add_norm_sub' (U.path hb hI) (V.path hb (hVI b hb))).trans
+      ((add_le_add (href b hb) hclose').trans_eq (add_comm _ _))
 
 /-- The terminal-data analogue gives all actual compact prefixes of the
 negative half-line, using literal backward compact perturbation after native
@@ -264,12 +259,7 @@ theorem exists_eventual_backward_graph_cap_of_finite_s (hDensity : OrdinaryH1Den
   · intro a ha hI
     have hclose' : ‖U.path ha hI - V.path ha (hVI a ha)‖ ≤ C * epsilon0 :=
       (hcompact a ha).choose_spec
-    calc
-      ‖U.path ha hI‖ =
-          ‖(U.path ha hI - V.path ha (hVI a ha)) + V.path ha (hVI a ha)‖ := by
-        rw [sub_add_cancel]
-      _ ≤ ‖U.path ha hI - V.path ha (hVI a ha)‖ + ‖V.path ha (hVI a ha)‖ :=
-        norm_add_le _ _
-      _ ≤ C * epsilon0 + L := add_le_add hclose' (href a ha)
+    exact (norm_le_norm_add_norm_sub' (U.path ha hI) (V.path ha (hVI a ha))).trans
+      ((add_le_add (href a ha) hclose').trans_eq (add_comm _ _))
 
 end HartreeF.BilateralSideStability
