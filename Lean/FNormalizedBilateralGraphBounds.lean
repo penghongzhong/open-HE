@@ -47,10 +47,20 @@ theorem future_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
   let N := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH s z
   have hd : affineState (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) z = u :=
     (criticalAffineState lambda hlambda y).apply_symm_apply u
-  have hn := actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
-    (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) s s z
-  dsimp only at hn
-  simp only [sub_self, zero_div, hd] at hn
+  let normAt : ℝ → EnergyState → Prop := fun mark datum =>
+    let V := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH mark datum
+    ∀ (A B : ℝ) (hAB : A ≤ B)
+      (hN : Icc (timeAffine lambda⁻¹ s A) (timeAffine lambda⁻¹ s B) ⊆ N.domain)
+      (hV : Icc A B ⊆ V.domain),
+      ‖V.path hAB hV‖ =
+        ‖N.path (timeAffine_monotone (inv_pos.mpr hlambda) s hAB) hN‖
+  have hraw : normAt ((s-s)/lambda⁻¹^2)
+      (affineState (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) z) :=
+    actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
+      (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) s s z
+  have hmark : (s-s)/lambda⁻¹^2 = 0 := by
+    simp only [sub_self, zero_div]
+  have hn : normAt 0 u := Eq.mp (congrArg₂ normAt hmark hd) hraw
   intro b hb hI
   have hNs : Icc (timeAffine lambda⁻¹ s 0) (timeAffine lambda⁻¹ s b) ⊆ N.domain := by
     intro t ht
@@ -83,10 +93,20 @@ theorem past_cap_spatial_pullback (u : EnergyState) {lambda : ℝ}
   let N := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH s z
   have hd : affineState (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) z = u :=
     (criticalAffineState lambda hlambda y).apply_symm_apply u
-  have hn := actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
-    (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) s s z
-  dsimp only at hn
-  simp only [sub_self, zero_div, hd] at hn
+  let normAt : ℝ → EnergyState → Prop := fun mark datum =>
+    let V := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH mark datum
+    ∀ (A B : ℝ) (hAB : A ≤ B)
+      (hN : Icc (timeAffine lambda⁻¹ s A) (timeAffine lambda⁻¹ s B) ⊆ N.domain)
+      (hV : Icc A B ⊆ V.domain),
+      ‖V.path hAB hV‖ =
+        ‖N.path (timeAffine_monotone (inv_pos.mpr hlambda) s hAB) hN‖
+  have hraw : normAt ((s-s)/lambda⁻¹^2)
+      (affineState (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) z) :=
+    actualMaximalTrajectory_affine_norm hDensity hSob h0 hfree hret hefree heret hH
+      (inv_pos.mpr hlambda) (-(lambda⁻¹ • y)) s s z
+  have hmark : (s-s)/lambda⁻¹^2 = 0 := by
+    simp only [sub_self, zero_div]
+  have hn : normAt 0 u := Eq.mp (congrArg₂ normAt hmark hd) hraw
   intro a ha hI
   have hNs : Icc (timeAffine lambda⁻¹ s a) (timeAffine lambda⁻¹ s 0) ⊆ N.domain := by
     intro t ht
