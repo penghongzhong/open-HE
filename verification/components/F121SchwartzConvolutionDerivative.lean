@@ -1,0 +1,11 @@
+import F121SchwartzConvolutionDerivative
+
+#print axioms HartreeF.Paper121SmoothConvolution.kernelIntegral
+#print axioms HartreeF.Paper121SmoothConvolution.kernel_integrand_measurable
+#print axioms HartreeF.Paper121SmoothConvolution.kernel_integrand_integrable
+#print axioms HartreeF.Paper121SmoothConvolution.kernelIntegral_hasFDerivAt
+
+#check @HartreeF.Paper121SmoothConvolution.kernelIntegral
+#check @HartreeF.Paper121SmoothConvolution.kernel_integrand_measurable
+#check @HartreeF.Paper121SmoothConvolution.kernel_integrand_integrable
+#check @HartreeF.Paper121SmoothConvolution.kernelIntegral_hasFDerivAt

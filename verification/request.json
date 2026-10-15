@@ -41,6 +41,9 @@
     "F121PointwiseNormalization",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
+    "F121SchwartzConvolutionDerivative",
+    "F121SchwartzConvolutionSmooth",
+    "F121SchwartzLocalMajorant",
     "F121SelectedScaleWindows",
     "F121SignedOrientation",
     "F121StrongCriticalLimit",
@@ -258,6 +261,9 @@
     "F121PointwiseNormalization",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
+    "F121SchwartzConvolutionDerivative",
+    "F121SchwartzConvolutionSmooth",
+    "F121SchwartzLocalMajorant",
     "F121SelectedScaleWindows",
     "F121SignedOrientation",
     "F121StrongCriticalLimit",
@@ -2040,7 +2046,10 @@
     "F121CutoffCore": "acc71092ed29f232227f2fc4e59d94602b8986d97ec325ce4438825ee5036d4c",
     "F121AnnularL2": "54ce6405f9280f11ae093024bc89c5cd5f7708d6c7788a8850dee7610fef47c5",
     "F121ConvolutionC0": "ef1d8fe1f4647de835ace7c2df68c418d11d86683894d9345ddf0f88adc9f5a3",
-    "F121AnnularRepresentative": "edb8a2157971f664ac017476cf194c4724e080e5d6abffdb72b5e8b05814bed9"
+    "F121AnnularRepresentative": "edb8a2157971f664ac017476cf194c4724e080e5d6abffdb72b5e8b05814bed9",
+    "F121SchwartzLocalMajorant": "bb55a3a24bf5cb76274807f4ad459322529bbb620424092be4b59a50d35ac0c6",
+    "F121SchwartzConvolutionDerivative": "3633dc58e09f9e97cd6ad0e0caf9ce4496237ceb2617842f7288ba6420bcaf9f",
+    "F121SchwartzConvolutionSmooth": "3f6a81b02e2a114416d8fe34a7ba7fd2106c6941fe5912efc76c043d7b6ff251"
   },
   "declarations": [
     {
@@ -2926,7 +2935,7 @@
     }
   ],
   "seed": {
-    "run": 38734524056,
-    "commit": "46e04a46b5a3f851a215d65a6197bd43a66d42ae"
+    "run": 38741373900,
+    "commit": "34f4c197a106d5301a7ce9cd961e7a10c3b8792d"
   }
 }

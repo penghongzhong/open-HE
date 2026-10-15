@@ -1,0 +1,11 @@
+import F121SchwartzConvolutionSmooth
+
+#print axioms HartreeF.Paper121SmoothConvolution.kernelIntegral_contDiff_nat
+#print axioms HartreeF.Paper121SmoothConvolution.kernelIntegral_smooth
+#print axioms HartreeF.Paper121SmoothConvolution.actual_convolution_smooth
+#print axioms HartreeF.Paper121SmoothConvolution.low_convolution_smooth
+
+#check @HartreeF.Paper121SmoothConvolution.kernelIntegral_contDiff_nat
+#check @HartreeF.Paper121SmoothConvolution.kernelIntegral_smooth
+#check @HartreeF.Paper121SmoothConvolution.actual_convolution_smooth
+#check @HartreeF.Paper121SmoothConvolution.low_convolution_smooth

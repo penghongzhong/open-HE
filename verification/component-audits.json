@@ -2137,5 +2137,56 @@
         "name": "HartreeF.Paper121Annular.annular_actual_domains"
       }
     ]
+  },
+  {
+    "module": "F121SchwartzLocalMajorant",
+    "source": "components/F121SchwartzLocalMajorant.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.local_weight_comparison"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.schwartz_local_majorant"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.lp_weight_integrable"
+      }
+    ]
+  },
+  {
+    "module": "F121SchwartzConvolutionDerivative",
+    "source": "components/F121SchwartzConvolutionDerivative.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.kernelIntegral"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.kernel_integrand_measurable"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.kernel_integrand_integrable"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.kernelIntegral_hasFDerivAt"
+      }
+    ]
+  },
+  {
+    "module": "F121SchwartzConvolutionSmooth",
+    "source": "components/F121SchwartzConvolutionSmooth.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.kernelIntegral_contDiff_nat"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.kernelIntegral_smooth"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.actual_convolution_smooth"
+      },
+      {
+        "name": "HartreeF.Paper121SmoothConvolution.low_convolution_smooth"
+      }
+    ]
   }
 ]

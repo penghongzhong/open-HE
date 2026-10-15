@@ -1,0 +1,9 @@
+import F121SchwartzLocalMajorant
+
+#print axioms HartreeF.Paper121SmoothConvolution.local_weight_comparison
+#print axioms HartreeF.Paper121SmoothConvolution.schwartz_local_majorant
+#print axioms HartreeF.Paper121SmoothConvolution.lp_weight_integrable
+
+#check @HartreeF.Paper121SmoothConvolution.local_weight_comparison
+#check @HartreeF.Paper121SmoothConvolution.schwartz_local_majorant
+#check @HartreeF.Paper121SmoothConvolution.lp_weight_integrable
