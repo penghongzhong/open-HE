@@ -19,7 +19,7 @@ theorem pairing_tendsto_zero_of_scale_zero
   intro φ ψ
   apply tendsto_zero_iff_norm_tendsto_zero.mpr
   have hc : Tendsto (fun n => a n * Real.sqrt (a n)) atTop (𝓝 0) := by
-    simpa only [Real.sqrt_zero, mul_zero] using
+    simpa only [Function.comp_def, Real.sqrt_zero, mul_zero] using
       hzero.mul ((Real.continuous_sqrt.tendsto 0).comp hzero)
   apply squeeze_zero (fun _ => norm_nonneg _)
     (fun n => schwartz_pairing_small_bound (ha n) (b n) φ ψ)
@@ -35,7 +35,7 @@ theorem pairing_tendsto_zero_of_scale_infty
   apply tendsto_zero_iff_norm_tendsto_zero.mpr
   have hi : Tendsto (fun n => (a n)⁻¹) atTop (𝓝 0) := hinfty.inv_tendsto_atTop
   have hc : Tendsto (fun n => (a n)⁻¹ * Real.sqrt (a n)⁻¹) atTop (𝓝 0) := by
-    simpa only [Real.sqrt_zero, mul_zero] using
+    simpa only [Function.comp_def, Real.sqrt_zero, mul_zero] using
       hi.mul ((Real.continuous_sqrt.tendsto 0).comp hi)
   apply squeeze_zero (fun _ => norm_nonneg _)
     (fun n => schwartz_pairing_large_bound (ha n) (b n) φ ψ)
@@ -79,7 +79,7 @@ theorem pairing_tendsto_zero_of_center_infty
         rw [gradientPullback, norm_smul, Real.norm_of_nonneg
           (mul_nonneg (ha n).le (Real.sqrt_nonneg _))]
         exact mul_le_mul_of_nonneg_right (hcoeff n) (norm_nonneg _))
-    simpa only [norm_zero, mul_zero] using hφ.norm.const_mul C
+    simpa only [Function.comp_def, norm_zero, mul_zero] using hφ.norm.const_mul C
   have hlim : Tendsto (fun n => ∫ x,
       inner ℝ (gradientPullback (a n) (b n) φ x) (ψ x)) atTop
         (𝓝 (∫ _x : Space, (0 : ℝ))) := by
