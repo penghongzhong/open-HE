@@ -62,7 +62,10 @@ theorem normalized_native_gradient_cap
   have hdatum : affineState hr y (M.state c) = z :=
     (criticalAffineState_symm_eq_affineState _ _ _ _).symm
   have hcov : covarianceAt 0 z := Eq.mp (congrArg₂ covarianceAt hmark hdatum) hraw
-  have htN : AffineMixed.timeAffine r c t ∈ N.domain := hcov.1 ▸ ht
+  have htN : AffineMixed.timeAffine r c t ∈ N.domain := by
+    change t ∈ (AffineMixed.timeAffine r c) ⁻¹' N.domain
+    rw [← hcov.1]
+    exact ht
   have htM : AffineMixed.timeAffine r c t ∈ M.domain := hNM.1 ▸ htN
   have he : U.state t = affineState hr y (N.state (AffineMixed.timeAffine r c t)) := hcov.2 ht
   rw [he, affineState_pureGradientNorm, hNM.2 htM]
@@ -92,7 +95,8 @@ theorem forward_bad_of_spatial_normalization
   have hgrad := normalized_native_gradient_cap hDensity hSob h0 hfree hret hefree heret hH
     f 0 (actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 f).center_mem
     hr y hgradient
-  simp only [LocalMildTrajectory.initial] at hgrad
+  dsimp only at hgrad
+  rw [(actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 f).initial] at hgrad
   have hz : Tendsto (fun _ : ℕ => ‖z - z‖) atTop (𝓝 0) := by
     simp only [sub_self, norm_zero]
     exact tendsto_const_nhds
@@ -137,7 +141,8 @@ theorem backward_bad_of_spatial_normalization
   have hgrad := normalized_native_gradient_cap hDensity hSob h0 hfree hret hefree heret hH
     f 0 (actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 f).center_mem
     hr y hgradient
-  simp only [LocalMildTrajectory.initial] at hgrad
+  dsimp only at hgrad
+  rw [(actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hH 0 f).initial] at hgrad
   have hz : Tendsto (fun _ : ℕ => ‖z - z‖) atTop (𝓝 0) := by
     simp only [sub_self, norm_zero]
     exact tendsto_const_nhds
