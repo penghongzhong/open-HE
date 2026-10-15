@@ -137,7 +137,9 @@
     "F121LiteralThresholdBridge",
     "F121HalflineFiniteness",
     "F121CompactConvergence",
-    "F121StrongCriticalLimit"
+    "F121StrongCriticalLimit",
+    "F121AffineCompactParameters",
+    "F121ArbitraryLocalProperness"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1051,7 +1053,9 @@
     "F121LiteralThresholdBridge",
     "F121HalflineFiniteness",
     "F121CompactConvergence",
-    "F121StrongCriticalLimit"
+    "F121StrongCriticalLimit",
+    "F121AffineCompactParameters",
+    "F121ArbitraryLocalProperness"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1965,7 +1969,9 @@
     "F121LiteralThresholdBridge": "313d266525bc47bed5eb3f566baef58be73027dbc7311900d0ae64cb49f18aa8",
     "F121HalflineFiniteness": "1da09905880ce150efe4ed27e3d5ecd5f62bb1962e709a9faf37366171bffc19",
     "F121CompactConvergence": "0024d4c44665d9a160f7c0ac51c25a63ec8497bf9f246d81c24a86f2d472c2f0",
-    "F121StrongCriticalLimit": "9f2aae5e719c98b0227f8f2ecc9592bf21cb058999fc5360431b56743ea3b13b"
+    "F121StrongCriticalLimit": "9f2aae5e719c98b0227f8f2ecc9592bf21cb058999fc5360431b56743ea3b13b",
+    "F121AffineCompactParameters": "a15d02b5f89b7b7cefeb8a016967a39cb5b2dd6bf54ee03deaaa0284d315d152",
+    "F121ArbitraryLocalProperness": "d9af3eb230d6a58d19ad6b8adc78f25ee0c4df0c9e9a91ac1c840a30da033d56"
   },
   "declarations": [
     {
@@ -2851,7 +2857,7 @@
     }
   ],
   "seed": {
-    "run": 38681257906,
-    "commit": "9eb826880d82c90c1ad8ad74631e70d0c0b41de2"
+    "run": 38686178177,
+    "commit": "835ea3768b66d59efa2a7c5f306bbf2a86a8d61b"
   }
 }

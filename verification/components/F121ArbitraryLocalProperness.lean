@@ -1,0 +1,3 @@
+import F121ArbitraryLocalProperness
+#print axioms HartreeF.Paper121LocalProperness.arbitrary_normalizers_bounded_on_compact_time
+#check @HartreeF.Paper121LocalProperness.arbitrary_normalizers_bounded_on_compact_time

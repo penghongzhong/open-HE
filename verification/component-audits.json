@@ -1774,5 +1774,23 @@
         "name": "HartreeF.Paper121StrongLimit.strong_critical_limit_original_environment"
       }
     ]
+  },
+  {
+    "module": "F121AffineCompactParameters",
+    "source": "components/F121AffineCompactParameters.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121AffineProperness.compact_carriers_parameter_box"
+      }
+    ]
+  },
+  {
+    "module": "F121ArbitraryLocalProperness",
+    "source": "components/F121ArbitraryLocalProperness.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121LocalProperness.arbitrary_normalizers_bounded_on_compact_time"
+      }
+    ]
   }
 ]
