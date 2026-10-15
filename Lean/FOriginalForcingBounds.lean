@@ -113,8 +113,10 @@ theorem exists_common_forcing_bounds {alpha c : ℝ} (hH : OrdinaryHLS alpha c) 
     have hbound1 : eLpNorm (forcing alpha c f) 1 volume ≤
         (C : ℝ≥0∞) * eLpNorm f 6 volume ^ (3 + alpha) *
           (eLpNorm f 4 volume ^ (2 : ℝ) * eLpNorm f 6 volume ^ alpha) := by
-      have hh := eLpNorm_smul_le_mul_eLpNorm (r := 1)
-        hp.aestronglyMeasurable hm4.aestronglyMeasurable
+      have hh : eLpNorm (forcing alpha c f) 1 volume ≤
+          eLpNorm (potential alpha c f) (ENNReal.ofReal (potentialExponent alpha)) volume *
+            eLpNorm (localFactor alpha f) (ENNReal.ofReal (densityExponent alpha)) volume :=
+        eLpNorm_smul_le_mul_eLpNorm hp.aestronglyMeasurable hm4.aestronglyMeasurable
       exact hh.trans (mul_le_mul' hb hbound4)
     have hfin1 : (C : ℝ≥0∞) * eLpNorm f 6 volume ^ (3 + alpha) *
         (eLpNorm f 4 volume ^ (2 : ℝ) * eLpNorm f 6 volume ^ alpha) ≠ ∞ := by
