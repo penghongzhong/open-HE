@@ -36,6 +36,7 @@ theorem kernel_integrand_integrable (k : 𝓢(V, E)) {f : V → ℂ}
       mul_le_mul_of_nonneg_left (hC x (Metric.mem_ball_self zero_lt_one) y) (norm_nonneg _)
     _ = _ := by ring
 
+omit [CompleteSpace E] in
 /-- Differentiation of the actual convolution integral under a proved local integrable bound. -/
 theorem kernelIntegral_hasFDerivAt (k : 𝓢(V, E)) {f : V → ℂ}
     (hf : AEStronglyMeasurable f volume) {d : ℕ}

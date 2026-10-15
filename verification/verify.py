@@ -171,6 +171,11 @@ def main():
         if name not in passed:
             component_reports.append({'module': name, 'status': 'NOT_RUN_MODULE_NOT_PASS'})
             continue
+        # On an incomplete build, preserve fresh-component audits and return diagnostics promptly.
+        # A successful build still reruns every component audit and the public audit below.
+        if receipt['status'] != 'TARGETS_PASS' and results[name].get('reused', False):
+            component_reports.append({'module': name, 'status': 'NOT_RUN_INCOMPLETE_REUSED_MODULE'})
+            continue
         audit_source = HERE / component['source']
         audit_log = OUT / ('component_audit_' + name + '.log')
         cmd = [str(LEAN), '-DwarningAsError=true', str(audit_source)]
