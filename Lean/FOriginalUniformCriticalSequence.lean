@@ -48,11 +48,15 @@ theorem exists_native_S_window {E T : ℝ}
   obtain ⟨f, hf, he, a, b, hab, hI, c, hac, hcb, hL, hR⟩ :=
     exists_balanced_native_window hDensity hSob h0 hfree hret hefree heret hOrd hE hEW hT
   let U := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd 0 f
-  refine ⟨f, hf, he, ⟨⟨a, c, b, hac, hcb, hI, ?_, ?_⟩⟩⟩
-  · rw [path_restrict U hab hI le_rfl hac.le hcb.le]
-    exact hL
-  · rw [path_restrict U hab hI hac.le hcb.le le_rfl]
-    exact hR
+  have hIL : Icc a c ⊆ U.domain := fun _ ht => hI ⟨ht.1, ht.2.trans hcb.le⟩
+  have hIR : Icc c b ⊆ U.domain := fun _ ht => hI ⟨hac.le.trans ht.1, ht.2⟩
+  have hleft : ENNReal.ofReal T < pathValueSize (intervalMeasure a c) (U.path hac.le hIL) :=
+    (congrArg (fun q => ENNReal.ofReal T < pathValueSize (intervalMeasure a c) q)
+      (path_restrict U hab hI le_rfl hac.le hcb.le hIL)).mpr hL
+  have hright : ENNReal.ofReal T < pathValueSize (intervalMeasure c b) (U.path hcb.le hIR) :=
+    (congrArg (fun q => ENNReal.ofReal T < pathValueSize (intervalMeasure c b) q)
+      (path_restrict U hab hI hac.le hcb.le le_rfl hIR)).mpr hR
+  exact ⟨f, hf, he, ⟨⟨a, c, b, hac, hcb, hI, hleft, hright⟩⟩⟩
 
 /-- Actual stable data approach the uniform critical energy, with a common
 strict energy ceiling and two S-large windows about one center per datum. -/
