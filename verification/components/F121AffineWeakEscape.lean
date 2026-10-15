@@ -1,0 +1,7 @@
+import F121AffineWeakEscape
+#print axioms HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_scale_zero
+#check @HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_scale_zero
+#print axioms HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_scale_infty
+#check @HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_scale_infty
+#print axioms HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_center_infty
+#check @HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_center_infty

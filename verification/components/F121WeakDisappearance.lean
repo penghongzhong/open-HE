@@ -1,0 +1,3 @@
+import F121WeakDisappearance
+#print axioms HartreeF.Paper121WeakDisappearance.weak_disappearance
+#check @HartreeF.Paper121WeakDisappearance.weak_disappearance

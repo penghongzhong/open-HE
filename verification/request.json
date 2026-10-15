@@ -139,7 +139,10 @@
     "F121CompactConvergence",
     "F121StrongCriticalLimit",
     "F121AffineCompactParameters",
-    "F121ArbitraryLocalProperness"
+    "F121ArbitraryLocalProperness",
+    "F121AffineWeakPairing",
+    "F121AffineWeakEscape",
+    "F121WeakDisappearance"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1055,7 +1058,10 @@
     "F121CompactConvergence",
     "F121StrongCriticalLimit",
     "F121AffineCompactParameters",
-    "F121ArbitraryLocalProperness"
+    "F121ArbitraryLocalProperness",
+    "F121AffineWeakPairing",
+    "F121AffineWeakEscape",
+    "F121WeakDisappearance"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1971,7 +1977,10 @@
     "F121CompactConvergence": "0024d4c44665d9a160f7c0ac51c25a63ec8497bf9f246d81c24a86f2d472c2f0",
     "F121StrongCriticalLimit": "9f2aae5e719c98b0227f8f2ecc9592bf21cb058999fc5360431b56743ea3b13b",
     "F121AffineCompactParameters": "3e7778a2a893850166e8fbd6faa36e776e2d0a409026fdc9caad6597227dae14",
-    "F121ArbitraryLocalProperness": "d9af3eb230d6a58d19ad6b8adc78f25ee0c4df0c9e9a91ac1c840a30da033d56"
+    "F121ArbitraryLocalProperness": "d9af3eb230d6a58d19ad6b8adc78f25ee0c4df0c9e9a91ac1c840a30da033d56",
+    "F121AffineWeakPairing": "5d1d9d30763be8466dd0c4761f808e04df0062cf594e64cfdc37f88109aedafa",
+    "F121AffineWeakEscape": "174bdd6b7ad8afbc301e9bd0a2e274d03891f4eb769048e5ba86d2f4fcd64a86",
+    "F121WeakDisappearance": "127943229387138bd6ac49a790963b7003522046e2b951a1671ad2e6df9733e2"
   },
   "declarations": [
     {
@@ -2857,7 +2866,7 @@
     }
   ],
   "seed": {
-    "run": 38686178177,
-    "commit": "835ea3768b66d59efa2a7c5f306bbf2a86a8d61b"
+    "run": 38689955230,
+    "commit": "af626da6f3e761d1fa3a11845a94a312f1a665ee"
   }
 }

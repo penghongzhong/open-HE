@@ -1,0 +1,9 @@
+import F121AffineWeakPairing
+#print axioms HartreeF.Paper121WeakPairing.schwartz_pairing
+#check @HartreeF.Paper121WeakPairing.schwartz_pairing
+#print axioms HartreeF.Paper121WeakPairing.schwartz_pairing_small_bound
+#check @HartreeF.Paper121WeakPairing.schwartz_pairing_small_bound
+#print axioms HartreeF.Paper121WeakPairing.schwartz_pairing_large_bound
+#check @HartreeF.Paper121WeakPairing.schwartz_pairing_large_bound
+#print axioms HartreeF.Paper121WeakPairing.weak_pairing_of_schwartz
+#check @HartreeF.Paper121WeakPairing.weak_pairing_of_schwartz

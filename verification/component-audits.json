@@ -1792,5 +1792,47 @@
         "name": "HartreeF.Paper121LocalProperness.arbitrary_normalizers_bounded_on_compact_time"
       }
     ]
+  },
+  {
+    "module": "F121AffineWeakPairing",
+    "source": "components/F121AffineWeakPairing.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121WeakPairing.schwartz_pairing"
+      },
+      {
+        "name": "HartreeF.Paper121WeakPairing.schwartz_pairing_small_bound"
+      },
+      {
+        "name": "HartreeF.Paper121WeakPairing.schwartz_pairing_large_bound"
+      },
+      {
+        "name": "HartreeF.Paper121WeakPairing.weak_pairing_of_schwartz"
+      }
+    ]
+  },
+  {
+    "module": "F121AffineWeakEscape",
+    "source": "components/F121AffineWeakEscape.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_scale_zero"
+      },
+      {
+        "name": "HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_scale_infty"
+      },
+      {
+        "name": "HartreeF.Paper121WeakEscape.pairing_tendsto_zero_of_center_infty"
+      }
+    ]
+  },
+  {
+    "module": "F121WeakDisappearance",
+    "source": "components/F121WeakDisappearance.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121WeakDisappearance.weak_disappearance"
+      }
+    ]
   }
 ]
