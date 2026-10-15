@@ -1675,5 +1675,53 @@
         "name": "HartreeF.Paper121CriticalEnvironment.critical_element_on_actual_maximal_lifespan"
       }
     ]
+  },
+  {
+    "module": "F121CompactClosureGlobal",
+    "source": "components/F121CompactClosureGlobal.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CompactGlobal.no_finite_endpoint_of_compact_closure"
+      }
+    ]
+  },
+  {
+    "module": "F121GlobalCritical",
+    "source": "components/F121GlobalCritical.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121GlobalCritical.global_critical_element_of_threshold_failure"
+      }
+    ]
+  },
+  {
+    "module": "F121LiteralSolutionClass",
+    "source": "components/F121LiteralSolutionClass.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121LiteralClass.LiteralMildOn"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralClass.literal_mild_iff_path_mild"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralClass.exists_native_path_of_literal"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralClass.LiteralLocalSolution"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralClass.LiteralLocalSolution.toNative"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralClass.ofNative"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralClass.translations_preserve_domain_state"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralClass.actual_maximal_among_literal_solutions"
+      }
+    ]
   }
 ]

@@ -1,0 +1,3 @@
+import F121GlobalCritical
+#print axioms HartreeF.Paper121GlobalCritical.global_critical_element_of_threshold_failure
+#check @HartreeF.Paper121GlobalCritical.global_critical_element_of_threshold_failure

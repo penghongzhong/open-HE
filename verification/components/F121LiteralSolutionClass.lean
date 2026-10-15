@@ -1,0 +1,17 @@
+import F121LiteralSolutionClass
+#print axioms HartreeF.Paper121LiteralClass.LiteralMildOn
+#check @HartreeF.Paper121LiteralClass.LiteralMildOn
+#print axioms HartreeF.Paper121LiteralClass.literal_mild_iff_path_mild
+#check @HartreeF.Paper121LiteralClass.literal_mild_iff_path_mild
+#print axioms HartreeF.Paper121LiteralClass.exists_native_path_of_literal
+#check @HartreeF.Paper121LiteralClass.exists_native_path_of_literal
+#print axioms HartreeF.Paper121LiteralClass.LiteralLocalSolution
+#check @HartreeF.Paper121LiteralClass.LiteralLocalSolution
+#print axioms HartreeF.Paper121LiteralClass.LiteralLocalSolution.toNative
+#check @HartreeF.Paper121LiteralClass.LiteralLocalSolution.toNative
+#print axioms HartreeF.Paper121LiteralClass.ofNative
+#check @HartreeF.Paper121LiteralClass.ofNative
+#print axioms HartreeF.Paper121LiteralClass.translations_preserve_domain_state
+#check @HartreeF.Paper121LiteralClass.translations_preserve_domain_state
+#print axioms HartreeF.Paper121LiteralClass.actual_maximal_among_literal_solutions
+#check @HartreeF.Paper121LiteralClass.actual_maximal_among_literal_solutions

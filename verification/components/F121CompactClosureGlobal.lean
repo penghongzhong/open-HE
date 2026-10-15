@@ -1,0 +1,3 @@
+import F121CompactClosureGlobal
+#print axioms HartreeF.Paper121CompactGlobal.no_finite_endpoint_of_compact_closure
+#check @HartreeF.Paper121CompactGlobal.no_finite_endpoint_of_compact_closure
