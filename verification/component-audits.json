@@ -1897,5 +1897,50 @@
         "name": "HartreeF.Paper121ScaleSelection.select_compact_scale_windows"
       }
     ]
+  },
+  {
+    "module": "F121BoundedAffineClosed",
+    "source": "components/F121BoundedAffineClosed.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121AffineClosed.boundedAffineCarrier"
+      },
+      {
+        "name": "HartreeF.Paper121AffineClosed.boundedAffineCarrier_isClosed"
+      },
+      {
+        "name": "HartreeF.Paper121AffineClosed.boundedAffineCarrier_mem_of_tendsto"
+      }
+    ]
+  },
+  {
+    "module": "F121PointwiseNormalization",
+    "source": "components/F121PointwiseNormalization.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121PointwiseNormalization.halfline_mem_of_expanding_windows"
+      },
+      {
+        "name": "HartreeF.Paper121PointwiseNormalization.splice_pointwise_normalizers"
+      }
+    ]
+  },
+  {
+    "module": "F121DirectionalSobolev",
+    "source": "components/F121DirectionalSobolev.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Directional.directional_sixth_bound"
+      }
+    ]
+  },
+  {
+    "module": "F121DirectionalEnvironment",
+    "source": "components/F121DirectionalEnvironment.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Directional.directional_coercivity_original_environment"
+      }
+    ]
   }
 ]

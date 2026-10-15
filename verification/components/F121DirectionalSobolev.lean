@@ -1,0 +1,3 @@
+import F121DirectionalSobolev
+#print axioms HartreeF.Paper121Directional.directional_sixth_bound
+#check @HartreeF.Paper121Directional.directional_sixth_bound

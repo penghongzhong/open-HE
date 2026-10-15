@@ -1,0 +1,7 @@
+import F121BoundedAffineClosed
+#print axioms HartreeF.Paper121AffineClosed.boundedAffineCarrier
+#check @HartreeF.Paper121AffineClosed.boundedAffineCarrier
+#print axioms HartreeF.Paper121AffineClosed.boundedAffineCarrier_isClosed
+#check @HartreeF.Paper121AffineClosed.boundedAffineCarrier_isClosed
+#print axioms HartreeF.Paper121AffineClosed.boundedAffineCarrier_mem_of_tendsto
+#check @HartreeF.Paper121AffineClosed.boundedAffineCarrier_mem_of_tendsto

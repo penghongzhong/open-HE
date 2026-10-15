@@ -1,0 +1,3 @@
+import F121DirectionalEnvironment
+#print axioms HartreeF.Paper121Directional.directional_coercivity_original_environment
+#check @HartreeF.Paper121Directional.directional_coercivity_original_environment

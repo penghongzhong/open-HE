@@ -1,0 +1,5 @@
+import F121PointwiseNormalization
+#print axioms HartreeF.Paper121PointwiseNormalization.halfline_mem_of_expanding_windows
+#check @HartreeF.Paper121PointwiseNormalization.halfline_mem_of_expanding_windows
+#print axioms HartreeF.Paper121PointwiseNormalization.splice_pointwise_normalizers
+#check @HartreeF.Paper121PointwiseNormalization.splice_pointwise_normalizers
