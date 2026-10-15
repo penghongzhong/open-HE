@@ -64,11 +64,10 @@ theorem compact_carriers_parameter_box {A B : Set EnergyState}
     simpa only [← mul_assoc, mul_inv_cancel₀ hr.ne', one_mul] using h'
   have hy : ‖y‖ ≤ D := by
     calc
-      ‖y‖ ≤ ‖x‖ + ‖y - x‖ := norm_le_norm_add_norm_sub x y
-      _ = ‖x‖ + ‖x - y‖ := by rw [norm_sub_rev]
+      ‖y‖ ≤ ‖x‖ + ‖x - y‖ := norm_le_norm_add_norm_sub x y
       _ ≤ 3 * M + r * (3 * N) := add_le_add hsource.2.2 hdist
-      _ ≤ D := add_le_add_left
-        (mul_le_mul_of_nonneg_right hupper (by positivity : 0 ≤ 3 * N)) _
+      _ ≤ D := add_le_add (le_refl (3 * M))
+        (mul_le_mul_of_nonneg_right hupper (by positivity : 0 ≤ 3 * N))
   exact ⟨hlower, hupper, hy⟩
 
 end HartreeF.Paper121AffineProperness

@@ -1970,7 +1970,7 @@
     "F121HalflineFiniteness": "1da09905880ce150efe4ed27e3d5ecd5f62bb1962e709a9faf37366171bffc19",
     "F121CompactConvergence": "0024d4c44665d9a160f7c0ac51c25a63ec8497bf9f246d81c24a86f2d472c2f0",
     "F121StrongCriticalLimit": "9f2aae5e719c98b0227f8f2ecc9592bf21cb058999fc5360431b56743ea3b13b",
-    "F121AffineCompactParameters": "a15d02b5f89b7b7cefeb8a016967a39cb5b2dd6bf54ee03deaaa0284d315d152",
+    "F121AffineCompactParameters": "3e7778a2a893850166e8fbd6faa36e776e2d0a409026fdc9caad6597227dae14",
     "F121ArbitraryLocalProperness": "d9af3eb230d6a58d19ad6b8adc78f25ee0c4df0c9e9a91ac1c840a30da033d56"
   },
   "declarations": [
