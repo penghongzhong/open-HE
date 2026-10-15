@@ -14,6 +14,7 @@
     "F121AffineWeakEscape",
     "F121AffineWeakPairing",
     "F121ArbitraryLocalProperness",
+    "F121BaselineHartree",
     "F121BoundedAffineClosed",
     "F121BoundedHalflineEnvironment",
     "F121BoundedHalflineLimit",
@@ -226,6 +227,7 @@
     "F121AffineWeakEscape",
     "F121AffineWeakPairing",
     "F121ArbitraryLocalProperness",
+    "F121BaselineHartree",
     "F121BoundedAffineClosed",
     "F121BoundedHalflineEnvironment",
     "F121BoundedHalflineLimit",
@@ -2025,7 +2027,8 @@
     "F121NormalizedGlobalTrajectory": "1b990e9940f5f216e37de5526c766b9dad4edac4d4cb27290856d7922c07f947",
     "F121BoundedHalflineLimit": "01d187266f56015b829301d00a9e51e7eca6c96cd53fdba4939870fff481abe7",
     "F121SignedOrientation": "dd819b628a5b4fa93e5e5830a81ad35aed57b2ec891e75182ca2beceef311acf",
-    "F121BoundedHalflineEnvironment": "3b533a7f8e5554d24a05709c8e319053fc0eb4a3e530063b91cdc6bf89c56103"
+    "F121BoundedHalflineEnvironment": "3b533a7f8e5554d24a05709c8e319053fc0eb4a3e530063b91cdc6bf89c56103",
+    "F121BaselineHartree": "5960c40a6573bcfd9937d08efff316bf262886fca2109fd0e755bc7ce4a7faf5"
   },
   "declarations": [
     {
@@ -2911,7 +2914,7 @@
     }
   ],
   "seed": {
-    "run": 38729096783,
-    "commit": "78297c4b8975e631c67b792e190b6fe0c6e16f00"
+    "run": 38730104830,
+    "commit": "a12f9db40b1111fc98cb8d8f0a12352c62e450db"
   }
 }

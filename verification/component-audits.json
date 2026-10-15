@@ -1999,5 +1999,23 @@
         "name": "HartreeF.Paper121BoundedHalfline.bounded_halfline_of_threshold_failure"
       }
     ]
+  },
+  {
+    "module": "F121BaselineHartree",
+    "source": "components/F121BaselineHartree.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121BaselineHartree.sum_power_bound"
+      },
+      {
+        "name": "HartreeF.Paper121BaselineHartree.forcing_sum_norm_bound"
+      },
+      {
+        "name": "HartreeF.Paper121BaselineHartree.baseline_domains"
+      },
+      {
+        "name": "HartreeF.Paper121BaselineHartree.baseline_hartree_environment"
+      }
+    ]
   }
 ]

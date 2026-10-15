@@ -1,0 +1,11 @@
+import F121BaselineHartree
+
+#print axioms HartreeF.Paper121BaselineHartree.sum_power_bound
+#print axioms HartreeF.Paper121BaselineHartree.forcing_sum_norm_bound
+#print axioms HartreeF.Paper121BaselineHartree.baseline_domains
+#print axioms HartreeF.Paper121BaselineHartree.baseline_hartree_environment
+
+#check @HartreeF.Paper121BaselineHartree.sum_power_bound
+#check @HartreeF.Paper121BaselineHartree.forcing_sum_norm_bound
+#check @HartreeF.Paper121BaselineHartree.baseline_domains
+#check @HartreeF.Paper121BaselineHartree.baseline_hartree_environment
