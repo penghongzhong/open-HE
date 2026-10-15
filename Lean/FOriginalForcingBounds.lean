@@ -23,7 +23,7 @@ theorem localFactor_four_six {alpha : ℝ} (ha : 0 < alpha)
   let a : Space → ℝ := fun x => ‖f x‖ ^ (2 : ℝ)
   let b : Space → ℝ := fun x => ‖f x‖ ^ alpha
   have ha2 : MemLp a 2 volume := by
-    simpa [a] using norm_power_memLp (p := 4) (s := 2) (by norm_num)
+    simpa [a, show (4 : ℝ) / 2 = 2 by norm_num] using norm_power_memLp (p := 4) (s := 2) (by norm_num)
       (by simpa using h4)
   have hb : MemLp b (ENNReal.ofReal (6 / alpha)) volume :=
     norm_power_memLp ha (by simpa using h6)
@@ -51,7 +51,7 @@ theorem localFactor_four_six {alpha : ℝ} (ha : 0 < alpha)
       eLpNorm a 2 volume * eLpNorm b (ENNReal.ofReal (6 / alpha)) volume :=
     eLpNorm_smul_le_mul_eLpNorm ha2.aestronglyMeasurable hb.aestronglyMeasurable
   have hna : eLpNorm a 2 volume = eLpNorm f 4 volume ^ (2 : ℝ) := by
-    simpa [a] using norm_power_eLpNorm (p := 4) (s := 2) (by norm_num)
+    simpa [a, show (4 : ℝ) / 2 = 2 by norm_num] using norm_power_eLpNorm (p := 4) (s := 2) (by norm_num)
       h4.aestronglyMeasurable
   have hnb : eLpNorm b (ENNReal.ofReal (6 / alpha)) volume =
       eLpNorm f 6 volume ^ alpha := by
@@ -95,7 +95,7 @@ theorem exists_common_forcing_bounds {alpha c : ℝ} (hH : OrdinaryHLS alpha c) 
       eLpNorm f 6 volume ^ (2 + alpha) ≠ ∞ := by
     finiteness [h6.eLpNorm_ne_top]
   have her := ENNReal.toReal_mono hfinite henergy
-  simp only [ENNReal.toReal_mul, ENNReal.coe_toReal, ENNReal.toReal_rpow] at her
+  simp only [ENNReal.toReal_mul, ENNReal.coe_toReal, ← ENNReal.toReal_rpow] at her
   refine ⟨hmem, ?_, fun h4 => ?_⟩
   · have he : (eLpNorm f 6 volume).toReal ^ (5 + 2 * alpha) =
         (eLpNorm f 6 volume).toReal ^ (3 + alpha) *
@@ -120,7 +120,7 @@ theorem exists_common_forcing_bounds {alpha c : ℝ} (hH : OrdinaryHLS alpha c) 
         (eLpNorm f 4 volume ^ (2 : ℝ) * eLpNorm f 6 volume ^ alpha) ≠ ∞ := by
       finiteness [h4.eLpNorm_ne_top, h6.eLpNorm_ne_top]
     have hr := ENNReal.toReal_mono hfin1 hbound1
-    simp only [ENNReal.toReal_mul, ENNReal.coe_toReal, ENNReal.toReal_rpow] at hr
+    simp only [ENNReal.toReal_mul, ENNReal.coe_toReal, ← ENNReal.toReal_rpow] at hr
     refine ⟨memLp_one_iff_integrable.mp hmem1, hr.trans_eq ?_⟩
     have he : (eLpNorm f 6 volume).toReal ^ (3 + 2 * alpha) =
         (eLpNorm f 6 volume).toReal ^ (3 + alpha) *
