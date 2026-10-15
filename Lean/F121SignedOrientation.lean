@@ -37,7 +37,7 @@ theorem signed_tensor_of_global_tensor {alpha kernel : ℝ}
     have hd (t : ℝ) : deriv ηr t = -(deriv η (-t)) := by
       have hh : HasDerivAt η (deriv η (-t)) (-t) :=
         (hη.differentiable (by simp) (-t)).hasDerivAt
-      simpa only [mul_neg_one] using (hh.comp t (hasDerivAt_neg t)).deriv
+      simpa only [ηr, Function.comp_def, mul_neg_one] using (hh.comp t (hasDerivAt_neg t)).deriv
     have he (t : ℝ) :
         -Complex.I * ((-1 : ℝ) : ℂ) * ((deriv η t : ℝ) : ℂ) * stateTest φ (u ((-1)*t)) +
           (η t : ℂ) * spatialTest hH φ (u ((-1)*t)) =
