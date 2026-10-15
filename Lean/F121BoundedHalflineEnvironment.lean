@@ -88,7 +88,14 @@ theorem bounded_halfline_of_threshold_failure
       ∀ t, (actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd
         0 ((criticalAffineState 2 htwo 0).symm (V.state 0))).state t =
         (criticalAffineState 2 htwo 0).symm (V.state (0+2^2*t)) at h
-    simpa only [hinit, zero_add, hpow] using h
+    let covarianceAt : EnergyState → Prop := fun g =>
+      let Wg := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd
+        0 ((criticalAffineState 2 htwo 0).symm g)
+      Wg.domain = univ ∧ ∀ t,
+        Wg.state t = (criticalAffineState 2 htwo 0).symm (V.state (4*t))
+    have hraw : covarianceAt (V.state 0) := by
+      simpa only [zero_add, hpow] using h
+    exact Eq.mp (congrArg covarianceAt hinit) hraw
   have hf : f ≠ 0 := by
     intro hz
     have he := congrArg (fun q => criticalAffineState 2 htwo 0 q) hz
@@ -119,7 +126,12 @@ theorem bounded_halfline_of_threshold_failure
       (¬ ActualLeftScattering.FiniteSBefore (actualMaximalTrajectory
         hDensity hSob h0 hfree hret hefree heret hOrd 0
         ((criticalAffineState 2 htwo 0).symm (V.state 0)))) at h
-    simpa only [hinit] using h
+    let badAt : EnergyState → Prop := fun g =>
+      let Wg := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd
+        0 ((criticalAffineState 2 htwo 0).symm g)
+      (¬ ActualScattering.FiniteSAfter Wg) ∧ (¬ ActualLeftScattering.FiniteSBefore Wg)
+    have hraw : badAt (V.state 0) := h
+    exact Eq.mp (congrArg badAt hinit) hraw
   let rw : ℝ → ℝ := fun t => rv (4*t)/2
   have hw (t : ℝ) : 0 < rw t := div_pos (hv _) htwo
   let xw : ℝ → Space := fun t => (2 : ℝ)⁻¹ • xv (4*t)
