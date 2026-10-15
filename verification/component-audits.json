@@ -1648,5 +1648,32 @@
         "name": "HartreeF.Paper121CriticalFromFailure.exists_native_compact_orbit_of_threshold_failure"
       }
     ]
+  },
+  {
+    "module": "F121ActualValueDomain",
+    "source": "components/F121ActualValueDomain.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121ActualDomain.actualValue_domain"
+      },
+      {
+        "name": "HartreeF.Paper121ActualDomain.actualValue_aestronglyMeasurable"
+      },
+      {
+        "name": "HartreeF.Paper121ActualDomain.actual_mixedNorm_eq_value_norm"
+      },
+      {
+        "name": "HartreeF.Paper121ActualDomain.actual_mixed_halfline_norms_eq_top"
+      }
+    ]
+  },
+  {
+    "module": "F121CriticalEnvironment",
+    "source": "components/F121CriticalEnvironment.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CriticalEnvironment.critical_element_on_actual_maximal_lifespan"
+      }
+    ]
   }
 ]

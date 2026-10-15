@@ -128,7 +128,9 @@
     "F121NativeHalflineSize",
     "F121CriticalAllTimes",
     "F121ActualHalflineNorm",
-    "F121CriticalFromFailure"
+    "F121CriticalFromFailure",
+    "F121ActualValueDomain",
+    "F121CriticalEnvironment"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1033,7 +1035,9 @@
     "F121NativeHalflineSize",
     "F121CriticalAllTimes",
     "F121ActualHalflineNorm",
-    "F121CriticalFromFailure"
+    "F121CriticalFromFailure",
+    "F121ActualValueDomain",
+    "F121CriticalEnvironment"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1937,8 +1941,10 @@
     "F121CriticalKineticBounds": "fb24009c50874b375a18cc078a59929de469b99fc67d926a75f13de09d380c9b",
     "F121NativeHalflineSize": "dfc64735faecede9824b192b1483ed2ad7bbc6096f95a97f62557fc2b928adb5",
     "F121CriticalAllTimes": "06d47e710df10fbee16d261dd79f688ae2b302236910781cc8b034a55e1c7215",
-    "F121ActualHalflineNorm": "b83f43d5ce7a0067e924956d57df7166aa0ae095ec3326d4be25df1af88e86a1",
-    "F121CriticalFromFailure": "c8acab4d006ef6f3a4d5ec3c5151bcb8961d9c3d6c545a8d767039ab498b9b6a"
+    "F121ActualHalflineNorm": "95e7f56ea50d62135b56176c92044a11865fcb8b3b61efbeda994e20338635a3",
+    "F121CriticalFromFailure": "c8acab4d006ef6f3a4d5ec3c5151bcb8961d9c3d6c545a8d767039ab498b9b6a",
+    "F121ActualValueDomain": "4a9873373b0fa7b8c2de5a4d9ff33e7508e5170688bb116bec6a67939a4427f9",
+    "F121CriticalEnvironment": "bd83b5f84b2bcda29be9c09fe6cc81dfb286ddbd7347d1beac7478631dc14caa"
   },
   "declarations": [
     {

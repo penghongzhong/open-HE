@@ -1,0 +1,9 @@
+import F121ActualValueDomain
+#print axioms HartreeF.Paper121ActualDomain.actualValue_domain
+#check @HartreeF.Paper121ActualDomain.actualValue_domain
+#print axioms HartreeF.Paper121ActualDomain.actualValue_aestronglyMeasurable
+#check @HartreeF.Paper121ActualDomain.actualValue_aestronglyMeasurable
+#print axioms HartreeF.Paper121ActualDomain.actual_mixedNorm_eq_value_norm
+#check @HartreeF.Paper121ActualDomain.actual_mixedNorm_eq_value_norm
+#print axioms HartreeF.Paper121ActualDomain.actual_mixed_halfline_norms_eq_top
+#check @HartreeF.Paper121ActualDomain.actual_mixed_halfline_norms_eq_top

@@ -1,0 +1,3 @@
+import F121CriticalEnvironment
+#print axioms HartreeF.Paper121CriticalEnvironment.critical_element_on_actual_maximal_lifespan
+#check @HartreeF.Paper121CriticalEnvironment.critical_element_on_actual_maximal_lifespan

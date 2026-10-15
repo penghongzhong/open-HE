@@ -25,7 +25,7 @@ theorem actualValue_coeFn_of_mem (u : EnergyState)
     (h : MemLp (energyValue u) 10 (volume : Measure Space)) :
     (actualValue u : Space → ℂ) =ᵐ[volume] energyValue u := by
   classical
-  rw [actualValue, dif_pos h]
+  rw [actualValue, dite_eq_left h]
   exact h.coeFn_toLp
 
 theorem actualValue_compact (hDensity : OrdinaryH1Density)
@@ -36,7 +36,8 @@ theorem actualValue_compact (hDensity : OrdinaryH1Density)
       (actualValue (U.state t) : Space → ℂ) =ᵐ[volume] energyValue (U.state t) := by
   filter_upwards [globalPathValue_actual hDensity hSob U hab hI] with t ht
   apply actualValue_coeFn_of_mem
-  exact (Lp.memLp (globalPathValue hDensity hSob hab (U.path hab hI) t)).congr ht
+  exact (memLp_congr_ae ht).mp
+    (Lp.memLp (globalPathValue hDensity hSob hab (U.path hab hI) t))
 
 /-- Exact compact norm identity for an arbitrary time function into L10_x;
 there is no global L10_t membership premise. -/
