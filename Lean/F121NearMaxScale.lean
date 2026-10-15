@@ -44,7 +44,7 @@ theorem normalized_length_tendsto_atTop (T A a : ℕ → ℝ)
   filter_upwards [hratio.eventually_lt_const (one_div_pos.mpr hC)] with n hn
   have hmul : (A n) ^ 2 < (1 / C) * T n := (div_lt_iff₀ (hT n)).mp hn
   have hCT : (A n) ^ 2 * C < T n := (lt_div_iff₀ hC).mp (by
-    simpa only [one_div, div_eq_mul_inv, mul_comm] using hmul)
+    simpa only [div_eq_mul_inv, one_mul, mul_comm] using hmul)
   have ha2 : (a n) ^ 2 ≤ (A n) ^ 2 :=
     (sq_le_sq₀ (ha n).le (hA n).le).2 (haA n)
   have h1 : b * (a n) ^ 2 ≤ C * (a n) ^ 2 :=
