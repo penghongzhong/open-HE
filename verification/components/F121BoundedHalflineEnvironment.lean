@@ -1,0 +1,5 @@
+import F121BoundedHalflineEnvironment
+
+#print axioms HartreeF.Paper121BoundedHalfline.bounded_halfline_of_threshold_failure
+
+#check @HartreeF.Paper121BoundedHalfline.bounded_halfline_of_threshold_failure

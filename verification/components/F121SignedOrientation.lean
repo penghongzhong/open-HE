@@ -1,0 +1,9 @@
+import F121SignedOrientation
+
+#print axioms HartreeF.Paper121SignedOrientation.SignedHartreeTensorPDE
+#print axioms HartreeF.Paper121SignedOrientation.signed_tensor_of_global_tensor
+#print axioms HartreeF.Paper121SignedOrientation.actual_global_signed_tensor
+
+#check @HartreeF.Paper121SignedOrientation.SignedHartreeTensorPDE
+#check @HartreeF.Paper121SignedOrientation.signed_tensor_of_global_tensor
+#check @HartreeF.Paper121SignedOrientation.actual_global_signed_tensor

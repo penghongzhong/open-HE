@@ -1975,5 +1975,29 @@
         "name": "HartreeF.Paper121BoundedHalfline.bounded_halfline_critical_limit"
       }
     ]
+  },
+  {
+    "module": "F121SignedOrientation",
+    "source": "components/F121SignedOrientation.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SignedOrientation.SignedHartreeTensorPDE"
+      },
+      {
+        "name": "HartreeF.Paper121SignedOrientation.signed_tensor_of_global_tensor"
+      },
+      {
+        "name": "HartreeF.Paper121SignedOrientation.actual_global_signed_tensor"
+      }
+    ]
+  },
+  {
+    "module": "F121BoundedHalflineEnvironment",
+    "source": "components/F121BoundedHalflineEnvironment.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121BoundedHalfline.bounded_halfline_of_threshold_failure"
+      }
+    ]
   }
 ]
