@@ -1834,5 +1834,35 @@
         "name": "HartreeF.Paper121WeakDisappearance.weak_disappearance"
       }
     ]
+  },
+  {
+    "module": "F121SubparabolicScalar",
+    "source": "components/F121SubparabolicScalar.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SubparabolicScalar.tail_of_no_compact_return"
+      },
+      {
+        "name": "HartreeF.Paper121SubparabolicScalar.ratio_tendsto_of_tail"
+      }
+    ]
+  },
+  {
+    "module": "F121RunningScaleSupremum",
+    "source": "components/F121RunningScaleSupremum.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SubparabolicScalar.running_supremum_subparabolic"
+      }
+    ]
+  },
+  {
+    "module": "F121SubparabolicScale",
+    "source": "components/F121SubparabolicScale.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Subparabolic.subparabolic_scale_original_environment"
+      }
+    ]
   }
 ]

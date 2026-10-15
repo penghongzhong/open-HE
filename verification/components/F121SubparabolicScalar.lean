@@ -1,0 +1,5 @@
+import F121SubparabolicScalar
+#print axioms HartreeF.Paper121SubparabolicScalar.tail_of_no_compact_return
+#check @HartreeF.Paper121SubparabolicScalar.tail_of_no_compact_return
+#print axioms HartreeF.Paper121SubparabolicScalar.ratio_tendsto_of_tail
+#check @HartreeF.Paper121SubparabolicScalar.ratio_tendsto_of_tail

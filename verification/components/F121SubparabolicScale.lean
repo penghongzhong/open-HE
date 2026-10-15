@@ -1,0 +1,3 @@
+import F121SubparabolicScale
+#print axioms HartreeF.Paper121Subparabolic.subparabolic_scale_original_environment
+#check @HartreeF.Paper121Subparabolic.subparabolic_scale_original_environment

@@ -142,7 +142,10 @@
     "F121ArbitraryLocalProperness",
     "F121AffineWeakPairing",
     "F121AffineWeakEscape",
-    "F121WeakDisappearance"
+    "F121WeakDisappearance",
+    "F121SubparabolicScalar",
+    "F121RunningScaleSupremum",
+    "F121SubparabolicScale"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1061,7 +1064,10 @@
     "F121ArbitraryLocalProperness",
     "F121AffineWeakPairing",
     "F121AffineWeakEscape",
-    "F121WeakDisappearance"
+    "F121WeakDisappearance",
+    "F121SubparabolicScalar",
+    "F121RunningScaleSupremum",
+    "F121SubparabolicScale"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1980,7 +1986,10 @@
     "F121ArbitraryLocalProperness": "d9af3eb230d6a58d19ad6b8adc78f25ee0c4df0c9e9a91ac1c840a30da033d56",
     "F121AffineWeakPairing": "3aeef7b7e88a48e687b89c9991f08ab893e8c4126afa98be23b41c81041894c9",
     "F121AffineWeakEscape": "c0d3e0401645beff64abe4448a785e2cba0fcae1ee949c905cfb0ca7c8a21573",
-    "F121WeakDisappearance": "127943229387138bd6ac49a790963b7003522046e2b951a1671ad2e6df9733e2"
+    "F121WeakDisappearance": "127943229387138bd6ac49a790963b7003522046e2b951a1671ad2e6df9733e2",
+    "F121SubparabolicScalar": "fb625e702a54e7a7b367eb206abfc8d6613e3528f9c0bb76cc92790c064eea9a",
+    "F121RunningScaleSupremum": "49614c6e2230ce39c592456b8efdf762ad8e3bcf9a25cd18c9050a2b502eba1b",
+    "F121SubparabolicScale": "5af01070edf0176d1b3196e5ed1a0ce787a028b339c0a8848ea5f939acfc237e"
   },
   "declarations": [
     {
@@ -2866,7 +2875,7 @@
     }
   ],
   "seed": {
-    "run": 38689955230,
-    "commit": "af626da6f3e761d1fa3a11845a94a312f1a665ee"
+    "run": 38695711260,
+    "commit": "6daecb960cad7362f99874ebce645b317a731fc0"
   }
 }

@@ -1,0 +1,3 @@
+import F121RunningScaleSupremum
+#print axioms HartreeF.Paper121SubparabolicScalar.running_supremum_subparabolic
+#check @HartreeF.Paper121SubparabolicScalar.running_supremum_subparabolic
