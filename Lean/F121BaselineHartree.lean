@@ -10,6 +10,8 @@ open scoped ENNReal NNReal Topology
 namespace HartreeF.Paper121BaselineHartree
 open ForcingDomain ForcingContinuity
 
+local instance : Fact (1 ≤ ENNReal.ofReal (6/5 : ℝ)) := ⟨by norm_num⟩
+
 theorem sum_power_bound {α x y : ℝ} (hα : 0 < α) (hx : 0 ≤ x) (hy : 0 ≤ y) :
     (3+α)*(x^(2+α)+y^(2+α))*x^(2+α) +
       y^(3+α)*(2+α)*(x^(1+α)+y^(1+α)) ≤
@@ -41,13 +43,14 @@ theorem forcing_sum_norm_bound {α c : ℝ} (hH : OrdinaryHLS α c) :
         (eLpNorm (f-g) 6 volume).toReal := by
   obtain ⟨C,hC⟩ := forcing_difference_bound hH
   let D : ℝ≥0 := ⟨(C : ℝ)*(2*(5+2*α)), by have hα := hH.order_pos; positivity⟩
+  have hD : (D : ℝ) = (C : ℝ)*(2*(5+2*α)) := rfl
   refine ⟨D,fun f g hf hg => ?_⟩
   have hb := sum_power_bound hH.order_pos
     (show 0 ≤ (eLpNorm f 6 volume).toReal from ENNReal.toReal_nonneg)
     (show 0 ≤ (eLpNorm g 6 volume).toReal from ENNReal.toReal_nonneg)
   exact (hC f g hf hg).trans
     ((mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left hb C.coe_nonneg)
-      ENNReal.toReal_nonneg).trans_eq (by dsimp [D]; ring))
+      ENNReal.toReal_nonneg).trans_eq (by rw [hD]; ring))
 
 /-- Every representative is literal; absolute convolution integrability is included. -/
 theorem baseline_domains {α c : ℝ} (hH : OrdinaryHLS α c)

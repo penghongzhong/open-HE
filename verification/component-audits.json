@@ -2017,5 +2017,26 @@
         "name": "HartreeF.Paper121BaselineHartree.baseline_hartree_environment"
       }
     ]
+  },
+  {
+    "module": "F121CutoffCore",
+    "source": "components/F121CutoffCore.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CutoffCore.low_gradient_contraction"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffCore.gradient_pair_bound"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffCore.low_convolution_same_distribution"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffCore.low_convolution_gradient_bound"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffCore.annular_symbol_reproduction"
+      }
+    ]
   }
 ]

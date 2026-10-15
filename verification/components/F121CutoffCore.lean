@@ -1,0 +1,13 @@
+import F121CutoffCore
+
+#print axioms HartreeF.Paper121CutoffCore.low_gradient_contraction
+#print axioms HartreeF.Paper121CutoffCore.gradient_pair_bound
+#print axioms HartreeF.Paper121CutoffCore.low_convolution_same_distribution
+#print axioms HartreeF.Paper121CutoffCore.low_convolution_gradient_bound
+#print axioms HartreeF.Paper121CutoffCore.annular_symbol_reproduction
+
+#check @HartreeF.Paper121CutoffCore.low_gradient_contraction
+#check @HartreeF.Paper121CutoffCore.gradient_pair_bound
+#check @HartreeF.Paper121CutoffCore.low_convolution_same_distribution
+#check @HartreeF.Paper121CutoffCore.low_convolution_gradient_bound
+#check @HartreeF.Paper121CutoffCore.annular_symbol_reproduction

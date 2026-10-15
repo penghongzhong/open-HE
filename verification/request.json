@@ -24,6 +24,7 @@
     "F121CriticalEnvironment",
     "F121CriticalFromFailure",
     "F121CriticalKineticBounds",
+    "F121CutoffCore",
     "F121DirectionalEnvironment",
     "F121DirectionalSobolev",
     "F121FixedScaleOrientation",
@@ -237,6 +238,7 @@
     "F121CriticalEnvironment",
     "F121CriticalFromFailure",
     "F121CriticalKineticBounds",
+    "F121CutoffCore",
     "F121DirectionalEnvironment",
     "F121DirectionalSobolev",
     "F121FixedScaleOrientation",
@@ -2028,7 +2030,8 @@
     "F121BoundedHalflineLimit": "01d187266f56015b829301d00a9e51e7eca6c96cd53fdba4939870fff481abe7",
     "F121SignedOrientation": "dd819b628a5b4fa93e5e5830a81ad35aed57b2ec891e75182ca2beceef311acf",
     "F121BoundedHalflineEnvironment": "3b533a7f8e5554d24a05709c8e319053fc0eb4a3e530063b91cdc6bf89c56103",
-    "F121BaselineHartree": "5960c40a6573bcfd9937d08efff316bf262886fca2109fd0e755bc7ce4a7faf5"
+    "F121BaselineHartree": "b19d280be795d1535ce421f79211887089da44886b4d368fe2eabfad1b0c0021",
+    "F121CutoffCore": "acc71092ed29f232227f2fc4e59d94602b8986d97ec325ce4438825ee5036d4c"
   },
   "declarations": [
     {
