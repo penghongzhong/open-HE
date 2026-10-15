@@ -17,8 +17,9 @@ theorem kernelIntegral_contDiff_nat {E : Type*} [NormedAddCommGroup E] [NormedSp
     ContDiff ℝ (n : ℕ∞) (kernelIntegral k f) := by
   induction n generalizing E with
   | zero =>
-    rw [contDiff_zero]
-    exact continuous_iff_continuousAt.mpr fun x => (kernelIntegral_hasFDerivAt k hf hw x).continuousAt
+    have hc : Continuous (kernelIntegral k f) :=
+      continuous_iff_continuousAt.mpr fun x => (kernelIntegral_hasFDerivAt k hf hw x).continuousAt
+    simpa using (contDiff_zero.mpr hc : ContDiff ℝ 0 (kernelIntegral k f))
   | succ n ih =>
     apply contDiff_succ_iff_hasFDerivAt.mpr
     exact ⟨kernelIntegral (SchwartzMap.fderivCLM ℂ V E k) f,

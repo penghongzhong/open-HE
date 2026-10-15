@@ -1,4 +1,4 @@
-import F121SchwartzConvolutionSmooth
+import F121CutoffCore
 import F121AnnularRepresentative
 
 noncomputable section
