@@ -13,6 +13,7 @@
     "F121AffineCompactParameters",
     "F121AffineWeakEscape",
     "F121AffineWeakPairing",
+    "F121AnnularL2",
     "F121ArbitraryLocalProperness",
     "F121BaselineHartree",
     "F121BoundedAffineClosed",
@@ -20,6 +21,7 @@
     "F121BoundedHalflineLimit",
     "F121CompactClosureGlobal",
     "F121CompactConvergence",
+    "F121ConvolutionC0",
     "F121CriticalAllTimes",
     "F121CriticalEnvironment",
     "F121CriticalFromFailure",
@@ -227,6 +229,7 @@
     "F121AffineCompactParameters",
     "F121AffineWeakEscape",
     "F121AffineWeakPairing",
+    "F121AnnularL2",
     "F121ArbitraryLocalProperness",
     "F121BaselineHartree",
     "F121BoundedAffineClosed",
@@ -234,6 +237,7 @@
     "F121BoundedHalflineLimit",
     "F121CompactClosureGlobal",
     "F121CompactConvergence",
+    "F121ConvolutionC0",
     "F121CriticalAllTimes",
     "F121CriticalEnvironment",
     "F121CriticalFromFailure",
@@ -2031,7 +2035,9 @@
     "F121SignedOrientation": "dd819b628a5b4fa93e5e5830a81ad35aed57b2ec891e75182ca2beceef311acf",
     "F121BoundedHalflineEnvironment": "3b533a7f8e5554d24a05709c8e319053fc0eb4a3e530063b91cdc6bf89c56103",
     "F121BaselineHartree": "b19d280be795d1535ce421f79211887089da44886b4d368fe2eabfad1b0c0021",
-    "F121CutoffCore": "acc71092ed29f232227f2fc4e59d94602b8986d97ec325ce4438825ee5036d4c"
+    "F121CutoffCore": "acc71092ed29f232227f2fc4e59d94602b8986d97ec325ce4438825ee5036d4c",
+    "F121AnnularL2": "e8ca4a5b69222e01595e5ef2b3b46f14193a8437f9587d5d519bfca56a6ee401",
+    "F121ConvolutionC0": "cfd2a4f61c12e7184092037241310d7bc73f9fca35e1018399b2b035629a19a4"
   },
   "declarations": [
     {
@@ -2917,7 +2923,7 @@
     }
   ],
   "seed": {
-    "run": 38730104830,
-    "commit": "a12f9db40b1111fc98cb8d8f0a12352c62e450db"
+    "run": 38734524056,
+    "commit": "46e04a46b5a3f851a215d65a6197bd43a66d42ae"
   }
 }

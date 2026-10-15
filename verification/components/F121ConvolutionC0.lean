@@ -1,0 +1,21 @@
+import F121ConvolutionC0
+
+#print axioms HartreeF.Paper121ConvolutionC0.evaluationC0
+#print axioms HartreeF.Paper121ConvolutionC0.convolutionEvaluation
+#print axioms HartreeF.Paper121ConvolutionC0.schwartzConvolutionC0
+#print axioms HartreeF.Paper121ConvolutionC0.schwartzConvolutionC0_bound
+#print axioms HartreeF.Paper121ConvolutionC0.convolutionC0
+#print axioms HartreeF.Paper121ConvolutionC0.convolutionC0_schwartz
+#print axioms HartreeF.Paper121ConvolutionC0.convolutionC0_apply
+#print axioms HartreeF.Paper121ConvolutionC0.convolutionC0_bound
+#print axioms HartreeF.Paper121ConvolutionC0.actual_convolution_continuous_vanishing
+
+#check @HartreeF.Paper121ConvolutionC0.evaluationC0
+#check @HartreeF.Paper121ConvolutionC0.convolutionEvaluation
+#check @HartreeF.Paper121ConvolutionC0.schwartzConvolutionC0
+#check @HartreeF.Paper121ConvolutionC0.schwartzConvolutionC0_bound
+#check @HartreeF.Paper121ConvolutionC0.convolutionC0
+#check @HartreeF.Paper121ConvolutionC0.convolutionC0_schwartz
+#check @HartreeF.Paper121ConvolutionC0.convolutionC0_apply
+#check @HartreeF.Paper121ConvolutionC0.convolutionC0_bound
+#check @HartreeF.Paper121ConvolutionC0.actual_convolution_continuous_vanishing

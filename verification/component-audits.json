@@ -2038,5 +2038,68 @@
         "name": "HartreeF.Paper121CutoffCore.annular_symbol_reproduction"
       }
     ]
+  },
+  {
+    "module": "F121AnnularL2",
+    "source": "components/F121AnnularL2.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Annular.multiplier_sub"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.nested_low_symbol"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.nested_low_distribution"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annularValueL2CLM"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_l2_distribution"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_l2_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_l2_unique"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_distribution_reproduction"
+      }
+    ]
+  },
+  {
+    "module": "F121ConvolutionC0",
+    "source": "components/F121ConvolutionC0.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.evaluationC0"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.convolutionEvaluation"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.schwartzConvolutionC0"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.schwartzConvolutionC0_bound"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.convolutionC0"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.convolutionC0_schwartz"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.convolutionC0_apply"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.convolutionC0_bound"
+      },
+      {
+        "name": "HartreeF.Paper121ConvolutionC0.actual_convolution_continuous_vanishing"
+      }
+    ]
   }
 ]
