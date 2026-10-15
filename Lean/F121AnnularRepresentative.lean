@@ -15,7 +15,7 @@ def enlargedAnnularKernel (q : Cutoff) {M : ℝ} (hM : 0 < M) : Test :=
   cutoffKernel q (by linarith : 0 < 2*M) - cutoffKernel q (by linarith : 0 < M/4)
 
 theorem enlargedAnnularKernel_fourier (q : Cutoff) {M : ℝ} (hM : 0 < M) :
-    (𝓕 (enlargedAnnularKernel q hM) : V → ℂ) =
+    ((𝓕 (enlargedAnnularKernel q hM) : Test) : V → ℂ) =
       lowSymbol q (2*M)-lowSymbol q (M/4) := by
   have he : 𝓕 (enlargedAnnularKernel q hM) =
       symbolSchwartz q (by linarith : 0 < 2*M)-symbolSchwartz q (by linarith : 0 < M/4) := by
@@ -25,7 +25,8 @@ theorem enlargedAnnularKernel_fourier (q : Cutoff) {M : ℝ} (hM : 0 < M) :
     exact congrArg₂ (fun f g : Test => f-g) (cutoffKernel_fourier q _)
       (cutoffKernel_fourier q _)
   funext ξ
-  exact congrArg (fun f : Test => f ξ) he
+  simpa only [SchwartzMap.sub_apply, symbolSchwartz_apply, Pi.sub_apply] using
+    congrArg (fun f : Test => f ξ) he
 
 theorem enlargedAnnularKernel_l2_bound (q : Cutoff) {M : ℝ} (hM : 0 < M) :
     ‖(enlargedAnnularKernel q hM).toLp 2 volume‖ ≤
@@ -126,7 +127,7 @@ theorem annular_actual_domains (hDensity : OrdinaryH1Density) {K : ℝ}
     (∀ x : V, ‖annularC0CLM hDensity hSob q hM u x‖ ≤
       (10*cutoffL2Constant q)*Real.sqrt M*pureGradientNorm u) := by
   have he := annular_C0_same_L2 hDensity hSob q hM u
-  refine ⟨(Lp.memLp _).congr he.symm, map_continuous _, zero_at_infty _, ?_,
+  refine ⟨(memLp_congr_ae he).mpr (Lp.memLp _), map_continuous _, zero_at_infty _, ?_,
     annular_C0_gradient_bound hDensity hSob q hM u⟩
   rw [eLpNorm_congr_ae he]
   exact annular_l2_bound hDensity hSob q hM u
