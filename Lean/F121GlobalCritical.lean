@@ -67,7 +67,8 @@ theorem global_critical_element_of_threshold_failure
   let V := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd 0 psi
   have hglobal : V.domain = univ :=
     (no_finite_endpoint_of_compact_closure (s := 0) hDensity hSob h0 hfree hret hefree heret
-      hOrd hgen psi hpsi r y (fun t _ => hr t) hclosure).2.2
+      hOrd hgen psi hpsi r y (fun t _ => hr t)
+      (by simpa only [exists_prop] using hclosure)).2.2
   have ht (t : ℝ) : t ∈ V.domain := by rw [hglobal]; trivial
   refine ⟨hEc, hEcW, psi, hpsi, hEpsi, hs, hglobal, ?_,
     (fun t => hn t (ht t)), r, hr, y, Q, hc, hne, hz, hq,
