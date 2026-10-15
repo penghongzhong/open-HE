@@ -25,7 +25,7 @@ theorem enlargedAnnularKernel_fourier (q : Cutoff) {M : ℝ} (hM : 0 < M) :
     exact congrArg₂ (fun f g : Test => f-g) (cutoffKernel_fourier q _)
       (cutoffKernel_fourier q _)
   funext ξ
-  simpa only [SchwartzMap.sub_apply, symbolSchwartz_apply, Pi.sub_apply] using
+  simpa only [sub_apply, symbolSchwartz_apply, Pi.sub_apply] using
     congrArg (fun f : Test => f ξ) he
 
 theorem enlargedAnnularKernel_l2_bound (q : Cutoff) {M : ℝ} (hM : 0 < M) :
