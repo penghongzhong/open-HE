@@ -14,7 +14,10 @@ def evaluationC0 (x : V) : C₀(V, ℂ) →L[ℂ] ℂ :=
     { toFun := fun f => f x
       map_add' := fun _ _ => rfl
       map_smul' := fun _ _ => rfl }
-    1 (fun f => by simpa only [one_mul] using f.toBCF.norm_coe_le_norm x)
+    1 (fun f => by
+      change ‖f x‖ ≤ 1*‖f‖
+      rw [one_mul, ← ZeroAtInftyContinuousMap.norm_toBCF_eq_norm]
+      exact f.toBCF.norm_coe_le_norm x)
 
 variable {p r : ℝ≥0∞} [Fact (1 ≤ p)] [Fact (1 ≤ r)] [p.HolderConjugate r]
 
