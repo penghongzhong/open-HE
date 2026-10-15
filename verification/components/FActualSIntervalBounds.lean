@@ -1,0 +1,7 @@
+import FActualSIntervalBounds
+
+#print axioms HartreeF.ActualSIntervalBounds.actual_snorm_mono
+#check @HartreeF.ActualSIntervalBounds.actual_snorm_mono
+
+#print axioms HartreeF.ActualSIntervalBounds.actual_snorm_split_le
+#check @HartreeF.ActualSIntervalBounds.actual_snorm_split_le

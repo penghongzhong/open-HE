@@ -1432,5 +1432,17 @@
         "name": "HartreeF.ActualSpatialBadTransport.backward_bad_of_spatial_normalization"
       }
     ]
+  },
+  {
+    "module": "FActualSIntervalBounds",
+    "source": "components/FActualSIntervalBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualSIntervalBounds.actual_snorm_mono"
+      },
+      {
+        "name": "HartreeF.ActualSIntervalBounds.actual_snorm_split_le"
+      }
+    ]
   }
 ]
