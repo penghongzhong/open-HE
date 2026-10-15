@@ -1519,5 +1519,26 @@
         "name": "HartreeF.OriginalCriticalWindows.escaping_bounds_energy_tendsto"
       }
     ]
+  },
+  {
+    "module": "FOriginalUniformCriticalSequence",
+    "source": "components/FOriginalUniformCriticalSequence.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalUniformSequence.NativeSWindow"
+      },
+      {
+        "name": "HartreeF.OriginalUniformSequence.exists_native_S_window"
+      },
+      {
+        "name": "HartreeF.OriginalUniformSequence.exists_uniform_critical_window_sequence"
+      },
+      {
+        "name": "HartreeF.OriginalUniformSequence.uniform_threshold_bounds_of_failure"
+      },
+      {
+        "name": "HartreeF.OriginalUniformSequence.exists_uniform_sequence_of_failure"
+      }
+    ]
   }
 ]

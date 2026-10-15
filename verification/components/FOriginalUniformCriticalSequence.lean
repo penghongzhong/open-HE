@@ -1,0 +1,16 @@
+import FOriginalUniformCriticalSequence
+
+#print axioms HartreeF.OriginalUniformSequence.NativeSWindow
+#check @HartreeF.OriginalUniformSequence.NativeSWindow
+
+#print axioms HartreeF.OriginalUniformSequence.exists_native_S_window
+#check @HartreeF.OriginalUniformSequence.exists_native_S_window
+
+#print axioms HartreeF.OriginalUniformSequence.exists_uniform_critical_window_sequence
+#check @HartreeF.OriginalUniformSequence.exists_uniform_critical_window_sequence
+
+#print axioms HartreeF.OriginalUniformSequence.uniform_threshold_bounds_of_failure
+#check @HartreeF.OriginalUniformSequence.uniform_threshold_bounds_of_failure
+
+#print axioms HartreeF.OriginalUniformSequence.exists_uniform_sequence_of_failure
+#check @HartreeF.OriginalUniformSequence.exists_uniform_sequence_of_failure
