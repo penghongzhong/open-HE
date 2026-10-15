@@ -2,3 +2,6 @@ import FActualCriticalScaleEscape
 
 #print axioms HartreeF.ActualCriticalScaleEscape.critical_normalized_return_time_not_tendsto
 #check @HartreeF.ActualCriticalScaleEscape.critical_normalized_return_time_not_tendsto
+
+#print axioms HartreeF.ActualCriticalScaleEscape.native_critical_return_time_not_tendsto
+#check @HartreeF.ActualCriticalScaleEscape.native_critical_return_time_not_tendsto

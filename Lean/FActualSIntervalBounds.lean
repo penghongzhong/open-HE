@@ -24,8 +24,8 @@ private theorem interval_eLpNorm_split (F : GlobalValueSpace) {a b c : ℝ} :
     funext t
     by_cases ht : t ∈ Iic c
     · rw [Pi.add_apply, indicator_of_mem ht,
-        indicator_of_not_mem (show t ∉ (Iic c)ᶜ from fun h => h ht), add_zero]
-    · rw [Pi.add_apply, indicator_of_not_mem ht,
+        indicator_of_notMem (show t ∉ (Iic c)ᶜ from fun h => h ht), add_zero]
+    · rw [Pi.add_apply, indicator_of_notMem ht,
         indicator_of_mem (show t ∈ (Iic c)ᶜ from ht), zero_add]
   have hL : eLpNorm ((Iic c).indicator F) 10 (localMeasure a b) ≤
       eLpNorm F 10 (localMeasure a c) := by

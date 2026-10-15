@@ -1415,6 +1415,9 @@
     "declarations": [
       {
         "name": "HartreeF.ActualCriticalScaleEscape.critical_normalized_return_time_not_tendsto"
+      },
+      {
+        "name": "HartreeF.ActualCriticalScaleEscape.native_critical_return_time_not_tendsto"
       }
     ]
   },
