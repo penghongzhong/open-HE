@@ -1567,5 +1567,17 @@
         "name": "HartreeF.OriginalForcingBounds.exists_common_forcing_bounds"
       }
     ]
+  },
+  {
+    "module": "F121CriticalKineticBounds",
+    "source": "components/F121CriticalKineticBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CriticalBounds.twice_energy_le_kinetic"
+      },
+      {
+        "name": "HartreeF.Paper121CriticalBounds.exists_native_compact_orbit_with_two_sided_kinetic_bounds"
+      }
+    ]
   }
 ]

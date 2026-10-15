@@ -1,0 +1,7 @@
+import F121CriticalKineticBounds
+
+#print axioms HartreeF.Paper121CriticalBounds.twice_energy_le_kinetic
+#check @HartreeF.Paper121CriticalBounds.twice_energy_le_kinetic
+
+#print axioms HartreeF.Paper121CriticalBounds.exists_native_compact_orbit_with_two_sided_kinetic_bounds
+#check @HartreeF.Paper121CriticalBounds.exists_native_compact_orbit_with_two_sided_kinetic_bounds

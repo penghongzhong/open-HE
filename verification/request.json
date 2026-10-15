@@ -123,7 +123,8 @@
     "FSpatialProfileStateLimit",
     "FTerminalCompactGeometry",
     "FTerminalFamilyCompactCauchy",
-    "FTerminalLimitFixedPoint"
+    "FTerminalLimitFixedPoint",
+    "F121CriticalKineticBounds"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1023,7 +1024,8 @@
     "WeakProductCutoffDomains",
     "WeakSmoothProduct",
     "WeightedProjectionDifference",
-    "WeightedSixComparison"
+    "WeightedSixComparison",
+    "F121CriticalKineticBounds"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1923,7 +1925,8 @@
     "FOriginalCriticalSequenceWindows": "d81ac91b951f3fe8438a7d593978e7e1cced382dce75e72b48ce737c9a2e6b0e",
     "FOriginalUniformCriticalSequence": "0268f4abd53bce556adef0964a624a48916834d41073fb4d262ed7010617c48e",
     "FOriginalDirectionalCoercivity": "25907d44f17cbe271ec6e2e5be8f19f9515d669f510faaa43809757c25e94e62",
-    "FOriginalForcingBounds": "722e2735891644ebbeb21e43d0b4e9947178fdde83d63271402a5520e88ba777"
+    "FOriginalForcingBounds": "722e2735891644ebbeb21e43d0b4e9947178fdde83d63271402a5520e88ba777",
+    "F121CriticalKineticBounds": "fb24009c50874b375a18cc078a59929de469b99fc67d926a75f13de09d380c9b"
   },
   "declarations": [
     {
@@ -2809,7 +2812,7 @@
     }
   ],
   "seed": {
-    "run": 38669787186,
-    "commit": "f247961bd458af2a33fdc959d74e3e0f4e1cf892"
+    "run": 38673672861,
+    "commit": "8486b913f0cd9cad19b2fdddb4cbf6f08bceb252"
   }
 }
