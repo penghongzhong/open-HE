@@ -16,11 +16,13 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [NormedSpace ℂ
 def kernelIntegral (k : 𝓢(V, E)) (f : V → ℂ) (x : V) : E :=
   ∫ y : V, f y • k (x-y)
 
+omit [IsScalarTower ℝ ℂ E] [CompleteSpace E] in
 theorem kernel_integrand_measurable (k : 𝓢(V, E)) {f : V → ℂ}
     (hf : AEStronglyMeasurable f volume) (x : V) :
     AEStronglyMeasurable (fun y : V => f y • k (x-y)) volume :=
   hf.smul (k.continuous.comp (continuous_const.sub continuous_id)).aestronglyMeasurable
 
+omit [IsScalarTower ℝ ℂ E] [CompleteSpace E] in
 theorem kernel_integrand_integrable (k : 𝓢(V, E)) {f : V → ℂ}
     (hf : AEStronglyMeasurable f volume) {d : ℕ}
     (hw : Integrable (fun y : V => ‖f y‖*(1+‖y‖)^(-(d : ℝ))) volume) (x : V) :
@@ -60,6 +62,7 @@ theorem kernelIntegral_hasFDerivAt (k : 𝓢(V, E)) {f : V → ℂ}
   · filter_upwards with y
     intro x _
     have h := (k.hasFDerivAt (x-y)).comp x ((hasFDerivAt_id x).sub_const y)
-    simpa only [ContinuousLinearMap.comp_id] using h.const_smul (f y)
+    simpa only [ContinuousLinearMap.comp_id, Function.comp_def, id_eq, Pi.smul_apply,
+      Dk, SchwartzMap.fderivCLM_apply] using h.const_smul (f y)
 
 end HartreeF.Paper121SmoothConvolution
