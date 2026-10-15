@@ -23,7 +23,7 @@ theorem kernelIntegral_contDiff_nat {E : Type*} [NormedAddCommGroup E] [NormedSp
   | succ n ih =>
     apply contDiff_succ_iff_hasFDerivAt.mpr
     exact ⟨kernelIntegral (SchwartzMap.fderivCLM ℂ V E k) f,
-      (by apply ih <;> assumption), kernelIntegral_hasFDerivAt k hf hw⟩
+      (by apply ih), kernelIntegral_hasFDerivAt k hf hw⟩
 
 theorem kernelIntegral_smooth {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedSpace ℂ E] [IsScalarTower ℝ ℂ E] [CompleteSpace E]
