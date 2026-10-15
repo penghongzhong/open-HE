@@ -183,7 +183,7 @@ theorem native_return_length_tendsto_atTop
   obtain ⟨p, _hp, k, hk, hlimit⟩ := hpcompact.tendsto_subseq' hmem
   have hz : Tendsto (fun n => z (k n)) atTop (𝓝 p.1) := hlimit.fst_nhds
   have htime : Tendsto (fun n => -c (k n) / (r (k n))^2) atTop (𝓝 (-p.2)) := by
-    simpa only [L, neg_div] using hlimit.snd_nhds.neg
+    simpa only [Function.comp_def, L, neg_div] using hlimit.snd_nhds.neg
   exact native_critical_return_time_not_tendsto hDensity hRel hSob h0 hfree hret
     hefree heret hOrd hH hS S Bw Bs B6 hExtract hgen hUnique cutoff f
     (fun n => c (k n)) (fun n => r (k n)) (fun n => hr (k n))
