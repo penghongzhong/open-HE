@@ -18,6 +18,7 @@ theorem actual_after_bound (hDensity : OrdinaryH1Density)
     (hM : ActualSTail.UniformSNormAfter U s M) :
     TimeHolder.mixedNorm (volume.restrict (U.domain ∩ Ici s)) volume 10 10
       (fun t => energyValue (U.state t)) ≤ (M : ℝ≥0∞) := by
+  have hcast : ENNReal.ofReal (M : ℝ) = (M : ℝ≥0∞) := ENNReal.ofReal_coe_nnreal
   obtain ⟨b, hb, hbI, hcover⟩ :=
     exists_right_interval_exhaustion U.domain U.domain_connected U.center_mem
   have hI (n : ℕ) : Icc s (b n) ⊆ U.domain :=
@@ -26,10 +27,10 @@ theorem actual_after_bound (hDensity : OrdinaryH1Density)
     hDensity hSob M.property (fun _ => s) b (fun _ _ _ => le_rfl) hb
     (fun n => (hbI n).2) U.state (fun n => U.path (hbI n).2 (hI n))
     (fun n => U.path_agrees (hbI n).2 (hI n))
-    (fun n => by simpa only [ENNReal.ofReal_coe_nnreal] using hM (b n) (hbI n).2 (hI n))
+    (fun n => (hM (b n) (hbI n).2 (hI n)).trans_eq hcast.symm)
   have h := actual_mixedNorm_le_of_global_nestedLp volume 10 10 _ F
     (fun t => energyValue (U.state t)) hFM hF
-  simpa only [hcover, ENNReal.ofReal_coe_nnreal] using h
+  simpa only [hcover] using h.trans_eq hcast
 
 theorem actual_before_bound (hDensity : OrdinaryH1Density)
     {K alpha kernel s : ℝ} (hSob : OrdinarySobolev K) {f : EnergyState}
@@ -37,6 +38,7 @@ theorem actual_before_bound (hDensity : OrdinaryH1Density)
     (hM : ActualInfiniteLeftSTail.UniformSNormBefore U s M) :
     TimeHolder.mixedNorm (volume.restrict (U.domain ∩ Iic s)) volume 10 10
       (fun t => energyValue (U.state t)) ≤ (M : ℝ≥0∞) := by
+  have hcast : ENNReal.ofReal (M : ℝ) = (M : ℝ≥0∞) := ENNReal.ofReal_coe_nnreal
   obtain ⟨a, ha, haI, hcover⟩ :=
     exists_left_interval_exhaustion U.domain U.domain_connected U.center_mem
   have hI (n : ℕ) : Icc (a n) s ⊆ U.domain :=
@@ -45,10 +47,10 @@ theorem actual_before_bound (hDensity : OrdinaryH1Density)
     hDensity hSob M.property a (fun _ => s) ha (fun _ _ _ => le_rfl)
     (fun n => (haI n).2) U.state (fun n => U.path (haI n).2 (hI n))
     (fun n => U.path_agrees (haI n).2 (hI n))
-    (fun n => by simpa only [ENNReal.ofReal_coe_nnreal] using hM (a n) (haI n).2 (hI n))
+    (fun n => (hM (a n) (haI n).2 (hI n)).trans_eq hcast.symm)
   have h := actual_mixedNorm_le_of_global_nestedLp volume 10 10 _ F
     (fun t => energyValue (U.state t)) hFM hF
-  simpa only [hcover, ENNReal.ofReal_coe_nnreal] using h
+  simpa only [hcover] using h.trans_eq hcast
 
 theorem finite_after_iff_literal (hDensity : OrdinaryH1Density)
     {K alpha kernel s : ℝ} (hSob : OrdinarySobolev K) {f : EnergyState}
@@ -69,7 +71,11 @@ theorem finite_after_iff_literal (hDensity : OrdinaryH1Density)
     refine ⟨L.toNNReal, ?_⟩
     intro b hab hI
     rw [ENNReal.coe_toNNReal h]
-    exact (le_iSup_of_le b (le_iSup_of_le hab (le_iSup_of_le hI le_rfl))).trans hn
+    apply le_trans (b := nativeSAfter U s) ?_ hn
+    unfold nativeSAfter
+    apply le_iSup_of_le b
+    apply le_iSup_of_le hab
+    exact le_iSup_of_le hI le_rfl
 
 theorem finite_before_iff_literal (hDensity : OrdinaryH1Density)
     {K alpha kernel s : ℝ} (hSob : OrdinarySobolev K) {f : EnergyState}
@@ -90,6 +96,10 @@ theorem finite_before_iff_literal (hDensity : OrdinaryH1Density)
     refine ⟨L.toNNReal, ?_⟩
     intro b hba hI
     rw [ENNReal.coe_toNNReal h]
-    exact (le_iSup_of_le b (le_iSup_of_le hba (le_iSup_of_le hI le_rfl))).trans hn
+    apply le_trans (b := nativeSBefore U s) ?_ hn
+    unfold nativeSBefore
+    apply le_iSup_of_le b
+    apply le_iSup_of_le hba
+    exact le_iSup_of_le hI le_rfl
 
 end HartreeF.Paper121Finiteness

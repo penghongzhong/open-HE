@@ -1963,7 +1963,7 @@
     "F121GlobalCritical": "d8e552ceb3ec8040e13b76599ef74173e06be421be631e4e057180eeca103157",
     "F121LiteralSolutionClass": "197349fc9790c9d88d7b75eeb3ddb50534fec5f6ab93405be64661938076662e",
     "F121LiteralThresholdBridge": "313d266525bc47bed5eb3f566baef58be73027dbc7311900d0ae64cb49f18aa8",
-    "F121HalflineFiniteness": "91c39328265505afe4215645cba12804986167f3fe157fed0f0060559470cf4c",
+    "F121HalflineFiniteness": "1da09905880ce150efe4ed27e3d5ecd5f62bb1962e709a9faf37366171bffc19",
     "F121CompactConvergence": "0024d4c44665d9a160f7c0ac51c25a63ec8497bf9f246d81c24a86f2d472c2f0",
     "F121StrongCriticalLimit": "9f2aae5e719c98b0227f8f2ecc9592bf21cb058999fc5360431b56743ea3b13b"
   },
