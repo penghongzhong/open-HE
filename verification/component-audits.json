@@ -1942,5 +1942,38 @@
         "name": "HartreeF.Paper121Directional.directional_coercivity_original_environment"
       }
     ]
+  },
+  {
+    "module": "F121RelativeNormalization",
+    "source": "components/F121RelativeNormalization.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121RelativeNormalization.normalize_rescaled_state"
+      },
+      {
+        "name": "HartreeF.Paper121RelativeNormalization.rescaled_state_mem_bounded_carrier"
+      },
+      {
+        "name": "HartreeF.Paper121RelativeNormalization.rescaled_compact_normalization"
+      }
+    ]
+  },
+  {
+    "module": "F121NormalizedGlobalTrajectory",
+    "source": "components/F121NormalizedGlobalTrajectory.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121NormalizedGlobal.normalized_global_trajectory"
+      }
+    ]
+  },
+  {
+    "module": "F121BoundedHalflineLimit",
+    "source": "components/F121BoundedHalflineLimit.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121BoundedHalfline.bounded_halfline_critical_limit"
+      }
+    ]
   }
 ]

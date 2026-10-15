@@ -15,6 +15,7 @@
     "F121AffineWeakPairing",
     "F121ArbitraryLocalProperness",
     "F121BoundedAffineClosed",
+    "F121BoundedHalflineLimit",
     "F121CompactClosureGlobal",
     "F121CompactConvergence",
     "F121CriticalAllTimes",
@@ -30,7 +31,9 @@
     "F121LiteralThresholdBridge",
     "F121NativeHalflineSize",
     "F121NearMaxScale",
+    "F121NormalizedGlobalTrajectory",
     "F121PointwiseNormalization",
+    "F121RelativeNormalization",
     "F121RunningScaleSupremum",
     "F121SelectedScaleWindows",
     "F121StrongCriticalLimit",
@@ -222,6 +225,7 @@
     "F121AffineWeakPairing",
     "F121ArbitraryLocalProperness",
     "F121BoundedAffineClosed",
+    "F121BoundedHalflineLimit",
     "F121CompactClosureGlobal",
     "F121CompactConvergence",
     "F121CriticalAllTimes",
@@ -237,7 +241,9 @@
     "F121LiteralThresholdBridge",
     "F121NativeHalflineSize",
     "F121NearMaxScale",
+    "F121NormalizedGlobalTrajectory",
     "F121PointwiseNormalization",
+    "F121RelativeNormalization",
     "F121RunningScaleSupremum",
     "F121SelectedScaleWindows",
     "F121StrongCriticalLimit",
@@ -2010,7 +2016,10 @@
     "F121BoundedAffineClosed": "7ce9d753ae94a672f50bb47392120d8b05c9bd71cfac122ff028a10b267ad993",
     "F121PointwiseNormalization": "3dc3925bc35fc68bcfff992602539ae62fb97b199e987f2b22eed43288f50d7f",
     "F121DirectionalSobolev": "6db62db4831b431e43018c35db602a553f364a4783c7e5c0aae5be7bd71a416b",
-    "F121DirectionalEnvironment": "8c678640437d43318fa1a2462161a3a2cec55b5fb2976e5baf2ccce09a1867ea"
+    "F121DirectionalEnvironment": "8c678640437d43318fa1a2462161a3a2cec55b5fb2976e5baf2ccce09a1867ea",
+    "F121RelativeNormalization": "9fde7472d0af285361c4b0f9017fca749b899f1306af7f68a402753da06dfa36",
+    "F121NormalizedGlobalTrajectory": "057fc4612bf7c700e928ae1c9b62bf2dca0eafb8154e65f4a9cf5d56e2c43609",
+    "F121BoundedHalflineLimit": "01d187266f56015b829301d00a9e51e7eca6c96cd53fdba4939870fff481abe7"
   },
   "declarations": [
     {
@@ -2896,7 +2905,7 @@
     }
   ],
   "seed": {
-    "run": 38722444868,
-    "commit": "682a4a88cc08c2b5235d008236d63b65133a66ce"
+    "run": 38723399338,
+    "commit": "eb67ad0be7ea2b362619b0930d5e1a36fbc98f3f"
   }
 }

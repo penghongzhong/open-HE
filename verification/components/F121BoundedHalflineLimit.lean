@@ -1,0 +1,5 @@
+import F121BoundedHalflineLimit
+
+#print axioms HartreeF.Paper121BoundedHalfline.bounded_halfline_critical_limit
+
+#check @HartreeF.Paper121BoundedHalfline.bounded_halfline_critical_limit

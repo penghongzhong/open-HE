@@ -1,0 +1,9 @@
+import F121RelativeNormalization
+
+#print axioms HartreeF.Paper121RelativeNormalization.normalize_rescaled_state
+#print axioms HartreeF.Paper121RelativeNormalization.rescaled_state_mem_bounded_carrier
+#print axioms HartreeF.Paper121RelativeNormalization.rescaled_compact_normalization
+
+#check @HartreeF.Paper121RelativeNormalization.normalize_rescaled_state
+#check @HartreeF.Paper121RelativeNormalization.rescaled_state_mem_bounded_carrier
+#check @HartreeF.Paper121RelativeNormalization.rescaled_compact_normalization

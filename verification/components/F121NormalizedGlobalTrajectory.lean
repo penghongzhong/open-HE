@@ -1,0 +1,5 @@
+import F121NormalizedGlobalTrajectory
+
+#print axioms HartreeF.Paper121NormalizedGlobal.normalized_global_trajectory
+
+#check @HartreeF.Paper121NormalizedGlobal.normalized_global_trajectory
