@@ -1,0 +1,10 @@
+import FOriginalDirectionalCoercivity
+
+#print axioms HartreeF.OriginalDirectional.originalSharpConstant_eq_standard
+#check @HartreeF.OriginalDirectional.originalSharpConstant_eq_standard
+
+#print axioms HartreeF.OriginalDirectional.originalKineticThreshold_eq_standard
+#check @HartreeF.OriginalDirectional.originalKineticThreshold_eq_standard
+
+#print axioms HartreeF.OriginalDirectional.original_theorem_3_3
+#check @HartreeF.OriginalDirectional.original_theorem_3_3

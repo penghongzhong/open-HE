@@ -100,6 +100,7 @@
     "FNegativeInitialCauchyFamily",
     "FNormalizedBilateralGraphBounds",
     "FOriginalCriticalSequenceWindows",
+    "FOriginalDirectionalCoercivity",
     "FOriginalUniformCriticalSequence",
     "FOriginalUniformScatteringThreshold",
     "FPaperMainEnvironment",
@@ -742,6 +743,7 @@
     "FOrdinaryRellichBall",
     "FOrdinaryRetardedStrichartz",
     "FOriginalCriticalSequenceWindows",
+    "FOriginalDirectionalCoercivity",
     "FOriginalMildToTensorPDE",
     "FOriginalUniformCriticalSequence",
     "FOriginalUniformScatteringThreshold",
@@ -1917,7 +1919,8 @@
     "FActualRecenterBadTransport": "ecd563660de6ec2962a07a9831b4d28bfa68c16c6227cd18289d1dcaf0d45a9b",
     "FOriginalUniformScatteringThreshold": "6d7360ade4c57e4d41140635d36274f55bc4584997d92dc4dcb15ed7d6744b90",
     "FOriginalCriticalSequenceWindows": "d81ac91b951f3fe8438a7d593978e7e1cced382dce75e72b48ce737c9a2e6b0e",
-    "FOriginalUniformCriticalSequence": "0268f4abd53bce556adef0964a624a48916834d41073fb4d262ed7010617c48e"
+    "FOriginalUniformCriticalSequence": "0268f4abd53bce556adef0964a624a48916834d41073fb4d262ed7010617c48e",
+    "FOriginalDirectionalCoercivity": "27d43a397988b4b9e327b0a6c051cf8bc1de97118b1e584f7315c96b6124a3b7"
   },
   "declarations": [
     {
@@ -2803,7 +2806,7 @@
     }
   ],
   "seed": {
-    "run": 38665514068,
-    "commit": "0b08e4b39b670fbf3d64a2c8183872aeee7114b7"
+    "run": 38667211015,
+    "commit": "358c872cfe37f05025008941cf813b0dfa34bf17"
   }
 }

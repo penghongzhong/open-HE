@@ -1540,5 +1540,20 @@
         "name": "HartreeF.OriginalUniformSequence.exists_uniform_sequence_of_failure"
       }
     ]
+  },
+  {
+    "module": "FOriginalDirectionalCoercivity",
+    "source": "components/FOriginalDirectionalCoercivity.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalDirectional.originalSharpConstant_eq_standard"
+      },
+      {
+        "name": "HartreeF.OriginalDirectional.originalKineticThreshold_eq_standard"
+      },
+      {
+        "name": "HartreeF.OriginalDirectional.original_theorem_3_3"
+      }
+    ]
   }
 ]
