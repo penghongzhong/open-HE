@@ -83,7 +83,8 @@ theorem original_theorem_3_3 {alpha : ℝ}
   constructor
   · exact mul_pos (div_pos (mul_pos (by norm_num) (sub_pos.mpr hE))
       (sub_pos.mpr hA.2)) hd
-  · convert hbound using 1 <;> ring
+  · convert hbound using 1
+    ring
 
 #print axioms originalSharpConstant_eq_standard
 #print axioms originalKineticThreshold_eq_standard
