@@ -1,0 +1,15 @@
+import F121ActualHalflineNorm
+#print axioms HartreeF.Paper121ActualNorm.actualValue
+#check @HartreeF.Paper121ActualNorm.actualValue
+#print axioms HartreeF.Paper121ActualNorm.actualValue_coeFn_of_mem
+#check @HartreeF.Paper121ActualNorm.actualValue_coeFn_of_mem
+#print axioms HartreeF.Paper121ActualNorm.actualValue_compact
+#check @HartreeF.Paper121ActualNorm.actualValue_compact
+#print axioms HartreeF.Paper121ActualNorm.actual_pathValueSize_eq_function
+#check @HartreeF.Paper121ActualNorm.actual_pathValueSize_eq_function
+#print axioms HartreeF.Paper121ActualNorm.nativeSAfter_le_actual_halfline_norm
+#check @HartreeF.Paper121ActualNorm.nativeSAfter_le_actual_halfline_norm
+#print axioms HartreeF.Paper121ActualNorm.nativeSBefore_le_actual_halfline_norm
+#check @HartreeF.Paper121ActualNorm.nativeSBefore_le_actual_halfline_norm
+#print axioms HartreeF.Paper121ActualNorm.actual_halfline_norms_eq_top
+#check @HartreeF.Paper121ActualNorm.actual_halfline_norms_eq_top

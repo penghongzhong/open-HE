@@ -1612,5 +1612,41 @@
         "name": "HartreeF.Paper121CriticalAllTimes.exists_native_compact_orbit_all_times"
       }
     ]
+  },
+  {
+    "module": "F121ActualHalflineNorm",
+    "source": "components/F121ActualHalflineNorm.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121ActualNorm.actualValue"
+      },
+      {
+        "name": "HartreeF.Paper121ActualNorm.actualValue_coeFn_of_mem"
+      },
+      {
+        "name": "HartreeF.Paper121ActualNorm.actualValue_compact"
+      },
+      {
+        "name": "HartreeF.Paper121ActualNorm.actual_pathValueSize_eq_function"
+      },
+      {
+        "name": "HartreeF.Paper121ActualNorm.nativeSAfter_le_actual_halfline_norm"
+      },
+      {
+        "name": "HartreeF.Paper121ActualNorm.nativeSBefore_le_actual_halfline_norm"
+      },
+      {
+        "name": "HartreeF.Paper121ActualNorm.actual_halfline_norms_eq_top"
+      }
+    ]
+  },
+  {
+    "module": "F121CriticalFromFailure",
+    "source": "components/F121CriticalFromFailure.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CriticalFromFailure.exists_native_compact_orbit_of_threshold_failure"
+      }
+    ]
   }
 ]

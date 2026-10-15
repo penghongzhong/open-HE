@@ -1,0 +1,3 @@
+import F121CriticalFromFailure
+#print axioms HartreeF.Paper121CriticalFromFailure.exists_native_compact_orbit_of_threshold_failure
+#check @HartreeF.Paper121CriticalFromFailure.exists_native_compact_orbit_of_threshold_failure
