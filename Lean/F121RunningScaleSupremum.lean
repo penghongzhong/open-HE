@@ -55,7 +55,9 @@ theorem running_supremum_subparabolic (r : ℝ → ℝ) (hr : ∀ t, 0 < r t)
       have hprod : 0 ≤ d * Real.sqrt T := mul_nonneg hd.le hspos.le
       nlinarith [hr t]
   have hsup : runningScaleSupremum r T ≤ d * Real.sqrt T := by
-    apply csSup_le ⟨r 0, ⟨0, ⟨le_rfl, hTpos.le⟩, rfl⟩⟩
+    have hne : (r '' Icc (0 : ℝ) T).Nonempty :=
+      ⟨r 0, ⟨0, ⟨le_rfl, hTpos.le⟩, rfl⟩⟩
+    apply csSup_le hne
     rintro a ⟨t, ht, rfl⟩
     exact hbound t ht
   have hratio : runningScaleSupremum r T / Real.sqrt T ≤ d :=
