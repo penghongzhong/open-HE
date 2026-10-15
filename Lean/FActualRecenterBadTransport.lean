@@ -47,11 +47,14 @@ private theorem finite_after_of_translated_graph_cap
     have hV : Icc (c-c) (b-c) ⊆ U.domain := by
       intro t ht
       apply hdom
+      change 0 ≤ t
       simpa only [sub_self] using ht.1
-    have hV0 : Icc 0 (b-c) ⊆ U.domain := fun _ ht => hdom ht.1
     have hn := translated_path_norm M U c heq hcb hMc hV
-    have hbound : ‖U.path (sub_le_sub_right hcb c) hV‖ ≤ R := by
-      simpa only [sub_self] using hcap (b-c) (sub_nonneg.mpr hcb) hV0
+    let capAt : ℝ → Prop := fun A =>
+      ∀ (hab : A ≤ b-c) (hD : Icc A (b-c) ⊆ U.domain), ‖U.path hab hD‖ ≤ R
+    have hbase : capAt 0 := hcap (b-c)
+    have hshift : capAt (c-c) := Eq.mpr (congrArg capAt (sub_self c)) hbase
+    have hbound : ‖U.path (sub_le_sub_right hcb c) hV‖ ≤ R := hshift _ _
     have hgraph : ‖M.path hcb hMc‖ ≤ R := hn.symm.le.trans hbound
     exact ((pathValueSize_le_graph hDensity hSob _).trans
       (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left hgraph
@@ -98,11 +101,14 @@ private theorem finite_before_of_translated_graph_cap
     have hV : Icc (b-c) (c-c) ⊆ U.domain := by
       intro t ht
       apply hdom
+      change t ≤ 0
       simpa only [sub_self] using ht.2
-    have hV0 : Icc (b-c) 0 ⊆ U.domain := fun _ ht => hdom ht.2
     have hn := translated_path_norm M U c heq hbc hMc hV
-    have hbound : ‖U.path (sub_le_sub_right hbc c) hV‖ ≤ R := by
-      simpa only [sub_self] using hcap (b-c) (sub_nonpos.mpr hbc) hV0
+    let capAt : ℝ → Prop := fun A =>
+      ∀ (hab : b-c ≤ A) (hD : Icc (b-c) A ⊆ U.domain), ‖U.path hab hD‖ ≤ R
+    have hbase : capAt 0 := hcap (b-c)
+    have hshift : capAt (c-c) := Eq.mpr (congrArg capAt (sub_self c)) hbase
+    have hbound : ‖U.path (sub_le_sub_right hbc c) hV‖ ≤ R := hshift _ _
     have hgraph : ‖M.path hbc hMc‖ ≤ R := hn.symm.le.trans hbound
     exact ((pathValueSize_le_graph hDensity hSob _).trans
       (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left hgraph
