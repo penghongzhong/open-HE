@@ -124,7 +124,9 @@
     "FTerminalCompactGeometry",
     "FTerminalFamilyCompactCauchy",
     "FTerminalLimitFixedPoint",
-    "F121CriticalKineticBounds"
+    "F121CriticalKineticBounds",
+    "F121NativeHalflineSize",
+    "F121CriticalAllTimes"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1025,7 +1027,9 @@
     "WeakSmoothProduct",
     "WeightedProjectionDifference",
     "WeightedSixComparison",
-    "F121CriticalKineticBounds"
+    "F121CriticalKineticBounds",
+    "F121NativeHalflineSize",
+    "F121CriticalAllTimes"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1926,7 +1930,9 @@
     "FOriginalUniformCriticalSequence": "0268f4abd53bce556adef0964a624a48916834d41073fb4d262ed7010617c48e",
     "FOriginalDirectionalCoercivity": "25907d44f17cbe271ec6e2e5be8f19f9515d669f510faaa43809757c25e94e62",
     "FOriginalForcingBounds": "722e2735891644ebbeb21e43d0b4e9947178fdde83d63271402a5520e88ba777",
-    "F121CriticalKineticBounds": "fb24009c50874b375a18cc078a59929de469b99fc67d926a75f13de09d380c9b"
+    "F121CriticalKineticBounds": "fb24009c50874b375a18cc078a59929de469b99fc67d926a75f13de09d380c9b",
+    "F121NativeHalflineSize": "dfc64735faecede9824b192b1483ed2ad7bbc6096f95a97f62557fc2b928adb5",
+    "F121CriticalAllTimes": "06d47e710df10fbee16d261dd79f688ae2b302236910781cc8b034a55e1c7215"
   },
   "declarations": [
     {
@@ -2812,7 +2818,7 @@
     }
   ],
   "seed": {
-    "run": 38673672861,
-    "commit": "8486b913f0cd9cad19b2fdddb4cbf6f08bceb252"
+    "run": 38674198766,
+    "commit": "8ff715902446097671f37d173cd4b4294ee6dc1d"
   }
 }

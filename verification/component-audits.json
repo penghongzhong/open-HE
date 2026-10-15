@@ -1579,5 +1579,38 @@
         "name": "HartreeF.Paper121CriticalBounds.exists_native_compact_orbit_with_two_sided_kinetic_bounds"
       }
     ]
+  },
+  {
+    "module": "F121NativeHalflineSize",
+    "source": "components/F121NativeHalflineSize.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Halfline.finite_after_at_of_finite_after_at"
+      },
+      {
+        "name": "HartreeF.Paper121Halfline.finite_before_at_of_finite_before_at"
+      },
+      {
+        "name": "HartreeF.Paper121Halfline.nativeSAfter"
+      },
+      {
+        "name": "HartreeF.Paper121Halfline.nativeSBefore"
+      },
+      {
+        "name": "HartreeF.Paper121Halfline.nativeSAfter_eq_top_of_bad"
+      },
+      {
+        "name": "HartreeF.Paper121Halfline.nativeSBefore_eq_top_of_bad"
+      }
+    ]
+  },
+  {
+    "module": "F121CriticalAllTimes",
+    "source": "components/F121CriticalAllTimes.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CriticalAllTimes.exists_native_compact_orbit_all_times"
+      }
+    ]
   }
 ]

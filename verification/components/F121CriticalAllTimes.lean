@@ -1,0 +1,4 @@
+import F121CriticalAllTimes
+
+#print axioms HartreeF.Paper121CriticalAllTimes.exists_native_compact_orbit_all_times
+#check @HartreeF.Paper121CriticalAllTimes.exists_native_compact_orbit_all_times
