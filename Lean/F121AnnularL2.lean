@@ -54,7 +54,10 @@ theorem annular_l2_bound (hDensity : OrdinaryH1Density) {K : ℝ}
   have h := (lowL2_norm q M
     (highValueL2 hDensity hSob q (by linarith : 0 < M/2) u)).trans
       (highValueL2_bound hDensity hSob q (by linarith : 0 < M/2) u)
-  simpa only [inv_div, div_eq_mul_inv] using h
+  have he : (M/2)⁻¹ = 2*M⁻¹ := by
+    field_simp [ne_of_gt hM]
+  rw [he] at h
+  exact h
 
 theorem annular_l2_unique (hDensity : OrdinaryH1Density) {K : ℝ}
     (hSob : OrdinarySobolev K) (q : Cutoff) {M : ℝ} (hM : 0 < M)

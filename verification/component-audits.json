@@ -2101,5 +2101,41 @@
         "name": "HartreeF.Paper121ConvolutionC0.actual_convolution_continuous_vanishing"
       }
     ]
+  },
+  {
+    "module": "F121AnnularRepresentative",
+    "source": "components/F121AnnularRepresentative.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Annular.enlargedAnnularKernel"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.enlargedAnnularKernel_fourier"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.enlargedAnnularKernel_l2_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annularInfinityCLM"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annularC0CLM"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_infinity_distribution"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_C0_apply"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_C0_same_L2"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_C0_gradient_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Annular.annular_actual_domains"
+      }
+    ]
   }
 ]

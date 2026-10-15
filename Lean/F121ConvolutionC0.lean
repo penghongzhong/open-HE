@@ -5,7 +5,7 @@ noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
 open MeasureTheory FourierTransform Filter
-open scoped ENNReal Topology SchwartzMap
+open scoped ENNReal Topology SchwartzMap ZeroAtInfty
 namespace HartreeF.Paper121ConvolutionC0
 open EnergySpace PhysicalLowpass
 
@@ -71,8 +71,8 @@ theorem convolutionC0_bound (hp : p ≠ ∞) (k : Test) :
   · exact norm_nonneg _
   · exact fun ψ => schwartzConvolutionC0_bound (p := p) (r := r) k ψ
 
-/-- The everywhere-defined actual integral is continuous and vanishes at infinity. -/
 include r in
+/-- The everywhere-defined actual integral is continuous and vanishes at infinity. -/
 theorem actual_convolution_continuous_vanishing (hp : p ≠ ∞) (k : Test)
     (f : Lp ℂ p (volume : Measure V)) :
     Continuous (convolutionValue k f) ∧
