@@ -1,5 +1,8 @@
 import FActualSpatialBadTransport
 
+#print axioms HartreeF.ActualSpatialBadTransport.normalized_native_gradient_cap
+#check @HartreeF.ActualSpatialBadTransport.normalized_native_gradient_cap
+
 #print axioms HartreeF.ActualSpatialBadTransport.forward_bad_of_spatial_normalization
 #check @HartreeF.ActualSpatialBadTransport.forward_bad_of_spatial_normalization
 

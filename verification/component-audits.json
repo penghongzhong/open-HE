@@ -1423,6 +1423,9 @@
     "source": "components/FActualSpatialBadTransport.lean",
     "declarations": [
       {
+        "name": "HartreeF.ActualSpatialBadTransport.normalized_native_gradient_cap"
+      },
+      {
         "name": "HartreeF.ActualSpatialBadTransport.forward_bad_of_spatial_normalization"
       },
       {
