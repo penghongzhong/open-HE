@@ -49,7 +49,7 @@ theorem directional_sixth_bound {K : ℝ} (hSob : OrdinarySobolev K)
       _ ≤ K * (2 * A - d) ^ 3 := hbound
       _ ≤ K * (2 * A) ^ 3 := mul_le_mul_of_nonneg_left hcube hSob.nonneg
       _ = _ := by ring
-  apply (mul_le_mul_left hA).mp
+  apply (mul_le_mul_iff_right₀ hA).mp
   calc
     A * (∫ x, ‖u x‖ ^ 6) = ((A / d) * (∫ x, ‖u x‖ ^ 6)) * d := by
       field_simp [hd.ne']

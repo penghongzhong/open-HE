@@ -2009,7 +2009,7 @@
     "F121SelectedScaleWindows": "92bcfbc726c37b59bc657ce11487b4db3a12471c23457ef98ccf2e9574584681",
     "F121BoundedAffineClosed": "7ce9d753ae94a672f50bb47392120d8b05c9bd71cfac122ff028a10b267ad993",
     "F121PointwiseNormalization": "3dc3925bc35fc68bcfff992602539ae62fb97b199e987f2b22eed43288f50d7f",
-    "F121DirectionalSobolev": "fe028ef2bbda5ebf69ead0c50db5648f9ce317139c24b2eb842e14df5177c783",
+    "F121DirectionalSobolev": "6db62db4831b431e43018c35db602a553f364a4783c7e5c0aae5be7bd71a416b",
     "F121DirectionalEnvironment": "8c678640437d43318fa1a2462161a3a2cec55b5fb2976e5baf2ccce09a1867ea"
   },
   "declarations": [
@@ -2896,7 +2896,7 @@
     }
   ],
   "seed": {
-    "run": 38712571476,
-    "commit": "edc08c2cd870b0912673ddeafa1f54551e472076"
+    "run": 38721586560,
+    "commit": "5a647d8dd0942ad15e7e523b1e26b9bc8bb2a6d3"
   }
 }
