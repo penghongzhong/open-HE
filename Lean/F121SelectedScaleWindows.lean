@@ -17,7 +17,7 @@ theorem select_compact_scale_windows {X : Type*} [MetricSpace X]
     (hfinite : ∀ T : ℝ, 0 ≤ T → BddAbove (r '' Icc 0 T))
     (hsmall : Tendsto (fun T => runningScaleSupremum r T / Real.sqrt T) atTop (𝓝 0)) :
     ∃ (τ : ℕ → ℝ) (σ : ℝ) (k : ℕ → ℕ) (L : ℕ → ℝ) (psi : X),
-      (∀ n, τ n ∈ Icc 0 ((n : ℝ) + 1) ∧
+      (∀ n : ℕ, τ n ∈ Icc 0 ((n : ℝ) + 1) ∧
         runningScaleSupremum r ((n : ℝ) + 1) / 2 < r (τ n) ∧
         r (τ n) ≤ runningScaleSupremum r ((n : ℝ) + 1)) ∧
       (σ = 1 ∨ σ = -1) ∧ StrictMono k ∧ Tendsto L atTop atTop ∧
