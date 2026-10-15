@@ -1,0 +1,9 @@
+import F121CutoffEnvironment
+
+#print axioms HartreeF.Paper121CutoffEnvironment.cutoffBoundConstant
+#print axioms HartreeF.Paper121CutoffEnvironment.cutoffBoundConstant_bounds
+#print axioms HartreeF.Paper121CutoffEnvironment.lemma61_full_environment
+
+#check @HartreeF.Paper121CutoffEnvironment.cutoffBoundConstant
+#check @HartreeF.Paper121CutoffEnvironment.cutoffBoundConstant_bounds
+#check @HartreeF.Paper121CutoffEnvironment.lemma61_full_environment

@@ -2188,5 +2188,56 @@
         "name": "HartreeF.Paper121SmoothConvolution.low_convolution_smooth"
       }
     ]
+  },
+  {
+    "module": "F121CutoffMaps",
+    "source": "components/F121CutoffMaps.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CutoffMaps.highEnergyCLM"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.lowEnergyCLM"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.lowEnergyCLM_apply"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.lowInfinityCLM"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.lowC0CLM"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.lowC0CLM_apply"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.low_convolution_same_value"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.lowInfinity_gradient_bound"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.low_actual_weak_derivative"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffMaps.annularInfinity_gradient_bound"
+      }
+    ]
+  },
+  {
+    "module": "F121CutoffEnvironment",
+    "source": "components/F121CutoffEnvironment.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CutoffEnvironment.cutoffBoundConstant"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffEnvironment.cutoffBoundConstant_bounds"
+      },
+      {
+        "name": "HartreeF.Paper121CutoffEnvironment.lemma61_full_environment"
+      }
+    ]
   }
 ]

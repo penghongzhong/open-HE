@@ -62,7 +62,7 @@ theorem kernelIntegral_hasFDerivAt (k : 𝓢(V, E)) {f : V → ℂ}
   · filter_upwards with y
     intro x _
     have h := (k.hasFDerivAt (x-y)).comp x ((hasFDerivAt_id x).sub_const y)
-    simpa only [ContinuousLinearMap.comp_id, Function.comp_def, id_eq, Pi.smul_apply,
+    simpa only [ContinuousLinearMap.comp_id, Function.comp_def, id_eq, Pi.smul_def,
       Dk, SchwartzMap.fderivCLM_apply] using h.const_smul (f y)
 
 end HartreeF.Paper121SmoothConvolution

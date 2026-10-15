@@ -28,6 +28,8 @@
     "F121CriticalFromFailure",
     "F121CriticalKineticBounds",
     "F121CutoffCore",
+    "F121CutoffEnvironment",
+    "F121CutoffMaps",
     "F121DirectionalEnvironment",
     "F121DirectionalSobolev",
     "F121FixedScaleOrientation",
@@ -248,6 +250,8 @@
     "F121CriticalFromFailure",
     "F121CriticalKineticBounds",
     "F121CutoffCore",
+    "F121CutoffEnvironment",
+    "F121CutoffMaps",
     "F121DirectionalEnvironment",
     "F121DirectionalSobolev",
     "F121FixedScaleOrientation",
@@ -2048,8 +2052,10 @@
     "F121ConvolutionC0": "ef1d8fe1f4647de835ace7c2df68c418d11d86683894d9345ddf0f88adc9f5a3",
     "F121AnnularRepresentative": "edb8a2157971f664ac017476cf194c4724e080e5d6abffdb72b5e8b05814bed9",
     "F121SchwartzLocalMajorant": "bb55a3a24bf5cb76274807f4ad459322529bbb620424092be4b59a50d35ac0c6",
-    "F121SchwartzConvolutionDerivative": "06a1bf0ae8ccce19d19e7a341fa778547efd42da3c5d08815e2e94028cf8f116",
-    "F121SchwartzConvolutionSmooth": "3f6a81b02e2a114416d8fe34a7ba7fd2106c6941fe5912efc76c043d7b6ff251"
+    "F121SchwartzConvolutionDerivative": "611276091406c44191b7996e6ce3e7970e3893b00c03a3a7809700cb28f42b2f",
+    "F121SchwartzConvolutionSmooth": "1fa6c61a714957e2a8cd9d60a330b86d94d43cdf9fdc1966c0f3c6acf6da0768",
+    "F121CutoffMaps": "8dd5901ec194ebf422663359d405309f48e68839c29b756d056e21e12d779761",
+    "F121CutoffEnvironment": "99ed62d7bc23f460b164f353ac997b7b89eaaaac251b5083453ce2e6b9979bad"
   },
   "declarations": [
     {
