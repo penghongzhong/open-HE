@@ -1,0 +1,3 @@
+import F121SelectedScaleWindows
+#print axioms HartreeF.Paper121ScaleSelection.select_compact_scale_windows
+#check @HartreeF.Paper121ScaleSelection.select_compact_scale_windows

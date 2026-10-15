@@ -1864,5 +1864,38 @@
         "name": "HartreeF.Paper121Subparabolic.subparabolic_scale_original_environment"
       }
     ]
+  },
+  {
+    "module": "F121NearMaxScale",
+    "source": "components/F121NearMaxScale.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121ScaleSelection.exists_near_max_scale"
+      },
+      {
+        "name": "HartreeF.Paper121ScaleSelection.normalized_length_tendsto_atTop"
+      }
+    ]
+  },
+  {
+    "module": "F121FixedScaleOrientation",
+    "source": "components/F121FixedScaleOrientation.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121ScaleSelection.fixed_long_direction"
+      },
+      {
+        "name": "HartreeF.Paper121ScaleSelection.oriented_time_in_window"
+      }
+    ]
+  },
+  {
+    "module": "F121SelectedScaleWindows",
+    "source": "components/F121SelectedScaleWindows.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121ScaleSelection.select_compact_scale_windows"
+      }
+    ]
   }
 ]

@@ -1,0 +1,5 @@
+import F121FixedScaleOrientation
+#print axioms HartreeF.Paper121ScaleSelection.fixed_long_direction
+#check @HartreeF.Paper121ScaleSelection.fixed_long_direction
+#print axioms HartreeF.Paper121ScaleSelection.oriented_time_in_window
+#check @HartreeF.Paper121ScaleSelection.oriented_time_in_window

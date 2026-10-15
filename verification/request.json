@@ -145,7 +145,10 @@
     "F121WeakDisappearance",
     "F121SubparabolicScalar",
     "F121RunningScaleSupremum",
-    "F121SubparabolicScale"
+    "F121SubparabolicScale",
+    "F121NearMaxScale",
+    "F121FixedScaleOrientation",
+    "F121SelectedScaleWindows"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1067,7 +1070,10 @@
     "F121WeakDisappearance",
     "F121SubparabolicScalar",
     "F121RunningScaleSupremum",
-    "F121SubparabolicScale"
+    "F121SubparabolicScale",
+    "F121NearMaxScale",
+    "F121FixedScaleOrientation",
+    "F121SelectedScaleWindows"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1989,7 +1995,10 @@
     "F121WeakDisappearance": "127943229387138bd6ac49a790963b7003522046e2b951a1671ad2e6df9733e2",
     "F121SubparabolicScalar": "fb625e702a54e7a7b367eb206abfc8d6613e3528f9c0bb76cc92790c064eea9a",
     "F121RunningScaleSupremum": "a34cbac915fc7633afce6e1bb91a819c28be25624769f8cded179433f3d52335",
-    "F121SubparabolicScale": "5af01070edf0176d1b3196e5ed1a0ce787a028b339c0a8848ea5f939acfc237e"
+    "F121SubparabolicScale": "5af01070edf0176d1b3196e5ed1a0ce787a028b339c0a8848ea5f939acfc237e",
+    "F121NearMaxScale": "952c7c2b364634da3e87f7f7357d5acc6a93d63a8b5ef1e4b71ab02466f5cbe6",
+    "F121FixedScaleOrientation": "a94a8c4bf2937bd6825df951c45501691762ba5e11e0e7d0f1b38b99a74332c9",
+    "F121SelectedScaleWindows": "e73295af811e0bc90493a5eaf0d4a2a0d29a477af52040470138844a9448f34c"
   },
   "declarations": [
     {
@@ -2875,7 +2884,7 @@
     }
   ],
   "seed": {
-    "run": 38695711260,
-    "commit": "6daecb960cad7362f99874ebce645b317a731fc0"
+    "run": 38699917482,
+    "commit": "210be0ede3f7768ed970d888583e540d7caa6c29"
   }
 }

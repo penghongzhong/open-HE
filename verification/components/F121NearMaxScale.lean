@@ -1,0 +1,5 @@
+import F121NearMaxScale
+#print axioms HartreeF.Paper121ScaleSelection.exists_near_max_scale
+#check @HartreeF.Paper121ScaleSelection.exists_near_max_scale
+#print axioms HartreeF.Paper121ScaleSelection.normalized_length_tendsto_atTop
+#check @HartreeF.Paper121ScaleSelection.normalized_length_tendsto_atTop
