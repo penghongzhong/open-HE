@@ -1,0 +1,7 @@
+import FOriginalForcingBounds
+
+#print axioms HartreeF.OriginalForcingBounds.localFactor_four_six
+#check @HartreeF.OriginalForcingBounds.localFactor_four_six
+
+#print axioms HartreeF.OriginalForcingBounds.exists_common_forcing_bounds
+#check @HartreeF.OriginalForcingBounds.exists_common_forcing_bounds

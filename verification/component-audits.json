@@ -1555,5 +1555,17 @@
         "name": "HartreeF.OriginalDirectional.original_theorem_3_3"
       }
     ]
+  },
+  {
+    "module": "FOriginalForcingBounds",
+    "source": "components/FOriginalForcingBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalForcingBounds.localFactor_four_six"
+      },
+      {
+        "name": "HartreeF.OriginalForcingBounds.exists_common_forcing_bounds"
+      }
+    ]
   }
 ]

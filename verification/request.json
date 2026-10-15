@@ -101,6 +101,7 @@
     "FNormalizedBilateralGraphBounds",
     "FOriginalCriticalSequenceWindows",
     "FOriginalDirectionalCoercivity",
+    "FOriginalForcingBounds",
     "FOriginalUniformCriticalSequence",
     "FOriginalUniformScatteringThreshold",
     "FPaperMainEnvironment",
@@ -744,6 +745,7 @@
     "FOrdinaryRetardedStrichartz",
     "FOriginalCriticalSequenceWindows",
     "FOriginalDirectionalCoercivity",
+    "FOriginalForcingBounds",
     "FOriginalMildToTensorPDE",
     "FOriginalUniformCriticalSequence",
     "FOriginalUniformScatteringThreshold",
@@ -1920,7 +1922,8 @@
     "FOriginalUniformScatteringThreshold": "6d7360ade4c57e4d41140635d36274f55bc4584997d92dc4dcb15ed7d6744b90",
     "FOriginalCriticalSequenceWindows": "d81ac91b951f3fe8438a7d593978e7e1cced382dce75e72b48ce737c9a2e6b0e",
     "FOriginalUniformCriticalSequence": "0268f4abd53bce556adef0964a624a48916834d41073fb4d262ed7010617c48e",
-    "FOriginalDirectionalCoercivity": "25907d44f17cbe271ec6e2e5be8f19f9515d669f510faaa43809757c25e94e62"
+    "FOriginalDirectionalCoercivity": "25907d44f17cbe271ec6e2e5be8f19f9515d669f510faaa43809757c25e94e62",
+    "FOriginalForcingBounds": "0746524d89b7b0b213c786af21b53b309f67b95bd60fc8792cac9a63a92284c9"
   },
   "declarations": [
     {
@@ -2806,7 +2809,7 @@
     }
   ],
   "seed": {
-    "run": 38667211015,
-    "commit": "358c872cfe37f05025008941cf813b0dfa34bf17"
+    "run": 38669787186,
+    "commit": "f247961bd458af2a33fdc959d74e3e0f4e1cf892"
   }
 }
