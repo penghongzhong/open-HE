@@ -1,0 +1,10 @@
+import FOriginalCriticalSequenceWindows
+
+#print axioms HartreeF.OriginalCriticalWindows.exists_large_native_window
+#check @HartreeF.OriginalCriticalWindows.exists_large_native_window
+
+#print axioms HartreeF.OriginalCriticalWindows.exists_balanced_native_window
+#check @HartreeF.OriginalCriticalWindows.exists_balanced_native_window
+
+#print axioms HartreeF.OriginalCriticalWindows.escaping_bounds_energy_tendsto
+#check @HartreeF.OriginalCriticalWindows.escaping_bounds_energy_tendsto

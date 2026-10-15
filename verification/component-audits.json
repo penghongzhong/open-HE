@@ -1504,5 +1504,20 @@
         "name": "HartreeF.OriginalUniformThreshold.exists_sublevel_datum_exceeding_bound"
       }
     ]
+  },
+  {
+    "module": "FOriginalCriticalSequenceWindows",
+    "source": "components/FOriginalCriticalSequenceWindows.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalCriticalWindows.exists_large_native_window"
+      },
+      {
+        "name": "HartreeF.OriginalCriticalWindows.exists_balanced_native_window"
+      },
+      {
+        "name": "HartreeF.OriginalCriticalWindows.escaping_bounds_energy_tendsto"
+      }
+    ]
   }
 ]
