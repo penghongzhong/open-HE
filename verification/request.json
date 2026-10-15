@@ -46,6 +46,7 @@
     "FActualNonlinearR2Tail",
     "FActualProfileEnergyLedger",
     "FActualProfileSumPDE",
+    "FActualRecenterBadTransport",
     "FActualSIntervalBounds",
     "FActualScaleEscapeContradiction",
     "FActualSelectedFreeValue",
@@ -334,6 +335,7 @@
     "FActualProfileSumPDE",
     "FActualQuadraticChargeRule",
     "FActualRealSliceMembership",
+    "FActualRecenterBadTransport",
     "FActualRegularizedEnergyFTC",
     "FActualRegularizedEnergyResidual",
     "FActualRegularizedMildDerivative",
@@ -1905,7 +1907,8 @@
     "FActualScaleEscapeContradiction": "d04ca6e5d664b2c130d24271d4d9a956a7552dc38c04693d57e1cd7fdfa6a935",
     "FActualCriticalScaleEscape": "f65a0b90251498a2513c8daf0e711b5446afe73bc960bffd324acdfd3453d37f",
     "FActualSpatialBadTransport": "49fd0c3641086b3c238a1d371445ecbfe6873a1a907386c3d90e8e268870eb4c",
-    "FActualSIntervalBounds": "21852575382bde5cb6107654e07841bbd657cea3a26de1c710e58c44623c9a8c"
+    "FActualSIntervalBounds": "5e54dabdc85488af851d3c2bbad3f73883b95af9fe77087604645c3aceed11fc",
+    "FActualRecenterBadTransport": "f07e2e4aca12b94b9ed34cab9cf1cfe04fcaa7e7939d733588dd5fe9b44d7a68"
   },
   "declarations": [
     {

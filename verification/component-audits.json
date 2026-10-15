@@ -1444,5 +1444,23 @@
         "name": "HartreeF.ActualSIntervalBounds.actual_snorm_split_le"
       }
     ]
+  },
+  {
+    "module": "FActualRecenterBadTransport",
+    "source": "components/FActualRecenterBadTransport.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualRecenterBadTransport.zero_recenter_gradient_cap"
+      },
+      {
+        "name": "HartreeF.ActualRecenterBadTransport.forward_bad_of_zero_recenter"
+      },
+      {
+        "name": "HartreeF.ActualRecenterBadTransport.backward_bad_of_zero_recenter"
+      },
+      {
+        "name": "HartreeF.ActualRecenterBadTransport.normalized_bilateral_bad"
+      }
+    ]
   }
 ]

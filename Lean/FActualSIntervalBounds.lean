@@ -11,6 +11,7 @@ open MeasureTheory Filter Set
 open scoped ENNReal Topology
 namespace HartreeF.ActualSIntervalBounds
 open EnergySpace CriticalPathSpace IntervalTimeTransport CriticalSourceBounds
+open CriticalPathRestriction
 open SobolevStretch StationarySelfTest MaximalTrajectory ActualSTail
 attribute [local irreducible] energySubmodule criticalPathSubmodule energyPath LocalMildTrajectory.path
 
@@ -21,7 +22,11 @@ private theorem interval_eLpNorm_split (F : GlobalValueSpace) {a b c : ℝ} :
   have heq : (F : ℝ → ValueSpace) =
       (Iic c).indicator F + (Iic c)ᶜ.indicator F := by
     funext t
-    by_cases ht : t ∈ Iic c <;> simp [ht]
+    by_cases ht : t ∈ Iic c
+    · rw [Pi.add_apply, indicator_of_mem ht,
+        indicator_of_not_mem (show t ∉ (Iic c)ᶜ from fun h => h ht), add_zero]
+    · rw [Pi.add_apply, indicator_of_not_mem ht,
+        indicator_of_mem (show t ∈ (Iic c)ᶜ from ht), zero_add]
   have hL : eLpNorm ((Iic c).indicator F) 10 (localMeasure a b) ≤
       eLpNorm F 10 (localMeasure a c) := by
     rw [eLpNorm_indicator_eq_eLpNorm_restrict measurableSet_Iic.nullMeasurableSet]
@@ -35,7 +40,10 @@ private theorem interval_eLpNorm_split (F : GlobalValueSpace) {a b c : ℝ} :
     apply eLpNorm_mono_measure
     change (volume.restrict (Icc a b)).restrict (Iic c)ᶜ ≤ volume.restrict (Icc c b)
     rw [Measure.restrict_restrict measurableSet_Iic.compl]
-    exact Measure.restrict_mono_set _ (fun _ ht => ⟨(lt_of_not_ge ht.1).le, ht.2.2⟩)
+    apply Measure.restrict_mono_set
+    intro t ht
+    have htc : ¬ t ≤ c := by simpa only [mem_compl_iff, mem_Iic] using ht.1
+    exact ⟨(lt_of_not_ge htc).le, ht.2.2⟩
   calc
     _ = eLpNorm ((Iic c).indicator F + (Iic c)ᶜ.indicator F) 10 (localMeasure a b) :=
       congrArg (fun f : ℝ → ValueSpace => eLpNorm f 10 (localMeasure a b)) heq

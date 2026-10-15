@@ -1,0 +1,13 @@
+import FActualRecenterBadTransport
+
+#print axioms HartreeF.ActualRecenterBadTransport.zero_recenter_gradient_cap
+#check @HartreeF.ActualRecenterBadTransport.zero_recenter_gradient_cap
+
+#print axioms HartreeF.ActualRecenterBadTransport.forward_bad_of_zero_recenter
+#check @HartreeF.ActualRecenterBadTransport.forward_bad_of_zero_recenter
+
+#print axioms HartreeF.ActualRecenterBadTransport.backward_bad_of_zero_recenter
+#check @HartreeF.ActualRecenterBadTransport.backward_bad_of_zero_recenter
+
+#print axioms HartreeF.ActualRecenterBadTransport.normalized_bilateral_bad
+#check @HartreeF.ActualRecenterBadTransport.normalized_bilateral_bad
