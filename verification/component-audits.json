@@ -1738,5 +1738,41 @@
         "name": "HartreeF.Paper121LiteralThreshold.global_critical_element_of_literal_threshold_failure"
       }
     ]
+  },
+  {
+    "module": "F121HalflineFiniteness",
+    "source": "components/F121HalflineFiniteness.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Finiteness.actual_after_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Finiteness.actual_before_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Finiteness.finite_after_iff_literal"
+      },
+      {
+        "name": "HartreeF.Paper121Finiteness.finite_before_iff_literal"
+      }
+    ]
+  },
+  {
+    "module": "F121CompactConvergence",
+    "source": "components/F121CompactConvergence.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121CompactConvergence.uniform_compact_convergence"
+      }
+    ]
+  },
+  {
+    "module": "F121StrongCriticalLimit",
+    "source": "components/F121StrongCriticalLimit.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121StrongLimit.strong_critical_limit_original_environment"
+      }
+    ]
   }
 ]

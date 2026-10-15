@@ -1,0 +1,3 @@
+import F121CompactConvergence
+#print axioms HartreeF.Paper121CompactConvergence.uniform_compact_convergence
+#check @HartreeF.Paper121CompactConvergence.uniform_compact_convergence

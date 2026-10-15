@@ -134,7 +134,10 @@
     "F121CompactClosureGlobal",
     "F121GlobalCritical",
     "F121LiteralSolutionClass",
-    "F121LiteralThresholdBridge"
+    "F121LiteralThresholdBridge",
+    "F121HalflineFiniteness",
+    "F121CompactConvergence",
+    "F121StrongCriticalLimit"
   ],
   "closure": [
     "ActualBubbleFields",
@@ -1045,7 +1048,10 @@
     "F121CompactClosureGlobal",
     "F121GlobalCritical",
     "F121LiteralSolutionClass",
-    "F121LiteralThresholdBridge"
+    "F121LiteralThresholdBridge",
+    "F121HalflineFiniteness",
+    "F121CompactConvergence",
+    "F121StrongCriticalLimit"
   ],
   "source_sha256": {
     "ActualBubbleFields": "95efcc4ea2d91db5f418087dc27a46c9036b3f1751112b90b9784e6622aa1323",
@@ -1956,7 +1962,10 @@
     "F121CompactClosureGlobal": "4d7cf02e9fc559f5f09aed59dd7b7912c1b9fe4a9662f806c1316dd4f46a8c86",
     "F121GlobalCritical": "d8e552ceb3ec8040e13b76599ef74173e06be421be631e4e057180eeca103157",
     "F121LiteralSolutionClass": "197349fc9790c9d88d7b75eeb3ddb50534fec5f6ab93405be64661938076662e",
-    "F121LiteralThresholdBridge": "313d266525bc47bed5eb3f566baef58be73027dbc7311900d0ae64cb49f18aa8"
+    "F121LiteralThresholdBridge": "313d266525bc47bed5eb3f566baef58be73027dbc7311900d0ae64cb49f18aa8",
+    "F121HalflineFiniteness": "91c39328265505afe4215645cba12804986167f3fe157fed0f0060559470cf4c",
+    "F121CompactConvergence": "0024d4c44665d9a160f7c0ac51c25a63ec8497bf9f246d81c24a86f2d472c2f0",
+    "F121StrongCriticalLimit": "9f2aae5e719c98b0227f8f2ecc9592bf21cb058999fc5360431b56743ea3b13b"
   },
   "declarations": [
     {
@@ -2842,7 +2851,7 @@
     }
   ],
   "seed": {
-    "run": 38677493718,
-    "commit": "0ce59416c57f7c2f6b8c5b894c24d0fc979766e7"
+    "run": 38681257906,
+    "commit": "9eb826880d82c90c1ad8ad74631e70d0c0b41de2"
   }
 }

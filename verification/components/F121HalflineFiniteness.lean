@@ -1,0 +1,9 @@
+import F121HalflineFiniteness
+#print axioms HartreeF.Paper121Finiteness.actual_after_bound
+#check @HartreeF.Paper121Finiteness.actual_after_bound
+#print axioms HartreeF.Paper121Finiteness.actual_before_bound
+#check @HartreeF.Paper121Finiteness.actual_before_bound
+#print axioms HartreeF.Paper121Finiteness.finite_after_iff_literal
+#check @HartreeF.Paper121Finiteness.finite_after_iff_literal
+#print axioms HartreeF.Paper121Finiteness.finite_before_iff_literal
+#check @HartreeF.Paper121Finiteness.finite_before_iff_literal

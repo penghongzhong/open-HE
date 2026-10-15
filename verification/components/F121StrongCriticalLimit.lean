@@ -1,0 +1,3 @@
+import F121StrongCriticalLimit
+#print axioms HartreeF.Paper121StrongLimit.strong_critical_limit_original_environment
+#check @HartreeF.Paper121StrongLimit.strong_critical_limit_original_environment
