@@ -1,0 +1,7 @@
+import F121LiteralThresholdBridge
+#print axioms HartreeF.Paper121LiteralThreshold.LiteralThresholdConclusion
+#check @HartreeF.Paper121LiteralThreshold.LiteralThresholdConclusion
+#print axioms HartreeF.Paper121LiteralThreshold.threshold_conclusion_iff_literal
+#check @HartreeF.Paper121LiteralThreshold.threshold_conclusion_iff_literal
+#print axioms HartreeF.Paper121LiteralThreshold.global_critical_element_of_literal_threshold_failure
+#check @HartreeF.Paper121LiteralThreshold.global_critical_element_of_literal_threshold_failure

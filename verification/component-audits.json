@@ -1723,5 +1723,20 @@
         "name": "HartreeF.Paper121LiteralClass.actual_maximal_among_literal_solutions"
       }
     ]
+  },
+  {
+    "module": "F121LiteralThresholdBridge",
+    "source": "components/F121LiteralThresholdBridge.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121LiteralThreshold.LiteralThresholdConclusion"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralThreshold.threshold_conclusion_iff_literal"
+      },
+      {
+        "name": "HartreeF.Paper121LiteralThreshold.global_critical_element_of_literal_threshold_failure"
+      }
+    ]
   }
 ]

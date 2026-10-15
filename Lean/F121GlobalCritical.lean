@@ -66,7 +66,7 @@ theorem global_critical_element_of_threshold_failure
       S Bw Bs B6 hExtract hgen hUnique cutoff hfailure
   let V := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd 0 psi
   have hglobal : V.domain = univ :=
-    (no_finite_endpoint_of_compact_closure hDensity hSob h0 hfree hret hefree heret
+    (no_finite_endpoint_of_compact_closure (s := 0) hDensity hSob h0 hfree hret hefree heret
       hOrd hgen psi hpsi r y (fun t _ => hr t) hclosure).2.2
   have ht (t : ℝ) : t ∈ V.domain := by rw [hglobal]; trivial
   refine ⟨hEc, hEcW, psi, hpsi, hEpsi, hs, hglobal, ?_,
@@ -74,6 +74,7 @@ theorem global_critical_element_of_threshold_failure
     (fun t => hnorm t (ht t)), hclosure⟩
   intro t
   have h := hSall t (ht t)
+  dsimp only [V] at hglobal
   simpa only [hglobal, univ_inter] using h
 
 #print axioms global_critical_element_of_threshold_failure

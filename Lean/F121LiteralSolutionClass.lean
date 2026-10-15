@@ -36,6 +36,7 @@ theorem literal_mild_iff_path_mild {alpha kernel a b : ℝ}
           forcing alpha kernel (energyValue (extendEnergyPath hab (energyPath _ u) z)) x := by
     apply setIntegral_congr_fun measurableSet_Ioc
     intro z hz
+    dsimp only
     rw [hext z ⟨hz.1.le, hz.2.trans t.property.2⟩]
   unfold LiteralMildOn IsMildHartreePath
   constructor
@@ -50,13 +51,13 @@ theorem literal_mild_iff_path_mild {alpha kernel a b : ℝ}
 theorem exists_native_path_of_literal {alpha kernel a b : ℝ}
     (hab : a ≤ b) (q : ℝ → EnergyState) (hc : ContinuousOn q (Icc a b))
     (g : Fin 3 → CriticalGradient (intervalMeasure a b))
-    (hg : ∀ j : Fin 3, ∀ᵐ t ∂intervalMeasure a b,
+    (hg : ∀ j : Fin 3, ∀ᵐ (t : Icc a b) ∂intervalMeasure a b,
       energyGradientDistribution j (q t) = Lp.toTemperedDistribution (g j t))
     (hmild : LiteralMildOn alpha kernel a b q) :
     ∃ u : CriticalPath (intervalMeasure a b),
       (∀ t : Icc a b, energyPath _ u t = q t) ∧
       IsMildHartreePath hab alpha kernel (q a) u := by
-  let v : C(Icc a b, EnergyState) := ⟨fun t => q t, hc.continuous_restrict⟩
+  let v : C(Icc a b, EnergyState) := ⟨fun t => q t, hc.domRestrict⟩
   let u : CriticalPath (intervalMeasure a b) := ⟨(v, g), hg⟩
   have hu (t : Icc a b) : energyPath _ u t = q t := rfl
   exact ⟨u, hu, (literal_mild_iff_path_mild hab q u hu).mp hmild⟩
@@ -71,7 +72,7 @@ structure LiteralLocalSolution (alpha kernel s : ℝ) (f : EnergyState) where
   initial : state s = f
   critical : ∀ {a b : ℝ}, a ≤ b → Icc a b ⊆ domain →
     ∃ g : Fin 3 → CriticalGradient (intervalMeasure a b),
-      ∀ j : Fin 3, ∀ᵐ t ∂intervalMeasure a b,
+      ∀ j : Fin 3, ∀ᵐ (t : Icc a b) ∂intervalMeasure a b,
         energyGradientDistribution j (state t) = Lp.toTemperedDistribution (g j t)
   mild : ∀ {a b : ℝ}, a ≤ b → Icc a b ⊆ domain →
     LiteralMildOn alpha kernel a b state
