@@ -5,3 +5,7 @@ import FActualCriticalScaleEscape
 
 #print axioms HartreeF.ActualCriticalScaleEscape.native_critical_return_time_not_tendsto
 #check @HartreeF.ActualCriticalScaleEscape.native_critical_return_time_not_tendsto
+
+
+#print axioms HartreeF.ActualCriticalScaleEscape.native_return_length_tendsto_atTop
+#check @HartreeF.ActualCriticalScaleEscape.native_return_length_tendsto_atTop

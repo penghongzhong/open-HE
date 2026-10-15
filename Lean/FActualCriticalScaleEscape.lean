@@ -135,4 +135,59 @@ theorem native_critical_return_time_not_tendsto
     hefree heret hOrd hH hS S Bw Bs B6 hExtract hgen hUnique cutoff f hf c r hr y hc hscale psi
       hEc hEcW hAW hE hA (fun n => (hbad n).1) (fun n => (hbad n).2) hz
 
+/-- Hartree v23, Lemma 2.19 (one-sided-normalization), the left-length step.
+Here r_n = 1/N_n, so c_n/r_n² = t_n N_n². Compactness supplies the
+strong subsequence; no strong-limit or global-limit hypothesis is added.
+This is only the length-divergence step, not the full normalization lemma. -/
+theorem native_return_length_tendsto_atTop
+    (hDensity : OrdinaryH1Density) (hRel : OrdinaryRellichBall)
+    {K C0 Ch Cr Che Cre alpha : ℝ} (hSob : OrdinarySobolev K)
+    (h0 : OrdinaryEndpointBound C0) (hfree : OrdinaryHomogeneousStrichartz Ch)
+    (hret : OrdinaryRetardedStrichartz h0 Cr)
+    (hefree : OrdinaryHomogeneousEndpointOutput Che)
+    (heret : OrdinaryRetardedEndpointOutput h0 Cre)
+    (hOrd : OrdinaryHLS alpha (standardRieszConstant alpha))
+    (hH : SharpOrdinaryHLS alpha) (hS : SharpOrdinarySobolev)
+    (S : OrdinaryBesselSmoothing) (Bw : OrdinaryBesselLp CriticalPathSpace.criticalExponent)
+    (Bs : OrdinaryBesselLp sourceExponent) (B6 : OrdinaryBesselLp 6)
+    (hExtract : OrdinaryLinearProfileExtraction hDensity hSob)
+    (hgen : OrdinaryFreeDistributionScalarGenerator)
+    (hUnique : OrdinaryL2CompactHomogeneousUniqueness) (cutoff : Highpass.Cutoff)
+    {A : ℝ} (f : EnergyState)
+    (c r : ℕ → ℝ) (hr : ∀ n, 0 < r n) (y : ℕ → Space)
+    (hc : ∀ n, c n ∈
+      (actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd 0 f).domain)
+    (hscale : Tendsto r atTop atTop) (hcpos : ∀ n, 0 ≤ c n) :
+    let Ec := criticalLevel hDensity hSob h0 hfree hret hefree heret hOrd
+    let M := actualMaximalTrajectory hDensity hSob h0 hfree hret hefree heret hOrd 0 f
+    let z := fun n => (criticalAffineState (r n) (hr n) (y n)).symm (M.state (c n))
+    0 < Ec → Ec < totalEnergy alpha (normalizedBubbleState alpha) →
+    A < gradientSquared (normalizedBubbleState alpha) →
+    (∀ t ∈ M.domain, totalEnergy alpha (M.state t) = Ec ∧ gradientSquared (M.state t) ≤ A) →
+    (¬ ActualScattering.FiniteSAfter M) → (¬ ActualLeftScattering.FiniteSBefore M) →
+    IsCompact (closure (range z)) →
+      Tendsto (fun n => c n / (r n)^2) atTop atTop := by
+  intro Ec M z hEc hEcW hAW hNative hfuture hpast hcompact
+  classical
+  let L : ℕ → ℝ := fun n => c n / (r n)^2
+  have hLpos (n : ℕ) : 0 ≤ L n := div_nonneg (hcpos n) (sq_nonneg _)
+  apply tendsto_atTop.2
+  intro b
+  by_contra hnot
+  have hfreq : ∃ᶠ n in atTop, L n < b := by
+    simpa only [not_le] using (not_eventually.mp hnot)
+  have hpcompact : IsCompact (closure (range z) ×ˢ Icc (0 : ℝ) b) :=
+    hcompact.prod isCompact_Icc
+  have hmem : ∃ᶠ n in atTop, (z n, L n) ∈ closure (range z) ×ˢ Icc (0 : ℝ) b :=
+    hfreq.mono fun n hn => ⟨subset_closure (mem_range_self n), hLpos n, hn.le⟩
+  obtain ⟨p, _hp, k, hk, hlimit⟩ := hpcompact.tendsto_subseq' hmem
+  have hz : Tendsto (fun n => z (k n)) atTop (𝓝 p.1) := hlimit.fst_nhds
+  have htime : Tendsto (fun n => -c (k n) / (r (k n))^2) atTop (𝓝 (-p.2)) := by
+    simpa only [L, neg_div] using hlimit.snd_nhds.neg
+  exact native_critical_return_time_not_tendsto hDensity hRel hSob h0 hfree hret
+    hefree heret hOrd hH hS S Bw Bs B6 hExtract hgen hUnique cutoff f
+    (fun n => c (k n)) (fun n => r (k n)) (fun n => hr (k n))
+    (fun n => y (k n)) (fun n => hc (k n)) (hscale.comp hk.tendsto_atTop) p.1
+    hEc hEcW hAW hNative hfuture hpast hz (-p.2) htime
+
 end HartreeF.ActualCriticalScaleEscape
