@@ -1,0 +1,31 @@
+import FOriginalUniformScatteringThreshold
+
+#print axioms HartreeF.OriginalUniformThreshold.UniformSBelow
+#check @HartreeF.OriginalUniformThreshold.UniformSBelow
+
+#print axioms HartreeF.OriginalUniformThreshold.uniformEnergies
+#check @HartreeF.OriginalUniformThreshold.uniformEnergies
+
+#print axioms HartreeF.OriginalUniformThreshold.uniformCriticalLevel
+#check @HartreeF.OriginalUniformThreshold.uniformCriticalLevel
+
+#print axioms HartreeF.OriginalUniformThreshold.uniformSBelow_mono
+#check @HartreeF.OriginalUniformThreshold.uniformSBelow_mono
+
+#print axioms HartreeF.OriginalUniformThreshold.uniformEnergies_bddAbove
+#check @HartreeF.OriginalUniformThreshold.uniformEnergies_bddAbove
+
+#print axioms HartreeF.OriginalUniformThreshold.uniformSBelow_le_native
+#check @HartreeF.OriginalUniformThreshold.uniformSBelow_le_native
+
+#print axioms HartreeF.OriginalUniformThreshold.exists_positive_uniform_energy
+#check @HartreeF.OriginalUniformThreshold.exists_positive_uniform_energy
+
+#print axioms HartreeF.OriginalUniformThreshold.uniformCriticalLevel_pos_le_native
+#check @HartreeF.OriginalUniformThreshold.uniformCriticalLevel_pos_le_native
+
+#print axioms HartreeF.OriginalUniformThreshold.uniformSBelow_of_lt
+#check @HartreeF.OriginalUniformThreshold.uniformSBelow_of_lt
+
+#print axioms HartreeF.OriginalUniformThreshold.exists_sublevel_datum_exceeding_bound
+#check @HartreeF.OriginalUniformThreshold.exists_sublevel_datum_exceeding_bound

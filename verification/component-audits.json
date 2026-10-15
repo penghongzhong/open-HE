@@ -1468,5 +1468,41 @@
         "name": "HartreeF.ActualRecenterBadTransport.normalized_bilateral_bad"
       }
     ]
+  },
+  {
+    "module": "FOriginalUniformScatteringThreshold",
+    "source": "components/FOriginalUniformScatteringThreshold.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalUniformThreshold.UniformSBelow"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.uniformEnergies"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.uniformCriticalLevel"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.uniformSBelow_mono"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.uniformEnergies_bddAbove"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.uniformSBelow_le_native"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.exists_positive_uniform_energy"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.uniformCriticalLevel_pos_le_native"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.uniformSBelow_of_lt"
+      },
+      {
+        "name": "HartreeF.OriginalUniformThreshold.exists_sublevel_datum_exceeding_bound"
+      }
+    ]
   }
 ]
