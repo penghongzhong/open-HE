@@ -70,7 +70,7 @@ theorem pairing_tendsto_zero_of_center_infty
       have hm := mul_le_mul_of_nonneg_right (hbound n) (norm_nonneg x)
       linarith
     have hescape : Tendsto (fun n => affine (a n) (b n) x) atTop (cocompact Space) := by
-      simpa only [cobounded_eq_cocompact] using
+      simpa only [Metric.cobounded_eq_cocompact] using
         (tendsto_norm_atTop_iff_cobounded.mp hnorm)
     have hφ := φ.tendsto_cocompact.comp hescape
     apply tendsto_zero_iff_norm_tendsto_zero.mpr

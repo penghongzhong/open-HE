@@ -70,7 +70,7 @@ theorem schwartz_pairing_large_bound {a : ℝ} (ha : 0 < a) (b : Space) (φ ψ :
           (SchwartzMap.norm_le_seminorm ℝ ψ x) (norm_nonneg _))
     _ = _ := by
       simp only [gradientPullback, norm_smul, Real.norm_of_nonneg hc]
-      rw [integral_mul_const, integral_const_mul, affine_integral ha b,
+      rw [integral_mul_const, integral_const_mul, affine_integral ha b (fun x => ‖φ x‖),
         smul_eq_mul]
       rw [← mul_assoc, hcoeff]
       ring
@@ -92,6 +92,7 @@ theorem weak_pairing_of_schwartz
         (fun G : L2 => inner ℝ (gradientAffineL2 (ha n) (b n) G) H) := by
       apply LipschitzWith.of_dist_le_mul
       intro G₁ G₂
+      simp only [dist_eq_norm]
       change ‖inner ℝ (gradientAffineL2 (ha n) (b n) G₁) H -
         inner ℝ (gradientAffineL2 (ha n) (b n) G₂) H‖ ≤ ‖H‖ * ‖G₁ - G₂‖
       rw [← inner_sub_left, ← map_sub]
@@ -107,6 +108,7 @@ theorem weak_pairing_of_schwartz
       (fun H : L2 => inner ℝ (gradientAffineL2 (ha n) (b n) G) H) := by
     apply LipschitzWith.of_dist_le_mul
     intro H₁ H₂
+    simp only [dist_eq_norm]
     change ‖inner ℝ (gradientAffineL2 (ha n) (b n) G) H₁ -
       inner ℝ (gradientAffineL2 (ha n) (b n) G) H₂‖ ≤ ‖G‖ * ‖H₁ - H₂‖
     rw [← inner_sub_right]

@@ -1978,8 +1978,8 @@
     "F121StrongCriticalLimit": "9f2aae5e719c98b0227f8f2ecc9592bf21cb058999fc5360431b56743ea3b13b",
     "F121AffineCompactParameters": "3e7778a2a893850166e8fbd6faa36e776e2d0a409026fdc9caad6597227dae14",
     "F121ArbitraryLocalProperness": "d9af3eb230d6a58d19ad6b8adc78f25ee0c4df0c9e9a91ac1c840a30da033d56",
-    "F121AffineWeakPairing": "5d1d9d30763be8466dd0c4761f808e04df0062cf594e64cfdc37f88109aedafa",
-    "F121AffineWeakEscape": "174bdd6b7ad8afbc301e9bd0a2e274d03891f4eb769048e5ba86d2f4fcd64a86",
+    "F121AffineWeakPairing": "3aeef7b7e88a48e687b89c9991f08ab893e8c4126afa98be23b41c81041894c9",
+    "F121AffineWeakEscape": "e55658b1b0dc2a28d3e4dc8987c9ce58d88d4c6cd39238b2aa0ba0bea105f386",
     "F121WeakDisappearance": "127943229387138bd6ac49a790963b7003522046e2b951a1671ad2e6df9733e2"
   },
   "declarations": [
