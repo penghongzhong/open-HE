@@ -48,6 +48,10 @@ theorem rescaled_compact_normalization
   apply closure_minimal _ hQ.isClosed
   rintro q ⟨t, rfl⟩
   have he := normalize_rescaled_state ha (hr (a^2*t)) 0 (x (a^2*t)) (v (a^2*t))
-  simpa only [sub_zero] using he.symm ▸ hn (a^2*t)
+  simp only [sub_zero] at he
+  change (criticalAffineState (r (a^2*t)/a) (div_pos (hr _) ha)
+    (a⁻¹ • x (a^2*t))).symm ((criticalAffineState a ha 0).symm (v (a^2*t))) ∈ Q
+  rw [he]
+  exact hn (a^2*t)
 
 end HartreeF.Paper121RelativeNormalization

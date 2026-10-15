@@ -46,8 +46,10 @@ theorem normalized_global_trajectory
   intro t
   have ht : t ∈ U.domain := by rw [hU]; trivial
   have htM : AffineMixed.timeAffine a c t ∈ M.domain := by rw [hglobal]; trivial
-  rw [hcov.2 ht, hNM.2 htM, criticalAffineState_symm_eq_affineState]
-  congr 2
-  exact add_comm _ _
+  have he : U.state t = affineState ha y (N.state (AffineMixed.timeAffine a c t)) := hcov.2 ht
+  have heNM : N.state (AffineMixed.timeAffine a c t) = M.state (AffineMixed.timeAffine a c t) := hNM.2 htM
+  rw [he, heNM, criticalAffineState_symm_eq_affineState]
+  have htime : AffineMixed.timeAffine a c t = c+a^2*t := add_comm _ _
+  rw [htime]
 
 end HartreeF.Paper121NormalizedGlobal

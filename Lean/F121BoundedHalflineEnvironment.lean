@@ -130,7 +130,12 @@ theorem bounded_halfline_of_threshold_failure
     rintro q ⟨t, rfl⟩
     rw [hW.2 t]
     have he := normalize_rescaled_state htwo (hv (4*t)) 0 (xv (4*t)) (V.state (4*t))
-    simpa only [sub_zero] using he.symm ▸ hQnorm (4*t)
+    simp only [sub_zero] at he
+    change (criticalAffineState (rv (4*t)/2) (div_pos (hv _) htwo)
+      ((2 : ℝ)⁻¹ • xv (4*t))).symm
+      ((criticalAffineState 2 htwo 0).symm (V.state (4*t))) ∈ Q
+    rw [he]
+    exact hQnorm (4*t)
   have hunit (t : ℝ) (ht : 0 ≤ sigma*t) : rw t ≤ 1 := by
     have hsign : 0 ≤ sigma*(4*t) := by nlinarith
     have hb := hbound (4*t) hsign
