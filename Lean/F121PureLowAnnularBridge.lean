@@ -7,7 +7,7 @@ set_option warningAsError true
 open MeasureTheory
 open scoped ENNReal
 namespace HartreeF.Paper121PureLow
-open EnergySpace EnergySpace.Highpass AnnularL1 MassRecovery WeakHartreeProduct
+open EnergySpace EnergySpace.Highpass AnnularL1 MassRecovery WeakHartreeProduct SobolevStretch YoungSource
 
 /-- The annular conclusion of Lemma 6.6, conditional on the actual weak
 L1 gradient. This component does not yet produce the Hartree gradient. -/
