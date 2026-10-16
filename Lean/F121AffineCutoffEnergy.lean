@@ -22,7 +22,7 @@ theorem highEnergy_affine (hD : OrdinaryH1Density) {K : ℝ} (hS : OrdinarySobol
     funext φ
     change highEnergyCLM hD hS q hM (affineState ha b (schwartzEnergyState φ)) =
       affineState ha b (highEnergyCLM hD hS q (div_pos hM ha) (schwartzEnergyState φ))
-    rw [affineState_schwartz, highEnergy_schwartz, highSchwartz_affine,
+    rw [affineState_schwartz, highEnergy_schwartz, highSchwartz_affine q ha hM,
       highEnergy_schwartz, affineState_schwartz]
   exact congrFun he u
 
@@ -33,6 +33,7 @@ theorem lowEnergy_affine (hD : OrdinaryH1Density) {K : ℝ} (hS : OrdinarySobole
   change affineStateEquiv ha b u-highEnergyCLM hD hS q hM (affineState ha b u) =
     affineStateEquiv ha b (u-highEnergyCLM hD hS q (div_pos hM ha) u)
   rw [map_sub, highEnergy_affine]
+  rfl
 
 theorem highValue_norm_affine (hD : OrdinaryH1Density) {K : ℝ} (hS : OrdinarySobolev K)
     (q : Cutoff) {a M : ℝ} (ha : 0 < a) (hM : 0 < M) (b : Space) (u : EnergyState) :
@@ -44,8 +45,9 @@ theorem highValue_norm_affine (hD : OrdinaryH1Density) {K : ℝ} (hS : OrdinaryS
       (((highValueL2CLM hD hS q hM).continuous.comp (affineStateEquiv ha b).continuous).norm)
       (continuous_const.mul (highValueL2CLM hD hS q (div_pos hM ha)).continuous.norm)
     funext φ
-    change ‖highValueL2CLM hD hS q hM (affineState ha b (schwartzEnergyState φ))‖ = _
-    simp only [Function.comp_apply, affineState_schwartz, high_schwartz_identification,
+    change ‖highValueL2CLM hD hS q hM (affineState ha b (schwartzEnergyState φ))‖ =
+      a⁻¹*‖highValueL2CLM hD hS q (div_pos hM ha) (schwartzEnergyState φ)‖
+    simp only [affineState_schwartz, high_schwartz_identification,
       ← highSchwartz_toL2 q hM, ← highSchwartz_toL2 q (div_pos hM ha),
       highSchwartz_affine q ha hM, affineSchwartz_L2_norm]
   exact congrFun he u
