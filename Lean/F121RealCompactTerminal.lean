@@ -5,7 +5,7 @@ noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
 set_option maxHeartbeats 1200000
-open MeasureTheory Filter Set
+open MeasureTheory Filter Set LineDeriv
 open scoped ENNReal Topology SchwartzMap RealInnerProductSpace
 namespace HartreeF.CompactOrbitTerminal
 open EnergySpace CriticalAffine SobolevStretch StationarySelfTest ActualStrichartz Retarded
@@ -111,7 +111,7 @@ theorem compactOrbit_energy_dual_zero_real
     simpa only [map_zero, inner_zero_left, terminalGradient_apply] using
       compactOrbit_gradient_zero_real hDensity hSob hS r s hr hr1 y hs hQ f hf v j
   obtain ⟨w, hwL⟩ := LocalRellich.energyState_dual_gradient_representation hSob L
-  simpa only [hwL, map_zero, inner_zero_left] using
+  simpa only [hwL, map_zero, inner_zero_left, Finset.sum_const_zero] using
     tendsto_finsetSum Finset.univ (fun j _ => hw j (w j))
 
 include hS in
