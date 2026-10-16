@@ -1,0 +1,11 @@
+import F121LowFrequencyL2
+
+#print axioms HartreeF.Paper121SmallFrequency.lowSymbol_small_limit
+#print axioms HartreeF.Paper121SmallFrequency.lowL2_norm_sq_fourier
+#print axioms HartreeF.Paper121SmallFrequency.lowL2_norm_small_limit
+#print axioms HartreeF.Paper121SmallFrequency.lowL2_small
+
+#check @HartreeF.Paper121SmallFrequency.lowSymbol_small_limit
+#check @HartreeF.Paper121SmallFrequency.lowL2_norm_sq_fourier
+#check @HartreeF.Paper121SmallFrequency.lowL2_norm_small_limit
+#check @HartreeF.Paper121SmallFrequency.lowL2_small

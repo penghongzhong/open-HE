@@ -37,6 +37,7 @@
     "F121HalflineFiniteness",
     "F121LiteralSolutionClass",
     "F121LiteralThresholdBridge",
+    "F121LowFrequencyL2",
     "F121NativeHalflineSize",
     "F121NearMaxScale",
     "F121NormalizedGlobalTrajectory",
@@ -261,6 +262,7 @@
     "F121HalflineFiniteness",
     "F121LiteralSolutionClass",
     "F121LiteralThresholdBridge",
+    "F121LowFrequencyL2",
     "F121NativeHalflineSize",
     "F121NearMaxScale",
     "F121NormalizedGlobalTrajectory",
@@ -2061,7 +2063,8 @@
     "F121CutoffMaps": "8ff05eab934248a72bd41c8ba4802a4b73a0613a089f9eecaecec4ce0443b3d9",
     "F121CutoffEnvironment": "d3f4da8eedf758e5e431d0c7e29641d20ad6d35f612841759c3bf93ced83b35e",
     "F121WeightedHighSmall": "493292eaaec7c215570a86f4a8faa07a5d4242979fb0ba118c250ca9fdf74101",
-    "F121WeightedHighCompact": "778a1f38c213fecde0497f415efb2a291ce5d5c24088f8f5c0d084e3048665df"
+    "F121WeightedHighCompact": "778a1f38c213fecde0497f415efb2a291ce5d5c24088f8f5c0d084e3048665df",
+    "F121LowFrequencyL2": "90fcc971f7adac5462693e387ae7b5ef2da7475be7096480e1f5e18cdc421684"
   },
   "declarations": [
     {
@@ -2947,7 +2950,7 @@
     }
   ],
   "seed": {
-    "run": 38755006013,
-    "commit": "0507c49591709b874cd1fc715f1007bf15fd61a7"
+    "run": 38875270496,
+    "commit": "6085d2a326d6797c7657a3d6cbce88e02960a47d"
   }
 }

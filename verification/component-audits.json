@@ -2272,5 +2272,23 @@
         "name": "HartreeF.Paper121SmallFrequency.compact_small_weighted_high"
       }
     ]
+  },
+  {
+    "module": "F121LowFrequencyL2",
+    "source": "components/F121LowFrequencyL2.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SmallFrequency.lowSymbol_small_limit"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.lowL2_norm_sq_fourier"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.lowL2_norm_small_limit"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.lowL2_small"
+      }
+    ]
   }
 ]
