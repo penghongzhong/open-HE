@@ -11,7 +11,7 @@ namespace HartreeF.Paper121AffineCutoff
 open EnergySpace EnergySpace.Highpass SobolevStretch StationarySelfTest
 open CriticalAffine FreeAffine Paper121SmallFrequency Paper121CutoffMaps
 
-theorem lowSymbol_affine_scale (q : Cutoff) {a M : ℝ} (ha : 0 < a) (hM : 0 < M)
+theorem lowSymbol_affine_scale (q : Cutoff) {a M : ℝ} (ha : 0 < a)
     (ξ : Space) : lowSymbol q (M/a) (a⁻¹ • ξ) = lowSymbol q M ξ := by
   unfold lowSymbol
   rw [smul_smul]
@@ -26,7 +26,7 @@ theorem highSchwartz_affine (q : Cutoff) {a M : ℝ} (ha : 0 < a) (hM : 0 < M)
       𝓕 (affineSchwartz ha b (highSchwartz q (M/a) φ)) := by
     ext ξ
     rw [highSchwartz_fourier q hM, affineSchwartz_fourier, affineSchwartz_fourier,
-      highSchwartz_fourier q (div_pos hM ha), lowSymbol_affine_scale q ha hM]
+      highSchwartz_fourier q (div_pos hM ha), lowSymbol_affine_scale q ha]
     simp only [Circle.smul_def, Complex.real_smul, smul_eq_mul]
     ring
   have he := congrArg (fun ψ : Test => 𝓕⁻ ψ) hf

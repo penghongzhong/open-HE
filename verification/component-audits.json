@@ -2368,5 +2368,65 @@
         "name": "HartreeF.Paper121AffineCutoff.weighted_high_critical"
       }
     ]
+  },
+  {
+    "module": "F121FrequencyOrbit",
+    "source": "components/F121FrequencyOrbit.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.normalized_gradient_eq"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.compact_gradient_bddAbove"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.normalized_orbit_gradient_bddAbove"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.normalized_orbit_small_pair"
+      }
+    ]
+  },
+  {
+    "module": "F121FrequencySuprema",
+    "source": "components/F121FrequencySuprema.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbitGradientSup"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbitLowSup"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbitMassSup"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.gradient_le_sup"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbit_cutoff_ranges_bounded"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbit_mass_sup_bound"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbit_sup_nonneg"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbit_sup_small_pair"
+      },
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.orbit_frequency_limits"
+      }
+    ]
+  },
+  {
+    "module": "F121Proposition63",
+    "source": "components/F121Proposition63.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121FrequencyOrbit.proposition63_halfline"
+      }
+    ]
   }
 ]

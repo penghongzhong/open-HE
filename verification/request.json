@@ -36,6 +36,8 @@
     "F121DirectionalEnvironment",
     "F121DirectionalSobolev",
     "F121FixedScaleOrientation",
+    "F121FrequencyOrbit",
+    "F121FrequencySuprema",
     "F121GlobalCritical",
     "F121HalflineFiniteness",
     "F121LiteralSolutionClass",
@@ -46,6 +48,7 @@
     "F121NearMaxScale",
     "F121NormalizedGlobalTrajectory",
     "F121PointwiseNormalization",
+    "F121Proposition63",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
     "F121SchwartzConvolutionDerivative",
@@ -265,6 +268,8 @@
     "F121DirectionalEnvironment",
     "F121DirectionalSobolev",
     "F121FixedScaleOrientation",
+    "F121FrequencyOrbit",
+    "F121FrequencySuprema",
     "F121GlobalCritical",
     "F121HalflineFiniteness",
     "F121LiteralSolutionClass",
@@ -275,6 +280,7 @@
     "F121NearMaxScale",
     "F121NormalizedGlobalTrajectory",
     "F121PointwiseNormalization",
+    "F121Proposition63",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
     "F121SchwartzConvolutionDerivative",
@@ -2075,8 +2081,11 @@
     "F121LowFrequencyL2": "90fcc971f7adac5462693e387ae7b5ef2da7475be7096480e1f5e18cdc421684",
     "F121LowGradientSmall": "30018336e3bcabef5a376f2ff44a8b6f489c9f8691e13ddb6a5c83efb5d8fc47",
     "F121CompactFrequencySmall": "ca036db58f108913897d1af75137fd0235bfe36167bf69e454a41c2bd11f3693",
-    "F121AffineCutoffSchwartz": "5b5d45f1e1b9c7f73ec03c88566f2229b81e00c5b75c7da1efc163f207f5676f",
-    "F121AffineCutoffEnergy": "d4ff8e9ee74a4c8f1fc419fd1ffe9c4f2efa31cf6d86d56949f1159ebcfb25b1"
+    "F121AffineCutoffSchwartz": "d6cdf0f7072c6850f9897bae4fbd69fa31902e43a3607402ab5df914326cc74c",
+    "F121AffineCutoffEnergy": "cb493167a2fe4b956c8dfb6c82a73cd5326c369a37862dcb8972dc7b6e27ebc6",
+    "F121FrequencyOrbit": "a98d57eae28139d355388213304e5f1bfcf265fc0c2a273f519f9b0cf9de54e6",
+    "F121FrequencySuprema": "4dc0f6144643d2b185d0a6ad0addf6270abac9d2e64e57e49959f553d12def7a",
+    "F121Proposition63": "4d42d8dd5451cef26ba0e24731d93d00b21193ac1f9b87c8307cee18b0600b70"
   },
   "declarations": [
     {

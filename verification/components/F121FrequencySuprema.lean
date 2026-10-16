@@ -1,0 +1,21 @@
+import F121FrequencySuprema
+
+#print axioms HartreeF.Paper121FrequencyOrbit.orbitGradientSup
+#print axioms HartreeF.Paper121FrequencyOrbit.orbitLowSup
+#print axioms HartreeF.Paper121FrequencyOrbit.orbitMassSup
+#print axioms HartreeF.Paper121FrequencyOrbit.gradient_le_sup
+#print axioms HartreeF.Paper121FrequencyOrbit.orbit_cutoff_ranges_bounded
+#print axioms HartreeF.Paper121FrequencyOrbit.orbit_mass_sup_bound
+#print axioms HartreeF.Paper121FrequencyOrbit.orbit_sup_nonneg
+#print axioms HartreeF.Paper121FrequencyOrbit.orbit_sup_small_pair
+#print axioms HartreeF.Paper121FrequencyOrbit.orbit_frequency_limits
+
+#check @HartreeF.Paper121FrequencyOrbit.orbitGradientSup
+#check @HartreeF.Paper121FrequencyOrbit.orbitLowSup
+#check @HartreeF.Paper121FrequencyOrbit.orbitMassSup
+#check @HartreeF.Paper121FrequencyOrbit.gradient_le_sup
+#check @HartreeF.Paper121FrequencyOrbit.orbit_cutoff_ranges_bounded
+#check @HartreeF.Paper121FrequencyOrbit.orbit_mass_sup_bound
+#check @HartreeF.Paper121FrequencyOrbit.orbit_sup_nonneg
+#check @HartreeF.Paper121FrequencyOrbit.orbit_sup_small_pair
+#check @HartreeF.Paper121FrequencyOrbit.orbit_frequency_limits

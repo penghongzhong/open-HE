@@ -1,0 +1,11 @@
+import F121FrequencyOrbit
+
+#print axioms HartreeF.Paper121FrequencyOrbit.normalized_gradient_eq
+#print axioms HartreeF.Paper121FrequencyOrbit.compact_gradient_bddAbove
+#print axioms HartreeF.Paper121FrequencyOrbit.normalized_orbit_gradient_bddAbove
+#print axioms HartreeF.Paper121FrequencyOrbit.normalized_orbit_small_pair
+
+#check @HartreeF.Paper121FrequencyOrbit.normalized_gradient_eq
+#check @HartreeF.Paper121FrequencyOrbit.compact_gradient_bddAbove
+#check @HartreeF.Paper121FrequencyOrbit.normalized_orbit_gradient_bddAbove
+#check @HartreeF.Paper121FrequencyOrbit.normalized_orbit_small_pair

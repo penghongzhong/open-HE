@@ -1,0 +1,5 @@
+import F121Proposition63
+
+#print axioms HartreeF.Paper121FrequencyOrbit.proposition63_halfline
+
+#check @HartreeF.Paper121FrequencyOrbit.proposition63_halfline

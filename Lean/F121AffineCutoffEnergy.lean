@@ -33,7 +33,6 @@ theorem lowEnergy_affine (hD : OrdinaryH1Density) {K : ℝ} (hS : OrdinarySobole
   change affineStateEquiv ha b u-highEnergyCLM hD hS q hM (affineState ha b u) =
     affineStateEquiv ha b (u-highEnergyCLM hD hS q (div_pos hM ha) u)
   rw [map_sub, highEnergy_affine]
-  rfl
 
 theorem highValue_norm_affine (hD : OrdinaryH1Density) {K : ℝ} (hS : OrdinarySobolev K)
     (q : Cutoff) {a M : ℝ} (ha : 0 < a) (hM : 0 < M) (b : Space) (u : EnergyState) :
