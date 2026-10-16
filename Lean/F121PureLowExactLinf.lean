@@ -55,7 +55,7 @@ theorem lowEnergyState_forcing_L1_exact_linf_allOrders
       MemLp (forcingGradientIm α c (energyValue v) U V) 1 volume ∧
       (eLpNorm (forcingGradientRe α c (energyValue v) U V) 1 volume).toReal +
         (eLpNorm (forcingGradientIm α c (energyValue v) U V) 1 volume).toReal ≤
-        C * (eLpNorm (energyValue v : V → ℂ) ∞ volume).toReal * pureGradientNorm v ^ (4 + 2 * α) := by
+        C * (eLpNorm (fun x => energyValue v x) ∞ volume).toReal * pureGradientNorm v ^ (4 + 2 * α) := by
   obtain ⟨C, hC0, hC⟩ :=
     lowEnergyState_forcing_L1_sameState_allOrders hDensity hSob hH hUpper
   refine ⟨C, hC0, ?_⟩
