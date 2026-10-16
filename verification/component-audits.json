@@ -3403,5 +3403,26 @@
         "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_exact_linf_allOrders"
       }
     ]
+  },
+  {
+    "module": "F121ComplexGradientL1",
+    "source": "components/F121ComplexGradientL1.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.complexGradient_norm_le_sum"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.actualFullGradient_eq_complex"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.complexGradient_integrable"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.complexGradient_L1_norm_le"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_actualFullGradient_exact_linf"
+      }
+    ]
   }
 ]

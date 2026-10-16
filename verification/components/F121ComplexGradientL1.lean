@@ -1,0 +1,13 @@
+import F121ComplexGradientL1
+
+#print axioms HartreeF.BoundedHartreeGradient.complexGradient_norm_le_sum
+#print axioms HartreeF.BoundedHartreeGradient.actualFullGradient_eq_complex
+#print axioms HartreeF.BoundedHartreeGradient.complexGradient_integrable
+#print axioms HartreeF.BoundedHartreeGradient.complexGradient_L1_norm_le
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_actualFullGradient_exact_linf
+
+#check @HartreeF.BoundedHartreeGradient.complexGradient_norm_le_sum
+#check @HartreeF.BoundedHartreeGradient.actualFullGradient_eq_complex
+#check @HartreeF.BoundedHartreeGradient.complexGradient_integrable
+#check @HartreeF.BoundedHartreeGradient.complexGradient_L1_norm_le
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_actualFullGradient_exact_linf

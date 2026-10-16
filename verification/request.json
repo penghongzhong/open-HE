@@ -25,6 +25,7 @@
     "F121CompactClosureGlobal",
     "F121CompactConvergence",
     "F121CompactFrequencySmall",
+    "F121ComplexGradientL1",
     "F121ConvolutionC0",
     "F121CriticalAllTimes",
     "F121CriticalEnvironment",
@@ -261,6 +262,7 @@
     "F121CompactClosureGlobal",
     "F121CompactConvergence",
     "F121CompactFrequencySmall",
+    "F121ComplexGradientL1",
     "F121ConvolutionC0",
     "F121CriticalAllTimes",
     "F121CriticalEnvironment",
@@ -2173,7 +2175,8 @@
     "F121GradientSameStateUpperOrder": "baa31fe64d31299a0dd627ff59d9b2d72adef6d03ab6376f5f4521d5ac2e8fbe",
     "FLowEnergyHartreeAllOrders": "1106ecdee35d9b45f66d703cd26584afd97dfbd0f77ff694333bb79ce083008d",
     "F121PureLowGradientSharp": "e84ba7f7de38b4c9d697bb03c9ee36ef946303d572e5d087c204f557f3d7ccb4",
-    "F121PureLowExactLinf": "5384470ffcba356759f5d913d64c6c957c5705f6ea0c02d1f410bb170f915d00"
+    "F121PureLowExactLinf": "5384470ffcba356759f5d913d64c6c957c5705f6ea0c02d1f410bb170f915d00",
+    "F121ComplexGradientL1": "4f80b68d250cb12f9328a87d9783ae5e4f33478134c6395b0d3c3c64b4271998"
   },
   "declarations": [
     {
@@ -3059,7 +3062,7 @@
     }
   ],
   "seed": {
-    "run": 38898882283,
-    "commit": "30d4cf5700d4307eda2f65e2fcd346a9cbd40dce"
+    "run": 38904456786,
+    "commit": "b2a7260d73beeb5d4839753215e1c0f2534b52fd"
   }
 }
