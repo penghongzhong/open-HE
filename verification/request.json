@@ -51,6 +51,7 @@
     "F121Proposition63",
     "F121Proposition65",
     "F121PureLowAnnularBridge",
+    "F121PureLowExactLinf",
     "F121PureLowGradientSharp",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
@@ -289,6 +290,7 @@
     "F121Proposition63",
     "F121Proposition65",
     "F121PureLowAnnularBridge",
+    "F121PureLowExactLinf",
     "F121PureLowGradientSharp",
     "F121RealCompactTerminal",
     "F121RelativeNormalization",
@@ -2170,7 +2172,8 @@
     "FLowEnergyHartreeUpperL1Gradient": "42ac86ef8ae272f3c1031b7de059553f83b533ab9b994d02c62d94e7941c87ed",
     "F121GradientSameStateUpperOrder": "baa31fe64d31299a0dd627ff59d9b2d72adef6d03ab6376f5f4521d5ac2e8fbe",
     "FLowEnergyHartreeAllOrders": "1106ecdee35d9b45f66d703cd26584afd97dfbd0f77ff694333bb79ce083008d",
-    "F121PureLowGradientSharp": "e84ba7f7de38b4c9d697bb03c9ee36ef946303d572e5d087c204f557f3d7ccb4"
+    "F121PureLowGradientSharp": "e84ba7f7de38b4c9d697bb03c9ee36ef946303d572e5d087c204f557f3d7ccb4",
+    "F121PureLowExactLinf": "9f50d4009b78c007063fd596c84dcdb07080c6c36420dbaeb6aaebf4ede179dd"
   },
   "declarations": [
     {
@@ -3056,7 +3059,7 @@
     }
   ],
   "seed": {
-    "run": 38896942693,
-    "commit": "3614e04ce77b26699784a6ba8601b964ed9e4f2f"
+    "run": 38898882283,
+    "commit": "30d4cf5700d4307eda2f65e2fcd346a9cbd40dce"
   }
 }

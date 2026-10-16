@@ -1,0 +1,9 @@
+import F121PureLowExactLinf
+
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_ae_le_exact_linf
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_exact_linf_pureGradient
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_exact_linf_allOrders
+
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_ae_le_exact_linf
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_exact_linf_pureGradient
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_exact_linf_allOrders

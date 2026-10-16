@@ -3388,5 +3388,20 @@
         "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_actual_annular_domains"
       }
     ]
+  },
+  {
+    "module": "F121PureLowExactLinf",
+    "source": "components/F121PureLowExactLinf.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_ae_le_exact_linf"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_exact_linf_pureGradient"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_exact_linf_allOrders"
+      }
+    ]
   }
 ]
