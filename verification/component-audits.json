@@ -3598,5 +3598,26 @@
         "name": "HartreeF.GeneralAnnular.lowEnergyState_general_annular_L1"
       }
     ]
+  },
+  {
+    "module": "F121Lemma66",
+    "source": "components/F121Lemma66.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma66.coordinate_L1_le_full"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma66.coordinate_L1_sum_le_three_full"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma66.general_annular_full_gradient"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma66.pureLow_bernstein_chain"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma66.lemma66_pure_low_leakage"
+      }
+    ]
   }
 ]

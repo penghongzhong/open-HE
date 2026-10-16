@@ -1,0 +1,13 @@
+import F121Lemma66
+
+#print axioms HartreeF.Paper121Lemma66.coordinate_L1_le_full
+#print axioms HartreeF.Paper121Lemma66.coordinate_L1_sum_le_three_full
+#print axioms HartreeF.Paper121Lemma66.general_annular_full_gradient
+#print axioms HartreeF.Paper121Lemma66.pureLow_bernstein_chain
+#print axioms HartreeF.Paper121Lemma66.lemma66_pure_low_leakage
+
+#check @HartreeF.Paper121Lemma66.coordinate_L1_le_full
+#check @HartreeF.Paper121Lemma66.coordinate_L1_sum_le_three_full
+#check @HartreeF.Paper121Lemma66.general_annular_full_gradient
+#check @HartreeF.Paper121Lemma66.pureLow_bernstein_chain
+#check @HartreeF.Paper121Lemma66.lemma66_pure_low_leakage
