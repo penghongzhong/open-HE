@@ -3424,5 +3424,179 @@
         "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_actualFullGradient_exact_linf"
       }
     ]
+  },
+  {
+    "module": "F121GeneralAnnularSymbols",
+    "source": "components/F121GeneralAnnularSymbols.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol_smooth"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol_zero"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol_eq_zero_on_ball"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol_eq_zero_of_large"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol_compact"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol_temperate"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_zero"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_eq_zero_on_ball"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_eventually_zero"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_smooth"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_compact"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_temperate"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSchwartz"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSchwartz_apply"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernel"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernel_fourier"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_reconstruction"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularSymbol_scale"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_scale_mul"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseSymbol_scale"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.mk"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.value"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.smooth"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.innerRadius"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.outerRadius"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.inner_pos"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.outer_pos"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.zero_small"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.Symbol.zero_large"
+      }
+    ]
+  },
+  {
+    "module": "F121GeneralAnnularKernel",
+    "source": "components/F121GeneralAnnularKernel.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernel_scale"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernel_eLpNorm_one"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernel_norm_one"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernel_integral_norm"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernelL1Constant"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernelL1Constant_nonneg"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.inverseKernel_norm"
+      }
+    ]
+  },
+  {
+    "module": "F121GeneralAnnularL1",
+    "source": "components/F121GeneralAnnularL1.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.GeneralAnnular.annular"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annular_multiplier"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularL1Value"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularConstant"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularL1Value_distribution"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularL1Value_norm_weighted"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularL1Value_norm"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.annularL1Value_unique"
+      }
+    ]
+  },
+  {
+    "module": "F121GeneralAnnularHartree",
+    "source": "components/F121GeneralAnnularHartree.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.GeneralAnnular.actual_weak_gradient_annular"
+      },
+      {
+        "name": "HartreeF.GeneralAnnular.lowEnergyState_general_annular_L1"
+      }
+    ]
   }
 ]

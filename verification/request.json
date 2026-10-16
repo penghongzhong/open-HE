@@ -39,6 +39,7 @@
     "F121FixedScaleOrientation",
     "F121FrequencyOrbit",
     "F121FrequencySuprema",
+    "F121GeneralAnnularHartree",
     "F121GlobalCritical",
     "F121HalflineFiniteness",
     "F121LiteralSolutionClass",
@@ -276,6 +277,10 @@
     "F121FixedScaleOrientation",
     "F121FrequencyOrbit",
     "F121FrequencySuprema",
+    "F121GeneralAnnularHartree",
+    "F121GeneralAnnularKernel",
+    "F121GeneralAnnularL1",
+    "F121GeneralAnnularSymbols",
     "F121GlobalCritical",
     "F121GradientSameStateSmallOrder",
     "F121GradientSameStateUpperOrder",
@@ -2176,7 +2181,11 @@
     "FLowEnergyHartreeAllOrders": "1106ecdee35d9b45f66d703cd26584afd97dfbd0f77ff694333bb79ce083008d",
     "F121PureLowGradientSharp": "e84ba7f7de38b4c9d697bb03c9ee36ef946303d572e5d087c204f557f3d7ccb4",
     "F121PureLowExactLinf": "5384470ffcba356759f5d913d64c6c957c5705f6ea0c02d1f410bb170f915d00",
-    "F121ComplexGradientL1": "da3ab6d6b09e55ed6d47def3bc218e1ddea40483970ff3e74076dfaafd9422e7"
+    "F121ComplexGradientL1": "da3ab6d6b09e55ed6d47def3bc218e1ddea40483970ff3e74076dfaafd9422e7",
+    "F121GeneralAnnularSymbols": "f5197824c12ad3eeec6e8abee96456858366cb7031495c09c30c064e040de4bf",
+    "F121GeneralAnnularKernel": "5e925a5537f303bf37e586acd186f9eb0b680b66bd25252266f22b066029719d",
+    "F121GeneralAnnularL1": "d7fce54700379185cc363a4eef8c8719d1c37c30a1b04bd64be1ca155a2558c8",
+    "F121GeneralAnnularHartree": "c5de83c74d5fd2b79d9a40ad168a20a8a365e5200467f226e51567fc799c1738"
   },
   "declarations": [
     {
@@ -3062,7 +3071,7 @@
     }
   ],
   "seed": {
-    "run": 38904456786,
-    "commit": "b2a7260d73beeb5d4839753215e1c0f2534b52fd"
+    "run": 38911782786,
+    "commit": "3e2d1b83bef6965583ec189ddff155ef9ffa7c0d"
   }
 }

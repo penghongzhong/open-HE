@@ -1,0 +1,7 @@
+import F121GeneralAnnularHartree
+
+#print axioms HartreeF.GeneralAnnular.actual_weak_gradient_annular
+#print axioms HartreeF.GeneralAnnular.lowEnergyState_general_annular_L1
+
+#check @HartreeF.GeneralAnnular.actual_weak_gradient_annular
+#check @HartreeF.GeneralAnnular.lowEnergyState_general_annular_L1
