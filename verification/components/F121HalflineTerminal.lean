@@ -1,0 +1,9 @@
+import F121HalflineTerminal
+
+#print axioms HartreeF.CompactOrbitTerminal.real_terminal_free_time_escape
+#print axioms HartreeF.CompactOrbitTerminal.halfline_real_dual_zero
+#print axioms HartreeF.CompactOrbitTerminal.halfline_real_tested_zero
+
+#check @HartreeF.CompactOrbitTerminal.real_terminal_free_time_escape
+#check @HartreeF.CompactOrbitTerminal.halfline_real_dual_zero
+#check @HartreeF.CompactOrbitTerminal.halfline_real_tested_zero

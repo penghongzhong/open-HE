@@ -1,0 +1,17 @@
+import F121RealCompactTerminal
+
+#print axioms HartreeF.CompactOrbitTerminal.actual_freeSchwartz_L6_decay_real
+#print axioms HartreeF.CompactOrbitTerminal.terminalGradient_schwartz_pair_zero_real
+#print axioms HartreeF.CompactOrbitTerminal.compactOrbit_schwartz_gradient_zero_real
+#print axioms HartreeF.CompactOrbitTerminal.compactOrbit_gradient_zero_real
+#print axioms HartreeF.CompactOrbitTerminal.compactOrbit_energy_dual_zero_real
+#print axioms HartreeF.CompactOrbitTerminal.compactOrbit_distribution_zero_real
+#print axioms HartreeF.CompactOrbitTerminal.compactOrbit_tested_terminal_zero_real
+
+#check @HartreeF.CompactOrbitTerminal.actual_freeSchwartz_L6_decay_real
+#check @HartreeF.CompactOrbitTerminal.terminalGradient_schwartz_pair_zero_real
+#check @HartreeF.CompactOrbitTerminal.compactOrbit_schwartz_gradient_zero_real
+#check @HartreeF.CompactOrbitTerminal.compactOrbit_gradient_zero_real
+#check @HartreeF.CompactOrbitTerminal.compactOrbit_energy_dual_zero_real
+#check @HartreeF.CompactOrbitTerminal.compactOrbit_distribution_zero_real
+#check @HartreeF.CompactOrbitTerminal.compactOrbit_tested_terminal_zero_real

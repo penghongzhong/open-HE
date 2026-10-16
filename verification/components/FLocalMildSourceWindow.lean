@@ -1,0 +1,11 @@
+import FLocalMildSourceWindow
+
+#print axioms HartreeF.OriginalSignedDuhamel.local_path_extension_same
+#print axioms HartreeF.OriginalSignedDuhamel.local_source_same_forcing
+#print axioms HartreeF.OriginalSignedDuhamel.local_freeTest_source_integrable
+#print axioms HartreeF.OriginalSignedDuhamel.local_mild_forward_original
+
+#check @HartreeF.OriginalSignedDuhamel.local_path_extension_same
+#check @HartreeF.OriginalSignedDuhamel.local_source_same_forcing
+#check @HartreeF.OriginalSignedDuhamel.local_freeTest_source_integrable
+#check @HartreeF.OriginalSignedDuhamel.local_mild_forward_original

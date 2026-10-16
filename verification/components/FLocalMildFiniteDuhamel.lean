@@ -1,0 +1,21 @@
+import FLocalMildFiniteDuhamel
+
+#print axioms HartreeF.OriginalSignedDuhamel.actual_freeTest_comp
+#print axioms HartreeF.OriginalSignedDuhamel.actual_freeTest_zero
+#print axioms HartreeF.OriginalSignedDuhamel.neg_preimage_Icc
+#print axioms HartreeF.OriginalSignedDuhamel.integral_reflection_Icc
+#print axioms HartreeF.OriginalSignedDuhamel.integrableOn_reflection_Icc
+#print axioms HartreeF.OriginalSignedDuhamel.local_mild_terminal_positive
+#print axioms HartreeF.OriginalSignedDuhamel.local_mild_terminal_negative
+#print axioms HartreeF.OriginalSignedDuhamel.local_mild_signed_finite
+#print axioms HartreeF.OriginalSignedDuhamel.local_mild_signed_window_integrable
+
+#check @HartreeF.OriginalSignedDuhamel.actual_freeTest_comp
+#check @HartreeF.OriginalSignedDuhamel.actual_freeTest_zero
+#check @HartreeF.OriginalSignedDuhamel.neg_preimage_Icc
+#check @HartreeF.OriginalSignedDuhamel.integral_reflection_Icc
+#check @HartreeF.OriginalSignedDuhamel.integrableOn_reflection_Icc
+#check @HartreeF.OriginalSignedDuhamel.local_mild_terminal_positive
+#check @HartreeF.OriginalSignedDuhamel.local_mild_terminal_negative
+#check @HartreeF.OriginalSignedDuhamel.local_mild_signed_finite
+#check @HartreeF.OriginalSignedDuhamel.local_mild_signed_window_integrable

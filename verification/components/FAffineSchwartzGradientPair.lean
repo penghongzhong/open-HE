@@ -1,0 +1,27 @@
+import FAffineSchwartzGradientPair
+
+#print axioms HartreeF.CompactOrbitTerminal.gradientSourceExponent
+#print axioms HartreeF.CompactOrbitTerminal.gradientSourceExponent_one_le
+#print axioms HartreeF.CompactOrbitTerminal.GradientSource
+#print axioms HartreeF.CompactOrbitTerminal.gradientSourcePair
+#print axioms HartreeF.CompactOrbitTerminal.gradientSourcePair_bound
+#print axioms HartreeF.CompactOrbitTerminal.gradientPullback_source_eLpNorm
+#print axioms HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource
+#print axioms HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_ae
+#print axioms HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_same_gradient
+#print axioms HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_norm
+#print axioms HartreeF.CompactOrbitTerminal.affineSchwartzGradient_inner_eq
+#print axioms HartreeF.CompactOrbitTerminal.criticalAffineSchwartzGradient_inner_bound
+
+#check @HartreeF.CompactOrbitTerminal.gradientSourceExponent
+#check @HartreeF.CompactOrbitTerminal.gradientSourceExponent_one_le
+#check @HartreeF.CompactOrbitTerminal.GradientSource
+#check @HartreeF.CompactOrbitTerminal.gradientSourcePair
+#check @HartreeF.CompactOrbitTerminal.gradientSourcePair_bound
+#check @HartreeF.CompactOrbitTerminal.gradientPullback_source_eLpNorm
+#check @HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource
+#check @HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_ae
+#check @HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_same_gradient
+#check @HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_norm
+#check @HartreeF.CompactOrbitTerminal.affineSchwartzGradient_inner_eq
+#check @HartreeF.CompactOrbitTerminal.criticalAffineSchwartzGradient_inner_bound

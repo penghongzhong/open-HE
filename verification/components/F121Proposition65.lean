@@ -1,0 +1,7 @@
+import F121Proposition65
+
+#print axioms HartreeF.OriginalSignedDuhamel.absolute_nplusone_tendsto
+#print axioms HartreeF.OriginalSignedDuhamel.proposition65_halfline
+
+#check @HartreeF.OriginalSignedDuhamel.absolute_nplusone_tendsto
+#check @HartreeF.OriginalSignedDuhamel.proposition65_halfline

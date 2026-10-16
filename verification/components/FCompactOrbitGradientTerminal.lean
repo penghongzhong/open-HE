@@ -1,0 +1,19 @@
+import FCompactOrbitGradientTerminal
+
+#print axioms HartreeF.CompactOrbitTerminal.actual_freeL2_real_adjoint
+#print axioms HartreeF.CompactOrbitTerminal.actual_freeSchwartz_L6_decay
+#print axioms HartreeF.CompactOrbitTerminal.terminalGradient
+#print axioms HartreeF.CompactOrbitTerminal.terminalGradient_apply
+#print axioms HartreeF.CompactOrbitTerminal.terminalGradient_norm
+#print axioms HartreeF.CompactOrbitTerminal.terminalGradient_pair_lipschitz
+#print axioms HartreeF.CompactOrbitTerminal.terminalGradient_schwartz_pair_zero
+#print axioms HartreeF.CompactOrbitTerminal.compactOrbit_schwartz_gradient_zero
+
+#check @HartreeF.CompactOrbitTerminal.actual_freeL2_real_adjoint
+#check @HartreeF.CompactOrbitTerminal.actual_freeSchwartz_L6_decay
+#check @HartreeF.CompactOrbitTerminal.terminalGradient
+#check @HartreeF.CompactOrbitTerminal.terminalGradient_apply
+#check @HartreeF.CompactOrbitTerminal.terminalGradient_norm
+#check @HartreeF.CompactOrbitTerminal.terminalGradient_pair_lipschitz
+#check @HartreeF.CompactOrbitTerminal.terminalGradient_schwartz_pair_zero
+#check @HartreeF.CompactOrbitTerminal.compactOrbit_schwartz_gradient_zero

@@ -2428,5 +2428,194 @@
         "name": "HartreeF.Paper121FrequencyOrbit.proposition63_halfline"
       }
     ]
+  },
+  {
+    "module": "FCompactDenseUniformZero",
+    "source": "components/FCompactDenseUniformZero.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.CompactOrbitTerminal.compact_dense_uniform_zero"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.dense_uniform_lipschitz_zero"
+      }
+    ]
+  },
+  {
+    "module": "FAffineSchwartzGradientPair",
+    "source": "components/FAffineSchwartzGradientPair.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.CompactOrbitTerminal.gradientSourceExponent"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.gradientSourceExponent_one_le"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.GradientSource"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.gradientSourcePair"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.gradientSourcePair_bound"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.gradientPullback_source_eLpNorm"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_ae"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_same_gradient"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.affineSchwartzGradientSource_norm"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.affineSchwartzGradient_inner_eq"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.criticalAffineSchwartzGradient_inner_bound"
+      }
+    ]
+  },
+  {
+    "module": "FCompactOrbitGradientTerminal",
+    "source": "components/FCompactOrbitGradientTerminal.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.CompactOrbitTerminal.actual_freeL2_real_adjoint"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.actual_freeSchwartz_L6_decay"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.terminalGradient"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.terminalGradient_apply"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.terminalGradient_norm"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.terminalGradient_pair_lipschitz"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.terminalGradient_schwartz_pair_zero"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.compactOrbit_schwartz_gradient_zero"
+      }
+    ]
+  },
+  {
+    "module": "F121RealCompactTerminal",
+    "source": "components/F121RealCompactTerminal.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.CompactOrbitTerminal.actual_freeSchwartz_L6_decay_real"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.terminalGradient_schwartz_pair_zero_real"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.compactOrbit_schwartz_gradient_zero_real"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.compactOrbit_gradient_zero_real"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.compactOrbit_energy_dual_zero_real"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.compactOrbit_distribution_zero_real"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.compactOrbit_tested_terminal_zero_real"
+      }
+    ]
+  },
+  {
+    "module": "F121HalflineTerminal",
+    "source": "components/F121HalflineTerminal.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.CompactOrbitTerminal.real_terminal_free_time_escape"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.halfline_real_dual_zero"
+      },
+      {
+        "name": "HartreeF.CompactOrbitTerminal.halfline_real_tested_zero"
+      }
+    ]
+  },
+  {
+    "module": "FLocalMildSourceWindow",
+    "source": "components/FLocalMildSourceWindow.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_path_extension_same"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_source_same_forcing"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_freeTest_source_integrable"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_mild_forward_original"
+      }
+    ]
+  },
+  {
+    "module": "FLocalMildFiniteDuhamel",
+    "source": "components/FLocalMildFiniteDuhamel.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.actual_freeTest_comp"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.actual_freeTest_zero"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.neg_preimage_Icc"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.integral_reflection_Icc"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.integrableOn_reflection_Icc"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_mild_terminal_positive"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_mild_terminal_negative"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_mild_signed_finite"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.local_mild_signed_window_integrable"
+      }
+    ]
+  },
+  {
+    "module": "F121Proposition65",
+    "source": "components/F121Proposition65.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.absolute_nplusone_tendsto"
+      },
+      {
+        "name": "HartreeF.OriginalSignedDuhamel.proposition65_halfline"
+      }
+    ]
   }
 ]

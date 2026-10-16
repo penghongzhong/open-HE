@@ -49,6 +49,7 @@
     "F121NormalizedGlobalTrajectory",
     "F121PointwiseNormalization",
     "F121Proposition63",
+    "F121Proposition65",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
     "F121SchwartzConvolutionDerivative",
@@ -272,6 +273,7 @@
     "F121FrequencySuprema",
     "F121GlobalCritical",
     "F121HalflineFiniteness",
+    "F121HalflineTerminal",
     "F121LiteralSolutionClass",
     "F121LiteralThresholdBridge",
     "F121LowFrequencyL2",
@@ -281,6 +283,8 @@
     "F121NormalizedGlobalTrajectory",
     "F121PointwiseNormalization",
     "F121Proposition63",
+    "F121Proposition65",
+    "F121RealCompactTerminal",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
     "F121SchwartzConvolutionDerivative",
@@ -497,6 +501,7 @@
     "FAffineRetardedSourceIdentity",
     "FAffineRetardedTimeChange",
     "FAffineSchwartzFree",
+    "FAffineSchwartzGradientPair",
     "FBackgroundCoefficientSmallness",
     "FBackwardFixedPointData",
     "FBackwardFixedPointDataComparison",
@@ -549,6 +554,7 @@
     "FCompactCrossTemporal",
     "FCompactCrossTerms",
     "FCompactCrossTime",
+    "FCompactDenseUniformZero",
     "FCompactFreeHeadSlots",
     "FCompactLimitCompatibility",
     "FCompactLimitPrescribedAsymptote",
@@ -557,6 +563,7 @@
     "FCompactLocalMassNative",
     "FCompactLpExhaustion",
     "FCompactMollifierMixed",
+    "FCompactOrbitGradientTerminal",
     "FCompactPDEInputDomain",
     "FCompactSupportIntervalLocalization",
     "FCompactTestLocalization",
@@ -805,6 +812,8 @@
     "FLocalCriticalPathProducer",
     "FLocalFreePathCaps",
     "FLocalL1AffineWeakGradient",
+    "FLocalMildFiniteDuhamel",
+    "FLocalMildSourceWindow",
     "FLocalMildTrajectory",
     "FLocalMildTrajectoryEnergyConservation",
     "FLocalMildTrajectoryExistence",
@@ -2085,7 +2094,15 @@
     "F121AffineCutoffEnergy": "32baf85b7c679100b1d0d93fa57371563b4017e91b36e4c58382ae82f7b26c00",
     "F121FrequencyOrbit": "a98d57eae28139d355388213304e5f1bfcf265fc0c2a273f519f9b0cf9de54e6",
     "F121FrequencySuprema": "d5aadc57a0434eadbac7c785694ce8737473cae4b3a4cd67296dfa3072dfc753",
-    "F121Proposition63": "11719acee764499567b68d59b639fd3abab4562896c03631ce2af2eb0c6ef693"
+    "F121Proposition63": "11719acee764499567b68d59b639fd3abab4562896c03631ce2af2eb0c6ef693",
+    "FCompactDenseUniformZero": "ce351ee9c8e19c0ae4bfa423a84cd3e6b4f71dc4fc6493478ccc5540904bcff8",
+    "FAffineSchwartzGradientPair": "e6e3d96112367885e2e5c85f491d9e754d3ed481d7079172edf57286aacecc37",
+    "FCompactOrbitGradientTerminal": "9deb9eee8eef331cf24c3aa2fcd63ac8f661a601dfdeb7472f074e8dadbff20e",
+    "F121RealCompactTerminal": "f9a06936fc5f6c1f97d5c898f8b71d5f0f273b26f652405d3c7fe8eefc77c894",
+    "F121HalflineTerminal": "3f30e6da05e7a4d20c195aff282be3ca2a3d7a005b80e0db5da91023349fa2eb",
+    "FLocalMildSourceWindow": "5384d64e2a46d7baace327f10887cd94356f4be64d8ab69b4fd689844f6b01f6",
+    "FLocalMildFiniteDuhamel": "60db24e5c837d6c107386178cefd56b3741c7b9364665da59c16d9debcaec8e3",
+    "F121Proposition65": "d53d0fb2a6d6f4abca6346617234c0fee3d48b754d9566503c432725fb91ab54"
   },
   "declarations": [
     {
@@ -2971,7 +2988,7 @@
     }
   ],
   "seed": {
-    "run": 38878043768,
-    "commit": "e1605f82d10f79e1de1beba2c19f6b1f56207833"
+    "run": 38887382968,
+    "commit": "1b0deead1f3d46bbffc8b82b384c95ea6d909758"
   }
 }

@@ -1,0 +1,7 @@
+import FCompactDenseUniformZero
+
+#print axioms HartreeF.CompactOrbitTerminal.compact_dense_uniform_zero
+#print axioms HartreeF.CompactOrbitTerminal.dense_uniform_lipschitz_zero
+
+#check @HartreeF.CompactOrbitTerminal.compact_dense_uniform_zero
+#check @HartreeF.CompactOrbitTerminal.dense_uniform_lipschitz_zero
