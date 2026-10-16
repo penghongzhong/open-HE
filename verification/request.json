@@ -2176,7 +2176,7 @@
     "FLowEnergyHartreeAllOrders": "1106ecdee35d9b45f66d703cd26584afd97dfbd0f77ff694333bb79ce083008d",
     "F121PureLowGradientSharp": "e84ba7f7de38b4c9d697bb03c9ee36ef946303d572e5d087c204f557f3d7ccb4",
     "F121PureLowExactLinf": "5384470ffcba356759f5d913d64c6c957c5705f6ea0c02d1f410bb170f915d00",
-    "F121ComplexGradientL1": "4f80b68d250cb12f9328a87d9783ae5e4f33478134c6395b0d3c3c64b4271998"
+    "F121ComplexGradientL1": "da3ab6d6b09e55ed6d47def3bc218e1ddea40483970ff3e74076dfaafd9422e7"
   },
   "declarations": [
     {

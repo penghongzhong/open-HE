@@ -66,12 +66,12 @@ theorem complexGradient_L1_norm_le {U W : Space → Space}
   have hg := complexGradient_integrable hU hW
   have hu := memLp_one_iff_integrable.mp hU
   have hw := memLp_one_iff_integrable.mp hW
-  have hn {E : Type*} [NormedAddCommGroup E] {f : Space → E}
+  have hn {E : Type} [NormedAddCommGroup E] {f : Space → E}
       (hf : Integrable f volume) :
       (eLpNorm f 1 volume).toReal = ∫ x, ‖f x‖ := by
     rw [eLpNorm_one_eq_lintegral_enorm hf.aestronglyMeasurable]
     exact (integral_norm_eq_lintegral_enorm hf.aestronglyMeasurable).symm
-  rw [hn hg, hn hu, hn hw, ← integral_add hu.norm hw.norm]
+  rw [hn (f := complexGradient U W) hg, hn (f := U) hu, hn (f := W) hw, ← integral_add hu.norm hw.norm]
   exact integral_mono hg.norm (hu.norm.add hw.norm) (complexGradient_norm_le_sum U W)
 
 /-- Lemma 6.6's first estimate in the full complex Euclidean gradient norm,
