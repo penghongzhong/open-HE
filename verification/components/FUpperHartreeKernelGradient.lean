@@ -1,0 +1,11 @@
+import FUpperHartreeKernelGradient
+
+#print axioms HartreeF.BoundedHartreeGradient.hartreePotentialGradient_eq_gradientConvolution_upperOrder
+#print axioms HartreeF.BoundedHartreeGradient.upperKernelMajorant
+#print axioms HartreeF.BoundedHartreeGradient.upperKernelMajorant_domain_bound
+#print axioms HartreeF.BoundedHartreeGradient.fourthGradientMagnitude_le_upperKernelMajorant
+
+#check @HartreeF.BoundedHartreeGradient.hartreePotentialGradient_eq_gradientConvolution_upperOrder
+#check @HartreeF.BoundedHartreeGradient.upperKernelMajorant
+#check @HartreeF.BoundedHartreeGradient.upperKernelMajorant_domain_bound
+#check @HartreeF.BoundedHartreeGradient.fourthGradientMagnitude_le_upperKernelMajorant

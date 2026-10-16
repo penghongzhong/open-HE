@@ -1,0 +1,11 @@
+import FBoundedSpatialBounds
+
+#print axioms HartreeF.BoundedHartreeGradient.spatialBound_of_ae_norm_le
+#print axioms HartreeF.BoundedHartreeGradient.spatialBound_const_mul
+#print axioms HartreeF.BoundedHartreeGradient.spatialBound_mul_bounded
+#print axioms HartreeF.BoundedHartreeGradient.spatialBound_power_six
+
+#check @HartreeF.BoundedHartreeGradient.spatialBound_of_ae_norm_le
+#check @HartreeF.BoundedHartreeGradient.spatialBound_const_mul
+#check @HartreeF.BoundedHartreeGradient.spatialBound_mul_bounded
+#check @HartreeF.BoundedHartreeGradient.spatialBound_power_six

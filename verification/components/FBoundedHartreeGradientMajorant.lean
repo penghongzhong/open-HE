@@ -1,0 +1,15 @@
+import FBoundedHartreeGradientMajorant
+
+#print axioms HartreeF.BoundedHartreeGradient.potential_nonneg_of_normalization
+#print axioms HartreeF.BoundedHartreeGradient.hartreeDensityGradient_norm_sharp
+#print axioms HartreeF.BoundedHartreeGradient.hartreePotentialGradient_norm_majorant
+#print axioms HartreeF.BoundedHartreeGradient.firstGradientMagnitude_eq_majorant
+#print axioms HartreeF.BoundedHartreeGradient.projected_forcing_gradient_majorant
+#print axioms HartreeF.BoundedHartreeGradient.memLp_one_bound_of_majorant
+
+#check @HartreeF.BoundedHartreeGradient.potential_nonneg_of_normalization
+#check @HartreeF.BoundedHartreeGradient.hartreeDensityGradient_norm_sharp
+#check @HartreeF.BoundedHartreeGradient.hartreePotentialGradient_norm_majorant
+#check @HartreeF.BoundedHartreeGradient.firstGradientMagnitude_eq_majorant
+#check @HartreeF.BoundedHartreeGradient.projected_forcing_gradient_majorant
+#check @HartreeF.BoundedHartreeGradient.memLp_one_bound_of_majorant

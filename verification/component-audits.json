@@ -2980,5 +2980,413 @@
         "name": "HartreeF.Paper121PureLow.actual_annular_common_representative"
       }
     ]
+  },
+  {
+    "module": "FPhysicalLowEnergyRepresentatives",
+    "source": "components/FPhysicalLowEnergyRepresentatives.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalInfinity"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalInfinityCLM"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalInfinityCLM_apply"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.continuousOn_lowPhysicalInfinity"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical_integrable"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical_bound"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical_pureGradient_bound"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical_memLp_top"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalInfinity_coe"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalInfinity_distribution"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical_same_value"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowEnergyState_memLp_top"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowEnergyState_linf_bound"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalGradient"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalGradient_integrable"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalGradient_bound"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalGradient_memLp_top"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalGradient_same_gradient"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowEnergyState_gradient_memLp_top"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowEnergyState_pureGradient_bound"
+      }
+    ]
+  },
+  {
+    "module": "FPhysicalLowpassWeakGradient",
+    "source": "components/FPhysicalLowpassWeakGradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.PhysicalLowpass.weakGradient_congr_ae"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalProjectedGradient"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysicalProjectedGradient_same"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical_hasWeakGradient"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowPhysical_inDotH1"
+      },
+      {
+        "name": "HartreeF.PhysicalLowpass.lowEnergyState_projectedGradient_memLp_top"
+      }
+    ]
+  },
+  {
+    "module": "FLowEnergyHartreeWeakGradient",
+    "source": "components/FLowEnergyHartreeWeakGradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_memLp_ten"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_projectedGradient_memLp_thirty_thirteen"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_hasWeakGradients"
+      }
+    ]
+  },
+  {
+    "module": "FBoundedSpatialBounds",
+    "source": "components/FBoundedSpatialBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.spatialBound_of_ae_norm_le"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.spatialBound_const_mul"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.spatialBound_mul_bounded"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.spatialBound_power_six"
+      }
+    ]
+  },
+  {
+    "module": "FBoundedHartreeMajorants",
+    "source": "components/FBoundedHartreeMajorants.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.bounded_majorant1_domain_bound"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.bounded_density_gradient_majorant"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.bounded_majorant4_domain_bound"
+      }
+    ]
+  },
+  {
+    "module": "FBoundedHartreeGradientMajorant",
+    "source": "components/FBoundedHartreeGradientMajorant.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.potential_nonneg_of_normalization"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.hartreeDensityGradient_norm_sharp"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.hartreePotentialGradient_norm_majorant"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.firstGradientMagnitude_eq_majorant"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.projected_forcing_gradient_majorant"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.memLp_one_bound_of_majorant"
+      }
+    ]
+  },
+  {
+    "module": "FBoundedHartreeGradientSmallOrder",
+    "source": "components/FBoundedHartreeGradientSmallOrder.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_smallOrder"
+      }
+    ]
+  },
+  {
+    "module": "FEnergyProjectedGradientNorm",
+    "source": "components/FEnergyProjectedGradientNorm.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.EnergySpace.energyProjectedGradient_eLpNorm_two_le_coordinate_sum"
+      },
+      {
+        "name": "HartreeF.EnergySpace.energyProjectedGradient_norm_two_le_three_pureGradient"
+      },
+      {
+        "name": "HartreeF.EnergySpace.energyProjectedGradient_norm_two_le_three_pureGradient_of_norm_le_one"
+      },
+      {
+        "name": "HartreeF.EnergySpace.energyProjectedGradient_norm_sum_memLp"
+      },
+      {
+        "name": "HartreeF.EnergySpace.energyProjectedGradient_norm_sum_le_six_pureGradient"
+      }
+    ]
+  },
+  {
+    "module": "FLowEnergyHartreeL1Gradient",
+    "source": "components/FLowEnergyHartreeL1Gradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_weakGradients_smallOrder"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_bound_smallOrder"
+      }
+    ]
+  },
+  {
+    "module": "F121GradientSameStateSmallOrder",
+    "source": "components/F121GradientSameStateSmallOrder.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_sameState_smallOrder"
+      }
+    ]
+  },
+  {
+    "module": "FRieszKernelDerivative",
+    "source": "components/FRieszKernelDerivative.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernelGradient"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernelGradient_measurable"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernelGradient_norm"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernelGradient_norm_eq_lowerOrder"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernelGradient_norm_le_lowerOrder"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernelGradient_locallyIntegrable"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernelGradient_locallyIntegrable_iff"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.regularizedRieszKernel"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.regularizedRieszGradient"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.regularizedRieszKernel_hasWeakGradient"
+      },
+      {
+        "name": "HartreeF.RieszKernelDerivative.rieszKernel_hasWeakGradient"
+      }
+    ]
+  },
+  {
+    "module": "FRieszGradientConvolutionDomain",
+    "source": "components/FRieszGradientConvolutionDomain.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientConvolution"
+      },
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientConvolution_aestronglyMeasurable"
+      },
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientConvolution_norm_le"
+      },
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientConvolution_bound"
+      }
+    ]
+  },
+  {
+    "module": "FRieszTranslatedKernelTests",
+    "source": "components/FRieszTranslatedKernelTests.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.translated_kernel_integration_by_parts"
+      },
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientTestPair"
+      },
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientTestPair_measurable"
+      },
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientTestPair_integrable"
+      }
+    ]
+  },
+  {
+    "module": "FRieszConvolutionWeakDerivative",
+    "source": "components/FRieszConvolutionWeakDerivative.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.gradientConvolution_inner"
+      },
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.rieszConvolution_hasWeakGradient"
+      }
+    ]
+  },
+  {
+    "module": "FRieszConvolutionDerivativeEndpoint",
+    "source": "components/FRieszConvolutionDerivativeEndpoint.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.rieszConvolution_derivative_endpoint"
+      }
+    ]
+  },
+  {
+    "module": "FWeakGradientUniqueness",
+    "source": "components/FWeakGradientUniqueness.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.weakGradient_unique"
+      }
+    ]
+  },
+  {
+    "module": "FUpperHartreeKernelGradient",
+    "source": "components/FUpperHartreeKernelGradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.hartreePotentialGradient_eq_gradientConvolution_upperOrder"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.upperKernelMajorant"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.upperKernelMajorant_domain_bound"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.fourthGradientMagnitude_le_upperKernelMajorant"
+      }
+    ]
+  },
+  {
+    "module": "FBoundedHartreeGradientUpperOrder",
+    "source": "components/FBoundedHartreeGradientUpperOrder.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.projected_forcing_gradient_majorant_upperOrder"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_upperOrder_exact"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_upperOrder"
+      }
+    ]
+  },
+  {
+    "module": "FLowEnergyHartreeUpperL1Gradient",
+    "source": "components/FLowEnergyHartreeUpperL1Gradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_weakGradients_upperOrder"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_bound_upperOrder"
+      }
+    ]
+  },
+  {
+    "module": "F121GradientSameStateUpperOrder",
+    "source": "components/F121GradientSameStateUpperOrder.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_sameState_upperOrder"
+      }
+    ]
+  },
+  {
+    "module": "FLowEnergyHartreeAllOrders",
+    "source": "components/FLowEnergyHartreeAllOrders.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_weakGradients_allOrders"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_bound_allOrders"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_bound_orderOne"
+      }
+    ]
+  },
+  {
+    "module": "F121PureLowGradientSharp",
+    "source": "components/F121PureLowGradientSharp.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_sameState_allOrders"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_sameState_allOrders"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_sameState_orderOne"
+      },
+      {
+        "name": "HartreeF.BoundedHartreeGradient.lowEnergyState_actual_annular_domains"
+      }
+    ]
   }
 ]

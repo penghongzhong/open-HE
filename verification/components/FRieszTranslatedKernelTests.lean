@@ -1,0 +1,11 @@
+import FRieszTranslatedKernelTests
+
+#print axioms HartreeF.RieszConvolutionDerivative.translated_kernel_integration_by_parts
+#print axioms HartreeF.RieszConvolutionDerivative.gradientTestPair
+#print axioms HartreeF.RieszConvolutionDerivative.gradientTestPair_measurable
+#print axioms HartreeF.RieszConvolutionDerivative.gradientTestPair_integrable
+
+#check @HartreeF.RieszConvolutionDerivative.translated_kernel_integration_by_parts
+#check @HartreeF.RieszConvolutionDerivative.gradientTestPair
+#check @HartreeF.RieszConvolutionDerivative.gradientTestPair_measurable
+#check @HartreeF.RieszConvolutionDerivative.gradientTestPair_integrable

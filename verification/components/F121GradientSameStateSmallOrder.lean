@@ -1,0 +1,5 @@
+import F121GradientSameStateSmallOrder
+
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_sameState_smallOrder
+
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_sameState_smallOrder

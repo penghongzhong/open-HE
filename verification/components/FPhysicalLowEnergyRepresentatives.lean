@@ -1,0 +1,45 @@
+import FPhysicalLowEnergyRepresentatives
+
+#print axioms HartreeF.PhysicalLowpass.lowPhysical
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalInfinity
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalInfinityCLM
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalInfinityCLM_apply
+#print axioms HartreeF.PhysicalLowpass.continuousOn_lowPhysicalInfinity
+#print axioms HartreeF.PhysicalLowpass.lowPhysical_integrable
+#print axioms HartreeF.PhysicalLowpass.lowPhysical_bound
+#print axioms HartreeF.PhysicalLowpass.lowPhysical_pureGradient_bound
+#print axioms HartreeF.PhysicalLowpass.lowPhysical_memLp_top
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalInfinity_coe
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalInfinity_distribution
+#print axioms HartreeF.PhysicalLowpass.lowPhysical_same_value
+#print axioms HartreeF.PhysicalLowpass.lowEnergyState_memLp_top
+#print axioms HartreeF.PhysicalLowpass.lowEnergyState_linf_bound
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalGradient
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalGradient_integrable
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalGradient_bound
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalGradient_memLp_top
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalGradient_same_gradient
+#print axioms HartreeF.PhysicalLowpass.lowEnergyState_gradient_memLp_top
+#print axioms HartreeF.PhysicalLowpass.lowEnergyState_pureGradient_bound
+
+#check @HartreeF.PhysicalLowpass.lowPhysical
+#check @HartreeF.PhysicalLowpass.lowPhysicalInfinity
+#check @HartreeF.PhysicalLowpass.lowPhysicalInfinityCLM
+#check @HartreeF.PhysicalLowpass.lowPhysicalInfinityCLM_apply
+#check @HartreeF.PhysicalLowpass.continuousOn_lowPhysicalInfinity
+#check @HartreeF.PhysicalLowpass.lowPhysical_integrable
+#check @HartreeF.PhysicalLowpass.lowPhysical_bound
+#check @HartreeF.PhysicalLowpass.lowPhysical_pureGradient_bound
+#check @HartreeF.PhysicalLowpass.lowPhysical_memLp_top
+#check @HartreeF.PhysicalLowpass.lowPhysicalInfinity_coe
+#check @HartreeF.PhysicalLowpass.lowPhysicalInfinity_distribution
+#check @HartreeF.PhysicalLowpass.lowPhysical_same_value
+#check @HartreeF.PhysicalLowpass.lowEnergyState_memLp_top
+#check @HartreeF.PhysicalLowpass.lowEnergyState_linf_bound
+#check @HartreeF.PhysicalLowpass.lowPhysicalGradient
+#check @HartreeF.PhysicalLowpass.lowPhysicalGradient_integrable
+#check @HartreeF.PhysicalLowpass.lowPhysicalGradient_bound
+#check @HartreeF.PhysicalLowpass.lowPhysicalGradient_memLp_top
+#check @HartreeF.PhysicalLowpass.lowPhysicalGradient_same_gradient
+#check @HartreeF.PhysicalLowpass.lowEnergyState_gradient_memLp_top
+#check @HartreeF.PhysicalLowpass.lowEnergyState_pureGradient_bound

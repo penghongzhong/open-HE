@@ -1,0 +1,9 @@
+import FBoundedHartreeGradientUpperOrder
+
+#print axioms HartreeF.BoundedHartreeGradient.projected_forcing_gradient_majorant_upperOrder
+#print axioms HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_upperOrder_exact
+#print axioms HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_upperOrder
+
+#check @HartreeF.BoundedHartreeGradient.projected_forcing_gradient_majorant_upperOrder
+#check @HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_upperOrder_exact
+#check @HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_upperOrder

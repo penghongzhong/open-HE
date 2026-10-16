@@ -1,0 +1,25 @@
+import FRieszKernelDerivative
+
+#print axioms HartreeF.RieszKernelDerivative.rieszKernelGradient
+#print axioms HartreeF.RieszKernelDerivative.rieszKernelGradient_measurable
+#print axioms HartreeF.RieszKernelDerivative.rieszKernelGradient_norm
+#print axioms HartreeF.RieszKernelDerivative.rieszKernelGradient_norm_eq_lowerOrder
+#print axioms HartreeF.RieszKernelDerivative.rieszKernelGradient_norm_le_lowerOrder
+#print axioms HartreeF.RieszKernelDerivative.rieszKernelGradient_locallyIntegrable
+#print axioms HartreeF.RieszKernelDerivative.rieszKernelGradient_locallyIntegrable_iff
+#print axioms HartreeF.RieszKernelDerivative.regularizedRieszKernel
+#print axioms HartreeF.RieszKernelDerivative.regularizedRieszGradient
+#print axioms HartreeF.RieszKernelDerivative.regularizedRieszKernel_hasWeakGradient
+#print axioms HartreeF.RieszKernelDerivative.rieszKernel_hasWeakGradient
+
+#check @HartreeF.RieszKernelDerivative.rieszKernelGradient
+#check @HartreeF.RieszKernelDerivative.rieszKernelGradient_measurable
+#check @HartreeF.RieszKernelDerivative.rieszKernelGradient_norm
+#check @HartreeF.RieszKernelDerivative.rieszKernelGradient_norm_eq_lowerOrder
+#check @HartreeF.RieszKernelDerivative.rieszKernelGradient_norm_le_lowerOrder
+#check @HartreeF.RieszKernelDerivative.rieszKernelGradient_locallyIntegrable
+#check @HartreeF.RieszKernelDerivative.rieszKernelGradient_locallyIntegrable_iff
+#check @HartreeF.RieszKernelDerivative.regularizedRieszKernel
+#check @HartreeF.RieszKernelDerivative.regularizedRieszGradient
+#check @HartreeF.RieszKernelDerivative.regularizedRieszKernel_hasWeakGradient
+#check @HartreeF.RieszKernelDerivative.rieszKernel_hasWeakGradient

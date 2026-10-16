@@ -1,0 +1,7 @@
+import FRieszConvolutionWeakDerivative
+
+#print axioms HartreeF.RieszConvolutionDerivative.gradientConvolution_inner
+#print axioms HartreeF.RieszConvolutionDerivative.rieszConvolution_hasWeakGradient
+
+#check @HartreeF.RieszConvolutionDerivative.gradientConvolution_inner
+#check @HartreeF.RieszConvolutionDerivative.rieszConvolution_hasWeakGradient

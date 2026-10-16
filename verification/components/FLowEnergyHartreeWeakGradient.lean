@@ -1,0 +1,9 @@
+import FLowEnergyHartreeWeakGradient
+
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_memLp_ten
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_projectedGradient_memLp_thirty_thirteen
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_hasWeakGradients
+
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_memLp_ten
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_projectedGradient_memLp_thirty_thirteen
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_hasWeakGradients

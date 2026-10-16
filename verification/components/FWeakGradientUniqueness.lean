@@ -1,0 +1,5 @@
+import FWeakGradientUniqueness
+
+#print axioms HartreeF.RieszConvolutionDerivative.weakGradient_unique
+
+#check @HartreeF.RieszConvolutionDerivative.weakGradient_unique

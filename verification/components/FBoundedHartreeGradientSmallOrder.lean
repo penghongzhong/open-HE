@@ -1,0 +1,5 @@
+import FBoundedHartreeGradientSmallOrder
+
+#print axioms HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_smallOrder
+
+#check @HartreeF.BoundedHartreeGradient.projected_forcing_gradient_L1_smallOrder

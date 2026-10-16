@@ -1,0 +1,5 @@
+import F121GradientSameStateUpperOrder
+
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_sameState_upperOrder
+
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_sameState_upperOrder

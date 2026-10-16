@@ -1,0 +1,9 @@
+import FBoundedHartreeMajorants
+
+#print axioms HartreeF.BoundedHartreeGradient.bounded_majorant1_domain_bound
+#print axioms HartreeF.BoundedHartreeGradient.bounded_density_gradient_majorant
+#print axioms HartreeF.BoundedHartreeGradient.bounded_majorant4_domain_bound
+
+#check @HartreeF.BoundedHartreeGradient.bounded_majorant1_domain_bound
+#check @HartreeF.BoundedHartreeGradient.bounded_density_gradient_majorant
+#check @HartreeF.BoundedHartreeGradient.bounded_majorant4_domain_bound

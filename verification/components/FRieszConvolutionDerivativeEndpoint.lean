@@ -1,0 +1,5 @@
+import FRieszConvolutionDerivativeEndpoint
+
+#print axioms HartreeF.RieszConvolutionDerivative.rieszConvolution_derivative_endpoint
+
+#check @HartreeF.RieszConvolutionDerivative.rieszConvolution_derivative_endpoint

@@ -1,0 +1,11 @@
+import FRieszGradientConvolutionDomain
+
+#print axioms HartreeF.RieszConvolutionDerivative.gradientConvolution
+#print axioms HartreeF.RieszConvolutionDerivative.gradientConvolution_aestronglyMeasurable
+#print axioms HartreeF.RieszConvolutionDerivative.gradientConvolution_norm_le
+#print axioms HartreeF.RieszConvolutionDerivative.gradientConvolution_bound
+
+#check @HartreeF.RieszConvolutionDerivative.gradientConvolution
+#check @HartreeF.RieszConvolutionDerivative.gradientConvolution_aestronglyMeasurable
+#check @HartreeF.RieszConvolutionDerivative.gradientConvolution_norm_le
+#check @HartreeF.RieszConvolutionDerivative.gradientConvolution_bound

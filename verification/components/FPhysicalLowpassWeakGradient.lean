@@ -1,0 +1,15 @@
+import FPhysicalLowpassWeakGradient
+
+#print axioms HartreeF.PhysicalLowpass.weakGradient_congr_ae
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalProjectedGradient
+#print axioms HartreeF.PhysicalLowpass.lowPhysicalProjectedGradient_same
+#print axioms HartreeF.PhysicalLowpass.lowPhysical_hasWeakGradient
+#print axioms HartreeF.PhysicalLowpass.lowPhysical_inDotH1
+#print axioms HartreeF.PhysicalLowpass.lowEnergyState_projectedGradient_memLp_top
+
+#check @HartreeF.PhysicalLowpass.weakGradient_congr_ae
+#check @HartreeF.PhysicalLowpass.lowPhysicalProjectedGradient
+#check @HartreeF.PhysicalLowpass.lowPhysicalProjectedGradient_same
+#check @HartreeF.PhysicalLowpass.lowPhysical_hasWeakGradient
+#check @HartreeF.PhysicalLowpass.lowPhysical_inDotH1
+#check @HartreeF.PhysicalLowpass.lowEnergyState_projectedGradient_memLp_top

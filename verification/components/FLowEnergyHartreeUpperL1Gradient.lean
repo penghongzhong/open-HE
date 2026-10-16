@@ -1,0 +1,7 @@
+import FLowEnergyHartreeUpperL1Gradient
+
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_weakGradients_upperOrder
+#print axioms HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_bound_upperOrder
+
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_weakGradients_upperOrder
+#check @HartreeF.BoundedHartreeGradient.lowEnergyState_forcing_L1_gradient_bound_upperOrder
