@@ -50,6 +50,7 @@
     "F121PointwiseNormalization",
     "F121Proposition63",
     "F121Proposition65",
+    "F121PureLowAnnularBridge",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
     "F121SchwartzConvolutionDerivative",
@@ -284,6 +285,7 @@
     "F121PointwiseNormalization",
     "F121Proposition63",
     "F121Proposition65",
+    "F121PureLowAnnularBridge",
     "F121RealCompactTerminal",
     "F121RelativeNormalization",
     "F121RunningScaleSupremum",
@@ -412,6 +414,7 @@
     "FActualInfiniteSTail",
     "FActualIntervalSourceBounds",
     "FActualL1ForcingDefect",
+    "FActualL1LpConvolution",
     "FActualL1MildPerturbation",
     "FActualL2HartreeCommutator",
     "FActualL6MassGauge",
@@ -502,6 +505,11 @@
     "FAffineRetardedTimeChange",
     "FAffineSchwartzFree",
     "FAffineSchwartzGradientPair",
+    "FAnnularInverseSymbols",
+    "FAnnularKernelScaling",
+    "FAnnularL1Realization",
+    "FAnnularLpCompatibility",
+    "FAnnularWeakGradientRealization",
     "FBackgroundCoefficientSmallness",
     "FBackwardFixedPointData",
     "FBackwardFixedPointDataComparison",
@@ -576,6 +584,7 @@
     "FCompatiblePathGluing",
     "FCompatibleSourceExhaustion",
     "FComplementaryPowerSmallness",
+    "FComplexYoungRepresentative",
     "FConditionalActualMassContinuity",
     "FConditionalActualMassDecay",
     "FConditionalLowMassRecovery",
@@ -656,6 +665,7 @@
     "FEnergyStateWeakGradient",
     "FEnergyWeakGradientTemperedDerivative",
     "FEnergyWeakTestBridge",
+    "FEnlargedAnnularL1",
     "FEssentialEnergyCap",
     "FExactLocalFluxBound",
     "FFinalPrefixSolution",
@@ -682,6 +692,7 @@
     "FForwardFixedPointDataComparison",
     "FForwardRetardedRestart",
     "FFourInputLocalization",
+    "FFourierInverseGradient",
     "FFreeCriticalFutureTail",
     "FFreeCriticalPastTail",
     "FFreeCriticalPathRebase",
@@ -949,6 +960,7 @@
     "FScalarFiniteEndpointEstimate",
     "FScalarFiniteEndpointLeftEstimate",
     "FScalarSourceRepresentatives",
+    "FSchwartzYoungDistribution",
     "FSharpEnergyBarrier",
     "FSharpWFiniteSGlobalScattering",
     "FSharpWStateTopology",
@@ -2102,7 +2114,18 @@
     "F121HalflineTerminal": "3f30e6da05e7a4d20c195aff282be3ca2a3d7a005b80e0db5da91023349fa2eb",
     "FLocalMildSourceWindow": "5384d64e2a46d7baace327f10887cd94356f4be64d8ab69b4fd689844f6b01f6",
     "FLocalMildFiniteDuhamel": "60db24e5c837d6c107386178cefd56b3741c7b9364665da59c16d9debcaec8e3",
-    "F121Proposition65": "d53d0fb2a6d6f4abca6346617234c0fee3d48b754d9566503c432725fb91ab54"
+    "F121Proposition65": "d53d0fb2a6d6f4abca6346617234c0fee3d48b754d9566503c432725fb91ab54",
+    "FSchwartzYoungDistribution": "3379408fc461b252b9e50ec08cf9339ace493e501a6395f08b71612b24b50a73",
+    "FFourierInverseGradient": "3bfaf45b1daf158db41ca9e588731d51a9ab244caac278ce9e340483ed31a222",
+    "FAnnularInverseSymbols": "b04e06dff6abca1f6bb0b6fd885fc5ee9c9aa87d90974ecb027c633251517eeb",
+    "FAnnularKernelScaling": "b8ee32e233fcd851b689898a1e3c201390ca7e8925167d2d99b6dbfee230d919",
+    "FAnnularL1Realization": "a1dbdc24b2ad6cc9636487b6c994d352dd52c836ceb56f2238d939603df9c427",
+    "FAnnularWeakGradientRealization": "94052439a7997686da9c1b9a4c24fdf273e0179f464637e73dba47a2d4e753ba",
+    "FActualL1LpConvolution": "0f9f6e2c1ccb374e439bdafbd42a7d77c9507373d63734788ec44640b3f7114d",
+    "FComplexYoungRepresentative": "e190e32b0a85ff616c7b554911f00221051aa0d0457b6173fbaddd57b3da64f4",
+    "FEnlargedAnnularL1": "07daa62e52108f86b1f0975d97f1b5bc4215d73b15db153b7fc683bb7dad6459",
+    "FAnnularLpCompatibility": "8938a16ee184f7b0903d440e4adffb604b25b2020ef9f15a6a0c0613fdb4368c",
+    "F121PureLowAnnularBridge": "dd557f26ce626be40c2476f8683e49dcca98cec34031dcaa6a060765d3b6aa70"
   },
   "declarations": [
     {
@@ -2988,7 +3011,7 @@
     }
   ],
   "seed": {
-    "run": 38887382968,
-    "commit": "1b0deead1f3d46bbffc8b82b384c95ea6d909758"
+    "run": 38893665409,
+    "commit": "84dd11cd7e81c827779c9ed06b012cdee9281986"
   }
 }

@@ -2617,5 +2617,368 @@
         "name": "HartreeF.OriginalSignedDuhamel.proposition65_halfline"
       }
     ]
+  },
+  {
+    "module": "FSchwartzYoungDistribution",
+    "source": "components/FSchwartzYoungDistribution.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.kernelTranspose"
+      },
+      {
+        "name": "HartreeF.AnnularL1.schwartzKernel_pairing"
+      },
+      {
+        "name": "HartreeF.AnnularL1.young_schwartz_distribution"
+      }
+    ]
+  },
+  {
+    "module": "FFourierInverseGradient",
+    "source": "components/FFourierInverseGradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.coordinateDerivativeSymbol"
+      },
+      {
+        "name": "HartreeF.AnnularL1.coordinateDerivativeSymbol_temperate"
+      },
+      {
+        "name": "HartreeF.AnnularL1.actual_coordinate_derivative_multiplier"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradient_multiplier_identity"
+      },
+      {
+        "name": "HartreeF.AnnularL1.one_distribution_injective"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientL1"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientL1_norm"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientL1_distribution"
+      }
+    ]
+  },
+  {
+    "module": "FAnnularInverseSymbols",
+    "source": "components/FAnnularInverseSymbols.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularSymbol"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_smooth"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_zero"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_eq_zero_of_small"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_eq_zero_of_large"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_eq_zero_on_ball"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_compact"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_temperate"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_mul_enlarged"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularSymbol_eq_sum"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_zero"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_eq_zero_of_small"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_eq_zero_on_ball"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_eventually_zero"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_smooth"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_compact"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_temperate"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSchwartz"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSchwartz_apply"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernel"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernel_fourier"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_reconstruction"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_mul_enlarged"
+      },
+      {
+        "name": "HartreeF.AnnularL1.lowSymbol_dilate"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularSymbol_scale"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_scale_mul"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseSymbol_scale"
+      }
+    ]
+  },
+  {
+    "module": "FAnnularKernelScaling",
+    "source": "components/FAnnularKernelScaling.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.inverseKernel_scale"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernel_eLpNorm_one"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernel_norm_one"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernel_integral_norm"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernelL1Constant"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernelL1Constant_nonneg"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseKernel_norm"
+      }
+    ]
+  },
+  {
+    "module": "FAnnularL1Realization",
+    "source": "components/FAnnularL1Realization.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.annular"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annular_multiplier"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularL1Value"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularConstant"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularL1Value_distribution"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularL1Value_norm_weighted"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularL1Value_norm"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularL1Value_unique"
+      }
+    ]
+  },
+  {
+    "module": "FAnnularWeakGradientRealization",
+    "source": "components/FAnnularWeakGradientRealization.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.weakGradientOne"
+      },
+      {
+        "name": "HartreeF.AnnularL1.actual_weak_gradient_annular"
+      }
+    ]
+  },
+  {
+    "module": "FActualL1LpConvolution",
+    "source": "components/FActualL1LpConvolution.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszL1LocalDomains.finiteSetIntegralCLM"
+      },
+      {
+        "name": "HartreeF.RieszL1LocalDomains.finiteSetIntegralCLM_apply"
+      },
+      {
+        "name": "HartreeF.RieszL1LocalDomains.actualConvolution"
+      },
+      {
+        "name": "HartreeF.RieszL1LocalDomains.lpAverage"
+      },
+      {
+        "name": "HartreeF.RieszL1LocalDomains.lpAverage_integrable"
+      },
+      {
+        "name": "HartreeF.RieszL1LocalDomains.lpAverage_coe_ae"
+      },
+      {
+        "name": "HartreeF.RieszL1LocalDomains.actualConvolution_memLp"
+      }
+    ]
+  },
+  {
+    "module": "FComplexYoungRepresentative",
+    "source": "components/FComplexYoungRepresentative.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.complex_smul_re_im"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.actualComplexConvolution"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.actualComplexConvolution_integrand_integrable"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.actualComplexConvolution_sections"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.actualComplexConvolution_integrable"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.actualComplexConvolution_re_im_ae"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.youngValue_re_im"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.youngValue_coe_ae"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.youngCLM_coe_ae"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.actualComplexConvolution_memLp"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.young_schwartz_coe_ae"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.actualComplexConvolution_eLpNorm_toReal_le"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.young_schwartz_coe_ae_cross"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.youngOne_memLp"
+      },
+      {
+        "name": "HartreeF.ComplexYoungRepresentative.youngOne_toLp_eq"
+      }
+    ]
+  },
+  {
+    "module": "FEnlargedAnnularL1",
+    "source": "components/FEnlargedAnnularL1.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnular"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnular_eq_sum"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnular_multiplier"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularSymbol_temperate"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annular_enlargedAnnular"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularL1Value"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularL1Value_distribution"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularL1Value_norm"
+      }
+    ]
+  },
+  {
+    "module": "FAnnularLpCompatibility",
+    "source": "components/FAnnularLpCompatibility.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientLp"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientL1_coe_ae_lp"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientL1_memLp"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientL1_toLp_eq"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientLp_norm"
+      },
+      {
+        "name": "HartreeF.AnnularL1.inverseGradientL1_toLp_norm"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularL1Value_memLp"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularL1Value_memLp"
+      },
+      {
+        "name": "HartreeF.AnnularL1.annularL1Value_memLp_six_fifths"
+      },
+      {
+        "name": "HartreeF.AnnularL1.enlargedAnnularL1Value_memLp_six_fifths"
+      }
+    ]
+  },
+  {
+    "module": "F121PureLowAnnularBridge",
+    "source": "components/F121PureLowAnnularBridge.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121PureLow.actual_annular_common_representative"
+      }
+    ]
   }
 ]

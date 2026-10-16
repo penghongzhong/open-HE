@@ -1,0 +1,5 @@
+import F121PureLowAnnularBridge
+
+#print axioms HartreeF.Paper121PureLow.actual_annular_common_representative
+
+#check @HartreeF.Paper121PureLow.actual_annular_common_representative
