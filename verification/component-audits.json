@@ -2326,5 +2326,47 @@
         "name": "HartreeF.Paper121SmallFrequency.compact_small_frequency_pair"
       }
     ]
+  },
+  {
+    "module": "F121AffineCutoffSchwartz",
+    "source": "components/F121AffineCutoffSchwartz.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121AffineCutoff.lowSymbol_affine_scale"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.highSchwartz_affine"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.highEnergy_schwartz"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.affineSchwartz_L2"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.affineSchwartz_L2_norm"
+      }
+    ]
+  },
+  {
+    "module": "F121AffineCutoffEnergy",
+    "source": "components/F121AffineCutoffEnergy.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121AffineCutoff.highEnergy_affine"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.lowEnergy_affine"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.highValue_norm_affine"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.low_gradient_critical"
+      },
+      {
+        "name": "HartreeF.Paper121AffineCutoff.weighted_high_critical"
+      }
+    ]
   }
 ]

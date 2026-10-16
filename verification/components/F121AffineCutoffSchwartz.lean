@@ -1,0 +1,13 @@
+import F121AffineCutoffSchwartz
+
+#print axioms HartreeF.Paper121AffineCutoff.lowSymbol_affine_scale
+#print axioms HartreeF.Paper121AffineCutoff.highSchwartz_affine
+#print axioms HartreeF.Paper121AffineCutoff.highEnergy_schwartz
+#print axioms HartreeF.Paper121AffineCutoff.affineSchwartz_L2
+#print axioms HartreeF.Paper121AffineCutoff.affineSchwartz_L2_norm
+
+#check @HartreeF.Paper121AffineCutoff.lowSymbol_affine_scale
+#check @HartreeF.Paper121AffineCutoff.highSchwartz_affine
+#check @HartreeF.Paper121AffineCutoff.highEnergy_schwartz
+#check @HartreeF.Paper121AffineCutoff.affineSchwartz_L2
+#check @HartreeF.Paper121AffineCutoff.affineSchwartz_L2_norm

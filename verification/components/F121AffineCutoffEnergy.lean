@@ -1,0 +1,13 @@
+import F121AffineCutoffEnergy
+
+#print axioms HartreeF.Paper121AffineCutoff.highEnergy_affine
+#print axioms HartreeF.Paper121AffineCutoff.lowEnergy_affine
+#print axioms HartreeF.Paper121AffineCutoff.highValue_norm_affine
+#print axioms HartreeF.Paper121AffineCutoff.low_gradient_critical
+#print axioms HartreeF.Paper121AffineCutoff.weighted_high_critical
+
+#check @HartreeF.Paper121AffineCutoff.highEnergy_affine
+#check @HartreeF.Paper121AffineCutoff.lowEnergy_affine
+#check @HartreeF.Paper121AffineCutoff.highValue_norm_affine
+#check @HartreeF.Paper121AffineCutoff.low_gradient_critical
+#check @HartreeF.Paper121AffineCutoff.weighted_high_critical
