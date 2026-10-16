@@ -42,7 +42,7 @@ theorem orbit_mass_sup_bound (hD : OrdinaryH1Density) {K : ℝ}
     (hS : OrdinarySobolev K) (q : Cutoff) {ι : Type*} [Nonempty ι] (U : ι → EnergyState)
     (hb : BddAbove (range (fun s => pureGradientNorm (U s)))) {M : ℝ} (hM : 0 < M) :
     orbitMassSup hD hS q U M ≤ orbitGradientSup U/M := by
-  rw [orbitMassSup, dif_pos hM]
+  rw [orbitMassSup, dite_eq_left hM]
   apply csSup_le (range_nonempty _)
   rintro _ ⟨s, rfl⟩
   calc
@@ -57,7 +57,7 @@ theorem orbit_sup_nonneg (hD : OrdinaryH1Density) {K : ℝ}
     0 ≤ orbitLowSup hD hS q U M ∧ 0 ≤ M*orbitMassSup hD hS q U M := by
   obtain ⟨s⟩ := ‹Nonempty ι›
   have hc := orbit_cutoff_ranges_bounded hD hS q U hb hM
-  simp only [orbitLowSup, orbitMassSup, dif_pos hM]
+  simp only [orbitLowSup, orbitMassSup, dite_eq_left hM]
   constructor
   · exact (pureGradientNorm_nonneg _).trans (le_csSup hc.1 (mem_range_self s))
   · exact mul_nonneg hM.le ((norm_nonneg _).trans (le_csSup hc.2 (mem_range_self s)))
@@ -74,12 +74,12 @@ theorem orbit_sup_small_pair (hD : OrdinaryH1Density) {K : ℝ}
   refine ⟨δ, hδ, ?_⟩
   intro M hM hMδ
   have hl : orbitLowSup hD hS q U M ≤ ε/2 := by
-    rw [orbitLowSup, dif_pos hM]
+    rw [orbitLowSup, dite_eq_left hM]
     apply csSup_le (range_nonempty _)
     rintro _ ⟨s, rfl⟩
     exact (hs M hM hMδ s).1.le
   have hm : orbitMassSup hD hS q U M ≤ (ε/2)/M := by
-    rw [orbitMassSup, dif_pos hM]
+    rw [orbitMassSup, dite_eq_left hM]
     apply csSup_le (range_nonempty _)
     rintro _ ⟨s, rfl⟩
     apply (le_div_iff₀ hM).mpr

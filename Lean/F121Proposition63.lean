@@ -53,7 +53,7 @@ theorem proposition63_halfline (hD : OrdinaryH1Density) {K : ℝ}
   have hn := orbit_sup_nonneg hD hS q V hb hM
   have hmass0 : 0 ≤ orbitMassSup hD hS q V M := by nlinarith [hn.2]
   have hlowB : orbitLowSup hD hS q V M ≤ orbitGradientSup V := by
-    rw [orbitLowSup, dif_pos hM]
+    rw [orbitLowSup, dite_eq_left hM]
     apply csSup_le (range_nonempty _)
     rintro _ ⟨s, rfl⟩
     exact (low_gradient_bound hD hS q hM (V s)).trans (gradient_le_sup V hb s)
