@@ -38,10 +38,10 @@ theorem proposition63_halfline (hD : OrdinaryH1Density) {K : ℝ}
   have hr1' (s : Ici (0 : ℝ)) : r' s ≤ 1 := hr1 s s.property
   have hq' (s : Ici (0 : ℝ)) : (criticalAffineState (r' s) (hr' s) (y' s)).symm (V s) ∈ Q :=
     hq s s.property
-  letI : Nonempty (Ici (0 : ℝ)) := ⟨⟨0, le_rfl⟩⟩
+  letI : Nonempty (Ici (0 : ℝ)) := ⟨⟨0, by simp⟩⟩
   have hb := normalized_orbit_gradient_bddAbove V r' hr' y' hQ hq'
   have hB0 : 0 ≤ orbitGradientSup V :=
-    (pureGradientNorm_nonneg (V ⟨0, le_rfl⟩)).trans (gradient_le_sup V hb ⟨0, le_rfl⟩)
+    (pureGradientNorm_nonneg (V ⟨0, by simp⟩)).trans (gradient_le_sup V hb ⟨0, by simp⟩)
   have hBQ : orbitGradientSup V ≤ sSup (pureGradientNorm '' Q) := by
     apply csSup_le (range_nonempty _)
     rintro _ ⟨s, rfl⟩
