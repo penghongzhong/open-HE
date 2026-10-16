@@ -1,0 +1,15 @@
+import F121LowGradientSmall
+
+#print axioms HartreeF.Paper121SmallFrequency.lowGradientSize
+#print axioms HartreeF.Paper121SmallFrequency.lowGradientSize_eq
+#print axioms HartreeF.Paper121SmallFrequency.lowGradientSize_small_limit
+#print axioms HartreeF.Paper121SmallFrequency.small_low_gradient
+#print axioms HartreeF.Paper121SmallFrequency.low_gradient_bound
+#print axioms HartreeF.Paper121SmallFrequency.low_gradient_compare
+
+#check @HartreeF.Paper121SmallFrequency.lowGradientSize
+#check @HartreeF.Paper121SmallFrequency.lowGradientSize_eq
+#check @HartreeF.Paper121SmallFrequency.lowGradientSize_small_limit
+#check @HartreeF.Paper121SmallFrequency.small_low_gradient
+#check @HartreeF.Paper121SmallFrequency.low_gradient_bound
+#check @HartreeF.Paper121SmallFrequency.low_gradient_compare

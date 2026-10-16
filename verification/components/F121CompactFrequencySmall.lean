@@ -1,0 +1,7 @@
+import F121CompactFrequencySmall
+
+#print axioms HartreeF.Paper121SmallFrequency.compact_small_low_gradient
+#print axioms HartreeF.Paper121SmallFrequency.compact_small_frequency_pair
+
+#check @HartreeF.Paper121SmallFrequency.compact_small_low_gradient
+#check @HartreeF.Paper121SmallFrequency.compact_small_frequency_pair
