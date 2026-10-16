@@ -1,0 +1,7 @@
+import F121WeightedHighCompact
+
+#print axioms HartreeF.Paper121SmallFrequency.scaled_high_compare
+#print axioms HartreeF.Paper121SmallFrequency.compact_small_weighted_high
+
+#check @HartreeF.Paper121SmallFrequency.scaled_high_compare
+#check @HartreeF.Paper121SmallFrequency.compact_small_weighted_high

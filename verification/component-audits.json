@@ -2260,5 +2260,17 @@
         "name": "HartreeF.Paper121SmallFrequency.small_weighted_high"
       }
     ]
+  },
+  {
+    "module": "F121WeightedHighCompact",
+    "source": "components/F121WeightedHighCompact.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SmallFrequency.scaled_high_compare"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.compact_small_weighted_high"
+      }
+    ]
   }
 ]
