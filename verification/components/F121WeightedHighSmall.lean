@@ -1,0 +1,13 @@
+import F121WeightedHighSmall
+
+#print axioms HartreeF.Paper121SmallFrequency.scaled_high_bound
+#print axioms HartreeF.Paper121SmallFrequency.scaled_high_difference
+#print axioms HartreeF.Paper121SmallFrequency.high_schwartz_identification
+#print axioms HartreeF.Paper121SmallFrequency.scaled_high_approximation
+#print axioms HartreeF.Paper121SmallFrequency.small_weighted_high
+
+#check @HartreeF.Paper121SmallFrequency.scaled_high_bound
+#check @HartreeF.Paper121SmallFrequency.scaled_high_difference
+#check @HartreeF.Paper121SmallFrequency.high_schwartz_identification
+#check @HartreeF.Paper121SmallFrequency.scaled_high_approximation
+#check @HartreeF.Paper121SmallFrequency.small_weighted_high

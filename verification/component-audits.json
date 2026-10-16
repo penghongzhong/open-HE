@@ -2239,5 +2239,26 @@
         "name": "HartreeF.Paper121CutoffEnvironment.lemma61_full_environment"
       }
     ]
+  },
+  {
+    "module": "F121WeightedHighSmall",
+    "source": "components/F121WeightedHighSmall.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121SmallFrequency.scaled_high_bound"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.scaled_high_difference"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.high_schwartz_identification"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.scaled_high_approximation"
+      },
+      {
+        "name": "HartreeF.Paper121SmallFrequency.small_weighted_high"
+      }
+    ]
   }
 ]

@@ -52,6 +52,7 @@
     "F121SubparabolicScalar",
     "F121SubparabolicScale",
     "F121WeakDisappearance",
+    "F121WeightedHighSmall",
     "FActualApproximateGlobalWBound",
     "FActualBackwardCompactLongTimePerturbation",
     "FActualBackwardCompactMaximalPerturbation",
@@ -274,6 +275,7 @@
     "F121SubparabolicScalar",
     "F121SubparabolicScale",
     "F121WeakDisappearance",
+    "F121WeightedHighSmall",
     "FActualAffineCriticalPath",
     "FActualAffineRetardedCovariance",
     "FActualAffineSourceWeakGradients",
@@ -2055,7 +2057,8 @@
     "F121SchwartzConvolutionDerivative": "f8e46f62ecddb225e4bfe73e73a5a239c1a079fa386ceee934d6c3a66cb063ec",
     "F121SchwartzConvolutionSmooth": "8e3b9450afe024e16108087514fbfcd902e549a594f91f10c239d2114b393ac0",
     "F121CutoffMaps": "8ff05eab934248a72bd41c8ba4802a4b73a0613a089f9eecaecec4ce0443b3d9",
-    "F121CutoffEnvironment": "d3f4da8eedf758e5e431d0c7e29641d20ad6d35f612841759c3bf93ced83b35e"
+    "F121CutoffEnvironment": "d3f4da8eedf758e5e431d0c7e29641d20ad6d35f612841759c3bf93ced83b35e",
+    "F121WeightedHighSmall": "2c2c5b2f9b09a26bb38c8582fe155d82d9e0a58f1a78c5066c8809883fb01264"
   },
   "declarations": [
     {
@@ -2941,7 +2944,7 @@
     }
   ],
   "seed": {
-    "run": 38741373900,
-    "commit": "34f4c197a106d5301a7ce9cd961e7a10c3b8792d"
+    "run": 38755006013,
+    "commit": "0507c49591709b874cd1fc715f1007bf15fd61a7"
   }
 }
