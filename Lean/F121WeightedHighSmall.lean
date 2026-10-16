@@ -29,7 +29,7 @@ theorem high_schwartz_identification (hDensity : OrdinaryH1Density) {K : ℝ}
       highL2 q M (φ.toLp 2 volume) := by
   exact (highValueL2_unique hDensity hSob q hM (schwartzEnergyState φ)
     (highL2 q M (φ.toLp 2 volume)) (by
-      rw [highL2_distribution, Lp.toTemperedDistribution_toLp_eq,
+      rw [highL2_distribution q hM, Lp.toTemperedDistribution_toLp_eq,
         schwartzEnergyState_distribution])).symm
 
 theorem scaled_high_approximation (hDensity : OrdinaryH1Density) {K : ℝ}
@@ -72,7 +72,6 @@ theorem small_weighted_high (hDensity : OrdinaryH1Density) {K : ℝ}
   have he : δ*(‖(φ n).toLp 2 volume‖+1) = ε/4 := by
     dsimp [δ]
     field_simp
-    <;> ring
   refine ⟨δ, hδ, ?_⟩
   intro M hM hMδ
   have hm := mul_le_mul_of_nonneg_right hMδ (norm_nonneg ((φ n).toLp 2 volume))
