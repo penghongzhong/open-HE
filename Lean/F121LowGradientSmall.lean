@@ -58,6 +58,7 @@ theorem low_gradient_compare (hDensity : OrdinaryH1Density) {K : ℝ}
   have ht := pureGradientNorm_add_le
     (lowEnergyCLM hDensity hSob q hM (u-v)) (lowEnergyCLM hDensity hSob q hM v)
   rw [← map_add, sub_add_cancel] at ht
-  exact ht.trans (add_le_add_right (low_gradient_bound hDensity hSob q hM (u-v)) _)
+  have hb := low_gradient_bound hDensity hSob q hM (u-v)
+  linarith
 
 end HartreeF.Paper121SmallFrequency
