@@ -45,6 +45,7 @@
     "F121Lemma31",
     "F121Lemma32",
     "F121Lemma33",
+    "F121Lemma35",
     "F121Lemma66",
     "F121Lemma67",
     "F121LiteralSolutionClass",
@@ -71,6 +72,7 @@
     "F121SubparabolicScalar",
     "F121SubparabolicScale",
     "F121Theorem34",
+    "F121Theorem36",
     "F121WeakDisappearance",
     "F121WeightedHighCompact",
     "F121WeightedHighSmall",
@@ -295,6 +297,7 @@
     "F121Lemma31",
     "F121Lemma32",
     "F121Lemma33",
+    "F121Lemma35",
     "F121Lemma66",
     "F121Lemma67",
     "F121LiteralSolutionClass",
@@ -322,6 +325,7 @@
     "F121SubparabolicScalar",
     "F121SubparabolicScale",
     "F121Theorem34",
+    "F121Theorem36",
     "F121WeakDisappearance",
     "F121WeightedHighCompact",
     "F121WeightedHighSmall",
@@ -2224,9 +2228,11 @@
     "F121Lemma31": "895bb6f65a4ae3c4876e098e3e7298aaa471ea3c6463b87650f526d59d1fb38d",
     "F121Lemma32": "faa7a19f866f0e220a6e7ab3ac003bf8b37211804a8a01a69d9632bd6021f866",
     "F121Lemma33": "5b95ae6474a8117ef437c0a6dda4bf4526c995b412634c55b0086534feafe317",
+    "F121Lemma35": "acd2026430719da58efecb8b0b506f258185094f5727d5db245d04648d445f1f",
     "F121Lemma66": "5cef74285722faa59483a2c477070255e48af4ca45e2d96f549bc6c19714bdc6",
     "F121Lemma67": "4d3bde1de9c3c3cbbc892069c3e2785a9904f65f3d5cd46bcb94565f389e7c1b",
     "F121Theorem34": "7b4234dac1ee5da2c5edcb2e7f0a6c1cb586a9a3041fdd4bbc57772a095e3b21",
+    "F121Theorem36": "d4037fd6e8dc837c2c947c91730434a76d1a6e9d8c241885134d718c3fb7a736",
     "FActualRieszL1ProductWeakGradient": "1d7e5243af22273be653f4065eb1c6f736cc238e976b2f897445731bc3c34037",
     "FActualRieszL1WeakDerivative": "0915a442d98ad3a5e6c5f6f64baaab5fd1ded8c9f9e78450c7b032a1dfaa1295",
     "FActualRieszWeightedDomination": "edb30e7691b155378016f338a5a1ae49e54a38aa6ef613609ee438114960b22a",
@@ -3135,7 +3141,7 @@
     }
   ],
   "seed": {
-    "run": 38997732717,
-    "commit": "b8c3a425428ddf653975d1edc0db627d5ed74e02"
+    "run": 39001463394,
+    "commit": "2332b2f36cec7384852899d043c3073d7da72204"
   }
 }

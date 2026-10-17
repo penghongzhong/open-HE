@@ -1,0 +1,5 @@
+import F121Theorem36
+
+#print axioms HartreeF.Paper121Theorem36.theorem36_actual_energy_conservation
+
+#check @HartreeF.Paper121Theorem36.theorem36_actual_energy_conservation

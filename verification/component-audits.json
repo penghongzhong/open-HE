@@ -3802,5 +3802,71 @@
         "name": "HartreeF.Paper121Theorem34.theorem34_actual_maximal_local_flow"
       }
     ]
+  },
+  {
+    "module": "F121Lemma35",
+    "source": "components/F121Lemma35.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma35.paperAffineState"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperAffineState_value_ae"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperAffineState_gradient_ae"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperTimePullback"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperTimeForward"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperTimePullback_apply"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperTimeForward_apply"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperTimeForward_pullback"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperTimePullback_forward"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperTimePullback_preimage_eq_forward_image"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperParabolicField"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperParabolicField_apply"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.FourCriticalMixedNormsInvariant"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.parabolic_Z_invariant"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.fourCriticalMixedNorms_invariant"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.paperAffineState_totalEnergy"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma35.lemma35_exact_affine_covariance"
+      }
+    ]
+  },
+  {
+    "module": "F121Theorem36",
+    "source": "components/F121Theorem36.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Theorem36.theorem36_actual_energy_conservation"
+      }
+    ]
   }
 ]

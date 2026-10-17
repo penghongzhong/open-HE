@@ -1,0 +1,37 @@
+import F121Lemma35
+
+#print axioms HartreeF.Paper121Lemma35.paperAffineState
+#print axioms HartreeF.Paper121Lemma35.paperAffineState_value_ae
+#print axioms HartreeF.Paper121Lemma35.paperAffineState_gradient_ae
+#print axioms HartreeF.Paper121Lemma35.paperTimePullback
+#print axioms HartreeF.Paper121Lemma35.paperTimeForward
+#print axioms HartreeF.Paper121Lemma35.paperTimePullback_apply
+#print axioms HartreeF.Paper121Lemma35.paperTimeForward_apply
+#print axioms HartreeF.Paper121Lemma35.paperTimeForward_pullback
+#print axioms HartreeF.Paper121Lemma35.paperTimePullback_forward
+#print axioms HartreeF.Paper121Lemma35.paperTimePullback_preimage_eq_forward_image
+#print axioms HartreeF.Paper121Lemma35.paperParabolicField
+#print axioms HartreeF.Paper121Lemma35.paperParabolicField_apply
+#print axioms HartreeF.Paper121Lemma35.FourCriticalMixedNormsInvariant
+#print axioms HartreeF.Paper121Lemma35.parabolic_Z_invariant
+#print axioms HartreeF.Paper121Lemma35.fourCriticalMixedNorms_invariant
+#print axioms HartreeF.Paper121Lemma35.paperAffineState_totalEnergy
+#print axioms HartreeF.Paper121Lemma35.lemma35_exact_affine_covariance
+
+#check @HartreeF.Paper121Lemma35.paperAffineState
+#check @HartreeF.Paper121Lemma35.paperAffineState_value_ae
+#check @HartreeF.Paper121Lemma35.paperAffineState_gradient_ae
+#check @HartreeF.Paper121Lemma35.paperTimePullback
+#check @HartreeF.Paper121Lemma35.paperTimeForward
+#check @HartreeF.Paper121Lemma35.paperTimePullback_apply
+#check @HartreeF.Paper121Lemma35.paperTimeForward_apply
+#check @HartreeF.Paper121Lemma35.paperTimeForward_pullback
+#check @HartreeF.Paper121Lemma35.paperTimePullback_forward
+#check @HartreeF.Paper121Lemma35.paperTimePullback_preimage_eq_forward_image
+#check @HartreeF.Paper121Lemma35.paperParabolicField
+#check @HartreeF.Paper121Lemma35.paperParabolicField_apply
+#check @HartreeF.Paper121Lemma35.FourCriticalMixedNormsInvariant
+#check @HartreeF.Paper121Lemma35.parabolic_Z_invariant
+#check @HartreeF.Paper121Lemma35.fourCriticalMixedNorms_invariant
+#check @HartreeF.Paper121Lemma35.paperAffineState_totalEnergy
+#check @HartreeF.Paper121Lemma35.lemma35_exact_affine_covariance
