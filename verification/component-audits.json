@@ -3868,5 +3868,98 @@
         "name": "HartreeF.Paper121Theorem36.theorem36_actual_energy_conservation"
       }
     ]
+  },
+  {
+    "module": "F121Lemma37",
+    "source": "components/F121Lemma37.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma37.trappingFactor"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma37.trappingGap"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma37.interaction_gap_of_cap"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma37.lemma37_original_threshold_trapping"
+      }
+    ]
+  },
+  {
+    "module": "F121Lemma38",
+    "source": "components/F121Lemma38.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma38.squareCutoff"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.squareCutoff_smooth"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.squareCutoff_compact"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.localizedChargeForm_eq_integral"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.localizedChargeForm_eq_compactConjugateTest"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.localizedChargeForm_hasDerivAt_of_compactPDE"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.localized_square_charge_derivative_flux"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.localized_square_charge_contDiffOn"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaledCutoff"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaledSquareCutoff"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaledSquareCutoff_gradient_eLpNorm"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaledSquareFlux_preL2_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaledSquareFlux_l2_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaled_localized_charge_derivative_flux"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaled_localized_charge_contDiffOn"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_preL2_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_l2_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_uniform_gradient_bound"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_uniform_l2_bound_on_Icc"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.lemma38_local_charge_and_two_flux_bounds"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.LocalChargeAndFluxBounds"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.localChargeAndFluxBounds_of_compactPDE"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma38.lemma38_actualMaximalTrajectory"
+      }
+    ]
   }
 ]

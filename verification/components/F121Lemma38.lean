@@ -1,0 +1,49 @@
+import F121Lemma38
+
+#print axioms HartreeF.Paper121Lemma38.squareCutoff
+#print axioms HartreeF.Paper121Lemma38.squareCutoff_smooth
+#print axioms HartreeF.Paper121Lemma38.squareCutoff_compact
+#print axioms HartreeF.Paper121Lemma38.localizedChargeForm_eq_integral
+#print axioms HartreeF.Paper121Lemma38.localizedChargeForm_eq_compactConjugateTest
+#print axioms HartreeF.Paper121Lemma38.localizedChargeForm_hasDerivAt_of_compactPDE
+#print axioms HartreeF.Paper121Lemma38.localized_square_charge_derivative_flux
+#print axioms HartreeF.Paper121Lemma38.localized_square_charge_contDiffOn
+#print axioms HartreeF.Paper121Lemma38.scaledCutoff
+#print axioms HartreeF.Paper121Lemma38.scaledSquareCutoff
+#print axioms HartreeF.Paper121Lemma38.scaledSquareCutoff_gradient_eLpNorm
+#print axioms HartreeF.Paper121Lemma38.scaledSquareFlux_preL2_bound
+#print axioms HartreeF.Paper121Lemma38.scaledSquareFlux_l2_bound
+#print axioms HartreeF.Paper121Lemma38.scaled_localized_charge_derivative_flux
+#print axioms HartreeF.Paper121Lemma38.scaled_localized_charge_contDiffOn
+#print axioms HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_preL2_bound
+#print axioms HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_l2_bound
+#print axioms HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_uniform_gradient_bound
+#print axioms HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_uniform_l2_bound_on_Icc
+#print axioms HartreeF.Paper121Lemma38.lemma38_local_charge_and_two_flux_bounds
+#print axioms HartreeF.Paper121Lemma38.LocalChargeAndFluxBounds
+#print axioms HartreeF.Paper121Lemma38.localChargeAndFluxBounds_of_compactPDE
+#print axioms HartreeF.Paper121Lemma38.lemma38_actualMaximalTrajectory
+
+#check @HartreeF.Paper121Lemma38.squareCutoff
+#check @HartreeF.Paper121Lemma38.squareCutoff_smooth
+#check @HartreeF.Paper121Lemma38.squareCutoff_compact
+#check @HartreeF.Paper121Lemma38.localizedChargeForm_eq_integral
+#check @HartreeF.Paper121Lemma38.localizedChargeForm_eq_compactConjugateTest
+#check @HartreeF.Paper121Lemma38.localizedChargeForm_hasDerivAt_of_compactPDE
+#check @HartreeF.Paper121Lemma38.localized_square_charge_derivative_flux
+#check @HartreeF.Paper121Lemma38.localized_square_charge_contDiffOn
+#check @HartreeF.Paper121Lemma38.scaledCutoff
+#check @HartreeF.Paper121Lemma38.scaledSquareCutoff
+#check @HartreeF.Paper121Lemma38.scaledSquareCutoff_gradient_eLpNorm
+#check @HartreeF.Paper121Lemma38.scaledSquareFlux_preL2_bound
+#check @HartreeF.Paper121Lemma38.scaledSquareFlux_l2_bound
+#check @HartreeF.Paper121Lemma38.scaled_localized_charge_derivative_flux
+#check @HartreeF.Paper121Lemma38.scaled_localized_charge_contDiffOn
+#check @HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_preL2_bound
+#check @HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_l2_bound
+#check @HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_uniform_gradient_bound
+#check @HartreeF.Paper121Lemma38.scaled_localized_charge_deriv_uniform_l2_bound_on_Icc
+#check @HartreeF.Paper121Lemma38.lemma38_local_charge_and_two_flux_bounds
+#check @HartreeF.Paper121Lemma38.LocalChargeAndFluxBounds
+#check @HartreeF.Paper121Lemma38.localChargeAndFluxBounds_of_compactPDE
+#check @HartreeF.Paper121Lemma38.lemma38_actualMaximalTrajectory

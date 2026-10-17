@@ -46,6 +46,8 @@
     "F121Lemma32",
     "F121Lemma33",
     "F121Lemma35",
+    "F121Lemma37",
+    "F121Lemma38",
     "F121Lemma66",
     "F121Lemma67",
     "F121LiteralSolutionClass",
@@ -298,6 +300,8 @@
     "F121Lemma32",
     "F121Lemma33",
     "F121Lemma35",
+    "F121Lemma37",
+    "F121Lemma38",
     "F121Lemma66",
     "F121Lemma67",
     "F121LiteralSolutionClass",
@@ -2229,6 +2233,8 @@
     "F121Lemma32": "faa7a19f866f0e220a6e7ab3ac003bf8b37211804a8a01a69d9632bd6021f866",
     "F121Lemma33": "5b95ae6474a8117ef437c0a6dda4bf4526c995b412634c55b0086534feafe317",
     "F121Lemma35": "acd2026430719da58efecb8b0b506f258185094f5727d5db245d04648d445f1f",
+    "F121Lemma37": "0678afa4e14083c9eaee2d99be918cecdda58d3cb9fc77e5be87a73e3101a51f",
+    "F121Lemma38": "404c204997216a7a3fe867c9e56517d7cfaa117058a7b9ac949777c6d2cbb2cb",
     "F121Lemma66": "5cef74285722faa59483a2c477070255e48af4ca45e2d96f549bc6c19714bdc6",
     "F121Lemma67": "4d3bde1de9c3c3cbbc892069c3e2785a9904f65f3d5cd46bcb94565f389e7c1b",
     "F121Theorem34": "7b4234dac1ee5da2c5edcb2e7f0a6c1cb586a9a3041fdd4bbc57772a095e3b21",
@@ -3141,7 +3147,7 @@
     }
   ],
   "seed": {
-    "run": 39001463394,
-    "commit": "2332b2f36cec7384852899d043c3073d7da72204"
+    "run": 39003441897,
+    "commit": "c65e1220c89a4773b434e67bc124004254637afc"
   }
 }
