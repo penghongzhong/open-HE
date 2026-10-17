@@ -3709,5 +3709,29 @@
         "name": "HartreeF.Paper121Lemma67.lemma67_weighted_mixed_gradient_replacement"
       }
     ]
+  },
+  {
+    "module": "F121Lemma31",
+    "source": "components/F121Lemma31.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma31.criticalSobolevConstant"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma31.projected_norm_le_complexGradient"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma31.critical_spatial_sobolev_comparison"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma31.mixedNorm_mono_of_norm_le"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma31.critical_path_sobolev_comparison"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma31.lemma31_critical_spatial_and_path"
+      }
+    ]
   }
 ]

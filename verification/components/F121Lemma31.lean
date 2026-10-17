@@ -1,0 +1,15 @@
+import F121Lemma31
+
+#print axioms HartreeF.Paper121Lemma31.criticalSobolevConstant
+#print axioms HartreeF.Paper121Lemma31.projected_norm_le_complexGradient
+#print axioms HartreeF.Paper121Lemma31.critical_spatial_sobolev_comparison
+#print axioms HartreeF.Paper121Lemma31.mixedNorm_mono_of_norm_le
+#print axioms HartreeF.Paper121Lemma31.critical_path_sobolev_comparison
+#print axioms HartreeF.Paper121Lemma31.lemma31_critical_spatial_and_path
+
+#check @HartreeF.Paper121Lemma31.criticalSobolevConstant
+#check @HartreeF.Paper121Lemma31.projected_norm_le_complexGradient
+#check @HartreeF.Paper121Lemma31.critical_spatial_sobolev_comparison
+#check @HartreeF.Paper121Lemma31.mixedNorm_mono_of_norm_le
+#check @HartreeF.Paper121Lemma31.critical_path_sobolev_comparison
+#check @HartreeF.Paper121Lemma31.lemma31_critical_spatial_and_path
