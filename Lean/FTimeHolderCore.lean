@@ -1,4 +1,6 @@
-import Mathlib
+import Mathlib.MeasureTheory.Function.LpSeminorm.CompareExp
+import Mathlib.Tactic.NormNum
+import Mathlib.Tactic.FieldSimp
 
 noncomputable section
 set_option autoImplicit false

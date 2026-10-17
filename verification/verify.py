@@ -1,4 +1,4 @@
-"""Fresh, bounded GitHub verification of F1048 left-endpoint and two-sided finite-S consumers."""
+"""Pinned, bounded verification of the declared original-manuscript batch."""
 import concurrent.futures as cf
 import datetime
 import fcntl
@@ -36,6 +36,20 @@ def sha(path):
 def now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
+def strip_comments(text):
+    """Ignore nested Lean comments, without ignoring inline proof holes."""
+    out = []; i = 0; depth = 0
+    while i < len(text):
+        if text.startswith('/-', i): depth += 1; i += 2
+        elif depth and text.startswith('-/', i): depth -= 1; i += 2
+        elif depth: i += 1
+        elif text.startswith('--', i):
+            end = text.find('\n', i)
+            i = len(text) if end < 0 else end
+        else: out.append(text[i]); i += 1
+    ensure(depth == 0, 'Unclosed Lean comment')
+    return ''.join(out)
+
 def save(name, value):
     target = OUT / name
     tmp = target.with_suffix(target.suffix + '.tmp')
@@ -55,7 +69,23 @@ def main():
     deps = {n: {d for line in re.findall(r'^import\s+([^\n]+)', p.read_text(), re.M)
                  for d in line.split() if d in files} for n, p in files.items()}
     for n,p in files.items():
-        ensure(not re.search(r'^\s*(?:axiom|sorry|admit)\b', p.read_text(), re.M), 'Forbidden declaration: '+n)
+        ensure(not re.search(r'\b(?:axiom|sorry|admit)\b', strip_comments(p.read_text())),
+               'Forbidden declaration or proof hole: '+n)
+    # Keep every repository source pinned, but compile exactly this batch's
+    # complete transitive import closure. A module count is not a paper count.
+    closure = set()
+    def visit(n):
+        ensure(n in files, 'Missing requested module: '+n)
+        if n in closure:
+            return
+        closure.add(n)
+        for d in deps[n]:
+            visit(d)
+    for n in REQ['targets']:
+        visit(n)
+    ensure(closure == set(REQ['closure']), 'Requested dependency closure differs')
+    files = {n: files[n] for n in sorted(closure)}
+    deps = {n: deps[n] for n in files}
     count = 0
     for pinfile in sorted((HERE / 'pins').glob('*.json')):
         for p,digest in json.loads(pinfile.read_text()).items():
@@ -106,20 +136,37 @@ def main():
                    not record.get('sorryAx_detected', True), 'Invalid seed result: '+n)
             ensure(record['source_sha256'] == hashes[n] and record['dependency_sources'] ==
                    {d:hashes[d] for d in sorted(deps[n])}, 'Seed source/dependency mismatch: '+n)
-            for folder,suffix,key in [('objects','.olean','olean_sha256'),('logs','.log','log_sha256')]:
-                artifact = seed_dir / folder / (n+suffix)
-                ensure(sha(artifact) == record[key], 'Seed artifact hash mismatch: '+n)
-                shutil.copy2(artifact, OUT / folder / artifact.name)
-            results[n] = {**record, 'reused':True,'seed_run':REQ['seed']['run']}
+            artifact = seed_dir / 'objects' / (n+'.olean')
+            ensure(sha(artifact) == record['olean_sha256'], 'Seed object hash mismatch: '+n)
+            shutil.copy2(artifact, objects / artifact.name)
+            # Reuse requires the structured successful invocation, pinned source
+            # and dependency hashes, and the exact compiled object. Raw logs are
+            # neither copied nor uploaded; old metadata retains their digest.
+            old_log = seed_dir / 'logs' / (n+'.log')
+            if old_log.exists():
+                ensure(sha(old_log) == record['log_sha256'], 'Historical seed log hash mismatch: '+n)
+            dependency_oleans = {d: results[d]['olean_sha256'] for d in sorted(deps[n])}
+            if 'dependency_oleans' in record:
+                ensure(record['dependency_oleans'] == dependency_oleans,
+                       'Seed dependency object mismatch: '+n)
+            results[n] = {**record, 'reused':True,'seed_run':REQ['seed']['run'],
+                          'raw_log_in_artifact':False, 'dependency_oleans':dependency_oleans,
+                          'dependency_oleans_provenance':'verified exact transitive seed DAG'}
     receipt = {'status':'RUNNING','identity':REQ['identity'],'targets':REQ['targets'],
                'closure':sorted(files),'results':results,'main_theorem_verified':False,
                'full_scattering_proved':False,'started_utc':now(),
                'commit':os.environ.get('GITHUB_SHA'), 'public_semantic_acceptance':'PENDING'}
+    receipt['manuscript_batch'] = REQ['manuscript_batch']
+    receipt['whole_original_environments_accepted'] = False
     save('receipt.json',receipt)
     print(f'Seed verified: {len(results)}; fresh compilations: {len(files)-len(results)}',flush=True)
 
     def compile_one(n):
         obj = objects / (n + '.olean'); log = logs / (n + '.log')
+        dependency_oleans = {d: results[d]['olean_sha256'] for d in sorted(deps[n])}
+        for dependency, digest in dependency_oleans.items():
+            ensure(sha(objects / (dependency + '.olean')) == digest,
+                   'Dependency changed before compilation: '+n+':'+dependency)
         command = [str(LEAN), '-DwarningAsError=true', '-o', str(obj), str(files[n])]
         started = now(); tic = time.monotonic(); code = None; timed_out = False
         with log.open('w') as f:
@@ -136,8 +183,9 @@ def main():
                 'seconds': round(time.monotonic() - tic, 3), 'started_utc': started, 'finished_utc': now(),
                 'command': command, 'cwd': str(source), 'source_sha256': hashes[n],
                 'dependency_sources': {d: hashes[d] for d in sorted(deps[n])},
+                'dependency_oleans': dependency_oleans,
                 'log_sha256': sha(log), 'olean_sha256': sha(obj) if ok else None,
-                'sorryAx_detected': sorry, 'reused': False}
+                'sorryAx_detected': sorry, 'reused': False, 'raw_log_in_artifact':False}
 
     pending = set(files) - results.keys(); active = {}; tic = time.monotonic()
     with cf.ThreadPoolExecutor(max_workers=2) as pool:
@@ -158,6 +206,18 @@ def main():
                 if results[n]['status'] != 'PASS':
                     print((logs / (n + '.log')).read_text(), flush=True)
     passed = {n for n, v in results.items() if v['status'] == 'PASS'}
+    for n in passed:
+        row = results[n]
+        ensure(sha(files[n]) == hashes[n] == row['source_sha256'], 'Final source mismatch: '+n)
+        ensure(sha(objects / (n+'.olean')) == row['olean_sha256'], 'Final object mismatch: '+n)
+        ensure(set(row['dependency_sources']) == deps[n] and
+               set(row['dependency_oleans']) == deps[n], 'Incomplete direct dependency record: '+n)
+        for dependency in deps[n]:
+            ensure(dependency in passed and
+                   row['dependency_sources'][dependency] == hashes[dependency] and
+                   row['dependency_oleans'][dependency] == results[dependency]['olean_sha256'],
+                   'Final dependency mismatch: '+n+':'+dependency)
+    receipt['direct_dependency_objects_verified'] = True
     receipt['status'] = 'TARGETS_PASS' if set(files) <= passed else 'INCOMPLETE'
     receipt['not_built'] = sorted(set(files) - results.keys())
     receipt['requested_not_passed'] = sorted(set(REQ['targets']) - passed)
@@ -222,7 +282,7 @@ def main():
     receipt['new_target_passes'] = len(REQ['targets'])
     save('receipt.json', receipt)
     print('PUBLIC_AUDIT ' + json.dumps(audit), flush=True)
-    print(f"TARGETS_PASS: {len(REQ['targets'])} new target modules. Main theorem remains unverified.", flush=True)
+    print(f"TARGETS_PASS: {len(REQ['targets'])} requested terminal modules; paper acceptance awaits independent review.", flush=True)
 
 if __name__ == '__main__':
     try:

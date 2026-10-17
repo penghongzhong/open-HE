@@ -1,4 +1,6 @@
-import Mathlib
+import Mathlib.MeasureTheory.Measure.Prod
+import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
+import Mathlib.MeasureTheory.Integral.Prod
 
 noncomputable section
 set_option autoImplicit false

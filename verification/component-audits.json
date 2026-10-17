@@ -3982,5 +3982,616 @@
         "name": "HartreeF.Paper121Theorem39.theorem39_interval_independent_perturbation"
       }
     ]
+  },
+  {
+    "module": "F121Theorem310",
+    "source": "components/F121Theorem310.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightGraphBlowup",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftGraphBlowup",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightFiniteSContinuation",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftFiniteSContinuation",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightInfiniteScattering",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftInfiniteScattering",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.wholeDomainGlobalScattering",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem310.theorem310_finite_size_continuation_and_scattering",
+        "analytic_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      }
+    ]
+  },
+  {
+    "module": "F121Corollary311Terminal",
+    "source": "components/F121Corollary311Terminal.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Corollary311.corollary311_quantitative_small_data",
+        "analytic_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Corollary311.corollary311_positive_stable_energy_seed",
+        "analytic_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev",
+          "SharpOrdinaryHLS",
+          "SharpOrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      }
+    ]
+  },
+  {
+    "module": "F121Theorem312Terminal",
+    "source": "components/F121Theorem312Terminal.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Theorem312.waveTailSize",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.PositiveWaveConclusion",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.PositiveWaveConclusion.halfDomain",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.PositiveWaveConclusion.stateCap",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.PositiveWaveConclusion.prescribedAsymptote",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.PositiveWaveConclusion.vanishingTails",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.PositiveWaveConclusion.energyOnEntireDomain",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.NegativeWaveConclusion",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.NegativeWaveConclusion.halfDomain",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.NegativeWaveConclusion.stateCap",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.NegativeWaveConclusion.prescribedAsymptote",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.NegativeWaveConclusion.vanishingTails",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.NegativeWaveConclusion.energyOnEntireDomain",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.theorem312_positive_wave",
+        "analytic_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.theorem312_negative_wave",
+        "analytic_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.Paper121Theorem312.theorem312_both_prescribed_wave_operators",
+        "analytic_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      }
+    ]
+  },
+  {
+    "module": "FCompactFullZSFromSource",
+    "source": "components/FCompactFullZSFromSource.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.CompactFullZS.scalarSConstant",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      },
+      {
+        "name": "HartreeF.CompactFullZS.scalarSConstant_nonneg",
+        "analytic_inputs": [
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.CompactFullZS.fullZS_le_of_graph_endpoint",
+        "analytic_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryH1Density",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.CompactFullZS.complex_endpoint_le_three_of_coordinate",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      },
+      {
+        "name": "HartreeF.CompactFullZS.forward_fullZS_of_graph_source",
+        "analytic_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.CompactFullZS.forward_correction_fullZS_of_source",
+        "analytic_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.CompactFullZS.backward_correction_fullZS_of_source",
+        "analytic_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      },
+      {
+        "name": "HartreeF.CompactFullZS.correction_add_sub",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      },
+      {
+        "name": "HartreeF.CompactFullZS.correction_sub_sub",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      },
+      {
+        "name": "HartreeF.CompactFullZS.unit_smul_enorm",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      }
+    ]
+  },
+  {
+    "module": "F121LpRealTimeTails",
+    "source": "components/F121LpRealTimeTails.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RealTimeTails.lp_restrict_Ici_tendsto_zero",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      },
+      {
+        "name": "HartreeF.RealTimeTails.lp_restrict_Iic_tendsto_zero",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      }
+    ]
+  },
+  {
+    "module": "F121ActualHalfLineTails",
+    "source": "components/F121ActualHalfLineTails.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.IntervalNormExhaustion.actualNestedLpBound_Ici_tail",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      },
+      {
+        "name": "HartreeF.IntervalNormExhaustion.actualNestedLpBound_Iic_tail",
+        "analytic_inputs": [],
+        "ordinary_inputs": []
+      }
+    ]
+  },
+  {
+    "module": "F121WaveTrajectoryEnergy",
+    "source": "components/F121WaveTrajectoryEnergy.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.WaveRealization.totalEnergy_of_actual_free_asymptote",
+        "analytic_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryBesselLp",
+          "OrdinaryBesselSmoothing",
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      }
+    ]
+  },
+  {
+    "module": "F121WaveCompactBounds",
+    "source": "components/F121WaveCompactBounds.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.WaveRealization.exists_compact_fullZS_cap",
+        "analytic_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ],
+        "ordinary_inputs": [
+          "OrdinaryEndpointBound",
+          "OrdinaryH1Density",
+          "OrdinaryHLS",
+          "OrdinaryHomogeneousEndpointOutput",
+          "OrdinaryHomogeneousStrichartz",
+          "OrdinaryRetardedEndpointOutput",
+          "OrdinaryRetardedStrichartz",
+          "OrdinarySobolev"
+        ]
+      }
+    ]
   }
 ]

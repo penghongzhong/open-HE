@@ -3,10 +3,23 @@ import hashlib
 import re
 
 
+def normalize_axiom_tokens(value):
+    """Erase only Lean's universe suffix; preserve and validate every raw token."""
+    raw = [s.strip() for s in re.split(r',\s*(?![^{}]*\})', value) if s.strip()]
+    normalized = set()
+    for token in raw:
+        match = re.fullmatch(r'([A-Za-z_][A-Za-z0-9_.]*?)(?:\.\{[^{}\n]*\})?', token)
+        if match is None:
+            raise ValueError('Malformed axiom token: ' + token)
+        normalized.add(match.group(1))
+    return raw, normalized
+
+
 def parse_public_output(text, declarations):
     if 'sorryAx' in text:
         raise ValueError('sorryAx in Lean output')
-    starts = list(re.finditer(r'^@?([A-Za-z_][A-Za-z0-9_.]*)\s*:', text, re.M))
+    starts = list(re.finditer(
+        r'^@?([A-Za-z_][A-Za-z0-9_.]*?)(?:\.\{[^}]*\})?\s*:', text, re.M))
     types = {}
     expected_names = {d['name'] for d in declarations}
     for i, match in enumerate(starts):
@@ -25,20 +38,28 @@ def parse_public_output(text, declarations):
         if matches:
             if len(matches) != 1:
                 raise ValueError('Duplicate axiom output: ' + name)
-            axioms = {a.strip() for a in matches[0].split(',') if a.strip()}
+            raw_axioms, axioms = normalize_axiom_tokens(matches[0])
         else:
             if not re.search("'" + escaped + r"' does not depend on any axioms", text):
                 raise ValueError('Missing axiom output: ' + name)
             axioms = set()
+            raw_axioms = []
         if not axioms <= allowed:
             raise ValueError('Unapproved axiom: ' + name + ': ' + repr(axioms))
         if name not in types:
             raise ValueError('Missing type output: ' + name)
         actual_type = types[name]
+        if '⋯' in actual_type or '...' in actual_type or '…' in actual_type:
+            raise ValueError('Truncated type output: ' + name)
         ordinary = sorted(set(re.findall(r'\bOrdinary[A-Za-z0-9_]+', actual_type)))
+        analytic = sorted(set(re.findall(r'\b(?:Sharp)?Ordinary[A-Za-z0-9_]+', actual_type)))
         if 'ordinary_inputs' in declaration and ordinary != declaration['ordinary_inputs']:
             raise ValueError('Ordinary-premise mismatch: ' + name)
-        result.append({**declaration, 'axioms': sorted(axioms), 'actual_type': actual_type,
+        if 'analytic_inputs' in declaration and analytic != declaration['analytic_inputs']:
+            raise ValueError('Analytic-premise mismatch: ' + name)
+        result.append({**declaration, 'axioms': sorted(axioms), 'raw_axioms': raw_axioms,
+                       'actual_type': actual_type,
                        'actual_type_sha256': hashlib.sha256(actual_type.encode()).hexdigest(),
-                       'ordinary_inputs_actual': ordinary})
+                       'ordinary_inputs_actual': ordinary,
+                       'analytic_inputs_actual': analytic})
     return result

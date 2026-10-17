@@ -1,0 +1,45 @@
+import F121Theorem312Terminal
+
+set_option pp.all false
+set_option pp.fullNames true
+set_option pp.universes true
+set_option pp.piBinderTypes true
+set_option pp.piBinderNames true
+set_option pp.funBinderTypes true
+set_option pp.deepTerms true
+set_option pp.maxSteps 1000000
+set_option format.width 120
+
+#print axioms HartreeF.Paper121Theorem312.waveTailSize
+#print axioms HartreeF.Paper121Theorem312.PositiveWaveConclusion
+#print axioms HartreeF.Paper121Theorem312.PositiveWaveConclusion.halfDomain
+#print axioms HartreeF.Paper121Theorem312.PositiveWaveConclusion.stateCap
+#print axioms HartreeF.Paper121Theorem312.PositiveWaveConclusion.prescribedAsymptote
+#print axioms HartreeF.Paper121Theorem312.PositiveWaveConclusion.vanishingTails
+#print axioms HartreeF.Paper121Theorem312.PositiveWaveConclusion.energyOnEntireDomain
+#print axioms HartreeF.Paper121Theorem312.NegativeWaveConclusion
+#print axioms HartreeF.Paper121Theorem312.NegativeWaveConclusion.halfDomain
+#print axioms HartreeF.Paper121Theorem312.NegativeWaveConclusion.stateCap
+#print axioms HartreeF.Paper121Theorem312.NegativeWaveConclusion.prescribedAsymptote
+#print axioms HartreeF.Paper121Theorem312.NegativeWaveConclusion.vanishingTails
+#print axioms HartreeF.Paper121Theorem312.NegativeWaveConclusion.energyOnEntireDomain
+#print axioms HartreeF.Paper121Theorem312.theorem312_positive_wave
+#print axioms HartreeF.Paper121Theorem312.theorem312_negative_wave
+#print axioms HartreeF.Paper121Theorem312.theorem312_both_prescribed_wave_operators
+
+#check @HartreeF.Paper121Theorem312.waveTailSize
+#check @HartreeF.Paper121Theorem312.PositiveWaveConclusion
+#check @HartreeF.Paper121Theorem312.PositiveWaveConclusion.halfDomain
+#check @HartreeF.Paper121Theorem312.PositiveWaveConclusion.stateCap
+#check @HartreeF.Paper121Theorem312.PositiveWaveConclusion.prescribedAsymptote
+#check @HartreeF.Paper121Theorem312.PositiveWaveConclusion.vanishingTails
+#check @HartreeF.Paper121Theorem312.PositiveWaveConclusion.energyOnEntireDomain
+#check @HartreeF.Paper121Theorem312.NegativeWaveConclusion
+#check @HartreeF.Paper121Theorem312.NegativeWaveConclusion.halfDomain
+#check @HartreeF.Paper121Theorem312.NegativeWaveConclusion.stateCap
+#check @HartreeF.Paper121Theorem312.NegativeWaveConclusion.prescribedAsymptote
+#check @HartreeF.Paper121Theorem312.NegativeWaveConclusion.vanishingTails
+#check @HartreeF.Paper121Theorem312.NegativeWaveConclusion.energyOnEntireDomain
+#check @HartreeF.Paper121Theorem312.theorem312_positive_wave
+#check @HartreeF.Paper121Theorem312.theorem312_negative_wave
+#check @HartreeF.Paper121Theorem312.theorem312_both_prescribed_wave_operators

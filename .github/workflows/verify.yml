@@ -38,7 +38,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: lean-verification-results-1
-          run-id: 39009415877
+          run-id: 39012287503
           github-token: ${{ github.token }}
           path: verification-seed
       - name: Check all pins, compile native compact-orbit closure and audit public declarations
@@ -48,6 +48,8 @@ jobs:
         if: always()
         with:
           name: lean-verification-results-${{ github.run_attempt }}
-          path: verification-results/
+          path: |
+            verification-results/*.json
+            verification-results/objects/*.olean
           retention-days: 30
           if-no-files-found: warn

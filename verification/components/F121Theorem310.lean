@@ -1,0 +1,31 @@
+import F121Theorem310
+
+set_option pp.all false
+set_option pp.fullNames true
+set_option pp.universes true
+set_option pp.piBinderTypes true
+set_option pp.piBinderNames true
+set_option pp.funBinderTypes true
+set_option pp.deepTerms true
+set_option pp.maxSteps 1000000
+set_option format.width 120
+
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightGraphBlowup
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftGraphBlowup
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightFiniteSContinuation
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftFiniteSContinuation
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightInfiniteScattering
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftInfiniteScattering
+#print axioms HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.wholeDomainGlobalScattering
+#print axioms HartreeF.Paper121Theorem310.theorem310_finite_size_continuation_and_scattering
+
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightGraphBlowup
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftGraphBlowup
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightFiniteSContinuation
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftFiniteSContinuation
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.rightInfiniteScattering
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.leftInfiniteScattering
+#check @HartreeF.Paper121Theorem310.FiniteSizeContinuationAndScattering.wholeDomainGlobalScattering
+#check @HartreeF.Paper121Theorem310.theorem310_finite_size_continuation_and_scattering

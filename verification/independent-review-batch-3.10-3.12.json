@@ -1,0 +1,323 @@
+{
+  "schema": "independent-original-environment-review-v1",
+  "reviewed_utc": "2026-10-17T18:27:07.364440+00:00",
+  "scope": {
+    "manuscript_numbers": [
+      "3.10",
+      "3.11",
+      "3.12"
+    ],
+    "whole_manuscript_environment_count": 83,
+    "overall_accepted_count": null,
+    "historical_37_of_81_used_as_current_acceptance": false,
+    "scope_extends_to_other_batches": false
+  },
+  "decision": {
+    "static_mathematical_source_review": "PASS",
+    "local_machine_evidence_review": "PASS",
+    "full_original_environment_match": "PASS_WITH_EXPLICIT_STANDARD_ANALYSIS_INPUTS",
+    "ready_for_authorized_repository_submission": true,
+    "github_actions_current_batch": "PENDING",
+    "remote_original_environments_accepted": false
+  },
+  "identity": {
+    "compiler_sha256": "bf8d54e4714cc4b03d3f6bb34c83b7202b87e49c8bfcbff6895c085bb90ceb38",
+    "mathlib_revision": "a98628e16c11f5167f16124105ddce53efa9bfe5",
+    "lake_manifest_sha256": "5f5f5d5825931416d9fc99a21950b1f8cfa9c98a52a6af0af89a577d72310014",
+    "flags": [
+      "-DwarningAsError=true"
+    ]
+  },
+  "source_binding": {
+    "request_repository_path": "verification/request.json",
+    "request_sha256": "58accaf0172d9381c53e01b7122c7e65866178876625fa9df6c91657bf0c7d13",
+    "all_repository_sources": 1041,
+    "complete_transitive_closure_modules": 539,
+    "closure_source_hashes_canonical_sha256": "3eba9da05a08067a0a3c360456a0181a8d6bee39ed983be9aaeb1a0290da3142",
+    "source_hashes_location": "source_sha256 and closure fields of the bound verification/request.json",
+    "new_or_reconstructed_modules_sha256": {
+      "F121Theorem310": "ae09162dc6568a80e0b59d4d93705670faf3115070d0c40a002423df35075616",
+      "F121Corollary311Terminal": "ba2a19223f218986ba9f2aa49bd1b86d29df178950aac3c2569bbdc2ada22ecb",
+      "F121Theorem312Terminal": "1b0959b1c07389b1c0340bcf1889215952135eb533781ec4419cfebfe595aa6f",
+      "FCompactFullZSFromSource": "771e84ac187d61b555e1cd9f916fea77db1690910992f4e8fe0dde96a1a5a14d",
+      "F121LpRealTimeTails": "402e2f25090837eca883878f442a0fefde6ab33565e95651c8ca01d67443d122",
+      "F121ActualHalfLineTails": "1e03b3689773bc2834a44a883ba2c1bd5a25b5efac3f678c5d89d54d2d019940",
+      "F121WaveTrajectoryEnergy": "eeaa57630f1e1ffb583695c95e91eb7b6dc145a28482160d8b7832741d5e2598",
+      "F121WaveCompactBounds": "d3e47395c80321aa9ec3a511c4afe882d8bc8ad5744c27522ffc46495bed00f4"
+    }
+  },
+  "original_domain": {
+    "dimension": 3,
+    "complex_nonradial_homogeneous_energy_data": true,
+    "riesz_order": "0 < alpha < 3",
+    "hartree_power": "p = 3 + alpha",
+    "literal_focusing_hartree_forcing": true,
+    "initial_value_L2_assumed": false,
+    "finite_variance_assumed": false,
+    "stable_seed_uses_original_W_energy_and_gradient_thresholds": true
+  },
+  "environment_matches": [
+    {
+      "original_number": "3.10",
+      "module": "F121Theorem310",
+      "same_actual_trajectory": "U; original datum, anchor, state and maximal domain retained",
+      "complete_clauses": [
+        "right finite-endpoint graph-norm obstruction",
+        "left finite-endpoint graph-norm obstruction",
+        "right finite-S and gradient-cap actual strict extension preserving old trajectory",
+        "left finite-S and gradient-cap actual strict extension preserving old trajectory",
+        "right infinite-endpoint graph and gradient scattering",
+        "left infinite-endpoint graph and gradient scattering",
+        "whole-domain common bounds imply domain R and both scattering states for the same U"
+      ],
+      "review": "PASS"
+    },
+    {
+      "original_number": "3.11",
+      "module": "F121Corollary311Terminal",
+      "same_actual_trajectory": "canonical maximal solution M for each original anchor and datum",
+      "complete_clauses": [
+        "positive universal epsilon and C chosen before all anchors and data",
+        "globality and two-sided scattering",
+        "literal E+W+Z+S bound C times initial pure-gradient norm",
+        "same four norms of correction to S(t-s)f bounded with exponent 5+2 alpha = 2p-1",
+        "positive stable-branch energy seed using both original W thresholds"
+      ],
+      "review": "PASS"
+    },
+    {
+      "original_number": "3.12",
+      "module": "F121Theorem312Terminal",
+      "same_actual_trajectory": "one canonical maximal trajectory in each separately constructed direction",
+      "complete_clauses_per_direction": [
+        "actual half-line contained in the maximal domain",
+        "one finite positive energy-state cap on that half-line",
+        "graph-norm asymptote to the prescribed free state phi",
+        "actual S+W+Z tails tend to zero over all real cutoffs",
+        "energy equals A(phi)/2 on the entire actual maximal domain"
+      ],
+      "opposite_infinite_direction_globality_claimed": false,
+      "review": "PASS"
+    }
+  ],
+  "no_circular_target_inputs": {
+    "public_terminal_target_scattering_or_globality_premise": false,
+    "public_terminal_NoBad_or_core_conclusion_premise": false,
+    "finite_S_source_domains_and_tails_actually_produced": true,
+    "wave_energy_identity_actually_derived": true,
+    "helper_boundary": "Intermediate helper assumptions such as a free asymptote or compact source cap are supplied by their public terminal proofs; they are not added as terminal assumptions."
+  },
+  "explicit_classical_input_boundary": {
+    "common_eight": [
+      "OrdinaryH1Density",
+      "OrdinarySobolev",
+      "OrdinaryHLS",
+      "OrdinaryEndpointBound",
+      "OrdinaryHomogeneousStrichartz",
+      "OrdinaryRetardedStrichartz",
+      "OrdinaryHomogeneousEndpointOutput",
+      "OrdinaryRetardedEndpointOutput"
+    ],
+    "small_data_positive_energy_seed_additions": [
+      "SharpOrdinaryHLS",
+      "SharpOrdinarySobolev",
+      "OrdinaryBesselSmoothing",
+      "OrdinaryBesselLp at criticalExponent, sourceExponent, and 6"
+    ],
+    "wave_operator_energy_additions": [
+      "OrdinaryBesselSmoothing",
+      "OrdinaryBesselLp at criticalExponent, sourceExponent, and 6"
+    ],
+    "native_Lean_existence_of_all_classical_interfaces_claimed": false,
+    "actual_analytic_contracts_matched": 43,
+    "BesselLp_three_distinct_indices_verified_in_actual_types": true,
+    "sources": [
+      {
+        "url": "https://www.math.ucdavis.edu/~hunter/pdes/ch3.pdf",
+        "scope": "Theorem 3.24 supplies ordinary H1 smooth density; Theorem 3.35 supplies the homogeneous Sobolev inequality. Complex and homogeneous-state bridges are explicit Lean consumers."
+      },
+      {
+        "url": "https://arxiv.org/pdf/1606.02158",
+        "scope": "Appendix A.1-A.2 supplies full strict-range strong Riesz-potential HLS and its genuine integral domain."
+      },
+      {
+        "url": "https://www-users.cse.umn.edu/~keel/endpoint.pdf",
+        "scope": "Theorem 1.2 and Corollary 1.4 cover three-dimensional Schrodinger Strichartz and endpoint inputs. Backward constants are derived separately in the Lean development."
+      },
+      {
+        "url": "https://arxiv.org/pdf/1010.5821",
+        "scope": "Equation (1.1) and Theorem 2.1 cover two independent functions with equal exponents; equation (1.4), Theorem 3.1 and Appendix A give sharp Sobolev. Normalization and Hartree threshold composition are explicit Lean results."
+      },
+      {
+        "url": "https://www.numdam.org/article/AIF_1961__11__385_0.pdf",
+        "scope": "Section 4, printed p.417, gives the Bessel kernel Fourier formula, mass one and derivative bound; section 10(1), pp.470-471, gives Lp mapping. Small/large normalized-dilation limits additionally use the standard L1-kernel and Lp-density argument, rather than being quoted verbatim from that mapping result."
+      }
+    ]
+  },
+  "actual_local_checks": {
+    "repository_source_hashes_and_no_holes": 1041,
+    "modules_with_exit_zero_object_and_log_hashes": 539,
+    "direct_dependency_source_and_object_keysets_exact": true,
+    "external_source_runtime_cache_hashes_recomputed": 33800,
+    "dependency_package_revisions_checked": 8,
+    "public_types_and_axiom_reports": 43,
+    "public_types_truncated": false,
+    "axiom_union": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "public_type_configuration": "Explicit @ checks, full names, universes, binder names/types and deep terms; all structure projections included; no ellipsis accepted."
+  },
+  "evidence_sha256": {
+    "local_compile_receipt": "0c93129f2a5a04123e27228d172a840670ddd47492229812c4acefd01f13cb54",
+    "local_batch_audit": "0aa4ffe43435fcf8abd97b3aa644c68938917266da53f5b36ac2b78022788470",
+    "public_audit_lean": "00f231fb4286173993f1fe318b9d0b5284136692c1cc567c8c3aea2be0432c4a",
+    "independent_machine_checks": "2aa4c793a1ab81dd60b75807abe0bef49921d40954df3380bd6310ba777953e8",
+    "independent_actual_type_supplement": "0c13bd568bdcdc04d4ae342c21ae18946184f37ce4c372138a44d3d34ddf4885",
+    "43_normalized_actual_type_hash_records": "098f46c03c9c43570cbac3ac5f9387740e6c9760ae691632b31f2a195b2219c5",
+    "frozen_analytic_contract": "1bf5b885daf95968aaa102b51e15d0ffd6782a210c463ad4027aaeda776b3a28"
+  },
+  "terminal_actual_types": [
+    {
+      "name": "HartreeF.Paper121Theorem310.theorem310_finite_size_continuation_and_scattering",
+      "module": "F121Theorem310",
+      "actual_type_sha256": "e52bfc55acb70c6c656aede3e8b562f0f6aab7e11d99ae37b9c6180fd369214b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "analytic_inputs_actual": [
+        "OrdinaryEndpointBound",
+        "OrdinaryH1Density",
+        "OrdinaryHLS",
+        "OrdinaryHomogeneousEndpointOutput",
+        "OrdinaryHomogeneousStrichartz",
+        "OrdinaryRetardedEndpointOutput",
+        "OrdinaryRetardedStrichartz",
+        "OrdinarySobolev"
+      ]
+    },
+    {
+      "name": "HartreeF.Paper121Corollary311.corollary311_quantitative_small_data",
+      "module": "F121Corollary311Terminal",
+      "actual_type_sha256": "6bf3a34acc0e8ec2eaa0d3504b23fae75e3fc28510f90f6a00b8303fb02f7305",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "analytic_inputs_actual": [
+        "OrdinaryEndpointBound",
+        "OrdinaryH1Density",
+        "OrdinaryHLS",
+        "OrdinaryHomogeneousEndpointOutput",
+        "OrdinaryHomogeneousStrichartz",
+        "OrdinaryRetardedEndpointOutput",
+        "OrdinaryRetardedStrichartz",
+        "OrdinarySobolev"
+      ]
+    },
+    {
+      "name": "HartreeF.Paper121Corollary311.corollary311_positive_stable_energy_seed",
+      "module": "F121Corollary311Terminal",
+      "actual_type_sha256": "2234d8876462a2e680db076cd774281783b845804b0b00ee22e78e4514dc546b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "analytic_inputs_actual": [
+        "OrdinaryBesselLp",
+        "OrdinaryBesselSmoothing",
+        "OrdinaryEndpointBound",
+        "OrdinaryH1Density",
+        "OrdinaryHLS",
+        "OrdinaryHomogeneousEndpointOutput",
+        "OrdinaryHomogeneousStrichartz",
+        "OrdinaryRetardedEndpointOutput",
+        "OrdinaryRetardedStrichartz",
+        "OrdinarySobolev",
+        "SharpOrdinaryHLS",
+        "SharpOrdinarySobolev"
+      ]
+    },
+    {
+      "name": "HartreeF.Paper121Theorem312.theorem312_positive_wave",
+      "module": "F121Theorem312Terminal",
+      "actual_type_sha256": "4243c7a83dc8a88b4de7da4cf88e853ca782c734a7251f15c98b6e8f71d0adb3",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "analytic_inputs_actual": [
+        "OrdinaryBesselLp",
+        "OrdinaryBesselSmoothing",
+        "OrdinaryEndpointBound",
+        "OrdinaryH1Density",
+        "OrdinaryHLS",
+        "OrdinaryHomogeneousEndpointOutput",
+        "OrdinaryHomogeneousStrichartz",
+        "OrdinaryRetardedEndpointOutput",
+        "OrdinaryRetardedStrichartz",
+        "OrdinarySobolev"
+      ]
+    },
+    {
+      "name": "HartreeF.Paper121Theorem312.theorem312_negative_wave",
+      "module": "F121Theorem312Terminal",
+      "actual_type_sha256": "0512fcdd5d0dc189dd47c53a818bdd3f4449cf5ffe4944ce9bfe007c6a6073d4",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "analytic_inputs_actual": [
+        "OrdinaryBesselLp",
+        "OrdinaryBesselSmoothing",
+        "OrdinaryEndpointBound",
+        "OrdinaryH1Density",
+        "OrdinaryHLS",
+        "OrdinaryHomogeneousEndpointOutput",
+        "OrdinaryHomogeneousStrichartz",
+        "OrdinaryRetardedEndpointOutput",
+        "OrdinaryRetardedStrichartz",
+        "OrdinarySobolev"
+      ]
+    },
+    {
+      "name": "HartreeF.Paper121Theorem312.theorem312_both_prescribed_wave_operators",
+      "module": "F121Theorem312Terminal",
+      "actual_type_sha256": "92aa766eb331cd43335dfa668aaeb20a01ab96f967e12e34ecd78f6a2a06427b",
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "analytic_inputs_actual": [
+        "OrdinaryBesselLp",
+        "OrdinaryBesselSmoothing",
+        "OrdinaryEndpointBound",
+        "OrdinaryH1Density",
+        "OrdinaryHLS",
+        "OrdinaryHomogeneousEndpointOutput",
+        "OrdinaryHomogeneousStrichartz",
+        "OrdinaryRetardedEndpointOutput",
+        "OrdinaryRetardedStrichartz",
+        "OrdinarySobolev"
+      ]
+    }
+  ],
+  "publication_boundary": {
+    "contains_manuscript_tex_or_pdf": false,
+    "contains_raw_logs": false,
+    "authorized_scope": "Necessary Lean, build, structured audit and Actions files for this existing branch only",
+    "workflow_artifact_allowlist": [
+      "verification-results/*.json",
+      "verification-results/objects/*.olean"
+    ],
+    "current_CI_source_static_review": "PASS; exact dependency object records and all pins retained; outside-batch modules marked NOT_RUN"
+  }
+}
