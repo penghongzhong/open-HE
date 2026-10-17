@@ -1,0 +1,19 @@
+import F121Theorem34
+
+#print axioms HartreeF.Paper121Theorem34.FourFinitePathQuantities
+#print axioms HartreeF.Paper121Theorem34.fourFinitePathQuantities
+#print axioms HartreeF.Paper121Theorem34.ActualHartreeDuhamelOnDomain
+#print axioms HartreeF.Paper121Theorem34.actualHartreeDuhamelOnDomain
+#print axioms HartreeF.Paper121Theorem34.actualPaperDifferenceSize_mono
+#print axioms HartreeF.Paper121Theorem34.CompactFlowDependence
+#print axioms HartreeF.Paper121Theorem34.compactFlowDependence
+#print axioms HartreeF.Paper121Theorem34.theorem34_actual_maximal_local_flow
+
+#check @HartreeF.Paper121Theorem34.FourFinitePathQuantities
+#check @HartreeF.Paper121Theorem34.fourFinitePathQuantities
+#check @HartreeF.Paper121Theorem34.ActualHartreeDuhamelOnDomain
+#check @HartreeF.Paper121Theorem34.actualHartreeDuhamelOnDomain
+#check @HartreeF.Paper121Theorem34.actualPaperDifferenceSize_mono
+#check @HartreeF.Paper121Theorem34.CompactFlowDependence
+#check @HartreeF.Paper121Theorem34.compactFlowDependence
+#check @HartreeF.Paper121Theorem34.theorem34_actual_maximal_local_flow

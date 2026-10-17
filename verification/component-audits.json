@@ -3748,5 +3748,59 @@
         "name": "HartreeF.Paper121Lemma32.lemma32_nonlinearity_on_energy_and_critical_graphs"
       }
     ]
+  },
+  {
+    "module": "F121Lemma33",
+    "source": "components/F121Lemma33.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma33.RawRetardedFormula"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma33.RawAdvancedFormula"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma33.ForcedFiniteDuhamel"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma33.RetardedRealization"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma33.AdvancedRealization"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma33.lemma33_compatible_sources_and_literal_finite_duhamel"
+      }
+    ]
+  },
+  {
+    "module": "F121Theorem34",
+    "source": "components/F121Theorem34.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Theorem34.FourFinitePathQuantities"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem34.fourFinitePathQuantities"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem34.ActualHartreeDuhamelOnDomain"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem34.actualHartreeDuhamelOnDomain"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem34.actualPaperDifferenceSize_mono"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem34.CompactFlowDependence"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem34.compactFlowDependence"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem34.theorem34_actual_maximal_local_flow"
+      }
+    ]
   }
 ]
