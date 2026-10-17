@@ -75,6 +75,7 @@
     "F121SubparabolicScale",
     "F121Theorem34",
     "F121Theorem36",
+    "F121Theorem39",
     "F121WeakDisappearance",
     "F121WeightedHighCompact",
     "F121WeightedHighSmall",
@@ -330,6 +331,7 @@
     "F121SubparabolicScale",
     "F121Theorem34",
     "F121Theorem36",
+    "F121Theorem39",
     "F121WeakDisappearance",
     "F121WeightedHighCompact",
     "F121WeightedHighSmall",
@@ -2239,6 +2241,7 @@
     "F121Lemma67": "4d3bde1de9c3c3cbbc892069c3e2785a9904f65f3d5cd46bcb94565f389e7c1b",
     "F121Theorem34": "7b4234dac1ee5da2c5edcb2e7f0a6c1cb586a9a3041fdd4bbc57772a095e3b21",
     "F121Theorem36": "d4037fd6e8dc837c2c947c91730434a76d1a6e9d8c241885134d718c3fb7a736",
+    "F121Theorem39": "b157c8263fb0be7db5a3b7a373cdc40db31362f908bf81753af8ff5ffb17856c",
     "FActualRieszL1ProductWeakGradient": "1d7e5243af22273be653f4065eb1c6f736cc238e976b2f897445731bc3c34037",
     "FActualRieszL1WeakDerivative": "0915a442d98ad3a5e6c5f6f64baaab5fd1ded8c9f9e78450c7b032a1dfaa1295",
     "FActualRieszWeightedDomination": "edb30e7691b155378016f338a5a1ae49e54a38aa6ef613609ee438114960b22a",
@@ -3147,7 +3150,7 @@
     }
   ],
   "seed": {
-    "run": 39003441897,
-    "commit": "c65e1220c89a4773b434e67bc124004254637afc"
+    "run": 39009415877,
+    "commit": "7b5f098bdc1dcca9fb0f6538a6492105d6b588c5"
   }
 }

@@ -3961,5 +3961,26 @@
         "name": "HartreeF.Paper121Lemma38.lemma38_actualMaximalTrajectory"
       }
     ]
+  },
+  {
+    "module": "F121Theorem39",
+    "source": "components/F121Theorem39.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Theorem39.ForwardPerturbationResult"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem39.BackwardPerturbationResult"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem39.forwardPerturbationResult_mono"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem39.backwardPerturbationResult_mono"
+      },
+      {
+        "name": "HartreeF.Paper121Theorem39.theorem39_interval_independent_perturbation"
+      }
+    ]
   }
 ]

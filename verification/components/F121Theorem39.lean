@@ -1,0 +1,13 @@
+import F121Theorem39
+
+#print axioms HartreeF.Paper121Theorem39.ForwardPerturbationResult
+#print axioms HartreeF.Paper121Theorem39.BackwardPerturbationResult
+#print axioms HartreeF.Paper121Theorem39.forwardPerturbationResult_mono
+#print axioms HartreeF.Paper121Theorem39.backwardPerturbationResult_mono
+#print axioms HartreeF.Paper121Theorem39.theorem39_interval_independent_perturbation
+
+#check @HartreeF.Paper121Theorem39.ForwardPerturbationResult
+#check @HartreeF.Paper121Theorem39.BackwardPerturbationResult
+#check @HartreeF.Paper121Theorem39.forwardPerturbationResult_mono
+#check @HartreeF.Paper121Theorem39.backwardPerturbationResult_mono
+#check @HartreeF.Paper121Theorem39.theorem39_interval_independent_perturbation
