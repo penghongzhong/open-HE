@@ -1,5 +1,5 @@
 import FActualRieszL1WeakDerivative
 
-#print axioms HartreeF.RieszConvolutionDerivative.actual_rieszConvolution_hasWeakGradient
+#print axioms HartreeF.RieszL1LocalDomains.actual_riesz_hasWeakGradient_L1
 
-#check @HartreeF.RieszConvolutionDerivative.actual_rieszConvolution_hasWeakGradient
+#check @HartreeF.RieszL1LocalDomains.actual_riesz_hasWeakGradient_L1

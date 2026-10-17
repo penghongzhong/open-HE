@@ -10,7 +10,7 @@ open scoped ENNReal RealInnerProductSpace
 namespace HartreeF.Paper121Lemma67
 open EnergySpace EnergySpace.Highpass PhysicalLowpass SobolevStretch StationarySelfTest
   ForcingDomain WeakHartreeProduct WeakHartreeChain BoundedHartreeGradient
-  GradientMajorants ActualUpperProduct YoungSource
+  GradientMajorants ActualUpperProduct YoungSource MassRecovery
 
 /-- The literal product in Lemma 6.7, with the signed real density unchanged. -/
 def weightedMixedProduct (α c : ℝ) (d : Space → ℝ) (v : EnergyState) : Space → ℂ :=
@@ -50,8 +50,10 @@ theorem weightedMixedProduct_memLp {α c : ℝ} (hH : OrdinaryHLS α c)
   have hb : MemLp (localFactor α (energyValue v))
       (ENNReal.ofReal (energyOuterExponent α)) volume :=
     localFactor_memLp hH.order_pos (by simpa using Lp.memLp (energyValue v))
-  letI := (energy_holder hH.order_pos hH.order_lt_three).ennrealOfReal
-  simpa only [weightedMixedProduct, sourceExponent] using hp.smul hb
+  let := (energy_holder hH.order_pos hH.order_lt_three).ennrealOfReal
+  change MemLp (fun x => rieszConvolution α c d x • localFactor α (energyValue v) x)
+    (ENNReal.ofReal (6 / 5 : ℝ)) volume
+  exact hp.smul hb
 
 /-- Projection of the literal complex product has the literal product-rule
 field as weak gradient. The density is only assumed integrable here. -/

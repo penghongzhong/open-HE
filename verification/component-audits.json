@@ -3652,7 +3652,7 @@
     "source": "components/FActualRieszL1WeakDerivative.lean",
     "declarations": [
       {
-        "name": "HartreeF.RieszConvolutionDerivative.actual_rieszConvolution_hasWeakGradient"
+        "name": "HartreeF.RieszL1LocalDomains.actual_riesz_hasWeakGradient_L1"
       }
     ]
   },
