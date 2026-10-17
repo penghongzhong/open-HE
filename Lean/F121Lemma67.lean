@@ -140,7 +140,7 @@ theorem lemma67_weighted_mixed_gradient_replacement
     hH.order_lt_three hH.normalization_pos ENNReal.toReal_nonneg
     Complex.imCLM imCLM_norm_le_one v hvA hd1
   have hwR : HasWeakGradient (fun x => (T x).re) GR := by
-    simpa only [T, GR] using
+    simpa [T, GR] using
       (weightedMixedProduct_projected_hasWeakGradient hD hS hα2'
         hH.order_lt_three hH.normalization_pos ENNReal.toReal_nonneg
         Complex.reCLM reCLM_norm_le_one v hd1
@@ -150,7 +150,7 @@ theorem lemma67_weighted_mixed_gradient_replacement
         (lowEnergyState_projectedGradient_memLp_thirty_thirteen
           hD hS Complex.imCLM qLow hM u) hvA)
   have hwI : HasWeakGradient (fun x => (T x).im) GI := by
-    simpa only [T, GI] using
+    simpa [T, GI] using
       (weightedMixedProduct_projected_hasWeakGradient hD hS hα2'
         hH.order_lt_three hH.normalization_pos ENNReal.toReal_nonneg
         Complex.imCLM imCLM_norm_le_one v hd1
