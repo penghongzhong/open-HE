@@ -1,0 +1,9 @@
+import FSameStateWeightedRieszProduct
+
+#print axioms HartreeF.WeightedRieszProduct.derivativeProduct_domain_bound
+#print axioms HartreeF.WeightedRieszProduct.localGradientProduct_domain_bound
+#print axioms HartreeF.WeightedRieszProduct.actual_weighted_kernel_integrals
+
+#check @HartreeF.WeightedRieszProduct.derivativeProduct_domain_bound
+#check @HartreeF.WeightedRieszProduct.localGradientProduct_domain_bound
+#check @HartreeF.WeightedRieszProduct.actual_weighted_kernel_integrals

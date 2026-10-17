@@ -1,0 +1,7 @@
+import FSameStateWeightedHardy
+
+#print axioms HartreeF.WeightedHardy.weighted_density_spatialBound
+#print axioms HartreeF.WeightedHardy.weighted_integral_domain_bound
+
+#check @HartreeF.WeightedHardy.weighted_density_spatialBound
+#check @HartreeF.WeightedHardy.weighted_integral_domain_bound

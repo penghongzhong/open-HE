@@ -3619,5 +3619,95 @@
         "name": "HartreeF.Paper121Lemma66.lemma66_pure_low_leakage"
       }
     ]
+  },
+  {
+    "module": "FSameStateWeightedHardy",
+    "source": "components/FSameStateWeightedHardy.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.WeightedHardy.weighted_density_spatialBound"
+      },
+      {
+        "name": "HartreeF.WeightedHardy.weighted_integral_domain_bound"
+      }
+    ]
+  },
+  {
+    "module": "FSameStateWeightedRieszProduct",
+    "source": "components/FSameStateWeightedRieszProduct.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.WeightedRieszProduct.derivativeProduct_domain_bound"
+      },
+      {
+        "name": "HartreeF.WeightedRieszProduct.localGradientProduct_domain_bound"
+      },
+      {
+        "name": "HartreeF.WeightedRieszProduct.actual_weighted_kernel_integrals"
+      }
+    ]
+  },
+  {
+    "module": "FActualRieszL1WeakDerivative",
+    "source": "components/FActualRieszL1WeakDerivative.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.RieszConvolutionDerivative.actual_rieszConvolution_hasWeakGradient"
+      }
+    ]
+  },
+  {
+    "module": "FActualRieszL1ProductWeakGradient",
+    "source": "components/FActualRieszL1ProductWeakGradient.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualUpperProduct.actual_riesz_L1_product_hasWeakGradient"
+      },
+      {
+        "name": "HartreeF.ActualUpperProduct.actual_riesz_projectedLocalFactor_hasWeakGradient"
+      }
+    ]
+  },
+  {
+    "module": "FActualUpperProjectedGradientL1",
+    "source": "components/FActualUpperProjectedGradientL1.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.ActualUpperProduct.upperProjectedGradientL1Bound_eq"
+      },
+      {
+        "name": "HartreeF.ActualUpperProduct.actualRieszLocalFactorGradient_energy_L1"
+      }
+    ]
+  },
+  {
+    "module": "F121Lemma67",
+    "source": "components/F121Lemma67.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma67.weightedMixedProduct"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma67.weightedMixedConstant"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma67.weightedMixedConstant_nonneg"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma67.two_upperProjectedGradientL1Bound_eq"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma67.weightedMixedProduct_memLp"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma67.weightedMixedProduct_projected_hasWeakGradient"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma67.eLpNorm_one_toReal_eq_integral_norm"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma67.lemma67_weighted_mixed_gradient_replacement"
+      }
+    ]
   }
 ]

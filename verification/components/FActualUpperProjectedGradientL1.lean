@@ -1,0 +1,7 @@
+import FActualUpperProjectedGradientL1
+
+#print axioms HartreeF.ActualUpperProduct.upperProjectedGradientL1Bound_eq
+#print axioms HartreeF.ActualUpperProduct.actualRieszLocalFactorGradient_energy_L1
+
+#check @HartreeF.ActualUpperProduct.upperProjectedGradientL1Bound_eq
+#check @HartreeF.ActualUpperProduct.actualRieszLocalFactorGradient_energy_L1

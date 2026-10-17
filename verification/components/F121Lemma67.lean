@@ -1,0 +1,19 @@
+import F121Lemma67
+
+#print axioms HartreeF.Paper121Lemma67.weightedMixedProduct
+#print axioms HartreeF.Paper121Lemma67.weightedMixedConstant
+#print axioms HartreeF.Paper121Lemma67.weightedMixedConstant_nonneg
+#print axioms HartreeF.Paper121Lemma67.two_upperProjectedGradientL1Bound_eq
+#print axioms HartreeF.Paper121Lemma67.weightedMixedProduct_memLp
+#print axioms HartreeF.Paper121Lemma67.weightedMixedProduct_projected_hasWeakGradient
+#print axioms HartreeF.Paper121Lemma67.eLpNorm_one_toReal_eq_integral_norm
+#print axioms HartreeF.Paper121Lemma67.lemma67_weighted_mixed_gradient_replacement
+
+#check @HartreeF.Paper121Lemma67.weightedMixedProduct
+#check @HartreeF.Paper121Lemma67.weightedMixedConstant
+#check @HartreeF.Paper121Lemma67.weightedMixedConstant_nonneg
+#check @HartreeF.Paper121Lemma67.two_upperProjectedGradientL1Bound_eq
+#check @HartreeF.Paper121Lemma67.weightedMixedProduct_memLp
+#check @HartreeF.Paper121Lemma67.weightedMixedProduct_projected_hasWeakGradient
+#check @HartreeF.Paper121Lemma67.eLpNorm_one_toReal_eq_integral_norm
+#check @HartreeF.Paper121Lemma67.lemma67_weighted_mixed_gradient_replacement

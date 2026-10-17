@@ -1,0 +1,7 @@
+import FActualRieszL1ProductWeakGradient
+
+#print axioms HartreeF.ActualUpperProduct.actual_riesz_L1_product_hasWeakGradient
+#print axioms HartreeF.ActualUpperProduct.actual_riesz_projectedLocalFactor_hasWeakGradient
+
+#check @HartreeF.ActualUpperProduct.actual_riesz_L1_product_hasWeakGradient
+#check @HartreeF.ActualUpperProduct.actual_riesz_projectedLocalFactor_hasWeakGradient
