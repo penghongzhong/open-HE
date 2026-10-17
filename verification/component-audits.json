@@ -3733,5 +3733,20 @@
         "name": "HartreeF.Paper121Lemma31.lemma31_critical_spatial_and_path"
       }
     ]
+  },
+  {
+    "module": "F121Lemma32",
+    "source": "components/F121Lemma32.lean",
+    "declarations": [
+      {
+        "name": "HartreeF.Paper121Lemma32.SinglePathEstimates"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma32.DifferenceGradientEstimate"
+      },
+      {
+        "name": "HartreeF.Paper121Lemma32.lemma32_nonlinearity_on_energy_and_critical_graphs"
+      }
+    ]
   }
 ]

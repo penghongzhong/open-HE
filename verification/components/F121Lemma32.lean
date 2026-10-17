@@ -1,0 +1,9 @@
+import F121Lemma32
+
+#print axioms HartreeF.Paper121Lemma32.SinglePathEstimates
+#print axioms HartreeF.Paper121Lemma32.DifferenceGradientEstimate
+#print axioms HartreeF.Paper121Lemma32.lemma32_nonlinearity_on_energy_and_critical_graphs
+
+#check @HartreeF.Paper121Lemma32.SinglePathEstimates
+#check @HartreeF.Paper121Lemma32.DifferenceGradientEstimate
+#check @HartreeF.Paper121Lemma32.lemma32_nonlinearity_on_energy_and_critical_graphs
